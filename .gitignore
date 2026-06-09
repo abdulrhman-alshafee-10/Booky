@@ -1,0 +1,10 @@
+node_modules/
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.env
+
+# dist is the deliverable — commit when shipping to ThemeForest
+# during active dev you may choose to gitignore it:
+# dist/

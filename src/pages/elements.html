@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+  <title>Element Library — Booky</title>
+  <meta name="description" content="All headers, heroes, and footers for the Booky template.">
+  <meta name="robots" content="noindex">
+  <style>
+    .el-header       { background: var(--color-surface-inverse); color: #fff; padding-block: 3rem; text-align: center; }
+    .el-group-label  { display: block; padding: 0.5rem 1.5rem; background: var(--color-primary); color: var(--color-text-on-primary); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; position: sticky; top: 0; z-index: var(--z-sticky); }
+    .el-item-label   { padding: 0.375rem 1.5rem; background: var(--color-surface-3); border-block: 1px solid var(--color-border); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.5rem; }
+    .el-demo-wrap    { position: relative; border-bottom: 2px dashed var(--color-border); }
+    .el-note         { padding: 0.75rem 1.5rem; background: color-mix(in oklch, var(--color-info) 10%, transparent); border-bottom: 1px solid var(--color-border); font-size: var(--text-xs); color: var(--color-text-muted); }
+  </style>
+</head>
+<body>
+
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- Page header -->
+  <header class="el-header">
+    <h1 class="font-heading text-5xl font-black mb-3">Element Library</h1>
+    <p class="text-white/60 text-lg">All headers, heroes, and footers · Phase 2 Lego Library</p>
+    <nav class="mt-6 flex flex-wrap justify-center gap-3 text-sm" aria-label="Jump to section">
+      <a href="#headers" class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Headers</a>
+      <a href="#heroes"  class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Heroes</a>
+      <a href="#footers" class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Footers</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ── HEADERS ──────────────────────────────────────── -->
+    <span class="el-group-label" id="headers">Headers (6 variants)</span>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-primary">Header 1</span>
+        Classic — sticky with announcement bar + mega menu
+      </p>
+      <include src="headers/header-1.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-secondary">Header 2</span>
+        Centered Logo — editorial / publisher
+      </p>
+      <include src="headers/header-2.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-accent">Header 3</span>
+        Transparent over hero — glass nav
+        <span class="badge badge-neutral ms-2">Pairs with dark heroes</span>
+      </p>
+      <p class="el-note">⚡ This header is transparent by design — it becomes solid after scrolling past the hero section. In this demo it will appear solid since no hero follows.</p>
+      <include src="headers/header-3.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-success">Header 4</span>
+        Sticky Condensed — single compact row
+      </p>
+      <include src="headers/header-4.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-warning">Header 5</span>
+        Mega Department Menu — two-pane dropdown
+      </p>
+      <include src="headers/header-5.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-danger">Header 6</span>
+        Minimal / Boutique — hamburger + centered logo
+      </p>
+      <include src="headers/header-6.html"></include>
+    </div>
+
+    <!-- ── HEROES ──────────────────────────────────────── -->
+    <span class="el-group-label" id="heroes">Heroes (5 variants)</span>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-primary">Hero Classic</span>
+        Split layout — text + cover stack
+        <span class="badge badge-neutral ms-2">Phase 1</span>
+      </p>
+      <include src="heroes/hero-classic.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-secondary">Hero Slider</span>
+        Full-bleed Swiper carousel (fade)
+        <span class="badge badge-success ms-2">LCP-safe</span>
+      </p>
+      <include src="heroes/hero-slider.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-accent">Hero Search</span>
+        Discovery-first — large search bar + category strip
+      </p>
+      <include src="heroes/hero-search.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-warning">Hero Category Grid</span>
+        Bento layout — copy + category tiles
+      </p>
+      <include src="heroes/hero-category-grid.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-danger">Hero Deal</span>
+        Conversion — deal of the day with countdown
+      </p>
+      <include src="heroes/hero-deal.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-neutral">Hero Video</span>
+        Video background / parallax poster
+        <span class="badge badge-neutral ms-2">Requires placeholder-hero.mp4</span>
+      </p>
+      <include src="heroes/hero-video.html"></include>
+    </div>
+
+    <!-- ── FOOTERS ──────────────────────────────────────── -->
+    <span class="el-group-label" id="footers">Footers (4 variants)</span>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-primary">Footer 1</span>
+        Full-column — newsletter + 4-col links + social
+        <span class="badge badge-neutral ms-2">Phase 1</span>
+      </p>
+      <include src="footers/footer-1.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-secondary">Footer 2</span>
+        Compact themed — single row, surface-2
+      </p>
+      <include src="footers/footer-2.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-accent">Footer 3</span>
+        Dark centered boutique — always surface-inverse
+      </p>
+      <include src="footers/footer-3.html"></include>
+    </div>
+
+    <div class="el-demo-wrap">
+      <p class="el-item-label">
+        <span class="badge badge-neutral">Footer 4</span>
+        Minimal landing — single slim bar
+      </p>
+      <include src="footers/footer-4.html"></include>
+    </div>
+
+  </main>
+
+  <script src="assets/js/plugins.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

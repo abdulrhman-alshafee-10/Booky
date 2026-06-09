@@ -1,0 +1,180 @@
+<!-- ============================================================
+     HERO — Slider (full-bleed Swiper)
+     2–3 full-width slides · gradient backgrounds · fade effect
+     LCP: first slide eager; subsequent slides lazy
+     Autoplay disabled under prefers-reduced-motion
+     Pairs with: header-3 (transparent) · header-1
+     Set [data-hero-dark] so header-3 stays transparent-light until scroll.
+============================================================ -->
+<section
+  class="relative overflow-hidden"
+  aria-labelledby="hero-slide-1-title"
+  data-hero
+  data-hero-dark
+>
+
+  <!-- Swiper container -->
+  <div
+    class="swiper hero-swiper"
+    data-swiper="hero"
+    aria-roledescription="carousel"
+    aria-label="Featured books slideshow"
+  >
+    <div class="swiper-wrapper">
+
+      <!-- ── Slide 1 (LCP) ────────────────────────────────── -->
+      <div
+        class="swiper-slide"
+        aria-roledescription="slide"
+        aria-label="1 of 3"
+      >
+        <div class="hero-slide cover-1 flex items-center" data-reveal>
+          <!-- Scrim overlay -->
+          <div class="media-scrim" aria-hidden="true"></div>
+
+          <div class="container-app relative z-10 w-full">
+            <div class="grid lg:grid-cols-2 gap-10 items-center py-20 lg:py-28">
+
+              <!-- Copy -->
+              <div class="max-w-xl text-white">
+                <span class="section-label !text-white/80 !mb-4">
+                  <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+                  Editor's Pick &middot; Summer 2026
+                </span>
+                <h1 id="hero-slide-1-title" class="font-heading font-bold leading-[1.05] tracking-tight text-white" style="font-size:clamp(2.8rem,5.5vw,4.5rem)">
+                  The Lantern of<br>
+                  <em class="not-italic text-primary-light">Aldridge Bay</em>
+                </h1>
+                <p class="mt-5 text-lg text-white/80 leading-relaxed">
+                  A sweeping coastal saga of secrets and redemption — Eleanor Finch's most celebrated novel, now in paperback.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center gap-3">
+                  <a href="shop.html" class="btn btn-primary btn-lg">Buy now — $12.99</a>
+                  <a href="shop.html" class="btn bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-sm btn-lg">Browse all →</a>
+                </div>
+                <div class="mt-6 flex items-center gap-3">
+                  <div class="rating" aria-label="Rated 4.9 of 5">
+                    <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+                    <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+                    <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+                    <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+                    <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+                  </div>
+                  <span class="text-sm text-white/70"><strong class="text-white">4.9</strong> from 8,400 readers</span>
+                </div>
+              </div>
+
+              <!-- Featured cover (LCP image) -->
+              <div class="relative flex justify-center lg:justify-end" aria-hidden="true">
+                <div class="relative w-52 sm:w-64 lg:w-72 rotate-[-4deg] shadow-card-hover rounded-card overflow-hidden ring-1 ring-white/10">
+                  <div class="cover-art cover-1">
+                    <span class="cover-art-publisher">Booky Press &middot; Bestseller</span>
+                    <div>
+                      <hr class="cover-art-rule">
+                      <p class="cover-art-title" style="font-size:1.55rem">The Lantern of Aldridge Bay</p>
+                      <p class="cover-art-author">A novel by Eleanor Finch</p>
+                    </div>
+                  </div>
+                  <div class="absolute -bottom-3 -end-3 z-20 rotate-3">
+                    <span class="inline-flex flex-col items-center bg-accent text-white rounded-full w-16 h-16 justify-center shadow-card">
+                      <span class="text-[0.6rem] uppercase tracking-wide opacity-80">Only</span>
+                      <span class="font-heading font-bold text-lg leading-none">$12</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Slide 2 ───────────────────────────────────────── -->
+      <div
+        class="swiper-slide"
+        aria-roledescription="slide"
+        aria-label="2 of 3"
+      >
+        <div class="hero-slide cover-5 flex items-center">
+          <div class="media-scrim" aria-hidden="true"></div>
+          <div class="container-app relative z-10 w-full">
+            <div class="grid lg:grid-cols-2 gap-10 items-center py-20 lg:py-28">
+              <div class="max-w-xl text-white">
+                <span class="section-label !text-white/80 !mb-4">
+                  <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+                  Debut Novel &middot; Must-Read 2026
+                </span>
+                <h2 class="font-heading font-bold leading-[1.05] tracking-tight text-white" style="font-size:clamp(2.8rem,5.5vw,4.5rem)">
+                  The Ember<br>
+                  <em class="not-italic text-primary-light">Cartographer</em>
+                </h2>
+                <p class="mt-5 text-lg text-white/80 leading-relaxed">
+                  Selene Park's breathtaking debut — a map-maker's journey through worlds that bend time and grief into something luminous.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center gap-3">
+                  <a href="shop.html" class="btn btn-primary btn-lg">Buy now — $14.99</a>
+                  <a href="shop.html" class="btn bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-sm btn-lg">Read excerpt →</a>
+                </div>
+              </div>
+              <div class="relative flex justify-center lg:justify-end" aria-hidden="true">
+                <div class="relative w-52 sm:w-64 lg:w-72 rotate-[3deg] shadow-card-hover rounded-card overflow-hidden ring-1 ring-white/10">
+                  <div class="cover-art cover-5">
+                    <span class="cover-art-publisher">Booky Press &middot; Debut</span>
+                    <div>
+                      <hr class="cover-art-rule">
+                      <p class="cover-art-title" style="font-size:1.45rem">The Ember Cartographer</p>
+                      <p class="cover-art-author">by Selene Park</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Slide 3 ───────────────────────────────────────── -->
+      <div
+        class="swiper-slide"
+        aria-roledescription="slide"
+        aria-label="3 of 3"
+      >
+        <div class="hero-slide cover-2 flex items-center">
+          <div class="media-scrim" aria-hidden="true"></div>
+          <div class="container-app relative z-10 w-full">
+            <div class="flex flex-col items-center text-center py-20 lg:py-28 max-w-3xl mx-auto">
+              <span class="section-label !text-white/80 !mb-5">
+                <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+                Summer Reading Sale — Up to 40% off
+              </span>
+              <h2 class="font-heading font-bold leading-[1.05] tracking-tight text-white" style="font-size:clamp(2.5rem,5vw,4rem)">
+                Thousands of titles.<br>One amazing price.
+              </h2>
+              <p class="mt-5 text-xl text-white/80 leading-relaxed max-w-xl">
+                Handpicked fiction, non-fiction, and children's books — all discounted for summer. Free shipping on every order over $35.
+              </p>
+              <div class="mt-8 flex flex-wrap justify-center items-center gap-3">
+                <a href="shop.html" class="btn btn-primary btn-xl">Shop the sale</a>
+                <a href="shop.html" class="btn bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-sm btn-lg">See all deals</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation -->
+    <button class="swiper-button-prev" aria-label="Previous slide">
+      <span class="sr-only">Previous</span>
+    </button>
+    <button class="swiper-button-next" aria-label="Next slide">
+      <span class="sr-only">Next</span>
+    </button>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination hero-pagination" data-swiper-pagination="hero"></div>
+
+  </div>
+
+</section>

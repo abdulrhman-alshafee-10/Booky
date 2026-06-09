@@ -1,0 +1,36 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!--
+    NO-FOUC THEME SCRIPT — must be first, before stylesheet.
+    Reads stored theme preference and sets data-theme BEFORE first paint.
+    Keeps the inline script tiny and CSP-friendly.
+  -->
+  <script>
+    (function () {
+      var stored, system;
+      try { stored = localStorage.getItem("booky-theme"); } catch (e) {}
+      system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", stored || system);
+    }());
+  </script>
+
+  <!-- Fonts preload (above-the-fold weights) -->
+  <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Third-party plugin styles (Swiper) — load before app CSS so our tokens win -->
+  <link rel="stylesheet" href="assets/css/plugins.css">
+
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicons/icon.svg">
+  <link rel="manifest" href="assets/favicons/site.webmanifest">
+
+  <!-- theme-color: two variants so browser chrome matches theme -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#1a1a2e">
+  <meta name="theme-color" content="#faf9f6">

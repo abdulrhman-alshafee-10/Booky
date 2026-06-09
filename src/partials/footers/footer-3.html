@@ -1,0 +1,103 @@
+<!-- ============================================================
+     FOOTER 3 — Dark Centered (boutique / author)
+     Centered composition on surface-inverse (always dark):
+     Centered logo · short centered nav · prominent newsletter · social · legal
+     Best for: boutique / author / poetry / rare-books demos.
+     Pairs with: header-6, hero-editorial.
+     Note: newsletter form id is unique (footer3-newsletter-email) to
+     avoid id clashes when newsletter section is also on the same page.
+============================================================ -->
+<footer class="bg-surface-inverse text-text-on-dark mt-auto">
+  <div class="container-app max-w-3xl mx-auto">
+    <div class="flex flex-col items-center text-center py-14 lg:py-18">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2.5 mb-6" aria-label="Booky home">
+        <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-white shrink-0">
+          <svg class="w-5 h-5" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+        </span>
+        <span class="font-heading text-2xl font-bold text-white">Booky</span>
+      </a>
+
+      <!-- Tagline -->
+      <p class="text-sm opacity-65 max-w-xs leading-relaxed mb-7">
+        Handpicked titles. Thoughtful recommendations. The independent bookshop reimagined for readers who love the craft.
+      </p>
+
+      <!-- Short centered nav -->
+      <nav aria-label="Footer navigation" class="mb-8">
+        <ul class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
+          <li><a href="shop.html" class="text-sm opacity-70 hover:opacity-100 hover:text-primary-light transition">Shop</a></li>
+          <li><a href="about.html" class="text-sm opacity-70 hover:opacity-100 hover:text-primary-light transition">Our Story</a></li>
+          <li><a href="blog.html" class="text-sm opacity-70 hover:opacity-100 hover:text-primary-light transition">Journal</a></li>
+          <li><a href="pricing.html" class="text-sm opacity-70 hover:opacity-100 hover:text-primary-light transition">Membership</a></li>
+          <li><a href="contact.html" class="text-sm opacity-70 hover:opacity-100 hover:text-primary-light transition">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Prominent centered newsletter -->
+      <div class="w-full max-w-md mb-8">
+        <p class="text-xs font-bold uppercase tracking-wider opacity-50 mb-3">Stay in the story</p>
+        <p class="text-sm opacity-70 mb-4 leading-relaxed">New titles, curated reading lists, and exclusive offers — delivered monthly.</p>
+        <form
+          class="flex gap-2"
+          data-newsletter
+          action="#"
+          novalidate
+        >
+          <label for="footer3-newsletter-email" class="sr-only">Email address</label>
+          <input
+            id="footer3-newsletter-email"
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            class="flex-1 min-w-0 bg-white/10 border border-white/20 rounded-input px-3 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+            autocomplete="email"
+            required
+          >
+          <button type="submit" class="btn btn-primary btn-sm shrink-0">Subscribe</button>
+        </form>
+        <p class="newsletter-msg text-xs mt-2 opacity-0 transition-opacity" data-newsletter-msg aria-live="polite"></p>
+      </div>
+
+      <!-- Social links -->
+      <div class="flex items-center justify-center gap-3 mb-10">
+        <a href="#" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-primary transition-colors" aria-label="Booky on Facebook" rel="noopener">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6 4.39 10.97 10.13 11.85v-8.38H7.08v-3.47h3.05V9.43c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.68.23 2.68.23v2.95h-1.51c-1.49 0-1.95.93-1.95 1.88v2.25h3.32l-.53 3.47h-2.79v8.38C19.61 23.04 24 18.07 24 12.07z"/></svg>
+        </a>
+        <a href="#" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-primary transition-colors" aria-label="Booky on Instagram" rel="noopener">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.43-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.4-10.4a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"/></svg>
+        </a>
+        <a href="#" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-primary transition-colors" aria-label="Booky on X" rel="noopener">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.64 7.58H.48l8.6-9.83L0 1.15h7.59l5.24 6.93zm-1.29 19.5h2.04L6.49 3.24H4.3z"/></svg>
+        </a>
+        <a href="#" class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-primary transition-colors" aria-label="Booky on Pinterest" rel="noopener">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.08 9.45 7.5 11.3-.1-.93-.2-2.36.04-3.38l1.5-6.35s-.38-.77-.38-1.9c0-1.79 1.04-3.12 2.32-3.12 1.1 0 1.63.82 1.63 1.81 0 1.1-.7 2.75-1.07 4.28-.3 1.28.63 2.32 1.89 2.32 2.27 0 4.02-2.39 4.02-5.84 0-3.05-2.2-5.18-5.33-5.18-3.63 0-5.76 2.72-5.76 5.53 0 1.1.42 2.26 1.06 2.9.1.12.12.22.09.34l-.4 1.6c-.06.25-.2.3-.45.18C3.84 15.8 3 13.93 3 12.13 3 8.4 5.93 5 11.3 5c4.24 0 7.53 3.02 7.53 7.06 0 4.21-2.65 7.6-6.33 7.6-1.24 0-2.4-.64-2.8-1.4l-.76 2.84c-.28 1.06-1.02 2.38-1.52 3.18.57.18 1.18.28 1.8.28 6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg>
+        </a>
+      </div>
+
+      <!-- Payment icons (decorative) -->
+      <div class="flex items-center justify-center gap-2 mb-8">
+        <span class="sr-only">We accept:</span>
+        <span class="flex items-center gap-2" aria-hidden="true">
+          <span class="px-2.5 py-1.5 rounded bg-white/10 text-xs font-semibold text-text-on-dark/70">VISA</span>
+          <span class="px-2.5 py-1.5 rounded bg-white/10 text-xs font-semibold text-text-on-dark/70">MC</span>
+          <span class="px-2.5 py-1.5 rounded bg-white/10 text-xs font-semibold text-text-on-dark/70">PayPal</span>
+          <span class="px-2.5 py-1.5 rounded bg-white/10 text-xs font-semibold text-text-on-dark/70">Apple Pay</span>
+        </span>
+      </div>
+
+      <!-- Legal line -->
+      <div class="pt-6 border-t border-white/10 w-full flex flex-col sm:flex-row items-center justify-center gap-3 text-xs opacity-50">
+        <p>&copy; 2026 Booky. All rights reserved.</p>
+        <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+        <ul class="flex items-center gap-4">
+          <li><a href="#" class="hover:opacity-100 hover:text-primary-light transition">Terms</a></li>
+          <li><a href="#" class="hover:opacity-100 hover:text-primary-light transition">Privacy</a></li>
+          <li><a href="#" class="hover:opacity-100 hover:text-primary-light transition">Cookies</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</footer>

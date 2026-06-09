@@ -1,0 +1,115 @@
+<!-- ============================================================
+     HERO — Classic Bookstore (flagship, LCP)
+     Editorial split: copy + featured book composition
+============================================================ -->
+<section class="relative overflow-hidden bg-surface" aria-labelledby="hero-title">
+  <!-- Decorative blobs -->
+  <span class="blob w-[28rem] h-[28rem] -top-32 -end-32 bg-primary-light" aria-hidden="true"></span>
+  <span class="blob w-[24rem] h-[24rem] -bottom-40 -start-24 bg-secondary-light" aria-hidden="true"></span>
+
+  <div class="container-app relative z-10">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-14 lg:py-20">
+
+      <!-- ── Copy ─────────────────────────────────────────── -->
+      <div class="max-w-xl animate-[fadeUp_0.6s_var(--ease-out)_both]" data-reveal>
+        <span class="section-label">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+          The independent bookshop, reimagined
+        </span>
+
+        <h1 id="hero-title" class="font-heading font-bold leading-[1.05] tracking-tight text-text" style="font-size:clamp(2.5rem,5.5vw,4.25rem)">
+          Find your next<br>
+          <span class="text-primary italic">great</span> read.
+        </h1>
+
+        <p class="mt-6 text-lg text-text-muted leading-relaxed text-pretty">
+          Thousands of hand-picked titles across every genre, curated by readers who love books as much as you do. Free shipping over $35.
+        </p>
+
+        <!-- Inline search -->
+        <form class="mt-8 flex gap-2 max-w-md" role="search" action="shop.html">
+          <label for="hero-search" class="sr-only">Search the catalogue</label>
+          <div class="input-group flex-1">
+            <span class="input-icon-start"><svg aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg></span>
+            <input id="hero-search" type="search" name="q" class="input-field !py-3" placeholder="Search 20,000+ titles...">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg shrink-0">Search</button>
+        </form>
+
+        <!-- Trust signals -->
+        <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
+          <div class="flex items-center gap-2">
+            <div class="rating" aria-label="Rated 4.9 of 5">
+              <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+              <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+              <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+              <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+              <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            </div>
+            <span class="text-sm text-text-muted"><strong class="text-text">4.9</strong> from 12k+ readers</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-text-muted">
+            <svg class="w-4 h-4 text-success" aria-hidden="true" focusable="false"><use href="#icon-check-circle"></use></svg>
+            Free returns within 30 days
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Featured book composition ────────────────────── -->
+      <div class="relative" data-reveal data-reveal-delay="120">
+        <div class="relative mx-auto max-w-md lg:max-w-none aspect-square sm:aspect-[4/3] lg:aspect-square">
+
+          <!-- Back cover (peeking) -->
+          <div class="absolute top-8 end-4 w-40 sm:w-48 rotate-6 shadow-card rounded-card overflow-hidden hidden sm:block" aria-hidden="true">
+            <div class="cover-art cover-3">
+              <span class="cover-art-publisher">Booky Press</span>
+              <div>
+                <hr class="cover-art-rule">
+                <p class="cover-art-title">Salt &amp; Starlight</p>
+                <p class="cover-art-author">by Marenne Vale</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary cover (peeking) -->
+          <div class="absolute bottom-6 start-2 w-36 sm:w-44 -rotate-6 shadow-card rounded-card overflow-hidden hidden sm:block" aria-hidden="true">
+            <div class="cover-art cover-2">
+              <span class="cover-art-publisher">Booky Press</span>
+              <div>
+                <hr class="cover-art-rule">
+                <p class="cover-art-title">The Quiet Algorithm</p>
+                <p class="cover-art-author">by D. Okonkwo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero cover (front, LCP) -->
+          <div class="relative mx-auto w-56 sm:w-64 lg:w-72 z-10 rotate-[-3deg] shadow-card-hover rounded-card overflow-hidden ring-1 ring-black/5">
+            <div class="cover-art cover-1">
+              <span class="cover-art-publisher">Booky Press &middot; Bestseller</span>
+              <div>
+                <hr class="cover-art-rule">
+                <p class="cover-art-title" style="font-size:1.6rem">The Lantern of Aldridge Bay</p>
+                <p class="cover-art-author">A novel by Eleanor Finch</p>
+              </div>
+            </div>
+            <!-- Floating price tag -->
+            <div class="absolute -bottom-3 -end-3 z-20 rotate-3">
+              <span class="inline-flex flex-col items-center bg-accent text-white rounded-full w-16 h-16 justify-center shadow-card">
+                <span class="text-[0.6rem] uppercase tracking-wide opacity-80">Only</span>
+                <span class="font-heading font-bold text-lg leading-none">$12</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Floating mini badge -->
+          <div class="absolute top-2 start-0 lg:start-8 z-20 bg-surface-2 rounded-full shadow-card px-3 py-2 flex items-center gap-2 -rotate-3 hidden sm:flex">
+            <svg class="w-4 h-4 text-success" aria-hidden="true" focusable="false"><use href="#icon-check-circle"></use></svg>
+            <span class="text-xs font-medium text-text">In stock &middot; Ships today</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

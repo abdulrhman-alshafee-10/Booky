@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+  <title>Block Library — Booky</title>
+  <meta name="description" content="All section blocks and card variants for the Booky template.">
+  <meta name="robots" content="noindex">
+  <style>
+    .bl-header { background: var(--color-surface-inverse); color: #fff; padding-block: 3rem; text-align: center; }
+    .bl-section-label { display: block; padding: 0.5rem 1.5rem; background: var(--color-surface-3); border-block: 1px solid var(--color-border); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); position: sticky; top: 0; z-index: 10; }
+  </style>
+</head>
+<body>
+
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- Page header -->
+  <header class="bl-header">
+    <h1 class="font-heading text-5xl font-black mb-3">Block Library</h1>
+    <p class="text-white/60 text-lg">All section blocks and card variants · Phase 2 Lego Library</p>
+    <nav class="mt-6 flex flex-wrap justify-center gap-3 text-sm" aria-label="Jump to section">
+      <a href="#cards"          class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Cards</a>
+      <a href="#featured-grid"  class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Featured Grid</a>
+      <a href="#trending-tabs"  class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Trending Tabs</a>
+      <a href="#genre-spotlight" class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Genre Spotlight</a>
+      <a href="#quote-cta"      class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Quote + CTA</a>
+      <a href="#membership"     class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Membership</a>
+      <a href="#gift-card"      class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Gift Cards</a>
+      <a href="#how-it-works"   class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">How It Works</a>
+      <a href="#events"         class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Events</a>
+      <a href="#instagram"      class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Instagram</a>
+      <a href="#faq"            class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">FAQ</a>
+      <a href="#about"          class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">About Intro</a>
+      <a href="#coming-soon"    class="btn btn-sm bg-white/10 text-white hover:bg-white/20 border-white/20">Coming Soon</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ── CARDS ─────────────────────────────────────────── -->
+    <span class="bl-section-label" id="cards">Cards</span>
+
+    <!-- Book Card Grid -->
+    <section class="section-y bg-surface">
+      <div class="container-app">
+        <div class="section-header-row mb-8">
+          <div>
+            <p class="section-label">Component</p>
+            <h2 class="font-heading text-2xl font-bold">Book Card (grid)</h2>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <include src="cards/book-card.html"></include>
+          <include src="cards/book-card.html"></include>
+          <include src="cards/book-card.html"></include>
+          <include src="cards/book-card.html"></include>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book Card List -->
+    <section class="section-y bg-surface-2">
+      <div class="container-app">
+        <div class="section-header-row mb-8">
+          <div>
+            <p class="section-label">Component</p>
+            <h2 class="font-heading text-2xl font-bold">Book Card (list / horizontal)</h2>
+          </div>
+        </div>
+        <div class="divide-y divide-border">
+          <include src="cards/book-card-list.html"></include>
+          <include src="cards/book-card-list.html"></include>
+          <include src="cards/book-card-list.html"></include>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book Card Compact -->
+    <section class="section-y bg-surface">
+      <div class="container-app">
+        <div class="section-header-row mb-8">
+          <div>
+            <p class="section-label">Component</p>
+            <h2 class="font-heading text-2xl font-bold">Book Card (compact / ranked)</h2>
+          </div>
+        </div>
+        <div class="max-w-xs">
+          <include src="cards/book-card-compact.html"></include>
+          <include src="cards/book-card-compact.html"></include>
+          <include src="cards/book-card-compact.html"></include>
+          <include src="cards/book-card-compact.html"></include>
+          <include src="cards/book-card-compact.html"></include>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog + Category Cards -->
+    <section class="section-y bg-surface-2">
+      <div class="container-app">
+        <div class="section-header-row mb-8">
+          <div>
+            <p class="section-label">Component</p>
+            <h2 class="font-heading text-2xl font-bold">Blog Cards &amp; Category Tiles</h2>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+          <include src="cards/blog-card.html"></include>
+          <include src="cards/blog-card.html"></include>
+          <include src="cards/blog-card.html"></include>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <include src="cards/category-card.html"></include>
+          <include src="cards/category-card.html"></include>
+          <include src="cards/category-card.html"></include>
+          <include src="cards/category-card.html"></include>
+          <include src="cards/category-card.html"></include>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION BLOCKS ──────────────────────────────── -->
+    <span class="bl-section-label" id="featured-grid">Section Block 1 — Featured Grid</span>
+    <include src="sections/featured-grid.html"></include>
+
+    <span class="bl-section-label" id="trending-tabs">Section Block 2 — Trending Tabs</span>
+    <include src="sections/trending-tabs.html"></include>
+
+    <span class="bl-section-label" id="genre-spotlight">Section Block 3 — Genre Spotlight</span>
+    <include src="sections/genre-spotlight.html"></include>
+
+    <span class="bl-section-label" id="quote-cta">Section Block 4 — Quote + CTA Band</span>
+    <include src="sections/quote-cta.html"></include>
+
+    <span class="bl-section-label" id="membership">Section Block 5 — Membership Teaser</span>
+    <include src="sections/membership-teaser.html"></include>
+
+    <span class="bl-section-label" id="gift-card">Section Block 6 — Gift Cards</span>
+    <include src="sections/gift-card.html"></include>
+
+    <span class="bl-section-label" id="how-it-works">Section Block 7 — How It Works</span>
+    <include src="sections/how-it-works.html"></include>
+
+    <span class="bl-section-label" id="events">Section Block 8 — Events Teaser</span>
+    <include src="sections/events-teaser.html"></include>
+
+    <span class="bl-section-label" id="instagram">Section Block 9 — Instagram Strip</span>
+    <include src="sections/instagram-strip.html"></include>
+
+    <span class="bl-section-label" id="faq">Section Block 10 — FAQ Teaser</span>
+    <include src="sections/faq-teaser.html"></include>
+
+    <span class="bl-section-label" id="about">Section Block 11 — About Intro</span>
+    <include src="sections/about-intro.html"></include>
+
+    <span class="bl-section-label" id="coming-soon">Section Block 12 — Coming Soon / Pre-Order</span>
+    <include src="sections/coming-soon-books.html"></include>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="assets/js/plugins.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

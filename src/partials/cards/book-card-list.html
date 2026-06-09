@@ -1,0 +1,50 @@
+<!-- ============================================================
+     CARD — Book List (horizontal variant)
+     Cover (small, left) + details row.
+     Used in: list-view shop pages, sidebar widgets, search results.
+     Copy and fill per item.
+============================================================ -->
+<article class="flex gap-4 py-4 border-b border-border-subtle last:border-0">
+
+  <!-- Cover (small, fixed size) -->
+  <a href="shop.html" class="shrink-0 w-16 rounded overflow-hidden shadow-sm" aria-hidden="true" tabindex="-1">
+    <div class="cover-art cover-4" style="aspect-ratio:2/3;">
+      <span class="cover-art-publisher sr-only">Booky Press</span>
+      <div>
+        <hr class="cover-art-rule">
+        <p class="cover-art-title" style="font-size:0.65rem">The Quiet Algorithm</p>
+        <p class="cover-art-author" style="font-size:0.55rem">D. Okonkwo</p>
+      </div>
+    </div>
+  </a>
+
+  <!-- Details -->
+  <div class="flex flex-col gap-1 flex-1 min-w-0">
+    <a href="shop.html" class="book-card-category">Non-Fiction</a>
+    <a href="shop.html" class="book-card-title !text-base">The Quiet Algorithm</a>
+    <a href="shop.html" class="book-card-author">D. Okonkwo</a>
+
+    <div class="flex items-center gap-1.5">
+      <div class="rating" aria-label="Rated 4.7 of 5">
+        <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+        <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+        <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+        <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+        <svg class="rating-star" aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg>
+      </div>
+      <span class="text-xs text-text-muted">(4.7)</span>
+    </div>
+
+    <div class="flex items-center justify-between mt-auto pt-2 gap-2">
+      <div class="price-group items-baseline">
+        <span class="price">$15.99</span>
+        <span class="price-original">$22.99</span>
+      </div>
+      <button class="btn btn-outline btn-sm shrink-0" aria-label="Add The Quiet Algorithm to cart">
+        <svg aria-hidden="true" focusable="false"><use href="#icon-cart"></use></svg>
+        Add to cart
+      </button>
+    </div>
+  </div>
+
+</article>

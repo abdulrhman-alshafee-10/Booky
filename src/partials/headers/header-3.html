@@ -1,0 +1,117 @@
+<!-- ============================================================
+     HEADER 3 — Transparent / Over-Hero
+     Absolutely positioned over image/dark hero; light text on load;
+     becomes solid (surface-2 + shadow) once user scrolls past hero.
+     Requires [data-header-transparent] → JS adds/removes .is-solid.
+     Pairs with: hero-video, hero-slider, hero-category-grid (image heroes)
+     Pages using this header set [data-hero-dark] on their hero element.
+============================================================ -->
+<header class="site-header header-transparent" id="site-header" data-header data-header-transparent>
+
+  <!-- Gradient scrim — ensures white nav text always meets AA
+       even over unpredictable hero imagery. Fades on .is-solid. -->
+  <div class="header-scrim" aria-hidden="true"></div>
+
+  <!-- ── Single main bar (no topbar — keeps the transparent look clean) ── -->
+  <div class="header-main relative z-10">
+    <div class="container-app">
+      <div class="flex items-center gap-4 lg:gap-8">
+
+        <!-- Mobile menu trigger -->
+        <button class="header-action lg:hidden -ms-2" data-mobile-nav-open aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+          <svg aria-hidden="true" focusable="false"><use href="#icon-menu"></use></svg>
+        </button>
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 shrink-0" aria-label="Booky home">
+          <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-white/20 backdrop-blur-sm text-white border border-white/30 header-solid-hide">
+            <svg class="w-5 h-5" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+          </span>
+          <!-- Solid-state logo (shown only when .is-solid) -->
+          <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-white shrink-0 header-solid-show">
+            <svg class="w-5 h-5" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+          </span>
+          <span class="font-heading text-2xl font-bold tracking-tight">Booky</span>
+        </a>
+
+        <!-- Desktop nav (centered) -->
+        <nav class="hidden lg:flex flex-1 justify-center" aria-label="Primary">
+          <ul class="flex items-center gap-7">
+            <li><a href="index.html" class="nav-link nav-link-glass" aria-current="page">Home</a></li>
+
+            <!-- Mega: Categories -->
+            <li class="has-mega">
+              <button class="nav-link nav-link-glass" aria-expanded="false" aria-controls="h3-mega-categories" data-mega-trigger>
+                Categories
+                <svg aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+              </button>
+              <div class="mega-menu" id="h3-mega-categories">
+                <div class="container-app">
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-1 py-7">
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-wider text-text-subtle mb-2 px-2.5">Fiction</p>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg> Literary Fiction</a>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg> Mystery &amp; Thriller</a>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg> Science Fiction</a>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg> Romance</a>
+                    </div>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-wider text-text-subtle mb-2 px-2.5">Non-Fiction</p>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg> Biography</a>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg> History</a>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg> Science &amp; Nature</a>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg> Self-Help</a>
+                    </div>
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-wider text-text-subtle mb-2 px-2.5">More</p>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg> Children's Books</a>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg> Poetry &amp; Essays</a>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg> Cookbooks</a>
+                      <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg> Art &amp; Photography</a>
+                    </div>
+                    <div class="relative rounded-card overflow-hidden cover-1 flex flex-col justify-end p-5 text-white min-h-44">
+                      <span class="badge badge-sale w-fit mb-2">Save 30%</span>
+                      <p class="font-heading text-lg font-bold leading-tight">Summer Reading Sale</p>
+                      <a href="shop.html" class="btn btn-sm bg-white text-neutral-900 hover:bg-neutral-100 mt-3 w-fit">Shop now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li><a href="shop.html" class="nav-link nav-link-glass">Shop</a></li>
+            <li><a href="blog.html" class="nav-link nav-link-glass">Journal</a></li>
+            <li><a href="about.html" class="nav-link nav-link-glass">About</a></li>
+            <li><a href="contact.html" class="nav-link nav-link-glass">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-0.5 ms-auto lg:ms-0">
+          <button class="header-action md:hidden" data-search-open aria-label="Search">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
+          </button>
+          <button class="header-action hidden lg:inline-flex" data-search-open aria-label="Search">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
+          </button>
+          <a href="account.html" class="header-action hidden sm:inline-flex" aria-label="My account">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-user"></use></svg>
+          </a>
+          <a href="wishlist.html" class="header-action" aria-label="Wishlist, 3 items">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-wishlist"></use></svg>
+            <span class="header-action-count" data-wishlist-count>3</span>
+          </a>
+          <button class="header-action" data-cart-open aria-label="Cart, 2 items" aria-haspopup="dialog">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-cart"></use></svg>
+            <span class="header-action-count" data-cart-count>2</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<include src="base/mobile-search.html"></include>
+<include src="base/mobile-nav.html"></include>

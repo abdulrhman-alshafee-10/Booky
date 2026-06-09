@@ -1,0 +1,93 @@
+<!-- ============================================================
+     SECTION — FAQ Teaser
+     4 accordion questions + "See all FAQs" link.
+     Reuses Phase-0 accordion a11y pattern.
+     Uses section-y bg-surface-2 for soft contrast.
+============================================================ -->
+<section class="section-y bg-surface-2" aria-labelledby="faq-title">
+  <div class="container-app">
+
+    <div class="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20">
+
+      <!-- Left — heading + CTA -->
+      <div data-reveal>
+        <span class="section-label">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-question-mark"></use></svg>
+          Got questions?
+        </span>
+        <h2 id="faq-title" class="section-title mt-2">Frequently asked</h2>
+        <p class="text-text-muted mt-3 mb-8 leading-relaxed">
+          Everything you need to know about ordering, delivery, memberships, and returns.
+        </p>
+        <a href="faq.html" class="btn btn-outline">See all FAQs</a>
+      </div>
+
+      <!-- Right — accordions -->
+      <div class="divide-y divide-border" data-reveal>
+
+        <!-- FAQ 1 -->
+        <div class="accordion" data-accordion>
+          <h3>
+            <button class="accordion-trigger" aria-expanded="true" aria-controls="faq-1-body" id="faq-1-trigger">
+              How quickly can I access my eBook after purchase?
+              <svg class="accordion-chevron" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+            </button>
+          </h3>
+          <div class="accordion-body" id="faq-1-body" role="region" aria-labelledby="faq-1-trigger">
+            <p class="accordion-content">
+              eBooks are available immediately after your payment is confirmed — usually within seconds. You'll find your purchase in your Booky account under "My Library" and can start reading in your browser or download to the Booky app on any device.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion" data-accordion>
+          <h3>
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2-body" id="faq-2-trigger">
+              What formats are eBooks available in?
+              <svg class="accordion-chevron" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+            </button>
+          </h3>
+          <div class="accordion-body hidden" id="faq-2-body" role="region" aria-labelledby="faq-2-trigger">
+            <p class="accordion-content">
+              All eBooks on Booky are DRM-free and available in EPUB and PDF formats. EPUB is compatible with most e-readers including Kindle (via email), Kobo, and Apple Books. PDF is ideal for formatted texts like graphic novels or academic titles.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion" data-accordion>
+          <h3>
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3-body" id="faq-3-trigger">
+              Can I return a book if I'm not happy?
+              <svg class="accordion-chevron" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+            </button>
+          </h3>
+          <div class="accordion-body hidden" id="faq-3-body" role="region" aria-labelledby="faq-3-trigger">
+            <p class="accordion-content">
+              Print books can be returned within 30 days in original condition for a full refund. For eBooks, we offer a 7-day satisfaction guarantee — if you've read less than 10% of the book, you can request a refund from your account dashboard.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion" data-accordion>
+          <h3>
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-4-body" id="faq-4-trigger">
+              How do Booky membership plans work?
+              <svg class="accordion-chevron" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+            </button>
+          </h3>
+          <div class="accordion-body hidden" id="faq-4-body" role="region" aria-labelledby="faq-4-trigger">
+            <p class="accordion-content">
+              Booky offers three tiers: Basic (free), Plus ($6/month), and Premium ($14/month). All paid plans include a 30-day free trial and can be cancelled at any time — no lock-in. Members save an average of 40% on every purchase compared to cover price.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

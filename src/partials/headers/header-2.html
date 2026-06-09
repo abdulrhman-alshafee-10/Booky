@@ -1,0 +1,146 @@
+<!-- ============================================================
+     HEADER 2 — Centered Logo (editorial)
+     Top utility bar · centered logo row · centered primary nav
+     Sticky-shrink · mega-menu · mobile off-canvas
+     Pairs with: hero-classic, hero-editorial, author / publisher demos
+============================================================ -->
+<header class="site-header" id="site-header" data-header>
+
+  <!-- ── Utility / announcement bar ──────────────────────────── -->
+  <div class="header-topbar" data-announce>
+    <div class="container-app">
+      <div class="flex items-center justify-between gap-4 py-2">
+        <p class="hidden sm:flex items-center gap-2">
+          <svg class="w-4 h-4 text-primary-light" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+          <span>Free shipping on orders over <strong class="font-semibold">$35</strong> &middot; Use code <strong class="font-semibold">BOOKWORM</strong></span>
+        </p>
+        <p class="sm:hidden text-xs">Free shipping over $35</p>
+        <div class="flex items-center gap-1">
+          <a href="contact.html" class="px-2 py-1 rounded text-xs hover:text-primary-light transition-colors">Help</a>
+          <span class="opacity-30" aria-hidden="true">|</span>
+          <a href="account.html" class="px-2 py-1 rounded text-xs hover:text-primary-light transition-colors">Sign in</a>
+          <button class="px-2 py-1 rounded text-xs hover:text-primary-light transition-colors" data-announce-dismiss aria-label="Dismiss announcement">
+            <svg class="w-3.5 h-3.5" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Centered logo row ────────────────────────────────────── -->
+  <div class="header-main">
+    <div class="container-app">
+      <!-- 3-column grid: start actions · centered logo · end actions -->
+      <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+
+        <!-- Start: mobile hamburger + desktop secondary actions -->
+        <div class="flex items-center gap-0.5">
+          <button class="header-action lg:hidden -ms-2" data-mobile-nav-open aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-menu"></use></svg>
+          </button>
+          <button class="header-action hidden lg:inline-flex" data-search-open aria-label="Search">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
+          </button>
+          <a href="wishlist.html" class="header-action hidden lg:inline-flex" aria-label="Wishlist, 3 items">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-wishlist"></use></svg>
+            <span class="header-action-count" data-wishlist-count>3</span>
+          </a>
+        </div>
+
+        <!-- Center: Logo -->
+        <a href="index.html" class="flex items-center gap-2 shrink-0" aria-label="Booky home">
+          <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-white shrink-0">
+            <svg class="w-5 h-5" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+          </span>
+          <span class="font-heading text-2xl font-bold tracking-tight text-text">Booky</span>
+        </a>
+
+        <!-- End: primary actions -->
+        <div class="flex items-center gap-0.5 justify-end">
+          <button class="header-action md:hidden" data-search-open aria-label="Search">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
+          </button>
+          <a href="account.html" class="header-action hidden sm:inline-flex" aria-label="My account">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-user"></use></svg>
+          </a>
+          <a href="wishlist.html" class="header-action lg:hidden" aria-label="Wishlist, 3 items">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-wishlist"></use></svg>
+            <span class="header-action-count" data-wishlist-count>3</span>
+          </a>
+          <button class="header-action" data-cart-open aria-label="Cart, 2 items" aria-haspopup="dialog">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-cart"></use></svg>
+            <span class="header-action-count" data-cart-count>2</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Centered primary navigation ─────────────────────────── -->
+  <nav class="hidden lg:block border-t border-border-subtle" aria-label="Primary">
+    <div class="container-app">
+      <ul class="flex items-center justify-center gap-7">
+        <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+
+        <!-- Mega: Categories -->
+        <li class="has-mega">
+          <button class="nav-link" aria-expanded="false" aria-controls="h2-mega-categories" data-mega-trigger>
+            Categories
+            <svg aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+          </button>
+          <div class="mega-menu" id="h2-mega-categories">
+            <div class="container-app">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-1 py-7">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-text-subtle mb-2 px-2.5">Fiction</p>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg> Literary Fiction</a>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg> Mystery &amp; Thriller</a>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg> Science Fiction</a>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg> Romance</a>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-text-subtle mb-2 px-2.5">Non-Fiction</p>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg> Biography</a>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg> History</a>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg> Science &amp; Nature</a>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg> Self-Help</a>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-text-subtle mb-2 px-2.5">More</p>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg> Children's Books</a>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg> Poetry &amp; Essays</a>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg> Cookbooks</a>
+                  <a href="shop.html" class="mega-link"><svg aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg> Art &amp; Photography</a>
+                </div>
+                <!-- Promo tile -->
+                <div class="relative rounded-card overflow-hidden cover-4 flex flex-col justify-end p-5 text-white min-h-44">
+                  <span class="badge badge-sale w-fit mb-2">New Releases</span>
+                  <p class="font-heading text-lg font-bold leading-tight">Spring 2026 Titles</p>
+                  <p class="text-xs opacity-90 mt-1">Discover this season's most anticipated books.</p>
+                  <a href="shop.html" class="btn btn-sm bg-white text-neutral-900 hover:bg-neutral-100 mt-3 w-fit">Browse now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a href="shop.html" class="nav-link">Shop</a></li>
+        <li><a href="blog.html" class="nav-link">Journal</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+        <li>
+          <a href="pricing.html" class="nav-link text-primary font-semibold">
+            <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            Membership
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</header>
+
+<include src="base/mobile-search.html"></include>
+<include src="base/mobile-nav.html"></include>

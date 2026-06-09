@@ -1,0 +1,98 @@
+<!-- ============================================================
+     SECTION — About Intro
+     Two-column: image collage (left) + copy with stats (right).
+     Used on homepage and about.html.
+============================================================ -->
+<section class="section-y bg-surface" aria-labelledby="about-intro-title">
+  <div class="container-app">
+
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Left — image collage using cover-art tiles -->
+      <div class="relative" data-reveal>
+
+        <!-- Large primary tile -->
+        <div class="cover-art cover-2 rounded-2xl shadow-card" style="aspect-ratio:4/5">
+          <span class="cover-art-publisher">Booky Press</span>
+          <div>
+            <hr class="cover-art-rule">
+            <p class="cover-art-title">Our Story</p>
+          </div>
+        </div>
+
+        <!-- Floating accent tile top-right -->
+        <div class="absolute top-6 -end-5 w-28 sm:w-36 shadow-card rounded-xl overflow-hidden border-2 border-surface" aria-hidden="true">
+          <div class="cover-art cover-5" style="aspect-ratio:2/3"></div>
+        </div>
+
+        <!-- Floating accent tile bottom-left -->
+        <div class="absolute -bottom-6 -start-5 w-28 sm:w-36 shadow-card rounded-xl overflow-hidden border-2 border-surface" aria-hidden="true">
+          <div class="cover-art cover-8" style="aspect-ratio:2/3"></div>
+        </div>
+
+        <!-- Small floating accent tile center-right -->
+        <div class="absolute bottom-24 -end-4 w-20 sm:w-24 shadow-card rounded-lg overflow-hidden border-2 border-surface" aria-hidden="true">
+          <div class="cover-art cover-1" style="aspect-ratio:2/3"></div>
+        </div>
+
+        <!-- Founded year badge -->
+        <div class="absolute top-6 start-6 bg-surface rounded-xl shadow-card px-4 py-3 text-center" aria-hidden="true">
+          <p class="font-heading text-3xl font-black text-primary leading-none">2012</p>
+          <p class="text-xs text-text-muted mt-0.5">Founded</p>
+        </div>
+
+      </div>
+
+      <!-- Right — copy + stats -->
+      <div data-reveal>
+
+        <span class="section-label">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-book-open"></use></svg>
+          Our story
+        </span>
+        <h2 id="about-intro-title" class="section-title mt-2">Born from a love of reading</h2>
+
+        <div class="space-y-4 text-text-muted leading-relaxed mt-4 mb-8">
+          <p>Booky started in a tiny Edinburgh flat in 2012, when three friends who couldn't stop talking about books decided to build the bookstore they always wished existed — one that combined the charm of an independent shop with the convenience of the digital age.</p>
+          <p>Today, we're a team of 48 passionate readers, editors, and engineers helping over a million book lovers discover their next favourite read. We still hand-pick every title in our featured collections, just as we did on day one.</p>
+        </div>
+
+        <!-- Stats -->
+        <dl class="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-8">
+          <div class="stat-block">
+            <dt class="stat-label">Books available</dt>
+            <dd class="stat-value" data-counter data-target="50000">50,000+</dd>
+          </div>
+          <div class="stat-block">
+            <dt class="stat-label">Happy readers</dt>
+            <dd class="stat-value" data-counter data-target="1200000">1.2M+</dd>
+          </div>
+          <div class="stat-block sm:col-span-1 col-span-2">
+            <dt class="stat-label">Countries served</dt>
+            <dd class="stat-value" data-counter data-target="98">98</dd>
+          </div>
+        </dl>
+
+        <!-- Awards / badges -->
+        <div class="flex flex-wrap items-center gap-4">
+          <div class="flex items-center gap-2 text-xs text-text-muted border border-border rounded-full px-3 py-1.5">
+            <svg class="w-4 h-4 text-accent shrink-0" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            Trustpilot Excellent · 4.8/5
+          </div>
+          <div class="flex items-center gap-2 text-xs text-text-muted border border-border rounded-full px-3 py-1.5">
+            <svg class="w-4 h-4 text-primary shrink-0" aria-hidden="true" focusable="false"><use href="#icon-shield-check"></use></svg>
+            B Corp Certified 2024
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="about.html" class="btn btn-primary">Read our story</a>
+          <a href="about.html#team" class="btn btn-ghost">Meet the team</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

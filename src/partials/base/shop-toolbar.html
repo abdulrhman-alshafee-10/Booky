@@ -1,0 +1,59 @@
+<!-- ============================================================
+     SHOP TOOLBAR  (layout-agnostic — drops into any shop page)
+     Result count (aria-live) · Filters button (mobile) ·
+     sort select · per-page select · grid/list view toggle.
+     Consumed by shop-filters.js via the data-* hooks below.
+============================================================ -->
+<div class="shop-toolbar" data-shop-toolbar>
+
+  <!-- Result count + mobile Filters trigger -->
+  <div class="flex items-center gap-3">
+    <button
+      class="btn btn-outline btn-sm"
+      type="button"
+      data-shop-filters-btn
+      data-drawer-open="filter-drawer"
+      aria-label="Open filters"
+    >
+      <svg aria-hidden="true" focusable="false"><use href="#icon-filter"></use></svg>
+      Filters
+    </button>
+
+    <p class="shop-toolbar-count" aria-live="polite" data-shop-count>
+      Showing <strong data-count-shown>12</strong> of <strong data-count-total>12</strong> books
+    </p>
+  </div>
+
+  <!-- Sort · per-page · view toggle -->
+  <div class="shop-toolbar-controls">
+    <div class="flex items-center gap-2">
+      <label class="sr-only" for="shop-sort">Sort books by</label>
+      <select id="shop-sort" class="select-field" data-shop-sort>
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="newest">Newest</option>
+        <option value="rating">Top rated</option>
+        <option value="popularity">Most popular</option>
+      </select>
+    </div>
+
+    <div class="hidden sm:flex items-center gap-2">
+      <label class="sr-only" for="shop-perpage">Books per page</label>
+      <select id="shop-perpage" class="select-field" data-shop-perpage>
+        <option value="12">12 / page</option>
+        <option value="24">24 / page</option>
+        <option value="48">48 / page</option>
+      </select>
+    </div>
+
+    <div class="view-toggle" role="group" aria-label="View as grid or list">
+      <button class="view-toggle-btn" type="button" data-shop-view="grid" aria-pressed="true" aria-label="Grid view">
+        <svg aria-hidden="true" focusable="false"><use href="#icon-grid"></use></svg>
+      </button>
+      <button class="view-toggle-btn" type="button" data-shop-view="list" aria-pressed="false" aria-label="List view">
+        <svg aria-hidden="true" focusable="false"><use href="#icon-list"></use></svg>
+      </button>
+    </div>
+  </div>
+</div>

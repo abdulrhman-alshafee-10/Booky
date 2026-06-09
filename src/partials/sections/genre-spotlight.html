@@ -1,0 +1,124 @@
+<!-- ============================================================
+     SECTION — Genre Spotlight
+     Full-width editorial band: large feature book (left) + genre label,
+     description, and secondary book strip (right).
+     Background uses surface-inverse for visual contrast.
+============================================================ -->
+<section class="section-y bg-surface-inverse text-white" aria-labelledby="genre-spotlight-title">
+  <div class="container-app">
+
+    <div class="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20 items-center">
+
+      <!-- Left — hero book + cover -->
+      <div class="flex flex-col sm:flex-row lg:flex-col gap-8 items-start" data-reveal>
+
+        <!-- Large feature cover -->
+        <div class="w-48 sm:w-56 lg:w-72 shrink-0">
+          <div class="cover-art cover-4 w-full" style="aspect-ratio:2/3">
+            <span class="cover-art-publisher">Booky Press</span>
+            <div>
+              <hr class="cover-art-rule">
+              <p class="cover-art-title">The Glass Meridian</p>
+              <p class="cover-art-author">N. Adisa</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book info + CTA -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <span class="badge badge-accent">Spotlight</span>
+            <span class="text-white/60 text-sm">Science Fiction</span>
+          </div>
+          <h3 class="font-heading text-2xl lg:text-3xl font-bold leading-tight mb-3">The Glass Meridian</h3>
+          <p class="text-sm text-white/60 mb-1">N. Adisa</p>
+          <div class="flex items-center gap-1 mb-4" aria-label="Rating: 4.9 out of 5">
+            <svg class="w-4 h-4 text-accent" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            <svg class="w-4 h-4 text-accent" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            <svg class="w-4 h-4 text-accent" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            <svg class="w-4 h-4 text-accent" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            <svg class="w-4 h-4 text-accent" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            <span class="text-white/60 text-sm ms-1">4.9 (1,428)</span>
+          </div>
+          <p class="text-white/70 text-sm leading-relaxed mb-6 max-w-xs">
+            A visionary debut about a cartographer tasked with mapping a world that refuses to stay still — part thriller, part meditation on identity and belonging.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="shop.html" class="btn btn-accent">Get this book — $13.99</a>
+            <a href="shop.html" class="btn btn-ghost text-white/80 hover:text-white">Preview</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right — genre info + secondary books -->
+      <div data-reveal>
+
+        <!-- Genre heading -->
+        <div class="mb-8">
+          <span class="section-label section-label-inverse">Genre</span>
+          <h2 id="genre-spotlight-title" class="font-heading text-4xl lg:text-5xl font-black mt-2 mb-4 text-white">Science Fiction</h2>
+          <p class="text-white/60 max-w-lg text-base leading-relaxed">
+            Explore futures imagined with rigour and wonder. From hard SF epics to intimate social speculation — over 3,200 titles on Booky.
+          </p>
+          <a href="shop.html" class="btn btn-outline mt-6 text-white border-white/30 hover:bg-white hover:text-surface-inverse">Browse all Sci-Fi</a>
+        </div>
+
+        <!-- Secondary books strip -->
+        <div class="border-t border-white/10 pt-8">
+          <p class="text-white/40 text-xs uppercase tracking-wider mb-4">Also trending in Sci-Fi</p>
+          <ul class="space-y-4" role="list">
+
+            <li class="flex items-center gap-4 group">
+              <div class="w-10 h-14 rounded overflow-hidden shrink-0 shadow-sm">
+                <div class="cover-art cover-6 h-full"><span class="sr-only">The Ember Cartographer</span></div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <a href="shop.html" class="text-sm font-semibold text-white group-hover:text-accent transition-colors line-clamp-1">The Ember Cartographer</a>
+                <p class="text-xs text-white/50">Selene Park</p>
+              </div>
+              <div class="text-end shrink-0"><p class="text-sm font-bold text-white">$14.99</p></div>
+            </li>
+
+            <li class="flex items-center gap-4 group">
+              <div class="w-10 h-14 rounded overflow-hidden shrink-0 shadow-sm">
+                <div class="cover-art cover-1 h-full"><span class="sr-only">The Lantern of Aldridge Bay</span></div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <a href="shop.html" class="text-sm font-semibold text-white group-hover:text-accent transition-colors line-clamp-1">The Lantern of Aldridge Bay</a>
+                <p class="text-xs text-white/50">Eleanor Finch</p>
+              </div>
+              <div class="text-end shrink-0"><p class="text-sm font-bold text-white">$12.99</p></div>
+            </li>
+
+            <li class="flex items-center gap-4 group">
+              <div class="w-10 h-14 rounded overflow-hidden shrink-0 shadow-sm">
+                <div class="cover-art cover-2 h-full"><span class="sr-only">Tide Without Shore</span></div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <a href="shop.html" class="text-sm font-semibold text-white group-hover:text-accent transition-colors line-clamp-1">Tide Without Shore</a>
+                <p class="text-xs text-white/50">P. Hasegawa</p>
+              </div>
+              <div class="text-end shrink-0"><p class="text-sm font-bold text-white">$11.99</p></div>
+            </li>
+
+            <li class="flex items-center gap-4 group">
+              <div class="w-10 h-14 rounded overflow-hidden shrink-0 shadow-sm">
+                <div class="cover-art cover-8 h-full"><span class="sr-only">The Quiet Algorithm</span></div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <a href="shop.html" class="text-sm font-semibold text-white group-hover:text-accent transition-colors line-clamp-1">The Quiet Algorithm</a>
+                <p class="text-xs text-white/50">D. Okonkwo</p>
+              </div>
+              <div class="text-end shrink-0"><p class="text-sm font-bold text-white">$15.99</p></div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

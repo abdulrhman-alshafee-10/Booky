@@ -1,0 +1,146 @@
+<!-- ============================================================
+     HERO — Category Grid (bento)
+     Left: editorial copy + CTA · Right: bento grid of category tiles
+     Pairs with: header-1, header-2 · generalist demos
+============================================================ -->
+<section class="relative overflow-hidden bg-surface" aria-labelledby="hero-catgrid-title">
+
+  <!-- Decorative blob -->
+  <span class="blob w-[30rem] h-[30rem] -top-20 -end-20 bg-primary-light" aria-hidden="true"></span>
+
+  <div class="container-app relative z-10">
+    <div class="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center py-14 lg:py-20">
+
+      <!-- ── Copy ─────────────────────────────────────────── -->
+      <div class="max-w-xl" data-reveal>
+        <span class="section-label">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+          Browse by genre
+        </span>
+
+        <h1
+          id="hero-catgrid-title"
+          class="font-heading font-bold leading-[1.05] tracking-tight text-text"
+          style="font-size:clamp(2.5rem,5vw,4rem)"
+        >
+          Every genre.<br>
+          Every story.<br>
+          <span class="text-primary">All in one place.</span>
+        </h1>
+
+        <p class="mt-6 text-lg text-text-muted leading-relaxed text-pretty">
+          From sweeping literary fiction to cutting-edge science, hand-picked by readers who love books as much as you do. Free shipping over $35.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="shop.html" class="btn btn-primary btn-lg">Browse all books</a>
+          <a href="shop.html" class="btn btn-outline btn-lg">New Arrivals</a>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="mt-8 flex flex-wrap items-center gap-5 text-sm text-text-muted">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-success shrink-0" aria-hidden="true" focusable="false"><use href="#icon-check-circle"></use></svg>
+            20,000+ titles
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-success shrink-0" aria-hidden="true" focusable="false"><use href="#icon-check-circle"></use></svg>
+            Free returns 30 days
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-success shrink-0" aria-hidden="true" focusable="false"><use href="#icon-check-circle"></use></svg>
+            Ships same day
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Bento grid of category tiles ─────────────────── -->
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:gap-4"
+        data-reveal
+        data-reveal-delay="100"
+        aria-hidden="true"
+      >
+        <!-- Large tile (2-col span) -->
+        <a
+          href="shop.html"
+          class="col-span-2 sm:col-span-1 lg:col-span-2 category-bento-tile cover-1 group rounded-card overflow-hidden relative flex flex-col justify-end p-5 min-h-44 text-white no-underline transition-transform hover:scale-[1.01] hover:shadow-card-hover"
+          aria-label="Browse Fiction"
+        >
+          <div class="category-bento-scrim" aria-hidden="true"></div>
+          <div class="relative z-10 transition-transform group-hover:-translate-y-1">
+            <span class="badge badge-primary mb-2 text-xs">2,400+ titles</span>
+            <p class="font-heading text-2xl font-bold">Fiction</p>
+            <p class="text-sm opacity-80">Literary · Thriller · Romance · Sci-Fi</p>
+          </div>
+        </a>
+
+        <!-- Tall tile (2-row span) -->
+        <a
+          href="shop.html"
+          class="row-span-2 category-bento-tile cover-3 group rounded-card overflow-hidden relative flex flex-col justify-end p-5 text-white no-underline transition-transform hover:scale-[1.01] hover:shadow-card-hover min-h-64"
+          aria-label="Browse Children's Books"
+        >
+          <div class="category-bento-scrim" aria-hidden="true"></div>
+          <div class="relative z-10 transition-transform group-hover:-translate-y-1">
+            <span class="badge badge-success mb-2 text-xs">800+ titles</span>
+            <p class="font-heading text-xl font-bold">Children's</p>
+            <p class="text-sm opacity-80">Ages 2–16</p>
+          </div>
+        </a>
+
+        <!-- Small tiles -->
+        <a
+          href="shop.html"
+          class="category-bento-tile cover-4 group rounded-card overflow-hidden relative flex flex-col justify-end p-4 min-h-28 text-white no-underline transition-transform hover:scale-[1.02] hover:shadow-card-hover"
+          aria-label="Browse Non-Fiction"
+        >
+          <div class="category-bento-scrim" aria-hidden="true"></div>
+          <div class="relative z-10 transition-transform group-hover:-translate-y-1">
+            <p class="font-heading text-base font-bold">Non-Fiction</p>
+            <p class="text-xs opacity-80">1,900+ titles</p>
+          </div>
+        </a>
+
+        <a
+          href="shop.html"
+          class="category-bento-tile cover-7 group rounded-card overflow-hidden relative flex flex-col justify-end p-4 min-h-28 text-white no-underline transition-transform hover:scale-[1.02] hover:shadow-card-hover"
+          aria-label="Browse Mystery & Thriller"
+        >
+          <div class="category-bento-scrim" aria-hidden="true"></div>
+          <div class="relative z-10 transition-transform group-hover:-translate-y-1">
+            <p class="font-heading text-base font-bold">Mystery</p>
+            <p class="text-xs opacity-80">Thriller · Crime</p>
+          </div>
+        </a>
+
+        <a
+          href="shop.html"
+          class="category-bento-tile cover-2 group rounded-card overflow-hidden relative flex flex-col justify-end p-4 min-h-28 text-white no-underline transition-transform hover:scale-[1.02] hover:shadow-card-hover"
+          aria-label="Browse Biography"
+        >
+          <div class="category-bento-scrim" aria-hidden="true"></div>
+          <div class="relative z-10 transition-transform group-hover:-translate-y-1">
+            <p class="font-heading text-base font-bold">Biography</p>
+            <p class="text-xs opacity-80">Memoir · History</p>
+          </div>
+        </a>
+
+        <a
+          href="shop.html"
+          class="category-bento-tile cover-5 group rounded-card overflow-hidden relative flex flex-col justify-end p-4 min-h-28 text-white no-underline transition-transform hover:scale-[1.02] hover:shadow-card-hover"
+          aria-label="Browse Poetry & Essays"
+        >
+          <div class="category-bento-scrim" aria-hidden="true"></div>
+          <div class="relative z-10 transition-transform group-hover:-translate-y-1">
+            <p class="font-heading text-base font-bold">Poetry</p>
+            <p class="text-xs opacity-80">Essays · Classics</p>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>

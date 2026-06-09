@@ -1,0 +1,51 @@
+<!-- ===== Quick view modal ===== -->
+<div class="modal-overlay" id="quickview" role="dialog" aria-modal="true" aria-labelledby="qv-title">
+  <div class="modal-box modal-lg">
+    <button class="modal-close absolute end-3 top-3 z-10 bg-surface-2" data-modal-close aria-label="Close quick view">
+      <svg aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+    </button>
+    <div class="grid sm:grid-cols-2 gap-0">
+      <!-- Cover -->
+      <div class="bg-surface-3 flex items-center justify-center p-8">
+        <div class="w-48 rounded-card overflow-hidden shadow-card-hover rotate-[-3deg]">
+          <div class="cover-art cover-1">
+            <span class="cover-art-publisher">Booky Press</span>
+            <div><hr class="cover-art-rule"><p class="cover-art-title" style="font-size:1.4rem">The Lantern of Aldridge Bay</p><p class="cover-art-author">Eleanor Finch</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- Details -->
+      <div class="p-6 sm:p-8">
+        <a href="product.html" class="book-card-category">Fiction</a>
+        <h2 class="font-heading text-2xl font-bold text-text mt-1" id="qv-title">The Lantern of Aldridge Bay</h2>
+        <a href="#" class="text-sm text-text-muted">by Eleanor Finch</a>
+        <div class="flex items-center gap-2 mt-3">
+          <div class="rating" aria-label="Rated 4.8 of 5">
+            <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+            <svg class="rating-star rating-star-filled" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+          </div>
+          <span class="text-sm text-text-muted">4.8 (2,341 reviews)</span>
+        </div>
+        <p class="text-sm text-text-muted leading-relaxed mt-4">A luminous debut about a lighthouse keeper's daughter who uncovers a century-old secret buried beneath the tides. A sweeping story of memory, loss, and the light we leave behind.</p>
+        <div class="price-group mt-5">
+          <span class="price text-2xl">$16.99</span>
+        </div>
+        <div class="flex items-center gap-3 mt-5">
+          <div class="qty-stepper" role="group" aria-label="Quantity">
+            <button class="qty-btn" aria-label="Decrease"><svg aria-hidden="true" focusable="false"><use href="#icon-minus"></use></svg></button>
+            <input class="qty-input" type="number" value="1" min="1" aria-label="Quantity">
+            <button class="qty-btn" aria-label="Increase"><svg aria-hidden="true" focusable="false"><use href="#icon-plus"></use></svg></button>
+          </div>
+          <button class="btn btn-primary flex-1" data-add-to-cart><svg aria-hidden="true" focusable="false"><use href="#icon-cart"></use></svg> Add to cart</button>
+        </div>
+        <div class="flex items-center gap-4 mt-4 text-sm">
+          <button class="inline-flex items-center gap-1.5 text-text-muted hover:text-primary"><svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-wishlist"></use></svg> Wishlist</button>
+          <a href="product.html" class="inline-flex items-center gap-1.5 text-text-muted hover:text-primary"><svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-eye"></use></svg> Full details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

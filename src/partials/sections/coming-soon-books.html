@@ -1,0 +1,136 @@
+<!-- ============================================================
+     SECTION — Coming Soon / Pre-Order
+     Books with future release dates, Pre-order badge,
+     release date display, and optional countdown on first book.
+============================================================ -->
+<section class="section-y bg-surface-2" aria-labelledby="coming-soon-title">
+  <div class="container-app">
+
+    <!-- Header -->
+    <div class="section-header-row" data-reveal>
+      <div>
+        <span class="section-label">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-calendar"></use></svg>
+          Pre-order now
+        </span>
+        <h2 id="coming-soon-title" class="section-title">Coming soon</h2>
+      </div>
+      <a href="shop.html" class="btn btn-outline hidden sm:inline-flex">All upcoming</a>
+    </div>
+
+    <!-- Books grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" data-reveal>
+
+      <!-- Book 1 — featured pre-order with countdown -->
+      <article class="card card-ring-primary flex flex-col sm:col-span-2 sm:flex-row gap-5 lg:flex-col lg:col-span-1" aria-labelledby="preorder-1-title">
+        <div class="w-32 sm:w-40 lg:w-full shrink-0">
+          <div class="cover-art cover-5 rounded-xl" style="aspect-ratio:2/3">
+            <span class="cover-art-publisher">Booky Press</span>
+            <div>
+              <hr class="cover-art-rule">
+              <p class="cover-art-title">Seven Names for Rain</p>
+              <p class="cover-art-author">A. Reeves</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="badge badge-primary">Pre-order</span>
+            <span class="badge badge-new">Most anticipated</span>
+          </div>
+          <a href="shop.html" id="preorder-1-title" class="font-heading text-base font-bold text-text leading-snug hover:text-primary transition-colors">Seven Names for Rain</a>
+          <p class="text-sm text-text-muted mt-0.5 mb-3">A. Reeves</p>
+
+          <!-- Countdown timer -->
+          <div class="mb-3" aria-label="Time until release">
+            <p class="text-xs text-text-subtle mb-1.5">Releases in:</p>
+            <div class="flex gap-2" data-countdown data-end="2026-07-15T00:00:00" aria-live="polite">
+              <div class="countdown-unit">
+                <span class="countdown-value" data-countdown-days>36</span>
+                <span class="countdown-label">Days</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-value" data-countdown-hours>14</span>
+                <span class="countdown-label">Hrs</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-value" data-countdown-mins>22</span>
+                <span class="countdown-label">Min</span>
+              </div>
+              <div class="countdown-unit">
+                <span class="countdown-value" data-countdown-secs>08</span>
+                <span class="countdown-label">Sec</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="price">$13.99</span>
+            <a href="shop.html" class="btn btn-primary btn-sm">Pre-order</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Book 2 -->
+      <article class="card flex flex-col" aria-labelledby="preorder-2-title">
+        <div class="mb-4">
+          <div class="cover-art cover-3 rounded-xl" style="aspect-ratio:2/3">
+            <span class="cover-art-publisher">Booky Press</span>
+            <div>
+              <hr class="cover-art-rule">
+              <p class="cover-art-title">The Iron Librarian</p>
+              <p class="cover-art-author">C. Nduka</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-2"><span class="badge badge-primary">Pre-order</span></div>
+          <a href="shop.html" id="preorder-2-title" class="font-heading text-sm font-bold text-text leading-snug hover:text-primary transition-colors line-clamp-2">The Iron Librarian</a>
+          <p class="text-xs text-text-muted mt-0.5 mb-1">C. Nduka</p>
+          <p class="text-xs text-text-subtle mb-3">
+            <svg class="w-3.5 h-3.5 inline-block me-1" aria-hidden="true" focusable="false"><use href="#icon-calendar"></use></svg>
+            Releases Aug 12, 2026
+          </p>
+        </div>
+        <div class="flex items-center justify-between mt-auto">
+          <span class="price">$15.99</span>
+          <a href="shop.html" class="btn btn-outline btn-sm">Pre-order</a>
+        </div>
+      </article>
+
+      <!-- Book 3 -->
+      <article class="card flex flex-col" aria-labelledby="preorder-3-title">
+        <div class="mb-4">
+          <div class="cover-art cover-7 rounded-xl" style="aspect-ratio:2/3">
+            <span class="cover-art-publisher">Booky Press</span>
+            <div>
+              <hr class="cover-art-rule">
+              <p class="cover-art-title">The Observatory of Lost Stars</p>
+              <p class="cover-art-author">P. Villaneuva</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-2"><span class="badge badge-primary">Pre-order</span></div>
+          <a href="shop.html" id="preorder-3-title" class="font-heading text-sm font-bold text-text leading-snug hover:text-primary transition-colors line-clamp-2">The Observatory of Lost Stars</a>
+          <p class="text-xs text-text-muted mt-0.5 mb-1">P. Villaneuva</p>
+          <p class="text-xs text-text-subtle mb-3">
+            <svg class="w-3.5 h-3.5 inline-block me-1" aria-hidden="true" focusable="false"><use href="#icon-calendar"></use></svg>
+            Releases Sep 3, 2026
+          </p>
+        </div>
+        <div class="flex items-center justify-between mt-auto">
+          <span class="price">$12.99</span>
+          <a href="shop.html" class="btn btn-outline btn-sm">Pre-order</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Mobile CTA -->
+    <div class="mt-8 text-center sm:hidden" data-reveal>
+      <a href="shop.html" class="btn btn-outline">All upcoming titles</a>
+    </div>
+
+  </div>
+</section>

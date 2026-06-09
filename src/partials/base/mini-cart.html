@@ -1,0 +1,58 @@
+<!-- ===== Mini-cart drawer ===== -->
+<div class="drawer-overlay" id="mini-cart">
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="mini-cart-title">
+    <div class="drawer-header">
+      <h2 class="drawer-title" id="mini-cart-title">
+        Your cart <span class="badge badge-primary badge-count ms-1">2</span>
+      </h2>
+      <button class="modal-close" data-drawer-close aria-label="Close cart">
+        <svg aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <div class="cart-item">
+        <div class="w-16 shrink-0 rounded overflow-hidden"><div class="cover-art cover-1 !p-1.5"><p class="cover-art-title !text-[0.5rem]">The Lantern of Aldridge Bay</p></div></div>
+        <div class="cart-item-info">
+          <a href="product.html" class="cart-item-title">The Lantern of Aldridge Bay</a>
+          <span class="cart-item-author">Eleanor Finch</span>
+          <div class="cart-item-footer">
+            <div class="qty-stepper" style="transform:scale(.85);transform-origin:left" role="group" aria-label="Quantity">
+              <button class="qty-btn" aria-label="Decrease"><svg aria-hidden="true" focusable="false"><use href="#icon-minus"></use></svg></button>
+              <input class="qty-input" type="number" value="1" min="1" aria-label="Quantity">
+              <button class="qty-btn" aria-label="Increase"><svg aria-hidden="true" focusable="false"><use href="#icon-plus"></use></svg></button>
+            </div>
+            <span class="price">$16.99</span>
+          </div>
+        </div>
+        <button class="qty-btn shrink-0" aria-label="Remove item"><svg aria-hidden="true" focusable="false"><use href="#icon-trash"></use></svg></button>
+      </div>
+      <div class="cart-item">
+        <div class="w-16 shrink-0 rounded overflow-hidden"><div class="cover-art cover-2 !p-1.5"><p class="cover-art-title !text-[0.5rem]">The Quiet Algorithm</p></div></div>
+        <div class="cart-item-info">
+          <a href="product.html" class="cart-item-title">The Quiet Algorithm</a>
+          <span class="cart-item-author">D. Okonkwo</span>
+          <div class="cart-item-footer">
+            <div class="qty-stepper" style="transform:scale(.85);transform-origin:left" role="group" aria-label="Quantity">
+              <button class="qty-btn" aria-label="Decrease"><svg aria-hidden="true" focusable="false"><use href="#icon-minus"></use></svg></button>
+              <input class="qty-input" type="number" value="1" min="1" aria-label="Quantity">
+              <button class="qty-btn" aria-label="Increase"><svg aria-hidden="true" focusable="false"><use href="#icon-plus"></use></svg></button>
+            </div>
+            <span class="price">$14.50</span>
+          </div>
+        </div>
+        <button class="qty-btn shrink-0" aria-label="Remove item"><svg aria-hidden="true" focusable="false"><use href="#icon-trash"></use></svg></button>
+      </div>
+    </div>
+    <div class="drawer-footer">
+      <div class="cart-summary !border-0 !pt-0">
+        <div class="cart-summary-row"><span>Subtotal</span><span>$31.49</span></div>
+        <div class="cart-summary-row"><span>Shipping</span><span class="text-success">Free</span></div>
+        <div class="cart-summary-row is-total"><span>Total</span><span>$31.49</span></div>
+      </div>
+      <div class="flex flex-col gap-2 mt-3">
+        <a href="checkout.html" class="btn btn-primary btn-full btn-lg">Checkout</a>
+        <a href="cart.html" class="btn btn-outline btn-full">View cart</a>
+      </div>
+    </div>
+  </div>
+</div>

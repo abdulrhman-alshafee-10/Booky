@@ -1,0 +1,141 @@
+<!-- ============================================================
+     HERO — Search / Discovery-first
+     Centered, generous whitespace · big search as primary CTA
+     Popular category chips · trending searches
+     Pairs with: header-4 (sticky condensed) · marketplace / academic demos
+============================================================ -->
+<section class="relative overflow-hidden bg-surface" aria-labelledby="hero-search-title">
+
+  <!-- Decorative background blobs -->
+  <span class="blob w-[36rem] h-[36rem] -top-40 -start-40 bg-primary-light" aria-hidden="true"></span>
+  <span class="blob w-[28rem] h-[28rem] -bottom-32 -end-32 bg-secondary-light" aria-hidden="true"></span>
+
+  <!-- Optional: subtle book-cover collage behind scrim (decorative) -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute top-8 end-8 opacity-5 grid grid-cols-4 gap-2 w-80 -rotate-6 hidden lg:grid">
+      <div class="cover-art cover-1 rounded-sm"></div>
+      <div class="cover-art cover-3 rounded-sm"></div>
+      <div class="cover-art cover-5 rounded-sm"></div>
+      <div class="cover-art cover-7 rounded-sm"></div>
+      <div class="cover-art cover-2 rounded-sm"></div>
+      <div class="cover-art cover-4 rounded-sm"></div>
+      <div class="cover-art cover-6 rounded-sm"></div>
+      <div class="cover-art cover-8 rounded-sm"></div>
+    </div>
+  </div>
+
+  <div class="container-app relative z-10">
+    <div class="flex flex-col items-center text-center py-16 lg:py-24 max-w-3xl mx-auto">
+
+      <!-- Eyebrow -->
+      <span class="section-label mb-4" data-reveal>
+        <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+        20,000+ hand-picked titles
+      </span>
+
+      <!-- Headline (h1 — the only one per page) -->
+      <h1
+        id="hero-search-title"
+        class="font-heading font-bold leading-[1.05] tracking-tight text-text"
+        style="font-size:clamp(2.5rem,5.5vw,4.25rem)"
+        data-reveal
+      >
+        Your next great read<br>
+        is <span class="text-primary italic">one search away.</span>
+      </h1>
+
+      <p class="mt-5 text-lg text-text-muted leading-relaxed max-w-xl text-pretty" data-reveal>
+        Discover handpicked fiction, non-fiction, children's books, and more — from the world's most passionate readers.
+      </p>
+
+      <!-- ── Large prominent search ─────────────────────────── -->
+      <form
+        class="mt-9 w-full max-w-2xl"
+        role="search"
+        action="shop.html"
+        data-reveal
+      >
+        <label for="hero-search-input" class="sr-only">Search by title, author, or ISBN</label>
+        <div class="flex w-full rounded-xl border-2 border-border focus-within:border-primary focus-within:ring-4 focus-within:ring-[color:var(--color-focus-ring)] transition-all overflow-hidden bg-surface-2 shadow-card">
+          <!-- Category select -->
+          <select
+            class="hidden md:block border-0 bg-surface-3 text-sm text-text-muted ps-4 pe-9 focus:outline-none cursor-pointer shrink-0 border-e border-border"
+            aria-label="Search category"
+          >
+            <option>All Books</option>
+            <option>Fiction</option>
+            <option>Non-Fiction</option>
+            <option>Children's</option>
+            <option>Mystery</option>
+            <option>Sci-Fi</option>
+            <option>Biography</option>
+          </select>
+          <input
+            id="hero-search-input"
+            type="search"
+            name="q"
+            placeholder="Search by title, author, or ISBN…"
+            class="flex-1 min-w-0 border-0 bg-transparent px-4 py-4 text-base text-text placeholder:text-text-subtle focus:outline-none"
+            autocomplete="off"
+          >
+          <button
+            type="submit"
+            class="flex items-center gap-2 px-5 bg-primary text-white hover:bg-primary-hover transition-colors font-semibold shrink-0"
+            aria-label="Search books"
+          >
+            <svg class="w-5 h-5" aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
+            <span class="hidden sm:block">Search</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Trending search chips -->
+      <div class="mt-5 flex flex-wrap justify-center items-center gap-2" data-reveal>
+        <span class="text-xs text-text-muted font-medium me-1">Trending:</span>
+        <a href="shop.html" class="chip">Mystery &amp; Thriller</a>
+        <a href="shop.html" class="chip">New Releases</a>
+        <a href="shop.html" class="chip">Award Winners</a>
+        <a href="shop.html" class="chip">Summer Reads</a>
+        <a href="shop.html" class="chip">Staff Picks</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Popular categories row ─────────────────────────────── -->
+  <div class="border-t border-border-subtle bg-surface-2">
+    <div class="container-app">
+      <div class="flex items-center gap-0 overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-5 lg:grid-cols-7 divide-x divide-border-subtle" role="list" aria-label="Browse by category">
+        <a href="shop.html" class="flex flex-col items-center gap-2 py-5 px-6 sm:px-4 shrink-0 hover:bg-surface-3 hover:text-primary transition-colors group" role="listitem">
+          <svg class="w-6 h-6 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+          <span class="text-xs font-medium text-text-muted group-hover:text-primary whitespace-nowrap">Fiction</span>
+        </a>
+        <a href="shop.html" class="flex flex-col items-center gap-2 py-5 px-6 sm:px-4 shrink-0 hover:bg-surface-3 hover:text-primary transition-colors group" role="listitem">
+          <svg class="w-6 h-6 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg>
+          <span class="text-xs font-medium text-text-muted group-hover:text-primary whitespace-nowrap">Non-Fiction</span>
+        </a>
+        <a href="shop.html" class="flex flex-col items-center gap-2 py-5 px-6 sm:px-4 shrink-0 hover:bg-surface-3 hover:text-primary transition-colors group" role="listitem">
+          <svg class="w-6 h-6 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg>
+          <span class="text-xs font-medium text-text-muted group-hover:text-primary whitespace-nowrap">Children's</span>
+        </a>
+        <a href="shop.html" class="flex flex-col items-center gap-2 py-5 px-6 sm:px-4 shrink-0 hover:bg-surface-3 hover:text-primary transition-colors group" role="listitem">
+          <svg class="w-6 h-6 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+          <span class="text-xs font-medium text-text-muted group-hover:text-primary whitespace-nowrap">Mystery</span>
+        </a>
+        <a href="shop.html" class="flex flex-col items-center gap-2 py-5 px-6 sm:px-4 shrink-0 hover:bg-surface-3 hover:text-primary transition-colors group" role="listitem">
+          <svg class="w-6 h-6 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" focusable="false"><use href="#icon-bookmark"></use></svg>
+          <span class="text-xs font-medium text-text-muted group-hover:text-primary whitespace-nowrap">Biography</span>
+        </a>
+        <a href="shop.html" class="hidden lg:flex flex-col items-center gap-2 py-5 px-4 shrink-0 hover:bg-surface-3 hover:text-primary transition-colors group" role="listitem">
+          <svg class="w-6 h-6 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" focusable="false"><use href="#icon-star-filled"></use></svg>
+          <span class="text-xs font-medium text-text-muted group-hover:text-primary whitespace-nowrap">Bestsellers</span>
+        </a>
+        <a href="shop.html" class="hidden lg:flex flex-col items-center gap-2 py-5 px-4 shrink-0 hover:bg-surface-3 hover:text-primary transition-colors group" role="listitem">
+          <svg class="w-6 h-6 text-primary group-hover:scale-110 transition-transform" aria-hidden="true" focusable="false"><use href="#icon-book"></use></svg>
+          <span class="text-xs font-medium text-text-muted group-hover:text-primary whitespace-nowrap">Sci-Fi</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
