@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+  <title>FAQ — Frequently Asked Questions | Booky Help Centre</title>
+  <meta name="description" content="Find answers to common questions about orders, shipping, returns, accounts, eBooks, and membership. Can't find what you need? Contact our team.">
+  <link rel="canonical" href="https://booky.example.com/faq.html">
+  <meta property="og:title" content="FAQ — Booky Help Centre">
+  <meta property="og:description" content="Answers about orders, shipping, returns, accounts, and membership.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta property="og:url" content="https://booky.example.com/faq.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ — Booky Help Centre">
+  <meta name="twitter:description" content="Common questions about orders, shipping, and returns.">
+  <meta name="twitter:image" content="assets/images/og-cover.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How long does delivery take?","acceptedAnswer":{"@type":"Answer","text":"Standard delivery takes 3–5 business days. Express delivery (1–2 days) is available at checkout. Same-day dispatch on orders placed before 2 PM on weekdays."}},
+      {"@type":"Question","name":"Can I return a book?","acceptedAnswer":{"@type":"Answer","text":"Yes — free returns within 30 days on any item in new, unopened condition. eBooks and audiobooks cannot be returned once downloaded."}},
+      {"@type":"Question","name":"How do I access eBooks?","acceptedAnswer":{"@type":"Answer","text":"After purchase, eBooks are available instantly in your account under Downloads. Compatible with any EPUB reader app on any device."}},
+      {"@type":"Question","name":"What is the Reading Club?","acceptedAnswer":{"@type":"Answer","text":"The Booky Reading Club is a monthly membership. Members receive curated picks, 10% off all purchases, early access to new releases, and access to our online reading community."}},
+      {"@type":"Question","name":"Do you ship internationally?","acceptedAnswer":{"@type":"Answer","text":"Yes — we ship to over 50 countries. International delivery times vary; see our shipping page for rates and estimated arrival times by region."}}
+    ]
+  }
+  </script>
+</head>
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <div class="page-hero">
+      <div class="container-app">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Home</a><span class="breadcrumb-sep" aria-hidden="true">›</span></li>
+            <li class="breadcrumb-item"><span class="breadcrumb-current" aria-current="page">FAQ</span></li>
+          </ol>
+        </nav>
+        <h1 class="page-hero-title">Help Centre &amp; FAQ</h1>
+        <p class="page-hero-desc">Find answers to common questions, or contact our team if you need something more specific.</p>
+      </div>
+    </div>
+
+    <!-- Search + Accordions -->
+    <section class="section-y bg-surface" aria-labelledby="faq-main-title" data-reveal>
+      <div class="container-app">
+        <h2 class="sr-only" id="faq-main-title">Frequently asked questions</h2>
+
+        <!-- Search box -->
+        <div class="max-w-xl mx-auto mb-10">
+          <label for="faq-search" class="sr-only">Search frequently asked questions</label>
+          <div class="relative">
+            <span class="input-icon-start"><svg aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg></span>
+            <input
+              id="faq-search"
+              type="search"
+              class="input-field !ps-10 !py-3"
+              placeholder="Search questions…"
+              data-faq-search
+              aria-controls="faq-list"
+              autocomplete="off"
+            >
+          </div>
+        </div>
+
+        <!-- Empty state (hidden until search empties results) -->
+        <div class="text-center py-12 hidden" id="faq-empty" aria-live="polite">
+          <svg class="w-12 h-12 text-text-subtle mx-auto mb-3" aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
+          <p class="text-text-muted">No results found. <a href="contact.html" class="text-primary hover:underline">Contact us</a> for help.</p>
+        </div>
+
+        <div id="faq-list" role="region" aria-live="polite" aria-label="FAQ sections">
+
+          <!-- Orders & Shipping -->
+          <div class="mb-8" data-faq-group>
+            <h3 class="font-heading text-lg font-bold text-text mb-4 pb-2 border-b border-border">Orders &amp; Shipping</h3>
+            <div class="space-y-2">
+              <div class="accordion-item" data-faq-item>
+                <h4>
+                  <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-1">
+                    How long does delivery take?
+                    <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+                  </button>
+                </h4>
+                <div class="accordion-body" id="faq-1" role="region" aria-labelledby="faq-1-trigger" hidden>
+                  <p>Standard delivery takes 3–5 business days. Express delivery (1–2 days) is available at checkout. Same-day dispatch on orders placed before 2 PM on weekdays. International delivery times vary — see our <a href="shipping-returns.html" class="text-primary hover:underline">shipping page</a>.</p>
+                </div>
+              </div>
+              <div class="accordion-item" data-faq-item>
+                <h4>
+                  <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-2">
+                    Is shipping free?
+                    <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+                  </button>
+                </h4>
+                <div class="accordion-body" id="faq-2" role="region" hidden>
+                  <p>Free standard delivery on all orders over $35. Orders under $35 are charged at a flat rate of $3.99. Reading Club members get free delivery on every order regardless of amount.</p>
+                </div>
+              </div>
+              <div class="accordion-item" data-faq-item>
+                <h4>
+                  <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-3">
+                    Do you ship internationally?
+                    <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+                  </button>
+                </h4>
+                <div class="accordion-body" id="faq-3" role="region" hidden>
+                  <p>Yes — we ship to over 50 countries. See our <a href="shipping-returns.html" class="text-primary hover:underline">shipping page</a> for current rates and estimated arrival times by region.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Returns -->
+          <div class="mb-8" data-faq-group>
+            <h3 class="font-heading text-lg font-bold text-text mb-4 pb-2 border-b border-border">Returns &amp; Refunds</h3>
+            <div class="space-y-2">
+              <div class="accordion-item" data-faq-item>
+                <h4>
+                  <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-4">
+                    Can I return a book?
+                    <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+                  </button>
+                </h4>
+                <div class="accordion-body" id="faq-4" role="region" hidden>
+                  <p>Yes — free returns within 30 days on any physical book in new, unopened condition. Start a return from your <a href="account-orders.html" class="text-primary hover:underline">account orders page</a>. Refunds are processed within 3–5 business days.</p>
+                </div>
+              </div>
+              <div class="accordion-item" data-faq-item>
+                <h4>
+                  <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-5">
+                    Can I return eBooks or audiobooks?
+                    <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+                  </button>
+                </h4>
+                <div class="accordion-body" id="faq-5" role="region" hidden>
+                  <p>Digital products (eBooks and audiobooks) cannot be returned once downloaded, as per our digital content policy. If you experience a technical issue, please <a href="contact.html" class="text-primary hover:underline">contact us</a> and we'll help.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Account & Membership -->
+          <div class="mb-8" data-faq-group>
+            <h3 class="font-heading text-lg font-bold text-text mb-4 pb-2 border-b border-border">Account &amp; Membership</h3>
+            <div class="space-y-2">
+              <div class="accordion-item" data-faq-item>
+                <h4>
+                  <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-6">
+                    What is the Reading Club?
+                    <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+                  </button>
+                </h4>
+                <div class="accordion-body" id="faq-6" role="region" hidden>
+                  <p>The Booky Reading Club is a monthly membership. Members receive curated picks, 10% off all purchases, early access to new releases, free delivery on every order, and access to our exclusive online reading community. See full details on our <a href="pricing.html" class="text-primary hover:underline">membership page</a>.</p>
+                </div>
+              </div>
+              <div class="accordion-item" data-faq-item>
+                <h4>
+                  <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-7">
+                    How do I cancel my membership?
+                    <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+                  </button>
+                </h4>
+                <div class="accordion-body" id="faq-7" role="region" hidden>
+                  <p>You can cancel anytime from your <a href="account-details.html" class="text-primary hover:underline">account settings</a>. Cancellation takes effect at the end of your current billing period — you keep all member benefits until then.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- eBooks & Digital -->
+          <div class="mb-8" data-faq-group>
+            <h3 class="font-heading text-lg font-bold text-text mb-4 pb-2 border-b border-border">eBooks &amp; Digital</h3>
+            <div class="space-y-2">
+              <div class="accordion-item" data-faq-item>
+                <h4>
+                  <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-8">
+                    How do I access my eBooks?
+                    <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+                  </button>
+                </h4>
+                <div class="accordion-body" id="faq-8" role="region" hidden>
+                  <p>After purchase, eBooks appear instantly in your account under <a href="account-downloads.html" class="text-primary hover:underline">Downloads</a>. They're compatible with any EPUB reader app on any device — including Kindle, Kobo, Apple Books, and Google Play Books.</p>
+                </div>
+              </div>
+              <div class="accordion-item" data-faq-item>
+                <h4>
+                  <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-9">
+                    Are eBooks DRM-free?
+                    <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+                  </button>
+                </h4>
+                <div class="accordion-body" id="faq-9" role="region" hidden>
+                  <p>Most titles on Booky are DRM-free, meaning you own the file and can read it on any device without restrictions. A small number of publisher agreements require DRM — these are labelled on the product page.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Still need help CTA -->
+    <section class="section-y bg-surface-2 border-t border-border" aria-label="Contact us">
+      <div class="container-app text-center">
+        <h2 class="font-heading text-2xl font-bold text-text mb-3">Didn't find your answer?</h2>
+        <p class="text-text-muted max-w-md mx-auto mb-6">Our team is available Monday–Friday, 9 AM–6 PM. We typically respond within a few hours.</p>
+        <a href="contact.html" class="btn btn-primary btn-lg">Contact us</a>
+      </div>
+    </section>
+
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

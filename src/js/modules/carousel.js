@@ -148,4 +148,18 @@ export function initCarousels() {
 
     new Swiper(container, opts);
   });
+
+  /* Re-init all swipers on RTL dir-change (from rtl-toggle.js) */
+  document.addEventListener("booky:dir-change", () => {
+    document.querySelectorAll("[data-swiper]").forEach((container) => {
+      const swiper = container.swiper;
+      if (swiper) {
+        const newDir = document.documentElement.dir === "rtl" ? "rtl" : "ltr";
+        /* Swiper 11 destroy + re-create is the safest approach */
+        swiper.destroy(true, true);
+        /* Small delay to let the DOM settle after dir flip */
+        setTimeout(() => initCarousels(), 50);
+      }
+    });
+  }, { once: false });
 }

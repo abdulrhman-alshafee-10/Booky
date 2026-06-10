@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>My Orders – Booky</title>
+  <meta name="description" content="View and manage all your Booky orders. Track delivery status and reorder past purchases.">
+  <link rel="canonical" href="https://booky.example.com/account-orders.html">
+  <meta property="og:title" content="My Orders – Booky">
+  <meta property="og:description" content="Manage your Booky orders.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://booky.example.com/account-orders.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+    <div class="bg-surface-2 border-b border-border">
+      <div class="container-app py-4">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item"><a href="account-dashboard.html">My Account</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item" aria-current="page">Orders</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section class="section-y">
+      <div class="container-app">
+        <div class="account-layout">
+          <include src="account/account-sidebar.html"></include>
+
+          <div class="account-layout-main">
+            <h1 class="font-heading text-2xl font-bold mb-6">My Orders</h1>
+
+            <div class="overflow-x-auto">
+              <table class="order-table w-full" aria-label="Order history">
+                <thead>
+                  <tr>
+                    <th scope="col">Order</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody data-orders-tbody>
+                  <!-- Rendered by account.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Order detail modal -->
+            <div class="modal-overlay" id="order-detail-modal" role="dialog" aria-modal="true" aria-label="Order detail">
+              <div class="modal-box">
+                <button class="modal-close absolute end-3 top-3" data-modal-close aria-label="Close">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+                </button>
+                <div data-order-modal-body></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

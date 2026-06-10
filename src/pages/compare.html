@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>Compare Books – Booky</title>
+  <meta name="description" content="Compare up to 4 books side-by-side. View price, format, rating, and author details at a glance.">
+  <link rel="canonical" href="https://booky.example.com/compare.html">
+  <meta property="og:title" content="Compare Books – Booky">
+  <meta property="og:description" content="Compare books side-by-side at Booky.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://booky.example.com/compare.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+    <!-- Page header -->
+    <section class="bg-surface-2 border-b border-border">
+      <div class="container-app shop-page-header">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item" aria-current="page">Compare</li>
+          </ol>
+        </nav>
+        <h1 class="shop-page-title mt-3">Compare Books</h1>
+        <p class="text-text-muted mt-2">Up to 4 books side-by-side. <span data-compare-count>0</span> selected.</p>
+      </div>
+    </section>
+
+    <section class="section-y">
+      <div class="container-app">
+        <!-- Empty state -->
+        <div class="text-center py-24" data-compare-empty hidden>
+          <svg class="w-20 h-20 text-text-muted mx-auto mb-6 opacity-30" aria-hidden="true" focusable="false"><use href="#icon-compare"></use></svg>
+          <h2 class="font-heading text-2xl font-bold">Nothing to compare yet</h2>
+          <p class="text-text-muted mt-2">Add up to 4 books using the compare button on any book card.</p>
+          <a href="shop.html" class="btn btn-primary btn-lg mt-8">Browse Books</a>
+        </div>
+
+        <!-- Compare table (rendered by compare.js) -->
+        <div class="overflow-x-auto" data-compare-table-wrap></div>
+
+        <div class="flex justify-between mt-8 flex-wrap gap-3" data-compare-actions>
+          <button class="btn btn-ghost btn-sm text-danger" data-clear-list="compare">
+            <svg aria-hidden="true" focusable="false"><use href="#icon-trash"></use></svg> Clear all
+          </button>
+          <a href="shop.html" class="btn btn-outline btn-sm">Add more books</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

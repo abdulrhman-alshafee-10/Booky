@@ -1,0 +1,216 @@
+<!-- ============================================================
+     BLOG SIDEBAR — widgets for listing + single pages.
+     On mobile: collapses into .blog-filter-drawer (drawer pattern).
+     On lg+: static column via .blog-layout.has-sidebar-*.
+     Each widget is a <section aria-labelledby> landmark.
+============================================================ -->
+<aside class="blog-filter-drawer" id="blog-sidebar" aria-label="Blog sidebar">
+
+  <!-- Drawer header (mobile only) -->
+  <div class="flex items-center justify-between mb-5 lg:hidden">
+    <span class="font-heading font-bold text-base">Filters &amp; Widgets</span>
+    <button
+      type="button"
+      class="btn btn-ghost btn-sm !p-2"
+      data-drawer-close="blog-sidebar"
+      aria-label="Close sidebar"
+    >
+      <svg class="w-5 h-5" aria-hidden="true" focusable="false"><use href="#icon-x"></use></svg>
+    </button>
+  </div>
+
+  <div class="blog-sidebar">
+
+    <!-- Widget: Search -->
+    <section class="widget" aria-labelledby="widget-search-title">
+      <h2 class="widget-title" id="widget-search-title">Search the journal</h2>
+      <div class="flex gap-2">
+        <label class="sr-only" for="blog-sidebar-search">Search articles</label>
+        <input
+          type="search"
+          id="blog-sidebar-search"
+          class="input-field flex-1"
+          placeholder="Search articles…"
+          data-blog-search
+          autocomplete="off"
+        >
+        <button type="button" class="btn btn-primary btn-sm" aria-label="Search">
+          <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-search"></use></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Widget: Categories -->
+    <section class="widget" aria-labelledby="widget-cats-title">
+      <h2 class="widget-title" id="widget-cats-title">Categories</h2>
+      <ul class="list-none p-0 m-0 flex flex-col gap-0.5" role="list">
+        <li>
+          <button type="button" class="filter-chip w-full justify-between text-start" data-blog-category="all" data-blog-chip>
+            <span>All Articles</span>
+            <span class="badge badge-neutral ms-auto">12</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="filter-chip w-full justify-between text-start" data-blog-category="fiction" data-blog-chip>
+            <span>Fiction</span>
+            <span class="badge badge-neutral ms-auto">2</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="filter-chip w-full justify-between text-start" data-blog-category="reading-life" data-blog-chip>
+            <span>Reading Life</span>
+            <span class="badge badge-neutral ms-auto">3</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="filter-chip w-full justify-between text-start" data-blog-category="staff-picks" data-blog-chip>
+            <span>Staff Picks</span>
+            <span class="badge badge-neutral ms-auto">1</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="filter-chip w-full justify-between text-start" data-blog-category="non-fiction" data-blog-chip>
+            <span>Non-Fiction</span>
+            <span class="badge badge-neutral ms-auto">1</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="filter-chip w-full justify-between text-start" data-blog-category="writing" data-blog-chip>
+            <span>Writing Craft</span>
+            <span class="badge badge-neutral ms-auto">1</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="filter-chip w-full justify-between text-start" data-blog-category="poetry" data-blog-chip>
+            <span>Poetry</span>
+            <span class="badge badge-neutral ms-auto">1</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="filter-chip w-full justify-between text-start" data-blog-category="bookshop-culture" data-blog-chip>
+            <span>Bookshop Culture</span>
+            <span class="badge badge-neutral ms-auto">1</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="filter-chip w-full justify-between text-start" data-blog-category="awards" data-blog-chip>
+            <span>Awards</span>
+            <span class="badge badge-neutral ms-auto">1</span>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Widget: Recent Posts -->
+    <section class="widget" aria-labelledby="widget-recent-title">
+      <h2 class="widget-title" id="widget-recent-title">Recent posts</h2>
+      <div class="flex flex-col">
+        <div class="widget-post">
+          <a href="blog-single.html" class="widget-post-thumb" aria-hidden="true" tabindex="-1">
+            <div class="cover-art cover-1" style="height:3.5rem"></div>
+          </a>
+          <div class="widget-post-body">
+            <a href="blog-single.html" class="widget-post-title">10 Books That Will Change the Way You See the World</a>
+            <p class="widget-post-meta"><time datetime="2026-06-01">Jun 1, 2026</time></p>
+          </div>
+        </div>
+        <div class="widget-post">
+          <a href="blog-single.html" class="widget-post-thumb" aria-hidden="true" tabindex="-1">
+            <div class="cover-art cover-2" style="height:3.5rem"></div>
+          </a>
+          <div class="widget-post-body">
+            <a href="blog-single.html" class="widget-post-title">Why Reading Slowly Is the Ultimate Luxury</a>
+            <p class="widget-post-meta"><time datetime="2026-05-28">May 28, 2026</time></p>
+          </div>
+        </div>
+        <div class="widget-post">
+          <a href="blog-single.html" class="widget-post-thumb" aria-hidden="true" tabindex="-1">
+            <div class="cover-art cover-5" style="height:3.5rem"></div>
+          </a>
+          <div class="widget-post-body">
+            <a href="blog-single.html" class="widget-post-title">Science Fiction's Best Kept Secrets</a>
+            <p class="widget-post-meta"><time datetime="2026-05-08">May 8, 2026</time></p>
+          </div>
+        </div>
+        <div class="widget-post">
+          <a href="blog-single.html" class="widget-post-thumb" aria-hidden="true" tabindex="-1">
+            <div class="cover-art cover-6" style="height:3.5rem"></div>
+          </a>
+          <div class="widget-post-body">
+            <a href="blog-single.html" class="widget-post-title">How to Build a Reading Habit That Sticks</a>
+            <p class="widget-post-meta"><time datetime="2026-04-30">Apr 30, 2026</time></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Widget: Tags -->
+    <section class="widget" aria-labelledby="widget-tags-title">
+      <h2 class="widget-title" id="widget-tags-title">Popular tags</h2>
+      <div class="tag-cloud">
+        <button type="button" class="filter-chip" data-blog-tag="fiction" data-blog-chip>Fiction</button>
+        <button type="button" class="filter-chip" data-blog-tag="reading-lists" data-blog-chip>Reading Lists</button>
+        <button type="button" class="filter-chip" data-blog-tag="mindfulness" data-blog-chip>Mindfulness</button>
+        <button type="button" class="filter-chip" data-blog-tag="slow-reading" data-blog-chip>Slow Reading</button>
+        <button type="button" class="filter-chip" data-blog-tag="habits" data-blog-chip>Habits</button>
+        <button type="button" class="filter-chip" data-blog-tag="sci-fi" data-blog-chip>Sci-Fi</button>
+        <button type="button" class="filter-chip" data-blog-tag="non-fiction" data-blog-chip>Non-Fiction</button>
+        <button type="button" class="filter-chip" data-blog-tag="writing" data-blog-chip>Writing</button>
+        <button type="button" class="filter-chip" data-blog-tag="poetry" data-blog-chip>Poetry</button>
+        <button type="button" class="filter-chip" data-blog-tag="awards" data-blog-chip>Awards</button>
+      </div>
+    </section>
+
+    <!-- Widget: About the journal -->
+    <section class="widget" aria-labelledby="widget-about-title">
+      <h2 class="widget-title" id="widget-about-title">About the journal</h2>
+      <div class="flex gap-3 mb-3">
+        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-text-on-primary font-heading font-bold text-lg flex-shrink-0">E</div>
+        <div>
+          <p class="font-semibold text-sm text-text">Elena Marlow</p>
+          <p class="text-xs text-text-muted">Editor-in-Chief</p>
+        </div>
+      </div>
+      <p class="text-sm text-text-muted leading-relaxed">A weekly dose of reading inspiration, author interviews, and bookseller recommendations from the Booky editorial team.</p>
+    </section>
+
+    <!-- Widget: Newsletter mini-CTA -->
+    <section class="widget bg-surface-inverse! text-white" aria-labelledby="widget-newsletter-title">
+      <h2 class="widget-title text-white/70!" id="widget-newsletter-title">Stay in the loop</h2>
+      <p class="text-sm text-white/80 mb-3 leading-relaxed">New articles every week. No spam, ever.</p>
+      <form class="flex flex-col gap-2" novalidate>
+        <label class="sr-only" for="sidebar-newsletter-email">Your email</label>
+        <input
+          type="email"
+          id="sidebar-newsletter-email"
+          class="input-field"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+        <button type="submit" class="btn btn-primary btn-sm w-full">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Widget: Featured book promo (cross-link to shop) -->
+    <section class="widget" aria-labelledby="widget-promo-title">
+      <h2 class="widget-title" id="widget-promo-title">Editor's pick</h2>
+      <a href="product.html" class="block group">
+        <div class="cover-art cover-3 mb-3" style="aspect-ratio:3/4; border-radius:var(--radius-card)">
+          <div>
+            <hr class="cover-art-rule">
+            <p class="cover-art-title">The Lantern of Aldridge Bay</p>
+          </div>
+          <span class="cover-art-publisher">Orison Press</span>
+        </div>
+        <p class="text-sm font-semibold text-text group-hover:text-primary transition-colors leading-snug">The Lantern of Aldridge Bay</p>
+        <p class="text-xs text-text-muted mt-0.5">By Mira Calloway</p>
+        <p class="text-sm font-bold text-primary mt-1">$18.99</p>
+      </a>
+    </section>
+
+  </div><!-- /.blog-sidebar -->
+
+</aside>
+<!-- Overlay (mobile) -->
+<div class="drawer-overlay" data-drawer-overlay="blog-sidebar" aria-hidden="true"></div>

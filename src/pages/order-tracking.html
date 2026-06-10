@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>Track Your Order – Booky</title>
+  <meta name="description" content="Enter your order number and email to track the status of your Booky order.">
+  <link rel="canonical" href="https://booky.example.com/order-tracking.html">
+  <meta property="og:title" content="Track Your Order – Booky">
+  <meta property="og:description" content="Check the status of your Booky order.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://booky.example.com/order-tracking.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+    <!-- Page header -->
+    <section class="bg-surface-2 border-b border-border">
+      <div class="container-app shop-page-header">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item" aria-current="page">Track Order</li>
+          </ol>
+        </nav>
+        <h1 class="shop-page-title mt-3">Track Your Order</h1>
+        <p class="text-text-muted mt-2">Enter your order number to see its current status.</p>
+      </div>
+    </section>
+
+    <section class="section-y">
+      <div class="container-app max-w-lg mx-auto">
+        <!-- Lookup form -->
+        <div class="auth-card">
+          <form data-validate novalidate>
+            <div class="mb-5">
+              <label for="track-order-number" class="form-label">Order number <span aria-hidden="true">*</span></label>
+              <input id="track-order-number" type="text" class="input-field" data-rule="required" placeholder="e.g. BKY-48210" autocomplete="off">
+            </div>
+            <div class="mb-6">
+              <label for="track-email" class="form-label">Email address <span aria-hidden="true">*</span></label>
+              <input id="track-email" type="email" class="input-field" data-rule="required|email" autocomplete="email">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full btn-lg" data-success-msg="#track-result">Track order</button>
+          </form>
+        </div>
+
+        <!-- Demo result (shown after "successful" lookup) -->
+        <div id="track-result" class="mt-8" hidden>
+          <div class="order-summary-box">
+            <div class="flex items-center justify-between flex-wrap gap-4 mb-5">
+              <div>
+                <p class="text-sm text-text-muted">Order</p>
+                <p class="font-bold">BKY-48210</p>
+              </div>
+              <span class="badge badge-info badge-lg">Shipped</span>
+            </div>
+            <ol class="order-timeline mb-6">
+              <li class="timeline-step is-done"><div class="step-dot"><svg aria-hidden="true" style="width:1rem;height:1rem"><use href="#icon-check"></use></svg></div><span class="step-label">Ordered</span></li>
+              <li class="timeline-step is-done"><div class="step-dot"><svg aria-hidden="true" style="width:1rem;height:1rem"><use href="#icon-check"></use></svg></div><span class="step-label">Packed</span></li>
+              <li class="timeline-step is-done" aria-current="step"><div class="step-dot"><svg aria-hidden="true" style="width:1rem;height:1rem"><use href="#icon-check"></use></svg></div><span class="step-label">Shipped</span></li>
+              <li class="timeline-step"><div class="step-dot"></div><span class="step-label">Delivered</span></li>
+            </ol>
+            <p class="text-sm text-text-muted">Estimated delivery: <strong>3–5 business days</strong></p>
+            <p class="text-sm text-text-muted mt-1">Tracking reference: <strong>RM8812345GB</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

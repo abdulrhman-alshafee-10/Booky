@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+  <title>Contact Us — Get in Touch with Booky</title>
+  <meta name="description" content="Reach the Booky team by email or our contact form. Monday–Friday, 9 AM–6 PM. Average response time: under 4 hours.">
+  <link rel="canonical" href="https://booky.example.com/contact.html">
+  <meta property="og:title" content="Contact Us — Booky">
+  <meta property="og:description" content="Email us or use the contact form. Response within 4 hours on weekdays.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta property="og:url" content="https://booky.example.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Us — Booky">
+  <meta name="twitter:description" content="Email us or use the contact form.">
+  <meta name="twitter:image" content="assets/images/og-cover.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Booky",
+    "url": "https://booky.example.com/contact.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Booky",
+      "email": "hello@booky.example.com",
+      "telephone": "+1-800-BOO-KY01",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "14 Reading Lane",
+        "addressLocality": "Edinburgh",
+        "postalCode": "EH1 1AA",
+        "addressCountry": "GB"
+      }
+    }
+  }
+  </script>
+</head>
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <div class="page-hero">
+      <div class="container-app">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Home</a><span class="breadcrumb-sep" aria-hidden="true">›</span></li>
+            <li class="breadcrumb-item"><span class="breadcrumb-current" aria-current="page">Contact</span></li>
+          </ol>
+        </nav>
+        <h1 class="page-hero-title">Get in touch.</h1>
+        <p class="page-hero-desc">We're a small team and we read every message. Average response time is under 4 hours during business hours.</p>
+      </div>
+    </div>
+
+    <!-- Contact section -->
+    <section class="section-y bg-surface" aria-labelledby="contact-form-title" data-reveal data-contact>
+      <div class="container-app">
+        <h2 class="sr-only" id="contact-form-title">Send us a message</h2>
+        <div class="grid lg:grid-cols-3 gap-10">
+
+          <!-- Contact info sidebar -->
+          <aside aria-label="Contact information">
+            <h3 class="font-heading text-xl font-bold text-text mb-6">Contact information</h3>
+            <div class="space-y-4 mb-8">
+              <div class="contact-info-card">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-mail"></use></svg>
+                </div>
+                <div>
+                  <p class="contact-info-label">Email</p>
+                  <a href="mailto:hello@booky.example.com" class="contact-info-link">hello@booky.example.com</a>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>
+                </div>
+                <div>
+                  <p class="contact-info-label">Phone</p>
+                  <a href="tel:+18008665901" class="contact-info-link">+1 800 BOO KY01</a>
+                  <p class="contact-info-value">Mon–Fri, 9 AM–6 PM</p>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <div class="contact-info-icon" aria-hidden="true">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-map-pin"></use></svg>
+                </div>
+                <div>
+                  <p class="contact-info-label">Head office</p>
+                  <p class="contact-info-value">14 Reading Lane<br>Edinburgh, EH1 1AA<br>United Kingdom</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="font-heading text-base font-bold text-text mb-3">Quick help</h3>
+            <ul class="space-y-2 text-sm text-text-muted">
+              <li><a href="faq.html" class="hover:text-primary hover:underline">Frequently asked questions</a></li>
+              <li><a href="account-orders.html" class="hover:text-primary hover:underline">Track your order</a></li>
+              <li><a href="shipping-returns.html" class="hover:text-primary hover:underline">Returns &amp; shipping policy</a></li>
+            </ul>
+          </aside>
+
+          <!-- Contact form (2/3) -->
+          <div class="lg:col-span-2">
+            <form
+              data-validate
+              data-contact-form
+              novalidate
+              aria-label="Contact form"
+            >
+              <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Full name <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    class="input-field"
+                    required
+                    autocomplete="name"
+                    aria-required="true"
+                    aria-describedby="contact-name-error"
+                  >
+                  <p class="form-error" id="contact-name-error" role="alert" hidden>Please enter your name.</p>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email address <span class="text-danger" aria-hidden="true">*</span></label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    class="input-field"
+                    required
+                    autocomplete="email"
+                    aria-required="true"
+                    aria-describedby="contact-email-error"
+                  >
+                  <p class="form-error" id="contact-email-error" role="alert" hidden>Please enter a valid email address.</p>
+                </div>
+              </div>
+              <div class="form-group mb-4">
+                <label for="contact-subject" class="form-label">Subject <span class="text-danger" aria-hidden="true">*</span></label>
+                <select
+                  id="contact-subject"
+                  name="subject"
+                  class="input-field"
+                  required
+                  aria-required="true"
+                  aria-describedby="contact-subject-error"
+                >
+                  <option value="">Select a topic…</option>
+                  <option value="order">Order or delivery</option>
+                  <option value="return">Return or refund</option>
+                  <option value="account">Account or membership</option>
+                  <option value="technical">Technical issue</option>
+                  <option value="partnership">Partnership or press</option>
+                  <option value="other">Something else</option>
+                </select>
+                <p class="form-error" id="contact-subject-error" role="alert" hidden>Please select a subject.</p>
+              </div>
+              <div class="form-group mb-4">
+                <label for="contact-order" class="form-label">Order number <span class="text-text-muted font-normal">(optional)</span></label>
+                <input
+                  type="text"
+                  id="contact-order"
+                  name="order_number"
+                  class="input-field"
+                  autocomplete="off"
+                  placeholder="e.g. BKY-12345"
+                >
+              </div>
+              <div class="form-group mb-6">
+                <label for="contact-message" class="form-label">Message <span class="text-danger" aria-hidden="true">*</span></label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  class="input-field resize-y"
+                  rows="6"
+                  required
+                  aria-required="true"
+                  aria-describedby="contact-message-error"
+                  minlength="20"
+                  placeholder="Tell us as much as you can — it helps us resolve things faster."
+                ></textarea>
+                <p class="form-error" id="contact-message-error" role="alert" hidden>Please enter a message (at least 20 characters).</p>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+            </form>
+
+            <!-- Success state (hidden until submit) -->
+            <div class="hidden text-center py-10" data-contact-success aria-live="polite">
+              <svg class="w-12 h-12 text-success mx-auto mb-3" aria-hidden="true" focusable="false"><use href="#icon-check-circle"></use></svg>
+              <h3 class="font-heading text-xl font-bold text-text mb-2">Message sent!</h3>
+              <p class="text-text-muted">Thanks for reaching out. We'll get back to you within 4 hours during business hours.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section class="bg-surface-2 border-t border-border" aria-labelledby="map-title" data-reveal>
+      <div class="container-app py-8">
+        <h2 class="font-heading text-xl font-bold text-text mb-4" id="map-title">Our location</h2>
+      </div>
+      <include src="base/map-embed.html"></include>
+    </section>
+
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

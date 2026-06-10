@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+  <title>Journal – Left Sidebar – Booky</title>
+  <meta name="description" content="Browse the Booky Journal with a handy left sidebar for filtering by category, tag, and keyword.">
+  <link rel="canonical" href="https://booky.example.com/blog-left-sidebar.html">
+  <meta property="og:title" content="Journal – Booky"><meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+  <main id="main">
+    <include src="blog/page-header.html"></include>
+    <section class="section-y" data-blog>
+      <div class="container-app">
+        <include src="blog/toolbar.html"></include>
+        <div class="blog-layout has-sidebar-start mt-2">
+          <include src="blog/sidebar.html"></include>
+          <div>
+            <include src="blog/posts.html"></include>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

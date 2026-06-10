@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+  <title>Journal – Big Style – Booky</title>
+  <meta name="description" content="Browse the Booky Journal in our editorial magazine layout — a large lead article followed by a curated grid of stories.">
+  <link rel="canonical" href="https://booky.example.com/blog-big.html">
+  <meta property="og:title" content="Journal – Booky"><meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+  <main id="main">
+    <include src="blog/page-header.html"></include>
+    <section class="section-y" data-blog>
+      <div class="container-app">
+        <include src="blog/toolbar.html"></include>
+        <!-- Feature (post 1) -->
+        <div class="mt-4" data-post-id="1" data-post-title="10 Books That Will Change the Way You See the World" data-post-category="fiction" data-post-tags="fiction reading-lists" data-post-date="2026-06-01" data-post-popularity="95" data-post-cover="cover-1">
+          <include src="cards/blog-card-feature.html"></include>
+        </div>
+        <!-- Secondary grid (posts 2-12) -->
+        <div class="mt-6">
+          <include src="blog/posts-big.html"></include>
+        </div>
+      </div>
+    </section>
+  </main>
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

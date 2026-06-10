@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>The Lantern of Aldridge Bay – Booky (With Sidebar)</title>
+  <meta name="description" content="A luminous debut about a lighthouse keeper's daughter who uncovers a century-old secret. Literary fiction. From $16.99.">
+  <link rel="canonical" href="https://booky.example.com/product-sidebar.html">
+  <meta property="og:title" content="The Lantern of Aldridge Bay – Booky">
+  <meta property="og:description" content="Longlisted for the Booker Prize. Buy from $16.99.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://booky.example.com/product-sidebar.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+    <div class="bg-surface-2 border-b border-border">
+      <div class="container-app py-4">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item"><a href="shop.html">Shop</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item" aria-current="page">The Lantern of Aldridge Bay</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section class="section-y">
+      <div class="container-app">
+        <div class="grid lg:grid-cols-[240px_1fr] gap-10 xl:gap-16">
+          <!-- Sidebar -->
+          <aside aria-label="Related categories" class="lg:sticky lg:top-24 self-start space-y-8">
+            <div class="p-5 bg-surface-2 rounded-card border border-border">
+              <h2 class="font-heading font-semibold text-base mb-3">Browse by Genre</h2>
+              <ul class="space-y-2 text-sm">
+                <li><a href="categories.html" class="text-primary font-semibold hover:underline">Literary Fiction</a></li>
+                <li><a href="categories.html" class="text-text-muted hover:text-primary">Historical Fiction</a></li>
+                <li><a href="categories.html" class="text-text-muted hover:text-primary">Mystery &amp; Thriller</a></li>
+                <li><a href="categories.html" class="text-text-muted hover:text-primary">Science Fiction</a></li>
+                <li><a href="categories.html" class="text-text-muted hover:text-primary">Poetry</a></li>
+                <li><a href="categories.html" class="text-text-muted hover:text-primary">Biography</a></li>
+              </ul>
+            </div>
+            <div class="p-5 bg-surface-2 rounded-card border border-border">
+              <h2 class="font-heading font-semibold text-base mb-3">About the Author</h2>
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-lg shrink-0" aria-hidden="true">E</div>
+                <div>
+                  <p class="font-semibold text-sm">Eleanor Finch</p>
+                  <p class="text-xs text-text-muted">Literary Fiction</p>
+                </div>
+              </div>
+              <p class="text-xs text-text-muted leading-relaxed">Award-winning debut author from Cornwall. Shortlisted for the Costa First Novel Award.</p>
+              <a href="author.html" class="btn btn-outline btn-sm btn-full mt-3">View Profile</a>
+            </div>
+          </aside>
+
+          <!-- Main content -->
+          <div>
+            <div class="grid md:grid-cols-[1fr_1.1fr] gap-10 xl:gap-16 items-start">
+              <div class="md:sticky md:top-24">
+                <include src="product/product-gallery.html"></include>
+              </div>
+              <div>
+                <include src="product/product-summary.html"></include>
+              </div>
+            </div>
+            <include src="product/product-tabs.html"></include>
+            <include src="product/related-products.html"></include>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

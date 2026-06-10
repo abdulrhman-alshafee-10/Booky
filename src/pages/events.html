@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+  <title>Events — Author Talks, Book Clubs &amp; Readings | Booky</title>
+  <meta name="description" content="Browse upcoming Booky events: author talks, book clubs, reading festivals, and store events. In-person and online. Free and ticketed.">
+  <link rel="canonical" href="https://booky.example.com/events.html">
+  <meta property="og:title" content="Events — Author Talks, Book Clubs &amp; Readings | Booky">
+  <meta property="og:description" content="Author talks, book clubs, reading festivals, and store events. In-person and online.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta property="og:url" content="https://booky.example.com/events.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Events — Booky">
+  <meta name="twitter:description" content="Author talks, book clubs, and readings.">
+  <meta name="twitter:image" content="assets/images/og-cover.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://booky.example.com/"},{"@type":"ListItem","position":2,"name":"Events","item":"https://booky.example.com/events.html"}]}
+  </script>
+</head>
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <div class="page-hero">
+      <div class="container-app">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Home</a><span class="breadcrumb-sep" aria-hidden="true">›</span></li>
+            <li class="breadcrumb-item"><span class="breadcrumb-current" aria-current="page">Events</span></li>
+          </ol>
+        </nav>
+        <h1 class="page-hero-title">Upcoming events.</h1>
+        <p class="page-hero-desc">Author talks, book clubs, reading festivals, and more. In-person and online — free and ticketed.</p>
+      </div>
+    </div>
+
+    <!-- Events list -->
+    <section class="section-y bg-surface" aria-labelledby="events-list-title" data-reveal>
+      <div class="container-app">
+        <h2 class="sr-only" id="events-list-title">Event listings</h2>
+
+        <!-- Filter chips -->
+        <div class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter events by type">
+          <button type="button" class="chip is-active" data-event-filter="all" aria-pressed="true">All events</button>
+          <button type="button" class="chip" data-event-filter="author-talk" aria-pressed="false">Author talks</button>
+          <button type="button" class="chip" data-event-filter="book-club" aria-pressed="false">Book clubs</button>
+          <button type="button" class="chip" data-event-filter="online" aria-pressed="false">Online</button>
+          <button type="button" class="chip" data-event-filter="free" aria-pressed="false">Free</button>
+        </div>
+
+        <!-- Event list -->
+        <div class="space-y-4" id="events-list" aria-live="polite">
+
+          <article class="event-card" data-event-type="author-talk" data-event-tags="author-talk">
+            <div class="event-date-block" aria-hidden="true">
+              <span class="event-date-month">Jul</span>
+              <span class="event-date-day">15</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-title"><a href="event-single.html" class="hover:text-primary hover:underline">An Evening with Clara Wells: Writing at the Edge of Memory</a></h3>
+              <ul class="event-meta">
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-map-pin"></use></svg>
+                  <span>Booky Edinburgh, 14 Reading Lane</span>
+                </li>
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                  <time datetime="2026-07-15T19:00">7:00 PM – 9:00 PM</time>
+                </li>
+              </ul>
+              <p class="text-sm text-text-muted mt-2 mb-3">Join us for an intimate evening with the bestselling author of <em>The Cartographer's Daughter</em>. Clara will read from her new novel, discuss her writing process, and take questions from the audience.</p>
+              <div class="flex items-center gap-3">
+                <span class="event-type-badge">Author talk</span>
+                <span class="badge badge-success text-xs">Free entry</span>
+              </div>
+            </div>
+            <a href="event-single.html" class="btn btn-sm btn-primary self-start shrink-0">Book seat</a>
+          </article>
+
+          <article class="event-card" data-event-type="book-club" data-event-tags="book-club online">
+            <div class="event-date-block" aria-hidden="true">
+              <span class="event-date-month">Jul</span>
+              <span class="event-date-day">18</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-title"><a href="event-single.html" class="hover:text-primary hover:underline">Booky Online Book Club — July: <em>Small Things Like These</em></a></h3>
+              <ul class="event-meta">
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-globe"></use></svg>
+                  <span>Online (Zoom)</span>
+                </li>
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                  <time datetime="2026-07-18T19:30">7:30 PM – 9:00 PM</time>
+                </li>
+              </ul>
+              <p class="text-sm text-text-muted mt-2 mb-3">This month we're reading Claire Keegan's <em>Small Things Like These</em>. Join our editors and fellow readers for a live discussion. Link sent on registration.</p>
+              <div class="flex items-center gap-3">
+                <span class="event-type-badge">Book club</span>
+                <span class="badge badge-outline text-xs">Members free, $5 guests</span>
+              </div>
+            </div>
+            <a href="event-single.html" class="btn btn-sm btn-primary self-start shrink-0">Register</a>
+          </article>
+
+          <article class="event-card" data-event-type="author-talk" data-event-tags="author-talk online">
+            <div class="event-date-block" aria-hidden="true">
+              <span class="event-date-month">Jul</span>
+              <span class="event-date-day">24</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-title"><a href="event-single.html" class="hover:text-primary hover:underline">Live Q&amp;A: Adaeze Okafor on <em>The Second Wife</em></a></h3>
+              <ul class="event-meta">
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-globe"></use></svg>
+                  <span>Online (YouTube Live)</span>
+                </li>
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                  <time datetime="2026-07-24T18:00">6:00 PM – 7:00 PM</time>
+                </li>
+              </ul>
+              <p class="text-sm text-text-muted mt-2 mb-3">Ask anything — debut novel writing, the publishing process, or the book itself. Submit questions in advance or join the live chat on the day.</p>
+              <div class="flex items-center gap-3">
+                <span class="event-type-badge">Author talk</span>
+                <span class="badge badge-success text-xs">Free</span>
+              </div>
+            </div>
+            <a href="event-single.html" class="btn btn-sm btn-outline self-start shrink-0">Learn more</a>
+          </article>
+
+          <article class="event-card" data-event-type="book-club" data-event-tags="book-club">
+            <div class="event-date-block" aria-hidden="true">
+              <span class="event-date-month">Aug</span>
+              <span class="event-date-day">5</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-title"><a href="event-single.html" class="hover:text-primary hover:underline">Slow Readers Club — In-Store Session</a></h3>
+              <ul class="event-meta">
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-map-pin"></use></svg>
+                  <span>Booky Glasgow, 7 Argyle Street</span>
+                </li>
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                  <time datetime="2026-08-05T18:30">6:30 PM – 8:00 PM</time>
+                </li>
+              </ul>
+              <p class="text-sm text-text-muted mt-2 mb-3">A low-pressure in-person book club that meets monthly. No homework required — just come and talk about what you've been reading (or not reading) lately.</p>
+              <div class="flex items-center gap-3">
+                <span class="event-type-badge">Book club</span>
+                <span class="badge badge-success text-xs">Free</span>
+              </div>
+            </div>
+            <a href="event-single.html" class="btn btn-sm btn-primary self-start shrink-0">Reserve spot</a>
+          </article>
+
+          <article class="event-card" data-event-type="author-talk" data-event-tags="author-talk">
+            <div class="event-date-block" aria-hidden="true">
+              <span class="event-date-month">Aug</span>
+              <span class="event-date-day">19</span>
+            </div>
+            <div class="event-body">
+              <h3 class="event-title"><a href="event-single.html" class="hover:text-primary hover:underline">Children's Author Morning: Rashida Muñoz reads <em>The Cloud Collector</em></a></h3>
+              <ul class="event-meta">
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-map-pin"></use></svg>
+                  <span>Booky London Covent Garden</span>
+                </li>
+                <li class="event-meta-item">
+                  <svg aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                  <time datetime="2026-08-19T11:00">11:00 AM – 12:00 PM</time>
+                </li>
+              </ul>
+              <p class="text-sm text-text-muted mt-2 mb-3">A 45-minute reading session for children aged 4–8. Rashida will read from her new picture book and lead a crafts activity. Recommended for families.</p>
+              <div class="flex items-center gap-3">
+                <span class="event-type-badge">Author talk</span>
+                <span class="badge badge-success text-xs">Free</span>
+              </div>
+            </div>
+            <a href="event-single.html" class="btn btn-sm btn-primary self-start shrink-0">Book seats</a>
+          </article>
+
+        </div>
+
+        <!-- No results -->
+        <div class="hidden text-center py-12" id="events-empty" aria-live="polite">
+          <p class="text-text-muted">No events match that filter. <a href="contact.html" class="text-primary hover:underline">Suggest an event</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <include src="sections/newsletter.html"></include>
+
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

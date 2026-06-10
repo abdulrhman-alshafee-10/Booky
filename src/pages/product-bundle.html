@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>The Lantern of Aldridge Bay – Bundle Deal – Booky</title>
+  <meta name="description" content="Save 20% when you buy The Lantern of Aldridge Bay with two companion titles. Literary fiction bundle from Booky.">
+  <link rel="canonical" href="https://booky.example.com/product-bundle.html">
+  <meta property="og:title" content="Bundle Deal – The Lantern of Aldridge Bay – Booky">
+  <meta property="og:description" content="Save 20% on this curated reading bundle.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://booky.example.com/product-bundle.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+    <div class="bg-surface-2 border-b border-border">
+      <div class="container-app py-4">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item"><a href="product.html">The Lantern of Aldridge Bay</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item" aria-current="page">Bundle Deal</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section class="section-y">
+      <div class="container-app">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <span class="badge badge-accent mb-3">Bundle &amp; Save</span>
+          <h1 class="font-heading text-3xl md:text-4xl font-bold">Curated Reading Bundle</h1>
+          <p class="text-text-muted mt-3 text-lg">Three hand-picked titles that belong together on your shelf. Save 20% when you buy all three.</p>
+        </div>
+
+        <include src="product/product-bundle-picker.html"></include>
+
+        <div class="mt-16 pt-12 border-t border-border">
+          <h2 class="font-heading text-2xl font-bold mb-6">About each book</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <article class="p-6 bg-surface-2 rounded-card border border-border">
+              <div class="w-24 mx-auto mb-4"><div class="cover-art cover-1" style="aspect-ratio:2/3"></div></div>
+              <h3 class="font-heading font-semibold text-center">The Lantern of Aldridge Bay</h3>
+              <p class="text-sm text-text-muted text-center mt-1">Eleanor Finch</p>
+              <p class="text-sm text-text-muted mt-3 leading-relaxed">A lighthouse keeper's daughter, a century-old secret, and the light that refuses to die.</p>
+            </article>
+            <article class="p-6 bg-surface-2 rounded-card border border-border">
+              <div class="w-24 mx-auto mb-4"><div class="cover-art cover-3" style="aspect-ratio:2/3"></div></div>
+              <h3 class="font-heading font-semibold text-center">Salt &amp; Starlight</h3>
+              <p class="text-sm text-text-muted text-center mt-1">Moira Blackwell</p>
+              <p class="text-sm text-text-muted mt-3 leading-relaxed">Two strangers. One storm. A tidal island that holds the truth of everything lost at sea.</p>
+            </article>
+            <article class="p-6 bg-surface-2 rounded-card border border-border">
+              <div class="w-24 mx-auto mb-4"><div class="cover-art cover-5" style="aspect-ratio:2/3"></div></div>
+              <h3 class="font-heading font-semibold text-center">Maps of the Vanishing</h3>
+              <p class="text-sm text-text-muted text-center mt-1">Yusuf Al-Rashid</p>
+              <p class="text-sm text-text-muted mt-3 leading-relaxed">A cartographer mapping forgotten lands discovers the borders of grief are always changing.</p>
+            </article>
+          </div>
+        </div>
+
+        <include src="product/related-products.html"></include>
+      </div>
+    </section>
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

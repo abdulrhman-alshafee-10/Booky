@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>Book Categories – Booky</title>
+  <meta name="description" content="Explore Booky's full catalogue by category — Fiction, Non-Fiction, Mystery, Science Fiction, Poetry, Biography and more.">
+  <link rel="canonical" href="https://booky.example.com/categories.html">
+  <meta property="og:title" content="Book Categories – Booky">
+  <meta property="og:description" content="Browse all book genres and categories at Booky.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://booky.example.com/categories.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+    <!-- Page header -->
+    <section class="bg-surface-2 border-b border-border">
+      <div class="container-app shop-page-header">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item" aria-current="page">Categories</li>
+          </ol>
+        </nav>
+        <h1 class="shop-page-title mt-3">All Categories</h1>
+        <p class="text-text-muted mt-2 max-w-2xl">Browse every genre on our shelves — from sweeping literary fiction to bite-sized poetry, gripping thrillers to life-changing non-fiction.</p>
+      </div>
+    </section>
+
+    <!-- A–Z filter -->
+    <section class="bg-surface border-b border-border py-4">
+      <div class="container-app">
+        <div class="alpha-filter" role="group" aria-label="Filter by letter">
+          <button class="alpha-btn is-active" data-alpha="all">All</button>
+          <button class="alpha-btn" data-alpha="F">F</button>
+          <button class="alpha-btn" data-alpha="H">H</button>
+          <button class="alpha-btn" data-alpha="M">M</button>
+          <button class="alpha-btn" data-alpha="N">N</button>
+          <button class="alpha-btn" data-alpha="P">P</button>
+          <button class="alpha-btn" data-alpha="S">S</button>
+          <button class="alpha-btn" data-alpha="T">T</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-y">
+      <div class="container-app">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="F">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 text-2xl" aria-hidden="true">📚</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Fiction</h2>
+            <p class="text-sm text-text-muted mt-1">3,420 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="N">
+            <div class="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🔍</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Non-Fiction</h2>
+            <p class="text-sm text-text-muted mt-1">2,185 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="M">
+            <div class="w-12 h-12 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🔪</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Mystery &amp; Thriller</h2>
+            <p class="text-sm text-text-muted mt-1">1,847 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="S">
+            <div class="w-12 h-12 rounded-lg bg-success/10 text-success flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🚀</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Science Fiction</h2>
+            <p class="text-sm text-text-muted mt-1">1,392 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="F">
+            <div class="w-12 h-12 rounded-lg bg-warning/10 text-warning flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🐉</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Fantasy</h2>
+            <p class="text-sm text-text-muted mt-1">1,204 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="P">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 text-2xl" aria-hidden="true">✍️</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Poetry</h2>
+            <p class="text-sm text-text-muted mt-1">648 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="H">
+            <div class="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🏰</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Historical Fiction</h2>
+            <p class="text-sm text-text-muted mt-1">1,031 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="B">
+            <div class="w-12 h-12 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4 text-2xl" aria-hidden="true">👤</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Biography</h2>
+            <p class="text-sm text-text-muted mt-1">892 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="S">
+            <div class="w-12 h-12 rounded-lg bg-success/10 text-success flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🧬</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Science &amp; Nature</h2>
+            <p class="text-sm text-text-muted mt-1">724 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="T">
+            <div class="w-12 h-12 rounded-lg bg-warning/10 text-warning flex items-center justify-center mb-4 text-2xl" aria-hidden="true">✈️</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Travel</h2>
+            <p class="text-sm text-text-muted mt-1">415 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="H">
+            <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🔮</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Horror</h2>
+            <p class="text-sm text-text-muted mt-1">509 books</p>
+          </a>
+          <a href="shop.html" class="group block p-6 bg-surface-2 rounded-card border border-border hover:border-primary hover:shadow-card transition-all" data-cat-letter="G">
+            <div class="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center mb-4 text-2xl" aria-hidden="true">🌍</div>
+            <h2 class="font-heading font-semibold group-hover:text-primary transition-colors">Graphic Novels</h2>
+            <p class="text-sm text-text-muted mt-1">337 books</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+  <title>Membership Plans — Reading Club Pricing | Booky</title>
+  <meta name="description" content="Choose the Booky Reading Club plan that fits your reading life. Free, Reader, Pro, and Family plans — billed monthly or annually. Cancel any time.">
+  <link rel="canonical" href="https://booky.example.com/pricing.html">
+  <meta property="og:title" content="Membership Plans — Reading Club | Booky">
+  <meta property="og:description" content="Free, Reader, Pro, and Family plans. Billed monthly or annually. Cancel any time.">
+  <meta property="og:image" content="assets/images/og-cover.jpg">
+  <meta property="og:url" content="https://booky.example.com/pricing.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Membership Plans — Booky">
+  <meta name="twitter:description" content="Free, Reader, Pro, and Family plans. Cancel any time.">
+  <meta name="twitter:image" content="assets/images/og-cover.jpg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://booky.example.com/"},{"@type":"ListItem","position":2,"name":"Membership","item":"https://booky.example.com/pricing.html"}]}
+  </script>
+</head>
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+
+    <!-- Page Header -->
+    <div class="page-hero">
+      <div class="container-app">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Home</a><span class="breadcrumb-sep" aria-hidden="true">›</span></li>
+            <li class="breadcrumb-item"><span class="breadcrumb-current" aria-current="page">Membership</span></li>
+          </ol>
+        </nav>
+        <h1 class="page-hero-title">Choose your reading plan.</h1>
+        <p class="page-hero-desc">A plan for every kind of reader — from casual browsers to obsessive collectors. Cancel, upgrade, or downgrade any time.</p>
+      </div>
+    </div>
+
+    <!-- Pricing section -->
+    <section class="section-y bg-surface" aria-labelledby="plans-title" data-reveal data-pricing>
+      <div class="container-app">
+        <h2 class="sr-only" id="plans-title">Membership plans</h2>
+
+        <!-- Billing switch -->
+        <div class="billing-switch-wrap">
+          <div class="billing-switch" role="group" aria-label="Billing period">
+            <button type="button" class="billing-option is-active" data-billing="monthly" aria-pressed="true">Monthly</button>
+            <button type="button" class="billing-option" data-billing="annual" aria-pressed="false">
+              Annual
+              <span class="billing-save-badge" data-billing-save aria-hidden="true">Save 20%</span>
+            </button>
+          </div>
+          <p class="text-xs text-text-muted mt-2 text-center" aria-live="polite" data-billing-live></p>
+        </div>
+
+        <!-- Price cards -->
+        <div class="pricing-grid">
+
+          <!-- Free -->
+          <div class="price-card">
+            <div class="price-card-name">Free</div>
+            <p class="price-card-desc">Explore Booky with no commitment. Great for occasional readers.</p>
+            <div class="price-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value" data-price-monthly="0" data-price-annual="0">0</span>
+              <span class="price-period" data-billing-note="/ month">/ month</span>
+            </div>
+            <p class="price-note">&nbsp;</p>
+            <ul class="price-features">
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Browse full catalogue</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Wishlist &amp; reading history</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Standard delivery rates</li>
+              <li class="price-feature"><svg class="comparison-dash" aria-hidden="true" focusable="false"><use href="#icon-minus"></use></svg> No member discount</li>
+              <li class="price-feature"><svg class="comparison-dash" aria-hidden="true" focusable="false"><use href="#icon-minus"></use></svg> No monthly picks</li>
+            </ul>
+            <a href="login.html" class="price-card-cta btn btn-outline btn-lg w-full">Get started free</a>
+          </div>
+
+          <!-- Reader -->
+          <div class="price-card">
+            <div class="price-card-name">Reader</div>
+            <p class="price-card-desc">For regular readers who want a better bookstore experience.</p>
+            <div class="price-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value" data-price-monthly="7" data-price-annual="6">7</span>
+              <span class="price-period" data-billing-note="/ month">/ month</span>
+            </div>
+            <p class="price-note" data-billing-note-reader>&nbsp;</p>
+            <ul class="price-features">
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Everything in Free</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> 5% off every order</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Free delivery on all orders</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> 1 curated pick / month</li>
+              <li class="price-feature"><svg class="comparison-dash" aria-hidden="true" focusable="false"><use href="#icon-minus"></use></svg> No early access</li>
+            </ul>
+            <a href="login.html" class="price-card-cta btn btn-primary btn-lg w-full">Start Reader plan</a>
+          </div>
+
+          <!-- Pro (most popular) -->
+          <div class="price-card price-card-featured">
+            <div class="price-card-badge">Most popular</div>
+            <div class="price-card-name">Pro</div>
+            <p class="price-card-desc">For passionate readers who want the full Booky experience.</p>
+            <div class="price-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value" data-price-monthly="14" data-price-annual="11">14</span>
+              <span class="price-period" data-billing-note="/ month">/ month</span>
+            </div>
+            <p class="price-note" data-billing-note-pro>&nbsp;</p>
+            <ul class="price-features">
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Everything in Reader</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> 10% off every order</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> 3 curated picks / month</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Early access to new releases</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Community &amp; book clubs</li>
+            </ul>
+            <a href="login.html" class="price-card-cta btn btn-primary btn-lg w-full">Start Pro plan</a>
+          </div>
+
+          <!-- Family -->
+          <div class="price-card">
+            <div class="price-card-name">Family</div>
+            <p class="price-card-desc">Up to 5 family members, each with their own reading profile.</p>
+            <div class="price-amount">
+              <span class="price-currency">$</span>
+              <span class="price-value" data-price-monthly="22" data-price-annual="17">22</span>
+              <span class="price-period" data-billing-note="/ month">/ month</span>
+            </div>
+            <p class="price-note" data-billing-note-family>&nbsp;</p>
+            <ul class="price-features">
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Everything in Pro</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Up to 5 member profiles</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Kids &amp; teen profiles</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> 15% off every order</li>
+              <li class="price-feature"><svg class="comparison-check" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg> Shared wishlist &amp; reading lists</li>
+            </ul>
+            <a href="login.html" class="price-card-cta btn btn-outline btn-lg w-full">Start Family plan</a>
+          </div>
+
+        </div>
+
+        <p class="text-center text-xs text-text-muted mt-4">All plans include a 14-day free trial. No credit card required for Free plan. Cancel any time.</p>
+      </div>
+    </section>
+
+    <!-- Comparison table -->
+    <section class="section-y bg-surface-2 border-t border-border" aria-labelledby="comparison-title" data-reveal>
+      <div class="container-app">
+        <div class="section-header text-center">
+          <h2 class="section-title" id="comparison-title">Full plan comparison</h2>
+        </div>
+        <div class="comparison-wrap">
+          <table class="comparison-table" aria-label="Plan feature comparison">
+            <caption class="sr-only">Comparison of Free, Reader, Pro, and Family plans</caption>
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Free</th>
+                <th scope="col">Reader</th>
+                <th scope="col">Pro</th>
+                <th scope="col">Family</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Browse full catalogue</th>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Wishlist &amp; reading history</th>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Order discount</th>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td>5%</td>
+                <td>10%</td>
+                <td>15%</td>
+              </tr>
+              <tr>
+                <th scope="row">Free delivery</th>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Monthly curated picks</th>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td>1</td>
+                <td>3</td>
+                <td>3 per profile</td>
+              </tr>
+              <tr>
+                <th scope="row">Early access</th>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Community &amp; book clubs</th>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Member profiles</th>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>Up to 5</td>
+              </tr>
+              <tr>
+                <th scope="row">Kids &amp; teen profiles</th>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Shared reading lists</th>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-dash" aria-label="Not included">—</span></td>
+                <td><span class="comparison-check" aria-label="Included">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Money-back guarantee -->
+    <section class="section-y bg-surface border-t border-border" aria-labelledby="guarantee-title" data-reveal>
+      <div class="container-app">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="section-label">Risk-free</span>
+            <h2 class="font-heading text-3xl font-bold text-text mt-2 mb-4" id="guarantee-title">14-day free trial. No strings.</h2>
+            <p class="text-text-muted leading-relaxed mb-4">Every paid plan starts with a 14-day free trial. Try it, use it, decide if it's right for you. If you cancel within 14 days you won't be charged a thing.</p>
+            <p class="text-text-muted leading-relaxed mb-6">After that, cancel any time from your account settings. No cancellation fees, no awkward retention flows. Your books are always yours.</p>
+            <a href="login.html" class="btn btn-primary btn-lg">Start free trial</a>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="value-card">
+              <div class="value-icon"><svg aria-hidden="true" focusable="false"><use href="#icon-shield"></use></svg></div>
+              <h3 class="value-title">No hidden fees</h3>
+              <p class="value-desc">The price you see is the price you pay. No setup fees, no activation charges.</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><svg aria-hidden="true" focusable="false"><use href="#icon-refresh"></use></svg></div>
+              <h3 class="value-title">Cancel any time</h3>
+              <p class="value-desc">Downgrade or cancel from account settings in one click. Your data is always yours.</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><svg aria-hidden="true" focusable="false"><use href="#icon-users"></use></svg></div>
+              <h3 class="value-title">Switch plans freely</h3>
+              <p class="value-desc">Upgrade or downgrade at any time — pro-rated billing means you're never double-charged.</p>
+            </div>
+            <div class="value-card">
+              <div class="value-icon"><svg aria-hidden="true" focusable="false"><use href="#icon-heart"></use></svg></div>
+              <h3 class="value-title">Priority support</h3>
+              <p class="value-desc">Paid members get priority email support with responses within 4 hours on weekdays.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ teaser -->
+    <section class="section-y bg-surface-2 border-t border-border" aria-labelledby="pricing-faq-title" data-reveal>
+      <div class="container-app">
+        <div class="section-header">
+          <span class="section-label">Common questions</span>
+          <h2 class="section-title" id="pricing-faq-title">Membership FAQ</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4 mb-8">
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="pfaq-1">
+                Can I switch plans mid-month?
+                <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+              </button>
+            </h3>
+            <div class="accordion-body" id="pfaq-1" role="region" hidden>
+              <p>Yes — upgrade immediately (charged pro-rata for the rest of the billing period) or downgrade at end of the current period.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="pfaq-2">
+                Do unused curated picks roll over?
+                <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+              </button>
+            </h3>
+            <div class="accordion-body" id="pfaq-2" role="region" hidden>
+              <p>Curated picks expire at the end of each month — they're timed to our editorial calendar and don't roll over. We recommend treating them as a monthly treat, not a credit.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="pfaq-3">
+                Is there a student discount?
+                <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+              </button>
+            </h3>
+            <div class="accordion-body" id="pfaq-3" role="region" hidden>
+              <p>Yes — verified students get 30% off Reader and Pro plans. <a href="contact.html" class="text-primary hover:underline">Contact us</a> with your student email to get a discount code.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="pfaq-4">
+                What happens to my books if I cancel?
+                <svg class="accordion-icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-down"></use></svg>
+              </button>
+            </h3>
+            <div class="accordion-body" id="pfaq-4" role="region" hidden>
+              <p>Your purchased books, eBooks, and audiobooks remain in your library permanently. Only membership perks (discounts, picks, early access) are removed when you downgrade to Free.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <a href="faq.html" class="btn btn-ghost">View all FAQ <svg class="inline w-4 h-4 ms-1" aria-hidden="true" focusable="false"><use href="#icon-arrow-right"></use></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <include src="sections/newsletter.html"></include>
+
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

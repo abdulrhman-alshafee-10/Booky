@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Something big is coming — Booky</title>
+  <meta name="description" content="A new Booky experience is launching soon. Sign up to be the first to know.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="flex min-h-dvh items-center justify-center bg-surface">
+
+  <div class="coming-soon-page">
+    <div class="coming-soon-logo">
+      <div class="cover-art cover-1" style="height:56px;width:56px;border-radius:0.75rem" aria-hidden="true"></div>
+      <span class="font-heading text-xl font-bold text-text">Booky</span>
+    </div>
+
+    <h1 class="coming-soon-title">Something big is coming.</h1>
+    <p class="coming-soon-desc">We're putting the finishing touches on a new reading experience. Sign up to be the first to know when we launch.</p>
+
+    <!-- Countdown -->
+    <div class="coming-soon-countdown" aria-label="Countdown to launch" data-countdown="2026-09-01T09:00:00">
+      <div class="coming-soon-unit">
+        <span class="coming-soon-value" id="cd-days" aria-live="polite">--</span>
+        <span class="coming-soon-label">Days</span>
+      </div>
+      <div class="coming-soon-unit">
+        <span class="coming-soon-value" id="cd-hours" aria-live="polite">--</span>
+        <span class="coming-soon-label">Hours</span>
+      </div>
+      <div class="coming-soon-unit">
+        <span class="coming-soon-value" id="cd-mins" aria-live="polite">--</span>
+        <span class="coming-soon-label">Minutes</span>
+      </div>
+      <div class="coming-soon-unit">
+        <span class="coming-soon-value" id="cd-secs" aria-live="off">--</span>
+        <span class="coming-soon-label">Seconds</span>
+      </div>
+    </div>
+
+    <!-- Newsletter signup -->
+    <form class="coming-soon-form" data-validate novalidate aria-label="Early access signup">
+      <label for="cs-email" class="sr-only">Email address</label>
+      <input
+        id="cs-email"
+        type="email"
+        name="email"
+        class="input-field flex-1"
+        placeholder="Your email address"
+        required
+        aria-required="true"
+        aria-describedby="cs-email-error"
+        autocomplete="email"
+      >
+      <button type="submit" class="btn btn-primary shrink-0">Notify me</button>
+      <p class="form-error" id="cs-email-error" role="alert" hidden>Please enter a valid email address.</p>
+    </form>
+
+    <!-- Success state -->
+    <div class="coming-soon-success hidden" aria-live="polite" id="cs-success">
+      <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      You're on the list. We'll email you at launch.
+    </div>
+
+    <p class="text-xs text-text-subtle mt-2">No spam. Unsubscribe any time.</p>
+
+    <div class="coming-soon-socials">
+      <a href="https://twitter.com/booky" class="team-social" aria-label="Follow Booky on Twitter">
+        <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/></svg>
+      </a>
+      <a href="https://instagram.com/booky" class="team-social" aria-label="Follow Booky on Instagram">
+        <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <script src="assets/js/plugins.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

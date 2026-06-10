@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>Checkout – Booky</title>
+  <meta name="description" content="Secure checkout at Booky. Enter your billing, shipping and payment details to complete your order.">
+  <link rel="canonical" href="https://booky.example.com/checkout.html">
+  <meta property="og:title" content="Checkout – Booky">
+  <meta property="og:description" content="Complete your Booky order securely.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://booky.example.com/checkout.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Minimal checkout header (no cart icon distraction) -->
+  <header class="bg-surface border-b border-border py-4">
+    <div class="container-app flex items-center justify-between">
+      <a href="index.html" class="font-heading font-bold text-2xl text-primary" aria-label="Booky home">Booky</a>
+      <div class="flex items-center gap-2 text-sm text-text-muted">
+        <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-lock"></use></svg>
+        Secure checkout
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="flex-1">
+    <div class="section-y">
+      <div class="container-app">
+        <!-- Empty cart guard -->
+        <div class="text-center py-20" data-checkout-empty hidden>
+          <h2 class="font-heading text-2xl font-bold">Your cart is empty</h2>
+          <p class="text-text-muted mt-2">Add some books before checking out.</p>
+          <a href="shop.html" class="btn btn-primary btn-lg mt-6">Browse Books</a>
+        </div>
+
+        <!-- Checkout main -->
+        <div data-checkout-main>
+          <div class="checkout-grid">
+            <!-- Left: forms -->
+            <div>
+              <!-- Step 1: Contact -->
+              <section class="checkout-section">
+                <h2 class="checkout-section-title">
+                  <span class="checkout-step-badge">1</span> Contact Information
+                </h2>
+                <form data-checkout-form novalidate>
+                  <!-- Contact -->
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label for="first-name" class="form-label">First name <span aria-hidden="true">*</span></label>
+                      <input id="first-name" type="text" class="input-field" data-rule="required|min:2" autocomplete="given-name" required>
+                    </div>
+                    <div>
+                      <label for="last-name" class="form-label">Last name <span aria-hidden="true">*</span></label>
+                      <input id="last-name" type="text" class="input-field" data-rule="required|min:2" autocomplete="family-name" required>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <label for="checkout-email" class="form-label">Email address <span aria-hidden="true">*</span></label>
+                    <input id="checkout-email" type="email" class="input-field" data-rule="required|email" autocomplete="email" required>
+                  </div>
+                  <div class="mt-4">
+                    <label for="checkout-phone" class="form-label">Phone number</label>
+                    <input id="checkout-phone" type="tel" class="input-field" autocomplete="tel">
+                  </div>
+
+                  <!-- Step 2: Billing -->
+                  <h3 class="font-heading font-semibold mt-8 mb-4">Billing Address</h3>
+                  <div class="mt-4">
+                    <label for="billing-address" class="form-label">Street address <span aria-hidden="true">*</span></label>
+                    <input id="billing-address" type="text" class="input-field" data-rule="required" autocomplete="street-address" required>
+                  </div>
+                  <div class="grid sm:grid-cols-2 gap-4 mt-4">
+                    <div>
+                      <label for="billing-city" class="form-label">City <span aria-hidden="true">*</span></label>
+                      <input id="billing-city" type="text" class="input-field" data-rule="required" autocomplete="address-level2" required>
+                    </div>
+                    <div>
+                      <label for="billing-postcode" class="form-label">Postcode <span aria-hidden="true">*</span></label>
+                      <input id="billing-postcode" type="text" class="input-field" data-rule="required" autocomplete="postal-code" required>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <label for="billing-country" class="form-label">Country <span aria-hidden="true">*</span></label>
+                    <select id="billing-country" class="select-field" data-rule="required" autocomplete="country" required>
+                      <option value="">Select a country</option>
+                      <option value="GB">United Kingdom</option>
+                      <option value="US">United States</option>
+                      <option value="CA">Canada</option>
+                      <option value="AU">Australia</option>
+                      <option value="DE">Germany</option>
+                      <option value="FR">France</option>
+                    </select>
+                  </div>
+
+                  <!-- Same as billing -->
+                  <label class="checkbox-control mt-5">
+                    <input type="checkbox" data-same-billing checked>
+                    <span>Ship to the same address</span>
+                  </label>
+
+                  <!-- Step 3: Shipping (hidden when same-as-billing) -->
+                  <div data-shipping-section hidden>
+                    <h3 class="font-heading font-semibold mt-8 mb-4">Shipping Address</h3>
+                    <div class="mt-4">
+                      <label for="shipping-address" class="form-label">Street address <span aria-hidden="true">*</span></label>
+                      <input id="shipping-address" type="text" class="input-field" autocomplete="shipping street-address">
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4 mt-4">
+                      <div>
+                        <label for="shipping-city" class="form-label">City <span aria-hidden="true">*</span></label>
+                        <input id="shipping-city" type="text" class="input-field" autocomplete="shipping address-level2">
+                      </div>
+                      <div>
+                        <label for="shipping-postcode" class="form-label">Postcode <span aria-hidden="true">*</span></label>
+                        <input id="shipping-postcode" type="text" class="input-field" autocomplete="shipping postal-code">
+                      </div>
+                    </div>
+                    <div class="mt-4">
+                      <label for="shipping-country" class="form-label">Country <span aria-hidden="true">*</span></label>
+                      <select id="shipping-country" class="select-field" autocomplete="shipping country">
+                        <option value="">Select a country</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Step 4: Payment -->
+                  <h3 class="font-heading font-semibold mt-8 mb-4">Payment Method</h3>
+                  <div class="space-y-3">
+
+                    <label class="payment-method">
+                      <input type="radio" name="payment" value="card" checked>
+                      <span class="payment-method-label">
+                        <svg aria-hidden="true" focusable="false"><use href="#icon-credit-card"></use></svg>
+                        Credit / Debit Card
+                      </span>
+                      <div class="payment-method-panel p-4">
+                        <div>
+                          <label for="card-number" class="form-label">Card number <span aria-hidden="true">*</span></label>
+                          <input id="card-number" type="text" class="input-field" data-rule="required|card" placeholder="0000 0000 0000 0000" autocomplete="cc-number" inputmode="numeric" maxlength="19">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 mt-3">
+                          <div>
+                            <label for="card-expiry" class="form-label">Expiry <span aria-hidden="true">*</span></label>
+                            <input id="card-expiry" type="text" class="input-field" data-rule="required|expiry" placeholder="MM/YY" autocomplete="cc-exp" maxlength="5">
+                          </div>
+                          <div>
+                            <label for="card-cvc" class="form-label">CVC <span aria-hidden="true">*</span></label>
+                            <input id="card-cvc" type="text" class="input-field" data-rule="required|cvc" placeholder="123" autocomplete="cc-csc" maxlength="4" inputmode="numeric">
+                          </div>
+                        </div>
+                        <div class="mt-3">
+                          <label for="card-name" class="form-label">Name on card <span aria-hidden="true">*</span></label>
+                          <input id="card-name" type="text" class="input-field" data-rule="required|min:2" autocomplete="cc-name">
+                        </div>
+                      </div>
+                    </label>
+
+                    <label class="payment-method">
+                      <input type="radio" name="payment" value="paypal">
+                      <span class="payment-method-label">
+                        <svg aria-hidden="true" focusable="false"><use href="#icon-external-link"></use></svg>
+                        PayPal
+                      </span>
+                      <div class="payment-method-panel p-4">
+                        <p class="text-sm text-text-muted">You will be redirected to PayPal to complete your payment securely.</p>
+                      </div>
+                    </label>
+
+                    <label class="payment-method">
+                      <input type="radio" name="payment" value="bank">
+                      <span class="payment-method-label">
+                        <svg aria-hidden="true" focusable="false"><use href="#icon-package"></use></svg>
+                        Bank Transfer
+                      </span>
+                      <div class="payment-method-panel p-4">
+                        <p class="text-sm text-text-muted">Bank details will be provided with your order confirmation. Your order will be held for 5 business days.</p>
+                      </div>
+                    </label>
+                  </div>
+
+                  <!-- Order notes -->
+                  <div class="mt-6">
+                    <label for="order-notes" class="form-label">Order notes (optional)</label>
+                    <textarea id="order-notes" class="input-field" rows="3" placeholder="Any special instructions for your order?"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full btn-lg mt-8">
+                    <svg aria-hidden="true" focusable="false"><use href="#icon-lock"></use></svg>
+                    Place order
+                  </button>
+                  <p class="text-xs text-text-muted text-center mt-3">By placing your order you agree to our <a href="#" class="underline">Terms &amp; Conditions</a> and <a href="#" class="underline">Privacy Policy</a>.</p>
+                </form>
+              </section>
+            </div>
+
+            <!-- Right: order summary -->
+            <aside aria-label="Order summary">
+              <div class="order-summary-box sticky top-24">
+                <h2 class="font-heading font-bold text-xl mb-5">Order Summary</h2>
+                <div data-checkout-items class="space-y-0 mb-4">
+                  <!-- Rendered by checkout.js -->
+                </div>
+                <div class="border-t border-border-subtle pt-4 space-y-2">
+                  <div class="order-line"><span>Subtotal</span><span data-checkout-subtotal>—</span></div>
+                  <div class="order-line"><span>Shipping</span><span data-checkout-shipping>—</span></div>
+                  <div class="order-line is-total"><span>Total</span><span data-checkout-total>—</span></div>
+                </div>
+                <div class="flex items-center gap-2 mt-5 text-xs text-text-muted justify-center">
+                  <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-lock"></use></svg> SSL encrypted · GDPR compliant
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-surface-2 border-t border-border py-6 text-center text-sm text-text-muted">
+    &copy; 2026 Booky. All rights reserved. · <a href="#" class="hover:underline">Privacy Policy</a> · <a href="#" class="hover:underline">Terms</a>
+  </footer>
+
+  <include src="icons/icons.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

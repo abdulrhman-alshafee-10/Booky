@@ -1,0 +1,37 @@
+<!-- ============================================================
+     BLOG TOOLBAR — result count + mobile sidebar trigger + sort.
+     Consumed by blog.js via data-* hooks.
+     Reuses .blog-toolbar component classes from input.css.
+============================================================ -->
+<div class="blog-toolbar" data-blog-toolbar>
+
+  <!-- Count + mobile sidebar trigger -->
+  <div class="flex items-center gap-3">
+    <button
+      type="button"
+      class="btn btn-outline btn-sm lg:hidden"
+      data-drawer-open="blog-sidebar"
+      aria-label="Open filters and widgets"
+    >
+      <svg class="w-4 h-4" aria-hidden="true" focusable="false"><use href="#icon-filter"></use></svg>
+      Filters
+    </button>
+
+    <p class="blog-toolbar-count" aria-live="polite" data-blog-count>
+      Showing <strong data-count-shown>12</strong> of <strong data-count-total>12</strong> articles
+    </p>
+  </div>
+
+  <!-- Sort select -->
+  <div class="blog-toolbar-controls">
+    <div class="flex items-center gap-2">
+      <label class="sr-only" for="blog-sort">Sort articles by</label>
+      <select id="blog-sort" class="select-field" data-blog-sort>
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="popular">Most popular</option>
+      </select>
+    </div>
+  </div>
+
+</div>

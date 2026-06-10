@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>Log In – Booky</title>
+  <meta name="description" content="Sign in to your Booky account to manage orders, downloads and your wishlist.">
+  <link rel="canonical" href="https://booky.example.com/login.html">
+  <meta property="og:title" content="Log In – Booky">
+  <meta property="og:description" content="Sign in to your Booky account.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://booky.example.com/login.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh bg-surface-2">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="bg-surface border-b border-border py-4 text-center">
+    <a href="index.html" class="font-heading font-bold text-2xl text-primary" aria-label="Booky home">Booky</a>
+  </header>
+
+  <main id="main" class="flex-1 flex items-center justify-center py-16 px-4">
+    <div class="w-full max-w-md">
+      <!-- Tab toggle: login / register -->
+      <div class="tabs-wrap mb-0" data-tabs>
+        <div class="tabs-nav" role="tablist" aria-label="Auth mode">
+          <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="tab-login" id="btn-login">Log in</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-register" id="btn-register" tabindex="-1">Register</button>
+        </div>
+
+        <!-- Login panel -->
+        <div class="tab-panel auth-card !rounded-ts-none" id="tab-login" role="tabpanel" aria-labelledby="btn-login">
+          <form data-validate novalidate>
+            <div class="mb-4">
+              <label for="login-email" class="form-label">Email address <span aria-hidden="true">*</span></label>
+              <input id="login-email" type="email" class="input-field" data-rule="required|email" autocomplete="email" required>
+            </div>
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-1">
+                <label for="login-password" class="form-label mb-0">Password <span aria-hidden="true">*</span></label>
+                <a href="#" class="text-xs text-primary hover:underline">Forgot password?</a>
+              </div>
+              <input id="login-password" type="password" class="input-field" data-rule="required" autocomplete="current-password" required>
+            </div>
+            <label class="checkbox-control mb-5">
+              <input type="checkbox" name="remember">
+              <span>Remember me</span>
+            </label>
+            <button type="submit" class="btn btn-primary btn-full btn-lg">Log in</button>
+          </form>
+
+          <div class="auth-divider my-5"><span>or continue with</span></div>
+          <div class="flex gap-3">
+            <button class="social-auth-btn flex-1" aria-label="Log in with Google">
+              <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Google
+            </button>
+            <button class="social-auth-btn flex-1" aria-label="Log in with Facebook">
+              <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+              Facebook
+            </button>
+          </div>
+        </div>
+
+        <!-- Register panel -->
+        <div class="tab-panel auth-card !rounded-ts-none hidden" id="tab-register" role="tabpanel" aria-labelledby="btn-register">
+          <form data-validate novalidate>
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label for="reg-fname" class="form-label">First name <span aria-hidden="true">*</span></label>
+                <input id="reg-fname" type="text" class="input-field" data-rule="required|min:2" autocomplete="given-name">
+              </div>
+              <div>
+                <label for="reg-lname" class="form-label">Last name <span aria-hidden="true">*</span></label>
+                <input id="reg-lname" type="text" class="input-field" data-rule="required|min:2" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="reg-email" class="form-label">Email address <span aria-hidden="true">*</span></label>
+              <input id="reg-email" type="email" class="input-field" data-rule="required|email" autocomplete="email">
+            </div>
+            <div class="mb-4">
+              <label for="reg-password" class="form-label">Password <span aria-hidden="true">*</span></label>
+              <input id="reg-password" type="password" class="input-field" data-rule="required|min:8" autocomplete="new-password">
+              <p class="text-xs text-text-muted mt-1">Minimum 8 characters.</p>
+            </div>
+            <label class="checkbox-control mb-5">
+              <input type="checkbox" name="terms" data-rule="required" data-error="You must accept the terms to continue.">
+              <span>I agree to the <a href="#" class="text-primary underline">Terms &amp; Conditions</a> and <a href="#" class="text-primary underline">Privacy Policy</a> <span aria-hidden="true">*</span></span>
+            </label>
+            <button type="submit" class="btn btn-primary btn-full btn-lg">Create account</button>
+          </form>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-text-muted mt-6">
+        <a href="index.html" class="hover:text-primary">&larr; Return to store</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="bg-surface border-t border-border py-4 text-center text-xs text-text-muted">
+    &copy; 2026 Booky. All rights reserved.
+  </footer>
+
+  <include src="base/scripts.html"></include>
+</body>
+</html>

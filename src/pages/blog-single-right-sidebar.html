@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+  <title>10 Books That Will Change the Way You See the World – Booky Journal</title>
+  <meta name="description" content="From sweeping literary fiction to thought-provoking non-fiction, these are the books our editors can't stop talking about.">
+  <link rel="canonical" href="https://booky.example.com/blog-single-right-sidebar.html">
+  <meta property="og:title" content="10 Books That Will Change the Way You See the World – Booky">
+  <meta property="og:description" content="From sweeping literary fiction to thought-provoking non-fiction, these are the books our editors can't stop talking about.">
+  <meta property="og:image" content="assets/images/og-blog-single.jpg">
+  <meta property="og:url" content="https://booky.example.com/blog-single-right-sidebar.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="10 Books That Will Change the Way You See the World – Booky">
+  <meta name="twitter:description" content="From sweeping literary fiction to thought-provoking non-fiction, these are the books our editors can't stop talking about.">
+  <meta name="twitter:image" content="assets/images/og-blog-single.jpg">
+</head>
+<body class="flex flex-col min-h-dvh" data-page="blog-single">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+
+    <!-- Reading progress bar -->
+    <div class="read-progress" id="read-progress" aria-hidden="true" role="presentation"></div>
+
+    <!-- Post header -->
+    <div class="bg-surface-2 border-b border-border">
+      <div class="container-app py-10">
+        <include src="blog/post-header.html"></include>
+      </div>
+    </div>
+
+    <!-- Hero cover art -->
+    <div class="post-hero" aria-hidden="true">
+      <div class="cover-art cover-1 w-full h-full rounded-none" aria-hidden="true"></div>
+    </div>
+
+    <!-- Two-column layout: post content left, sidebar right -->
+    <div class="container-app py-10">
+      <div class="blog-layout has-sidebar-end">
+
+        <!-- Post content (DOM first = correct reading order) -->
+        <div>
+
+          <!-- Share row (below hero) -->
+          <include src="blog/post-share.html"></include>
+
+          <!-- Post body -->
+          <article class="py-8" id="post-body" data-post-body>
+            <div class="prose has-drop-cap">
+
+              <p>Books have a unique power: they can transport you across continents, reframe your assumptions, and leave you fundamentally different by the final page. This list isn't curated for novelty — it's curated for impact.</p>
+
+              <h2 id="why-these-books">Why these books</h2>
+              <p>The criteria were deceptively simple: did the book change the way you see something you thought you already understood? The answers surprised us. History books challenged how we think about the present. Novels illuminated truths that journalism couldn't.</p>
+
+              <div class="prose-callout">
+                <p>"A book that changes you doesn't announce itself. You finish it and only realise, weeks later, that you're thinking differently." — Elena Marlow</p>
+              </div>
+
+              <h2 id="fiction-that-rewires">Fiction that rewires your brain</h2>
+              <p>The novels in this section aren't just good stories — they operate on multiple levels simultaneously. Reading them once is enough to be moved. Reading them again reveals an architecture you missed entirely.</p>
+
+              <h3 id="on-perception-and-reality">On perception and reality</h3>
+              <p>The first title explores how the stories we tell about ourselves become the stories we live by. It's formally experimental but never difficult, weaving three timelines together until the reader can no longer be sure which is which.</p>
+
+              <blockquote class="pull-quote">
+                <p>The greatest trick narrative plays is convincing you that you are outside it.</p>
+              </blockquote>
+
+              <h3 id="on-grief-and-time">On grief and time</h3>
+              <p>Grief literature can fall into predictable territory. This one does not. It is the most structurally inventive and emotionally precise account of loss we have encountered in years of editing.</p>
+
+              <h2 id="non-fiction-that-reads-like-fiction">Non-fiction that reads like fiction</h2>
+              <p>The best narrative non-fiction collapses the gap between literary pleasure and factual rigour. These titles share a gift for revealing the extraordinary in what should, by rights, be ordinary.</p>
+
+              <div class="prose-takeaways">
+                <h3>Key takeaways</h3>
+                <ul>
+                  <li>Narrative non-fiction benefits from close reading you'd bring to literary fiction.</li>
+                  <li>The most illuminating books often concern systems, not individuals.</li>
+                  <li>The most enduring titles tend to age into relevance rather than out of it.</li>
+                </ul>
+              </div>
+
+              <h2 id="how-to-read-this-list">How to read this list</h2>
+              <p>Don't treat it as a curriculum. These books might be exactly right for where you are right now. We've kept descriptions brief deliberately. The less you know going in, the more the book can do its work.</p>
+
+            </div>
+          </article>
+
+          <!-- Share row (after body) -->
+          <include src="blog/post-share.html"></include>
+
+          <!-- Author box -->
+          <div class="mt-8">
+            <include src="blog/post-author.html"></include>
+          </div>
+
+          <!-- Post nav -->
+          <div class="mt-8">
+            <include src="blog/post-nav.html"></include>
+          </div>
+
+          <!-- Comments -->
+          <div class="mt-8">
+            <include src="blog/comments.html"></include>
+          </div>
+
+          <!-- Comment form -->
+          <div class="mt-8">
+            <include src="blog/comment-form.html"></include>
+          </div>
+
+        </div><!-- /post column -->
+
+        <!-- Right sidebar (TOC + blog widgets) -->
+        <aside class="blog-sidebar" aria-label="Article sidebar">
+
+          <!-- Table of contents -->
+          <nav class="toc widget" id="post-toc" aria-label="On this page">
+            <p class="toc-title">On this page</p>
+            <ol class="toc-list" data-toc-list>
+              <!-- auto-populated by toc.js -->
+            </ol>
+          </nav>
+
+          <!-- Recent posts widget -->
+          <div class="widget">
+            <h2 class="widget-title">More to read</h2>
+            <ul class="flex flex-col gap-3">
+              <li class="widget-post">
+                <a href="blog-single.html" class="widget-post-thumb" aria-hidden="true" tabindex="-1">
+                  <div class="cover-art cover-2 w-full h-full rounded-none"></div>
+                </a>
+                <div class="widget-post-body">
+                  <a href="blog-single.html" class="widget-post-title">Why Reading Slowly Is the Ultimate Luxury</a>
+                  <span class="widget-post-meta"><time datetime="2026-05-28">May 28</time> &middot; 7 min</span>
+                </div>
+              </li>
+              <li class="widget-post">
+                <a href="blog-single.html" class="widget-post-thumb" aria-hidden="true" tabindex="-1">
+                  <div class="cover-art cover-3 w-full h-full rounded-none"></div>
+                </a>
+                <div class="widget-post-body">
+                  <a href="blog-single.html" class="widget-post-title">Behind the Shelves: Our Booksellers' Picks</a>
+                  <span class="widget-post-meta"><time datetime="2026-05-20">May 20</time> &middot; 4 min</span>
+                </div>
+              </li>
+              <li class="widget-post">
+                <a href="blog-single.html" class="widget-post-thumb" aria-hidden="true" tabindex="-1">
+                  <div class="cover-art cover-5 w-full h-full rounded-none"></div>
+                </a>
+                <div class="widget-post-body">
+                  <a href="blog-single.html" class="widget-post-title">Science Fiction's Best Kept Secrets</a>
+                  <span class="widget-post-meta"><time datetime="2026-05-08">May 8</time> &middot; 6 min</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter widget -->
+          <div class="widget bg-primary text-white rounded-card p-5">
+            <h2 class="font-heading font-bold text-base mb-2 text-white">Weekly reading picks</h2>
+            <p class="text-sm opacity-80 mb-4">Join 4,200 readers. New list every Thursday.</p>
+            <form data-form="newsletter-sidebar" novalidate aria-label="Newsletter sign-up">
+              <div class="flex flex-col gap-2">
+                <label class="sr-only" for="sidebar-newsletter-email">Email address</label>
+                <input class="form-input text-text bg-white" type="email" id="sidebar-newsletter-email" name="email" placeholder="your@email.com" required aria-required="true" autocomplete="email">
+                <button type="submit" class="btn bg-white text-primary hover:bg-neutral-100 w-full font-semibold">Subscribe</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Tags cloud -->
+          <div class="widget">
+            <h2 class="widget-title">Tags</h2>
+            <div class="tag-cloud">
+              <a href="blog-category.html?cat=fiction" class="filter-chip">Fiction</a>
+              <a href="blog-category.html?cat=reading-life" class="filter-chip">Reading Life</a>
+              <a href="blog-category.html?cat=staff-picks" class="filter-chip">Staff Picks</a>
+              <a href="blog-category.html?cat=history" class="filter-chip">History</a>
+              <a href="blog-category.html?cat=writing" class="filter-chip">Writing</a>
+              <a href="blog-category.html?cat=non-fiction" class="filter-chip">Non-Fiction</a>
+            </div>
+          </div>
+
+        </aside><!-- /sidebar -->
+
+      </div><!-- /.blog-layout -->
+    </div>
+
+    <!-- Related posts (full-width) -->
+    <include src="blog/related-posts.html"></include>
+
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

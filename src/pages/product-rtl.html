@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>فانوس خليج ألدريدج – بوكي</title>
+  <meta name="description" content="رواية أولى مضيئة تتحدث عن ابنة حارس المنارة التي تكشف سرًا عمره قرن من الزمان. أدب روائي. مُرشحة للقائمة الطويلة لجائزة بوكر. من <bdi>$16.99</bdi>.">
+  <link rel="canonical" href="https://booky.example.com/product-rtl.html">
+  <meta property="og:title" content="فانوس خليج ألدريدج – بوكي">
+  <meta property="og:description" content="مُرشحة للقائمة الطويلة لجائزة بوكر. اشتري من $16.99.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://booky.example.com/product-rtl.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">الانتقال إلى المحتوى</a>
+
+  <!-- RTL demo notice -->
+  <div class="bg-secondary text-text-on-dark text-sm py-2 px-4 text-center" role="note" dir="rtl">
+    <span>هذه صفحة عرض توضيحي للغة العربية (RTL) — </span>
+    <span dir="ltr" class="inline-block">Right-to-Left Demo Page</span>
+    <span> — </span>
+    <button type="button" data-rtl-toggle class="underline hover:no-underline font-medium ms-2" aria-pressed="true">
+      <span data-rtl-label>LTR</span>
+    </button>
+  </div>
+
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+    <!-- Breadcrumb -->
+    <div class="bg-surface-2 border-b border-border">
+      <div class="container-app py-4">
+        <nav aria-label="مسار التنقل">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index-rtl.html">الرئيسية</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item"><a href="shop-rtl.html">المتجر</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item"><a href="categories.html">الروايات</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item" aria-current="page">فانوس خليج ألدريدج</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Product main -->
+    <section class="section-y" aria-label="تفاصيل المنتج">
+      <div class="container-app">
+        <div class="grid lg:grid-cols-[1fr_1.1fr] gap-12 xl:gap-20 items-start">
+          <!-- Gallery -->
+          <div class="lg:sticky lg:top-24">
+            <include src="product/product-gallery.html"></include>
+          </div>
+          <!-- Summary -->
+          <div>
+            <include src="product/product-summary.html"></include>
+          </div>
+        </div>
+
+        <!-- Tabs: description / details / reviews -->
+        <include src="product/product-tabs.html"></include>
+
+        <!-- Bundle -->
+        <include src="product/product-bundle-picker.html"></include>
+
+        <!-- Related products -->
+        <include src="product/related-products.html"></include>
+      </div>
+    </section>
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

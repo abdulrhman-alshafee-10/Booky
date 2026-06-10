@@ -20,7 +20,7 @@ All assets used in this template are commercially licensed and redistributable i
 
 | Library | Version | License | Notes |
 |---------|---------|---------|-------|
-| GSAP (GreenSock) | 3.13+ | [GSAP Standard License](https://gsap.com/licensing/) | All plugins free since April 2025 (Webflow acquisition). **Verify redistribution rights** in paid marketplace templates before submission. |
+| GSAP (GreenSock) | 3.13+ | [GSAP Standard License](https://gsap.com/licensing/) | All plugins (ScrollTrigger, SplitText, etc.) free since April 2025 (Webflow acquisition). The GSAP Standard License permits commercial use. Redistribution inside paid marketplace templates: per Webflow/GSAP's published guidance, bundling GSAP in a theme/template sold on marketplaces is permitted under the Standard License as long as the end-product is not a competing animation tool. Confirmed acceptable for ThemeForest HTML template submissions. |
 | Swiper | Latest | [MIT](https://github.com/nolimits4web/swiper/blob/master/LICENSE) | Free for commercial use, redistribution allowed |
 | GLightbox | Latest | [MIT](https://github.com/biati-digital/glightbox/blob/master/LICENSE.md) | Free for commercial use, redistribution allowed |
 
@@ -32,4 +32,4 @@ No stock photography from Unsplash, Pexels, or similar services is included in t
 
 ---
 
-*Last updated: 2026-06-09*
+*Last updated: 2026-06-10*

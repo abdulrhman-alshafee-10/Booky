@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <include src="base/head.html"></include>
+
+  <title>My Downloads – Booky</title>
+  <meta name="description" content="Access your purchased eBooks and audiobooks from Booky. Download anytime.">
+  <link rel="canonical" href="https://booky.example.com/account-downloads.html">
+  <meta property="og:title" content="My Downloads – Booky">
+  <meta property="og:description" content="Download your purchased Booky eBooks and audiobooks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://booky.example.com/account-downloads.html">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="flex flex-col min-h-dvh">
+  <include src="icons/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <include src="headers/header-1.html"></include>
+
+  <main id="main">
+    <div class="bg-surface-2 border-b border-border">
+      <div class="container-app py-4">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item"><a href="account-dashboard.html">My Account</a></li>
+            <li class="breadcrumb-sep" aria-hidden="true"><svg focusable="false"><use href="#icon-chevron-right"></use></svg></li>
+            <li class="breadcrumb-item" aria-current="page">Downloads</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section class="section-y">
+      <div class="container-app">
+        <div class="account-layout">
+          <include src="account/account-sidebar.html"></include>
+
+          <div class="account-layout-main">
+            <h1 class="font-heading text-2xl font-bold mb-6">My Downloads</h1>
+
+            <div class="space-y-4">
+              <div class="download-item">
+                <div class="w-14 h-20 rounded overflow-hidden shrink-0"><div class="cover-art cover-2" style="aspect-ratio:2/3"></div></div>
+                <div class="download-item-info">
+                  <p class="font-semibold">The Quiet Algorithm</p>
+                  <p class="text-sm text-text-muted">D. Okonkwo · eBook (EPUB)</p>
+                  <p class="text-xs text-text-muted mt-1">Purchased Apr 14, 2026 · 2.4 MB</p>
+                  <div class="download-item-actions mt-2">
+                    <a href="#" class="btn btn-primary btn-sm" download aria-label="Download The Quiet Algorithm EPUB">
+                      <svg aria-hidden="true" focusable="false"><use href="#icon-download"></use></svg> Download EPUB
+                    </a>
+                    <a href="#" class="btn btn-outline btn-sm" download aria-label="Download The Quiet Algorithm PDF">Download PDF</a>
+                  </div>
+                </div>
+                <div class="text-sm text-text-muted shrink-0">2 remaining</div>
+              </div>
+
+              <div class="download-item">
+                <div class="w-14 h-20 rounded overflow-hidden shrink-0"><div class="cover-art cover-5" style="aspect-ratio:2/3"></div></div>
+                <div class="download-item-info">
+                  <p class="font-semibold">The Last Observatory</p>
+                  <p class="text-sm text-text-muted">Priya Venkataraman · Audiobook (MP3)</p>
+                  <p class="text-xs text-text-muted mt-1">Purchased Mar 2, 2026 · 312 MB</p>
+                  <div class="download-item-actions mt-2">
+                    <a href="#" class="btn btn-primary btn-sm" download aria-label="Download The Last Observatory audiobook">
+                      <svg aria-hidden="true" focusable="false"><use href="#icon-download"></use></svg> Download MP3
+                    </a>
+                  </div>
+                </div>
+                <div class="text-sm text-text-muted shrink-0">Unlimited</div>
+              </div>
+            </div>
+
+            <p class="text-sm text-text-muted mt-8">Download links are valid for 1 year from purchase. EPUB and PDF versions are DRM-free.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="footers/footer-1.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

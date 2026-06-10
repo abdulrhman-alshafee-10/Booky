@@ -8,10 +8,16 @@
   -->
   <script>
     (function () {
-      var stored, system;
+      var stored, system, dir;
       try { stored = localStorage.getItem("booky-theme"); } catch (e) {}
       system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       document.documentElement.setAttribute("data-theme", stored || system);
+      /* Restore RTL preference before first paint (no FOUC of direction) */
+      try { dir = localStorage.getItem("booky-dir"); } catch (e) {}
+      if (dir === "rtl") {
+        document.documentElement.dir = "rtl";
+        document.documentElement.lang = "ar";
+      }
     }());
   </script>
 
