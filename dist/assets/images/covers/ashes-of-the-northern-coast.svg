@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="Ashes of the Northern Coast by Henrik Vald">
+  <rect width="600" height="900" fill="#272729"/>
+  <text x="70" y="150" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#b89b6e" text-anchor="start" opacity="0.85">BOOKY PRESS</text>
+    <line x1="70" y1="180" x2="530" y2="180" stroke="#ece8e0" stroke-width="3" opacity="0.85"/>
+    <text x="70" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="50" fill="#ece8e0" text-anchor="start"><tspan x="70" dy="0">Ashes of the</tspan><tspan x="70" dy="53">Northern Coast</tspan></text>
+    <line x1="70" y1="750" x2="530" y2="750" stroke="#b89b6e" stroke-width="1.5" opacity="0.6"/>
+    <text x="70" y="790" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#ece8e0" text-anchor="start" opacity="0.85">HENRIK VALD</text>
+</svg>

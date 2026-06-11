@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Rare &amp; Used Books — Booky · Antiquarian Bookstore Demo</title>
+  <meta name="description" content="An antiquarian bookshop demo for Booky — parchment tones, sepia accents, and a wall of rare volumes. A shop that feels eighty years old. One of ten home styles.">
+  <link rel="canonical" href="https://booky.example.com/demo-vintage.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rare &amp; Used Books — Booky Vintage Demo">
+  <meta property="og:description" content="An antiquarian bookshop demo for Booky — parchment, sepia, and rare volumes.">
+  <meta property="og:url" content="https://booky.example.com/demo-vintage.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/a-history-of-quiet-things.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rare &amp; Used Books — Booky Vintage Demo">
+  <meta name="twitter:description" content="An antiquarian bookshop demo for Booky.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/a-history-of-quiet-things.svg">
+</head>
+<body class="demo-vintage">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+
+    <!-- H1 — single antique cover, ornament frame, one strapline -->
+    <section class="hero hero-centered section-deep" aria-labelledby="v-hero">
+      <svg class="ornament ornament-tl" aria-hidden="true"><use href="#i-leaf"></use></svg>
+      <svg class="ornament ornament-br" aria-hidden="true"><use href="#i-leaf"></use></svg>
+      <div class="container-narrow">
+        <span class="overline">Antiquarian &amp; rare · Est. MMXV</span>
+        <div class="mx-auto w-44 sm:w-52 mt-8">
+          <a class="cover" href="product.html" aria-label="View A History of Quiet Things"><img src="assets/images/covers/a-history-of-quiet-things.svg" alt="A History of Quiet Things — a rare first edition" width="600" height="900" loading="eager" fetchpriority="high" decoding="async"></a>
+        </div>
+        <h1 class="display mt-8">A library of second lives</h1>
+        <p class="mt-5 max-w-xl mx-auto text-ink-soft">First editions, out-of-print treasures, and well-loved volumes — each one catalogued, graded, and waiting for its next reader.</p>
+        <a class="btn mt-7" href="shop-left.html">Browse the collection</a>
+      </div>
+    </section>
+
+    <include src="sections/cover-wall.html"></include>
+    <include src="sections/genre-spotlight.html"></include>
+    <include src="sections/bestseller-spotlight.html"></include>
+    <include src="sections/testimonials.html"></include>
+    <include src="sections/latest-articles.html"></include>
+    <include src="sections/trust-strip.html"></include>
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="The Weight of Mornings by Jonah Reyes">
+  <rect width="600" height="900" fill="#46202b"/>
+  <text x="70" y="150" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#caa0a0" text-anchor="start" opacity="0.85">BOOKY PRESS</text>
+    <line x1="70" y1="180" x2="530" y2="180" stroke="#f0dfe0" stroke-width="3" opacity="0.85"/>
+    <text x="70" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#f0dfe0" text-anchor="start"><tspan x="70" dy="0">The Weight</tspan><tspan x="70" dy="61.480000000000004">of Mornings</tspan></text>
+    <line x1="70" y1="750" x2="530" y2="750" stroke="#caa0a0" stroke-width="1.5" opacity="0.6"/>
+    <text x="70" y="790" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#f0dfe0" text-anchor="start" opacity="0.85">JONAH REYES</text>
+</svg>

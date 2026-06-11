@@ -1,8 +1,36 @@
 /* ============================================================
    BOOKY — components/shop.css
-   Filled in later phases per plan.md §5–§6. Keep this file:
-   it is imported by input.css.
+   Phase 5 adds the store-engine UI (mini-cart drawer lines,
+   quick-view dialog, compact qty). Shop toolbar/filters/grid and
+   cart/checkout pages arrive in Phases 12–13.
 ============================================================ */
 @layer components {
-  /* shop components arrive in their phase */
+
+  /* ── Mini-cart drawer lines ────────────────────────────── */
+  .mc-line { display: flex; gap: 0.85rem; padding-block: 1rem; border-block-end: 1px solid var(--color-line); }
+  .mc-line-cover { inline-size: 3.25rem; flex-shrink: 0; }
+  .mc-line-body { flex: 1; min-inline-size: 0; }
+  .mc-line-title { font-family: var(--font-display); font-size: var(--text-sm); line-height: 1.25; color: var(--color-ink); }
+  .mc-line-author { font-size: var(--text-xs); color: var(--color-ink-faint); margin-block: 0.15rem 0.55rem; }
+  .mc-line-end { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: 0.5rem; }
+  .mc-remove { color: var(--color-ink-faint); background: none; border: 0; cursor: pointer; transition: color var(--duration-fast); }
+  .mc-remove:hover { color: var(--color-sale); }
+
+  .qty-sm button { inline-size: 1.9rem; block-size: 1.9rem; }
+  .qty-sm input { inline-size: 2.3rem; padding-block: 0.35rem; }
+
+  .mc-subtotal { display: flex; align-items: baseline; justify-content: space-between; }
+  .mc-subtotal .price { font-size: var(--text-xl); }
+  .drawer-foot .btn + .btn { margin-block-start: 0.25rem; }
+
+  /* ── Quick-view dialog ─────────────────────────────────── */
+  .modal-quickview { inline-size: min(46rem, 100%); padding: 0; overflow: hidden; }
+  .qv-grid { display: grid; }
+  @media (min-width: 640px) { .qv-grid { grid-template-columns: 0.85fr 1fr; } }
+  .qv-cover { display: flex; align-items: center; justify-content: center; padding: 2.5rem; background-color: var(--color-paper-deep); }
+  .qv-cover img { inline-size: auto; max-block-size: 19rem; border-radius: var(--radius-xs); box-shadow: var(--shadow-cover-lg); }
+  .qv-body { padding: 2rem; }
+  .qv-blurb { font-size: var(--text-sm); color: var(--color-ink-soft); line-height: 1.6; }
+  .qv-actions { display: flex; gap: 0.75rem; align-items: center; }
+  .qv-actions .btn { flex: 1; }
 }

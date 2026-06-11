@@ -1,0 +1,61 @@
+<!-- H1 — Split slider (flagship). Left: overline + serif title + line +
+     READ MORE link. Right: one floating cover. Swiper fade between 3
+     featured books. First cover is the LCP image (eager). -->
+<section class="hero hero-split section-deep" aria-label="Featured books">
+  <svg class="ornament ornament-tl" aria-hidden="true"><use href="#i-leaf"></use></svg>
+  <svg class="ornament ornament-br" aria-hidden="true"><use href="#i-leaf"></use></svg>
+  <div class="container-main">
+    <div class="booky-swiper" aria-roledescription="carousel" aria-label="Featured books">
+      <div class="swiper" data-swiper="hero">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="hero-slide">
+              <div class="hero-text">
+                <span class="overline">New this season</span>
+                <h1 class="display">The Lantern of Aldridge Bay</h1>
+                <p>A keeper's quiet record of one storm-bound winter — and the light that refused to go out. Eleanor Finch's most luminous novel yet.</p>
+                <a class="btn-link" href="product.html">Read more <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+              </div>
+              <div class="hero-cover-wrap">
+                <img class="hero-cover" src="assets/images/covers/the-lantern-of-aldridge-bay.svg" alt="The Lantern of Aldridge Bay by Eleanor Finch — book cover" width="600" height="900" loading="eager" fetchpriority="high" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="hero-slide">
+              <div class="hero-text">
+                <span class="overline">Editor's pick</span>
+                <h1 class="display">Salt &amp; Starlight</h1>
+                <p>Two islands, one tide, and a correspondence that spans forty years. A tender meditation on distance from Marina Vøllo.</p>
+                <a class="btn-link" href="product.html">Read more <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+              </div>
+              <div class="hero-cover-wrap">
+                <img class="hero-cover" src="assets/images/covers/salt-and-starlight.svg" alt="Salt and Starlight by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="hero-slide">
+              <div class="hero-text">
+                <span class="overline">Just arrived</span>
+                <h1 class="display">A Cartography of Dreams</h1>
+                <p>Petra Lindgren maps the places we visit only while sleeping — part atlas, part confession, wholly unforgettable.</p>
+                <a class="btn-link" href="product.html">Read more <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+              </div>
+              <div class="hero-cover-wrap">
+                <img class="hero-cover" src="assets/images/covers/a-cartography-of-dreams.svg" alt="A Cartography of Dreams by Petra Lindgren — book cover" width="600" height="900" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <button class="swiper-nav swiper-nav-prev" data-swiper-prev aria-label="Previous book"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg></button>
+      <button class="swiper-nav swiper-nav-next" data-swiper-next aria-label="Next book"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+      <div class="swiper-pagination booky-dots"></div>
+    </div>
+  </div>
+</section>

@@ -2,14 +2,91 @@
 <html lang="en">
 <head>
   <include src="base/head.html"></include>
-  <title>Booky — Premium Bookstore HTML Template</title>
-  <meta name="description" content="Booky — a premium bookstore HTML template. Phase 0 pipeline placeholder; the flagship home is assembled in Phase 8.">
+
+  <title>Booky — Editorial Bookstore &amp; eCommerce HTML Template</title>
+  <meta name="description" content="Booky is a premium, editorial bookstore HTML template — cream, serif, and built for booksellers. Featured titles, bestsellers, offers, and a calm reading-first design.">
+  <link rel="canonical" href="https://booky.example.com/">
+
+  <!-- LCP: preload the first hero cover -->
+  <link rel="preload" as="image" href="assets/images/covers/the-lantern-of-aldridge-bay.svg" fetchpriority="high">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Booky — Editorial Bookstore HTML Template">
+  <meta property="og:description" content="A premium, cream-and-serif bookstore template. Featured titles, bestsellers, offers, and a calm reading-first design.">
+  <meta property="og:url" content="https://booky.example.com/">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Booky — Editorial Bookstore HTML Template">
+  <meta name="twitter:description" content="A premium, cream-and-serif bookstore template for booksellers.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://booky.example.com/#organization",
+        "name": "Booky",
+        "url": "https://booky.example.com/",
+        "description": "An independent bookshop and online bookstore.",
+        "logo": "https://booky.example.com/assets/favicons/icon.svg",
+        "sameAs": [
+          "https://instagram.com/bookystore",
+          "https://twitter.com/bookystore"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://booky.example.com/#website",
+        "name": "Booky",
+        "url": "https://booky.example.com/",
+        "publisher": { "@id": "https://booky.example.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://booky.example.com/shop-left.html?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-<body>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
   <main id="main">
-    <h1>Booky</h1>
-    <p>Phase 0 scaffold — build pipeline is working. Design system arrives in Phase 1.</p>
+    <include src="heroes/hero-split.html"></include>
+    <include src="sections/category-strip.html"></include>
+    <include src="sections/featured-books.html"></include>
+    <include src="sections/bestseller-spotlight.html"></include>
+    <include src="sections/popular-tabs.html"></include>
+    <include src="sections/quote-day.html"></include>
+    <include src="sections/books-offer.html"></include>
+    <include src="sections/newsletter-band.html"></include>
+    <include src="sections/latest-articles.html"></include>
+    <include src="sections/trust-strip.html"></include>
   </main>
+
+  <include src="layout/footer.html"></include>
+
+  <!-- Overlays + global controls -->
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+
   <include src="base/scripts.html"></include>
 </body>
 </html>

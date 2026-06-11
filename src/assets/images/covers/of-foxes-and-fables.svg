@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="Of Foxes &amp; Fables by Edmund Clarke">
+  <rect width="600" height="900" fill="#22382e"/>
+  <circle cx="300" cy="300" r="150" fill="none" stroke="#bcae79" stroke-width="2" opacity="0.65"/>
+    <circle cx="300" cy="300" r="6" fill="#bcae79"/>
+    <text x="300" y="130" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#bcae79" text-anchor="middle" opacity="0.85">BOOKY PRESS</text>
+    <text x="300" y="560" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ece7d5" text-anchor="middle"><tspan x="300" dy="0">Of Foxes</tspan><tspan x="300" dy="68.64">&amp; Fables</tspan></text>
+    <text x="300" y="810" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#ece7d5" text-anchor="middle" opacity="0.85">EDMUND CLARKE</text>
+</svg>

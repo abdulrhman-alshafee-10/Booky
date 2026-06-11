@@ -1,0 +1,100 @@
+<!-- ============================================================
+     Header A — "Editorial" (plan §5.2)
+     Topbar · wordmark · centered nav (dropdown + mega) · actions
+============================================================ -->
+<header class="site-header" data-header>
+  <!-- Slim announcement bar -->
+  <div class="topbar">
+    <div class="container-main topbar-inner">
+      <p>Free shipping on orders over $35 — every order, every shelf.</p>
+      <span class="hidden sm:flex items-center gap-4">
+        <a href="account.html">My account</a>
+        <a href="contact.html">Help</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- Main bar -->
+  <div class="container-main header-main">
+    <div class="header-left">
+      <button class="header-burger lg:hidden" data-open="mobile-nav" aria-label="Open menu" aria-controls="mobile-nav">
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+      </button>
+      <a class="wordmark" href="index.html">Booky</a>
+    </div>
+
+    <nav class="primary-nav hidden lg:block" aria-label="Primary">
+      <ul>
+        <li><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+        <li class="has-menu">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="mega-shop">
+            Shop <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <div class="mega" id="mega-shop" role="menu">
+            <div class="mega-grid">
+              <div class="mega-col">
+                <h3>Fiction</h3>
+                <a href="shop-left.html" role="menuitem">Literary</a>
+                <a href="shop-left.html" role="menuitem">Mystery &amp; thriller</a>
+                <a href="shop-left.html" role="menuitem">Romance</a>
+                <a href="shop-left.html" role="menuitem">Science fiction</a>
+              </div>
+              <div class="mega-col">
+                <h3>Non-fiction</h3>
+                <a href="shop-left.html" role="menuitem">Biography</a>
+                <a href="shop-left.html" role="menuitem">History</a>
+                <a href="shop-left.html" role="menuitem">Essays</a>
+                <a href="shop-left.html" role="menuitem">Cookery</a>
+              </div>
+              <div class="mega-col">
+                <h3>Browse</h3>
+                <a href="shop-left.html" role="menuitem">New arrivals</a>
+                <a href="shop-right.html" role="menuitem">Bestsellers</a>
+                <a href="shop-full.html" role="menuitem">On offer</a>
+                <a href="authors.html" role="menuitem">Authors</a>
+              </div>
+              <a class="mega-feature" href="shop-full.html" role="menuitem">
+                <span class="mega-feature-art" aria-hidden="true"></span>
+                <span class="mega-feature-body">
+                  <span class="overline">This month</span>
+                  <span class="block font-display text-lg text-ink mt-1">The autumn reading list</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="has-menu">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="dd-pages">
+            Pages <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+          </button>
+          <ul class="dropdown" id="dd-pages" role="menu">
+            <li><a href="about.html" role="menuitem">About</a></li>
+            <li><a href="authors.html" role="menuitem">Authors</a></li>
+            <li><a href="faq.html" role="menuitem">FAQ</a></li>
+            <li><a href="contact.html" role="menuitem">Contact</a></li>
+            <li><a href="styleguide.html" role="menuitem">Style guide</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link" href="blog-grid.html">Blog</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="header-action" data-open="search-overlay" aria-label="Search">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+      </button>
+      <a class="header-action hidden sm:inline-grid" href="account.html" aria-label="My account">
+        <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+      </a>
+      <a class="header-action" href="wishlist.html" aria-label="Wishlist">
+        <svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg>
+        <span class="count" data-wishlist-count hidden>0</span>
+      </a>
+      <button class="header-action" data-open="mini-cart" aria-label="Open cart">
+        <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>
+        <span class="count" data-cart-count hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>

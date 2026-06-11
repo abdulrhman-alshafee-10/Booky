@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="Salt &amp; Starlight by Marenne Vale">
+  <rect width="600" height="900" fill="#3b2a4a"/>
+  <circle cx="300" cy="300" r="150" fill="none" stroke="#c39ccd" stroke-width="2" opacity="0.65"/>
+    <circle cx="300" cy="300" r="6" fill="#c39ccd"/>
+    <text x="300" y="130" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#c39ccd" text-anchor="middle" opacity="0.85">BOOKY PRESS</text>
+    <text x="300" y="560" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#ece2ec" text-anchor="middle"><tspan x="300" dy="0">Salt &amp;</tspan><tspan x="300" dy="68.64">Starlight</tspan></text>
+    <text x="300" y="810" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#ece2ec" text-anchor="middle" opacity="0.85">MARENNE VALE</text>
+</svg>

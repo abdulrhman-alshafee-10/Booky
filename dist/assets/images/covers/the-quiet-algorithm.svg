@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="The Quiet Algorithm by D. Okonkwo">
+  <rect width="600" height="900" fill="#37434c"/>
+  <text x="70" y="150" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#cdb489" text-anchor="start" opacity="0.85">BOOKY PRESS</text>
+    <line x1="70" y1="180" x2="530" y2="180" stroke="#e9eef0" stroke-width="3" opacity="0.85"/>
+    <text x="70" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#e9eef0" text-anchor="start"><tspan x="70" dy="0">The Quiet</tspan><tspan x="70" dy="69.96000000000001">Algorithm</tspan></text>
+    <line x1="70" y1="750" x2="530" y2="750" stroke="#cdb489" stroke-width="1.5" opacity="0.6"/>
+    <text x="70" y="790" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#e9eef0" text-anchor="start" opacity="0.85">D. OKONKWO</text>
+</svg>

@@ -1,0 +1,51 @@
+<!-- ============================================================
+     Mobile off-canvas navigation (drawer) — plan §5.2
+     Opened by [data-open="mobile-nav"]; managed by dialog.js.
+     Submenus use the accordion pattern (accordion.js).
+============================================================ -->
+<div class="overlay overlay-drawer" id="mobile-nav" data-overlay>
+  <div class="overlay-backdrop" data-close></div>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer-head">
+      <a class="wordmark" href="index.html">Booky</a>
+      <button class="drawer-close" data-close aria-label="Close menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <nav class="drawer-body" aria-label="Mobile">
+      <ul class="drawer-nav" data-accordion data-accordion-single>
+        <li><a href="index.html">Home</a></li>
+        <li class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="m-shop">Shop <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+          <div class="accordion-panel" id="m-shop"><div><div class="accordion-panel-inner flex flex-col gap-2">
+            <a href="shop-left.html">Literary</a>
+            <a href="shop-left.html">Mystery &amp; thriller</a>
+            <a href="shop-right.html">Bestsellers</a>
+            <a href="shop-full.html">On offer</a>
+          </div></div></div>
+        </li>
+        <li class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="m-pages">Pages <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+          <div class="accordion-panel" id="m-pages"><div><div class="accordion-panel-inner flex flex-col gap-2">
+            <a href="about.html">About</a>
+            <a href="authors.html">Authors</a>
+            <a href="faq.html">FAQ</a>
+            <a href="styleguide.html">Style guide</a>
+          </div></div></div>
+        </li>
+        <li><a href="blog-grid.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="drawer-foot">
+      <a class="btn btn-outline btn-block" href="account.html">My account</a>
+      <div class="social-row">
+        <a class="social-link" href="#" aria-label="Booky on Instagram"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+        <a class="social-link" href="#" aria-label="Booky on X"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-twitter"></use></svg></a>
+        <a class="social-link" href="#" aria-label="Booky on Facebook"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+      </div>
+    </div>
+  </aside>
+</div>

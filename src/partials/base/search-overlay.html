@@ -1,0 +1,28 @@
+<!-- ============================================================
+     Search overlay — plan §5.2
+     Opened by [data-open="search-overlay"]; managed by dialog.js +
+     search-overlay.js (autofocus, clear on close).
+============================================================ -->
+<div class="overlay overlay-search" id="search-overlay" data-overlay role="dialog" aria-modal="true" aria-label="Search the shop">
+  <div class="overlay-backdrop" data-close></div>
+  <div class="search-panel">
+    <div class="container-narrow">
+      <button class="search-close" data-close aria-label="Close search">
+        <svg class="icon icon-lg" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+      <span class="overline">Search the shelves</span>
+      <form class="search-form mt-3" action="shop-left.html" role="search">
+        <label class="sr-only" for="site-search">Search books</label>
+        <input class="search-input-lg" id="site-search" type="search" name="q" placeholder="Title, author, ISBN…" data-autofocus autocomplete="off">
+        <button class="btn-link" type="submit">Search <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+      </form>
+      <div class="popular-tags">
+        <span class="overline overline--muted">Popular</span>
+        <a class="chip" href="shop-left.html">Literary fiction</a>
+        <a class="chip" href="shop-left.html">Booker winners</a>
+        <a class="chip" href="shop-left.html">Poetry</a>
+        <a class="chip" href="shop-left.html">New this week</a>
+      </div>
+    </div>
+  </div>
+</div>

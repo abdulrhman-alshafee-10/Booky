@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Modern Books — Booky · Minimal Bookstore Demo</title>
+  <meta name="description" content="A type-led, minimal bookstore demo for Booky — zero decoration, generous white space, and a cool ink-blue accent. One of ten home styles.">
+  <link rel="canonical" href="https://booky.example.com/demo-minimal.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Modern Books — Booky Minimal Demo">
+  <meta property="og:description" content="A type-led, minimal bookstore demo for Booky.">
+  <meta property="og:url" content="https://booky.example.com/demo-minimal.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-quiet-algorithm.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Modern Books — Booky Minimal Demo">
+  <meta name="twitter:description" content="A type-led, minimal bookstore demo for Booky.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-quiet-algorithm.svg">
+</head>
+<body class="demo-minimal">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header-minimal.html"></include>
+
+  <main id="main">
+
+    <!-- H2 — Centered statement (one CTA, no decoration) -->
+    <section class="hero hero-centered" aria-labelledby="m-hero">
+      <div class="container-narrow">
+        <span class="overline">A modern bookshop</span>
+        <h1 class="display" id="m-hero">Fewer books. Better ones.</h1>
+        <p class="hero-lead">A tightly edited shelf for readers who would rather own ten books they love than a hundred they won't finish.</p>
+        <div class="hero-actions">
+          <a class="btn" href="shop-left.html">Browse the edit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- S2 — Asymmetric: 3 editorial cards + a compact cover list -->
+    <section class="section" aria-labelledby="m-edit">
+      <div class="container-main">
+        <div class="section-head">
+          <span class="overline">This season</span>
+          <h2 id="m-edit">The selection</h2>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-12 mt-10">
+          <div class="lg:col-span-2 grid sm:grid-cols-3 gap-6">
+            <article class="card-editorial" data-product-id="bk-03" data-product-title="The Quiet Algorithm" data-product-author="D. Okonkwo" data-product-price="14.50" data-product-cover="the-quiet-algorithm">
+              <div class="card-media">
+                <a class="cover" href="product.html" aria-label="View The Quiet Algorithm"><img src="assets/images/covers/the-quiet-algorithm.svg" alt="The Quiet Algorithm by D. Okonkwo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+                <div class="cover-actions">
+                  <button class="cover-icon-btn" data-add-to-cart aria-label="Add The Quiet Algorithm to cart"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg></button>
+                  <button class="cover-icon-btn" data-quickview aria-label="Quick view The Quiet Algorithm"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg></button>
+                  <button class="cover-icon-btn" data-wishlist aria-label="Save The Quiet Algorithm to wishlist"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-heart"></use></svg></button>
+                </div>
+              </div>
+              <div class="card-editorial-body">
+                <span class="card-overline">Essays</span>
+                <a class="card-title" href="product.html">The Quiet Algorithm</a>
+                <a class="card-author" href="author.html">D. Okonkwo</a>
+                <div class="price-group"><span class="price">$14.50</span></div>
+              </div>
+            </article>
+            <article class="card-editorial" data-product-id="bk-10" data-product-title="The Last Observatory" data-product-author="Nadia Soto" data-product-price="17.00" data-product-cover="the-last-observatory">
+              <div class="card-media">
+                <a class="cover" href="product.html" aria-label="View The Last Observatory"><img src="assets/images/covers/the-last-observatory.svg" alt="The Last Observatory by Nadia Soto — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+                <div class="cover-actions">
+                  <button class="cover-icon-btn" data-add-to-cart aria-label="Add The Last Observatory to cart"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg></button>
+                  <button class="cover-icon-btn" data-quickview aria-label="Quick view The Last Observatory"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg></button>
+                  <button class="cover-icon-btn" data-wishlist aria-label="Save The Last Observatory to wishlist"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-heart"></use></svg></button>
+                </div>
+              </div>
+              <div class="card-editorial-body">
+                <span class="card-overline">Fiction</span>
+                <a class="card-title" href="product.html">The Last Observatory</a>
+                <a class="card-author" href="author.html">Nadia Soto</a>
+                <div class="price-group"><span class="price">$17.00</span></div>
+              </div>
+            </article>
+            <article class="card-editorial" data-product-id="bk-13" data-product-title="A History of Quiet Things" data-product-author="Wren Adler" data-product-price="19.00" data-product-cover="a-history-of-quiet-things">
+              <div class="card-media">
+                <a class="cover" href="product.html" aria-label="View A History of Quiet Things"><img src="assets/images/covers/a-history-of-quiet-things.svg" alt="A History of Quiet Things by Wren Adler — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+                <div class="cover-actions">
+                  <button class="cover-icon-btn" data-add-to-cart aria-label="Add A History of Quiet Things to cart"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg></button>
+                  <button class="cover-icon-btn" data-quickview aria-label="Quick view A History of Quiet Things"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg></button>
+                  <button class="cover-icon-btn" data-wishlist aria-label="Save A History of Quiet Things to wishlist"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-heart"></use></svg></button>
+                </div>
+              </div>
+              <div class="card-editorial-body">
+                <span class="card-overline">Poetry</span>
+                <a class="card-title" href="product.html">A History of Quiet Things</a>
+                <a class="card-author" href="author.html">Wren Adler</a>
+                <div class="price-group"><span class="price">$19.00</span></div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="lg:col-span-1">
+            <span class="overline">Also worth your shelf</span>
+            <ul class="mt-5 border-t border-line">
+              <li class="flex items-center gap-4 py-4 border-b border-line"><a class="cover w-12 shrink-0" href="product.html" aria-label="View Salt and Starlight"><img src="assets/images/covers/salt-and-starlight.svg" alt="Salt and Starlight — book cover" width="600" height="900" loading="lazy" decoding="async"></a><span class="min-w-0"><a class="card-title block" href="product.html">Salt and Starlight</a><span class="card-author">Marina Vøllo</span></span><span class="price ml-auto">$18.50</span></li>
+              <li class="flex items-center gap-4 py-4 border-b border-line"><a class="cover w-12 shrink-0" href="product.html" aria-label="View The Cartographer's Oath"><img src="assets/images/covers/the-cartographers-oath.svg" alt="The Cartographer's Oath — book cover" width="600" height="900" loading="lazy" decoding="async"></a><span class="min-w-0"><a class="card-title block" href="product.html">The Cartographer's Oath</a><span class="card-author">A. J. Crewe</span></span><span class="price ml-auto">$16.50</span></li>
+              <li class="flex items-center gap-4 py-4 border-b border-line"><a class="cover w-12 shrink-0" href="product.html" aria-label="View Letters to the Sea"><img src="assets/images/covers/letters-to-the-sea.svg" alt="Letters to the Sea — book cover" width="600" height="900" loading="lazy" decoding="async"></a><span class="min-w-0"><a class="card-title block" href="product.html">Letters to the Sea</a><span class="card-author">Cora Bellweather</span></span><span class="price ml-auto">$13.00</span></li>
+              <li class="flex items-center gap-4 py-4 border-b border-line"><a class="cover w-12 shrink-0" href="product.html" aria-label="View The Glasshouse Year"><img src="assets/images/covers/the-glasshouse-year.svg" alt="The Glasshouse Year — book cover" width="600" height="900" loading="lazy" decoding="async"></a><span class="min-w-0"><a class="card-title block" href="product.html">The Glasshouse Year</a><span class="card-author">Sibyl Hartmann</span></span><span class="price ml-auto">$17.50</span></li>
+              <li class="flex items-center gap-4 py-4 border-b border-line"><a class="cover w-12 shrink-0" href="product.html" aria-label="View The Paper Observatory"><img src="assets/images/covers/the-paper-observatory.svg" alt="The Paper Observatory — book cover" width="600" height="900" loading="lazy" decoding="async"></a><span class="min-w-0"><a class="card-title block" href="product.html">The Paper Observatory</a><span class="card-author">Lia Moreau</span></span><span class="price ml-auto">$14.50</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- S1 — Text genre strip (no icons) -->
+    <section class="section" aria-labelledby="m-genres">
+      <div class="container-main">
+        <div class="section-head">
+          <span class="overline">Browse</span>
+          <h2 id="m-genres">By genre</h2>
+        </div>
+        <div class="genre-strip mt-8">
+          <a href="shop-left.html"><span class="genre-strip-name">Literary fiction</span><span class="genre-strip-count">248</span></a>
+          <a href="shop-left.html"><span class="genre-strip-name">Essays</span><span class="genre-strip-count">112</span></a>
+          <a href="shop-left.html"><span class="genre-strip-name">Poetry</span><span class="genre-strip-count">96</span></a>
+          <a href="shop-left.html"><span class="genre-strip-name">Translated</span><span class="genre-strip-count">74</span></a>
+          <a href="shop-left.html"><span class="genre-strip-name">Art &amp; design</span><span class="genre-strip-count">58</span></a>
+          <a href="shop-left.html"><span class="genre-strip-name">Nature</span><span class="genre-strip-count">132</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- S5 — Quote, floating in white space -->
+    <section class="section" aria-labelledby="m-quote">
+      <div class="container-narrow quote-day">
+        <h2 id="m-quote" class="sr-only">On reading</h2>
+        <blockquote>"The shelf should hold only what you would read twice."</blockquote>
+        <p class="quote-day-attr">The Booky editors</p>
+      </div>
+    </section>
+
+    <!-- S8 — Articles, 2-up wide, arrow links only -->
+    <section class="section" aria-labelledby="m-journal">
+      <div class="container-main">
+        <div class="section-head">
+          <span class="overline">Journal</span>
+          <h2 id="m-journal">Notes from the shop</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-10 mt-10">
+          <article class="card-article">
+            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-2.svg" alt="A stack of clothbound books on a desk" width="900" height="600" loading="lazy" decoding="async"></a>
+            <div class="card-article-meta"><span>Essay</span><span class="dot" aria-hidden="true"></span><time datetime="2026-05-09">9 May 2026</time></div>
+            <a class="card-article-title" href="blog-single.html">The case for the small library</a>
+            <div class="card-article-foot"><span>5 min read</span><span class="btn-link">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span></div>
+          </article>
+          <article class="card-article">
+            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-3.svg" alt="A writer's desk at dawn" width="900" height="600" loading="lazy" decoding="async"></a>
+            <div class="card-article-meta"><span>Lists</span><span class="dot" aria-hidden="true"></span><time datetime="2026-04-27">27 Apr 2026</time></div>
+            <a class="card-article-title" href="blog-single.html">Six books that earn their reread</a>
+            <div class="card-article-foot"><span>7 min read</span><span class="btn-link">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- S7 — Newsletter, centered on white (no band) -->
+    <section class="section" aria-labelledby="m-news">
+      <div class="container-prose text-center">
+        <span class="overline">Stay in touch</span>
+        <h2 id="m-news" class="mt-3">One email. Every Friday.</h2>
+        <p class="mt-4 text-ink-soft">The week's single best book, and nothing else.</p>
+        <form data-newsletter class="mt-7 max-w-md mx-auto">
+          <div class="field">
+            <div class="newsletter-inline">
+              <label class="sr-only" for="m-email">Email address</label>
+              <input id="m-email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+              <button class="btn-link" type="submit">Send <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <include src="layout/footer-slim.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

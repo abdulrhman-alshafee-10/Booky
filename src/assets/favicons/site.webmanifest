@@ -1,0 +1,10 @@
+{
+  "name": "Booky — Premium Bookstore Template",
+  "short_name": "Booky",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "theme_color": "#f7f4ee",
+  "background_color": "#f7f4ee",
+  "display": "standalone"
+}

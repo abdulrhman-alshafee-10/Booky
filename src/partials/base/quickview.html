@@ -1,0 +1,37 @@
+<!-- ============================================================
+     Quick-view dialog — opened by [data-quickview]; populated by
+     quickview.js, open/close/focus-trap by dialog.js.
+============================================================ -->
+<div class="overlay overlay-center" id="quickview" data-overlay role="dialog" aria-modal="true" aria-labelledby="qv-title">
+  <div class="overlay-backdrop" data-close></div>
+  <div class="modal modal-quickview" data-product-id="">
+    <button class="modal-close" data-close aria-label="Close quick view"><svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg></button>
+    <div class="qv-grid">
+      <div class="qv-cover" data-qv-cover></div>
+      <div class="qv-body">
+        <span class="card-overline" data-qv-genre>Fiction</span>
+        <h2 id="qv-title" class="text-2xl mt-1" data-qv-title>Title</h2>
+        <a class="card-author mt-1" data-qv-author href="author.html">Author</a>
+        <span class="rating mt-3" role="img" aria-label="Rated 4.5 of 5">
+          <svg class="icon icon-fill" aria-hidden="true"><use href="#i-star"></use></svg>
+          <svg class="icon icon-fill" aria-hidden="true"><use href="#i-star"></use></svg>
+          <svg class="icon icon-fill" aria-hidden="true"><use href="#i-star"></use></svg>
+          <svg class="icon icon-fill" aria-hidden="true"><use href="#i-star"></use></svg>
+          <span class="star-half"><svg class="icon icon-fill star-bg" aria-hidden="true"><use href="#i-star"></use></svg><svg class="icon icon-fill star-fg" aria-hidden="true"><use href="#i-star"></use></svg></span>
+          <span class="rating-count">(128)</span>
+        </span>
+        <div class="price-group mt-4"><span class="price text-xl" data-qv-price>$0.00</span></div>
+        <p class="qv-blurb mt-4">A carefully chosen Booky title. Visit the full page for the complete synopsis, reviews, and every available format.</p>
+        <div class="qv-actions mt-6">
+          <div class="qty" role="group" aria-label="Quantity">
+            <button type="button" aria-label="Decrease"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-minus"></use></svg></button>
+            <input type="number" value="1" min="1" max="99" data-qty-field aria-label="Quantity">
+            <button type="button" aria-label="Increase"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-plus"></use></svg></button>
+          </div>
+          <button class="btn btn-block" data-add-to-cart>Add to cart</button>
+        </div>
+        <a class="btn-link mt-5" href="product.html">Full details <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+      </div>
+    </div>
+  </div>
+</div>

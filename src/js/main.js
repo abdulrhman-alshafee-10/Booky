@@ -1,9 +1,42 @@
 /**
  * BOOKY — app entry → dist/assets/js/main.js
  * Feature modules are imported and initialised here as phases land
- * (plan.md §12). Every module must no-op cleanly when its markup
- * is absent from the page.
+ * (plan.md §12). Every module no-ops cleanly when its markup is absent.
  */
+import { initStore }         from "./modules/store.js";
+import { initHeader }        from "./modules/header.js";
+import { initDialogs }       from "./modules/dialog.js";
+import { initMobileNav }     from "./modules/mobile-nav.js";
+import { initSearchOverlay } from "./modules/search-overlay.js";
+import { initTabs }          from "./modules/tabs.js";
+import { initAccordions }    from "./modules/accordion.js";
+import { initToasts }        from "./modules/toast.js";
+import { initBackToTop }     from "./modules/back-to-top.js";
+import { initQuantity }      from "./modules/quantity.js";
+import { initCart }          from "./modules/cart-ui.js";
+import { initWishlist }      from "./modules/wishlist.js";
+import { initCompare }       from "./modules/compare.js";
+import { initQuickview }     from "./modules/quickview.js";
+import { initCarousels }     from "./modules/carousel.js";
+import { initCountdowns }    from "./modules/countdown.js";
+import { initForms }         from "./modules/forms.js";
 
-/* Marks JS availability for progressive-enhancement hooks. */
 document.documentElement.classList.add("js");
+
+initStore();
+initHeader();
+initDialogs();
+initMobileNav();
+initSearchOverlay();
+initTabs();
+initAccordions();
+initToasts();
+initBackToTop();
+initQuantity();
+initCart();
+initWishlist();
+initCompare();
+initQuickview();
+initCarousels();
+initCountdowns();
+initForms();

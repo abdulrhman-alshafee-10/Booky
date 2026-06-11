@@ -1,0 +1,41 @@
+<!-- ============================================================
+     Header B — "Minimal" (plan §5.2)
+     Centered wordmark · nav split left/right · no topbar/mega.
+     Used by demo-minimal and demo-author.
+============================================================ -->
+<header class="site-header header-minimal" data-header>
+  <div class="container-main header-main">
+    <div class="header-left">
+      <button class="header-burger lg:hidden" data-open="mobile-nav" aria-label="Open menu" aria-controls="mobile-nav">
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+      </button>
+      <nav class="nav-min nav-min-left hidden lg:flex" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="shop-left.html">Shop</a>
+        <a class="nav-link" href="blog-grid.html">Journal</a>
+      </nav>
+    </div>
+
+    <a class="wordmark" href="index.html">Booky</a>
+
+    <div class="header-right-min">
+      <nav class="nav-min nav-min-right hidden lg:flex" aria-label="Secondary">
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="header-action" data-open="search-overlay" aria-label="Search">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        </button>
+        <a class="header-action" href="wishlist.html" aria-label="Wishlist">
+          <svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg>
+          <span class="count" data-wishlist-count hidden>0</span>
+        </a>
+        <button class="header-action" data-open="mini-cart" aria-label="Open cart">
+          <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>
+          <span class="count" data-cart-count hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,12 +1,197 @@
 /* ============================================================
-   BOOKY — design tokens
-   Phase 1 fills the complete spec (plan.md §4):
-   light palette · dark set · type · spacing · radius · shadow ·
-   z-scale · motion · containers · per-demo accents.
-   The values below are a minimal valid seed only.
+   BOOKY — design tokens (plan.md §4)
+   Single source of truth. Buyers re-skin the template by
+   editing this file only.
+
+   1. @theme        — light palette (global default) + type +
+                      spacing + radius + shadow + motion + misc
+   2. Keyframes
+   3. Dark set      — [data-theme="dark"], used ONLY by the two
+                      dark-first demos (baked at build, no toggle)
+   4. Demo accents  — .demo-* blocks arrive in Phases 9–11
 ============================================================ */
+
+/* ── 1. Tokens ────────────────────────────────────────────── */
 @theme {
-  /* seed tokens — replaced by the full Phase 1 spec */
-  --color-paper: oklch(0.97 0.008 85);
-  --color-ink: oklch(0.24 0.012 65);
+
+  /* ----- Color · light (Booksaw mood: cream, ink, bronze) ----- */
+  --color-paper:        oklch(0.97 0.008 85);    /* page background — warm ivory   */
+  --color-paper-deep:   oklch(0.938 0.013 82);   /* alternating section band       */
+  --color-surface:      oklch(0.995 0.002 90);   /* cards, inputs, dropdowns       */
+
+  --color-ink:          oklch(0.24 0.012 65);    /* headings, primary text         */
+  --color-ink-soft:     oklch(0.45 0.014 70);    /* body & secondary text          */
+  --color-ink-faint:    oklch(0.58 0.012 72);    /* hints, placeholders, meta      */
+
+  --color-line:         oklch(0.885 0.010 80);   /* hairline rules & borders       */
+  --color-line-strong:  oklch(0.78 0.012 76);    /* input borders, active edges    */
+
+  --color-btn:          oklch(0.24 0.012 65);    /* primary action fill (charcoal) */
+  --color-btn-ink:      oklch(0.97 0.008 85);    /* text on primary action         */
+
+  --color-accent:       oklch(0.55 0.10 65);     /* THE accent — antique bronze    */
+  --color-accent-soft:  oklch(0.55 0.10 65 / 0.10);
+  --color-gold:         oklch(0.72 0.13 85);     /* rating stars                   */
+  --color-sale:         oklch(0.54 0.17 28);     /* sale price / ribbon — madder   */
+
+  --color-success:      oklch(0.55 0.12 150);
+  --color-success-soft: oklch(0.55 0.12 150 / 0.12);
+  --color-warning:      oklch(0.68 0.13 80);
+  --color-warning-soft: oklch(0.68 0.13 80 / 0.14);
+  --color-danger:       oklch(0.54 0.17 28);
+  --color-danger-soft:  oklch(0.54 0.17 28 / 0.10);
+  --color-info:         oklch(0.52 0.09 245);
+  --color-info-soft:    oklch(0.52 0.09 245 / 0.10);
+
+  --color-overlay:      oklch(0.24 0.012 65 / 0.55);   /* dialog scrim  */
+  --color-focus:        oklch(0.55 0.10 65 / 0.60);    /* focus ring    */
+
+  /* ----- Typography ----- */
+  --font-display: "Prata", "Georgia", serif;              /* elegant high-contrast serif */
+  --font-body:    "Jost", "Segoe UI", system-ui, sans-serif;
+  --font-sans:    "Jost", "Segoe UI", system-ui, sans-serif; /* tailwind default alias  */
+
+  --text-overline: 0.6875rem;   /* 11px — small-caps section labels */
+  --text-xs:       0.75rem;
+  --text-sm:       0.875rem;
+  --text-base:     1rem;
+  --text-lg:       1.125rem;
+  --text-xl:       1.375rem;
+  --text-2xl:      1.75rem;
+  --text-3xl:      2.25rem;
+  --text-4xl:      3rem;
+  --text-display:  clamp(2.5rem, 1.5rem + 4vw, 4.25rem);
+
+  /* ----- Spacing extensions (4px scale continues) ----- */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+
+  /* ----- Radius — near-square language, no pills ----- */
+  --radius-xs:   2px;      /* covers, images          */
+  --radius-sm:   4px;      /* buttons, inputs         */
+  --radius-md:   8px;      /* cards that need it      */
+  --radius-full: 9999px;   /* avatars & dots ONLY     */
+
+  /* ----- Elevation — shadows belong to covers, not cards ----- */
+  --shadow-cover:    0 18px 40px -18px oklch(0.30 0.04 60 / 0.35);
+  --shadow-cover-lg: 0 30px 70px -25px oklch(0.30 0.04 60 / 0.45);
+  --shadow-drop:     0 10px 30px -12px oklch(0.30 0.04 60 / 0.22);
+  --shadow-modal:    0 30px 90px -20px oklch(0.20 0.03 60 / 0.40);
+
+  /* ----- Motion ----- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-smooth: cubic-bezier(0.45, 0, 0.55, 1);
+  --duration-fast:   150ms;
+  --duration-base:   300ms;
+  --duration-slow:   600ms;
+  --duration-slower: 900ms;
+
+  --animate-fade-up: fadeUp var(--duration-slow) var(--ease-out) both;
+  --animate-fade-in: fadeIn var(--duration-base) var(--ease-out) both;
+
+  /* ----- Layout ----- */
+  --container-main:   1240px;
+  --container-narrow: 1000px;
+  --container-prose:  720px;
+  --section-y: clamp(4.5rem, 9vw, 8rem);
+
+  /* ----- Z scale ----- */
+  --z-header:   10;
+  --z-dropdown: 20;
+  --z-drawer:   30;
+  --z-modal:    40;
+  --z-toast:    50;
+}
+
+/* ── 2. Keyframes ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── 3. Dark set — ONLY the two dark-first demos ──────────────
+   Baked statically: <html data-theme="dark">. No runtime toggle
+   exists anywhere in the template. A "night library": deep, nearly
+   neutral charcoal (no brown/orange cast) lit by a soft brass-gold
+   accent and cream type. Depth from lighter edges, covers glow. */
+[data-theme="dark"] {
+  --color-paper:       oklch(0.18 0.008 255);  /* deep neutral charcoal  */
+  --color-paper-deep:  oklch(0.215 0.009 255);
+  --color-surface:     oklch(0.245 0.010 255);
+
+  --color-ink:         oklch(0.94 0.006 90);   /* warm off-white         */
+  --color-ink-soft:    oklch(0.74 0.008 85);
+  --color-ink-faint:   oklch(0.60 0.008 85);
+
+  --color-line:        oklch(0.31 0.009 255);
+  --color-line-strong: oklch(0.42 0.011 255);
+
+  --color-btn:         oklch(0.94 0.006 90);   /* cream bar on dark      */
+  --color-btn-ink:     oklch(0.18 0.008 255);
+
+  /* accent — soft brass/parchment gold (not ember orange) */
+  --color-accent:      oklch(0.80 0.075 80);
+  --color-accent-soft: oklch(0.80 0.075 80 / 0.16);
+  --color-gold:        oklch(0.83 0.10 86);
+  --color-sale:        oklch(0.70 0.15 28);
+
+  --color-overlay:     oklch(0.06 0.01 255 / 0.72);
+  --color-focus:       oklch(0.80 0.075 80 / 0.6);
+
+  /* shadows soften — edges do the work in the dark */
+  --shadow-cover:    0 18px 40px -16px oklch(0 0 0 / 0.55);
+  --shadow-cover-lg: 0 30px 70px -22px oklch(0 0 0 / 0.65);
+  --shadow-drop:     0 10px 30px -10px oklch(0 0 0 / 0.50);
+  --shadow-modal:    0 30px 90px -18px oklch(0 0 0 / 0.70);
+}
+
+/* ── 4. Demo accent blocks (.demo-*) ───────────────────────────
+   Each demo sets a class on <body> and overrides only the tokens it
+   needs. Demo 1 (the flagship) inherits the global default — the block
+   below exists to document the pattern and pin its accent explicitly.
+   Demos 2–10 land in Phases 9–11. */
+
+/* Demo 1 — Editorial Bookstore (flagship). Antique-bronze accent = the
+   global default; no other overrides. Duplicate this block, swap the
+   class + values, and a home is re-skinned. */
+.demo-index {
+  --color-accent:      oklch(0.55 0.10 65);
+  --color-accent-soft: oklch(0.55 0.10 65 / 0.10);
+}
+
+/* Demo 2 — Modern Books (minimal). Cool ink-blue accent, zero radius. */
+.demo-minimal {
+  --color-accent:      oklch(0.42 0.14 253);
+  --color-accent-soft: oklch(0.42 0.14 253 / 0.10);
+  --color-focus:       oklch(0.42 0.14 253 / 0.6);
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+}
+
+/* Demo 3 — Little Readers (kids). Warm coral + sunshine alt, rounded. */
+.demo-kids {
+  --color-accent:      oklch(0.60 0.15 28);
+  --color-accent-soft: oklch(0.60 0.15 28 / 0.12);
+  --color-accent-alt:  oklch(0.72 0.13 85);
+  --color-focus:       oklch(0.60 0.15 28 / 0.6);
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 20px;
+}
+
+/* Demo 4 — Rare & Used Books (vintage). Deeper parchment + sepia/oxblood. */
+.demo-vintage {
+  --color-paper:       oklch(0.95 0.012 78);
+  --color-paper-deep:  oklch(0.91 0.016 76);
+  --color-accent:      oklch(0.48 0.09 50);
+  --color-accent-soft: oklch(0.48 0.09 50 / 0.10);
+  --color-focus:       oklch(0.48 0.09 50 / 0.6);
+  --color-sale:        oklch(0.42 0.14 28);
 }

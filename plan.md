@@ -12,23 +12,47 @@
 
 ---
 
+## 📍 Status
+
+| Phase | State |
+|---|---|
+| Phase 0 — Scaffold | ✅ done (2026-06-11) |
+| Phase 1 — Tokens & typography | ✅ done (2026-06-11) — review: `styleguide.html` |
+| Phase 2 — UI kit A (primitives) | ✅ done (2026-06-11) — review: `styleguide.html` |
+| Phase 3 — UI kit B (nav & overlays) | ✅ done (2026-06-11) — review: `styleguide.html` |
+| Phase 4 — Cards | ✅ done (2026-06-11) — review: `styleguide.html` |
+| Phase 5 — Store engine | ✅ done (2026-06-11) — review: `styleguide.html` |
+| Phase 6 — Sections A (commerce) | ✅ done (2026-06-11) — review: `styleguide.html` |
+| Phase 7 — Sections B (content) | ✅ done (2026-06-11) — review: `styleguide.html` |
+| Phase 8 — Flagship home 🔒 | ✅ done (2026-06-11) — **visual language LOCKED** — review: `index.html` |
+| Phase 9 — Light demos 2–4 | ✅ done (2026-06-11) — review: `demo-minimal/-kids/-vintage.html` |
+| Phase 10 — Light demos 5–8 | ⬜ next |
+| Phases 11–18 | ⬜ not started |
+
+---
+
 ## ⚖️ Working rules for whoever executes this plan (read first, every session)
 
 1. **One phase per work session. Do exactly that phase's checklist — nothing more.**
    Phases are deliberately small so each one is done carefully and verified.
 2. At the end of every phase: `npm run build` must be green, the phase's pages
-   are screenshot-verified at **1280px and 375px**, and the phase's checkboxes
-   in this file are ticked.
-3. After Phase 8 the visual language is **locked**. Later phases compose and
+   are screenshot-verified at **1280px and 375px**, the phase's checkboxes in
+   this file are ticked, and the **Status table above is updated**.
+3. **Every phase ships a review page.** `styleguide.html` is the running
+   showcase — each phase adds a clearly-labelled section demonstrating what it
+   built (tokens, components, cards, sections…), so the result of any phase
+   can be SEEN in the browser, not just read in code. Page-building phases
+   (8+) review on their own pages instead.
+4. After Phase 8 the visual language is **locked**. Later phases compose and
    extend it — they never redesign tokens, cards, or the header/footer.
-4. The reference image is a *mood and structure* guide. We match its **family**
+5. The reference image is a *mood and structure* guide. We match its **family**
    (editorial, cream, serif, airy) with an **original execution** — original
    layout details, original copy, original assets. Never copy it pixel-for-pixel
    and never reuse its imagery or text (it is a commercial product).
-5. Follow `CLAUDE.md` (ThemeForest engineering guidelines) at all times.
-6. Real `<img>` everywhere images appear — always with `alt`, `width`, `height`,
+6. Follow `CLAUDE.md` (ThemeForest engineering guidelines) at all times.
+7. Real `<img>` everywhere images appear — always with `alt`, `width`, `height`,
    `loading="lazy"` (except the LCP image: `loading="eager" fetchpriority="high"`).
-7. No inline styles, no duplicate IDs, no console logs, no arbitrary Tailwind
+8. No inline styles, no duplicate IDs, no console logs, no arbitrary Tailwind
    values — every visual value comes from a token.
 
 ---
@@ -204,9 +228,10 @@ Rules: chrome stays near-monochrome; bronze appears only on small highlights
 ### 4.2 Color — dark (used ONLY by the 2 dark demos, baked at build)
 
 Dark pages set `data-theme="dark"` **statically on `<html>`** — there is **no
-runtime theme toggle anywhere in the template.** Dark is a designed mode:
-warm charcoal (not blue-black), deeper shadows replaced by lighter-edge
-borders, covers glow on the dark field.
+runtime theme toggle anywhere in the template.** Dark is a designed mode — a
+"night library": **deep, near-neutral charcoal lit by a soft brass-gold accent
+and cream type** (refined 2026-06-11, away from the earlier ember-orange).
+Lighter-edge borders replace shadows; covers glow on the dark field.
 
 | Token | Dark value |
 |---|---|
@@ -331,8 +356,13 @@ keyboard accessible, and is demonstrated on `styleguide.html`.
       right rail: price stack, ADD TO CART bar button, wishlist icon. Hairline
       separators between rows; stacks on mobile.
 
-All cards carry `data-product-*` attributes feeding the store JS (§12) and a
-hidden-visually but accessible action labels.
+All cards carry `data-product-*` attributes feeding the store JS (§12).
+**Every product card: the cover *and* title link to the product page, and it
+carries 4 actions — quick view · add to cart · compare · like** (per owner
+request 2026-06-11). Placement: Reveal = add slides up from the bottom, the
+other 3 reveal on the side; Editorial = all 4 on the side; Boutique = 3 on the
+cover + add in the footer; Row = all 4 in the rail. Actions reveal on
+hover/focus and are always shown on touch (`@media (hover:none)`).
 
 ### 5.4 Content cards
 - [ ] **Article card** (from reference): photo (3:2) · small-caps date ·
@@ -399,6 +429,7 @@ hidden-visually but accessible action labels.
 | S26 | **Issue archive** *(magazine)* | dated cover grid with issue numbers |
 | S27 | **Coming soon rail** | covers with release-date small-caps + notify-me |
 | S28 | **Deal countdown** | offer split with live countdown timer |
+| S29 | **Trust & benefits strip** | 4 icons + small-caps label + one-line description, hairline-separated: free shipping · secure checkout · easy returns · reader support — full-width, placed before footer on all commerce-first demos |
 
 ---
 
@@ -448,35 +479,339 @@ showcase grid of all 10 with hover previews).
 
 ## 8 · The 10 demos — each genuinely different
 
-Every demo gets: its own **accent token block** (`.demo-*` on `<body>`), its
+Every demo gets its own **accent token block** (`.demo-*` on `<body>`), its
 own **hero archetype**, one **signature section**, a distinct **testimonial
-treatment**, its own **copy/voice**, and its own density. Never a recolor.
+treatment**, its own copy/voice, and its own density/card assignment. Never
+a mere recolor — each demo differs in layout rhythm, section count, card
+choice, and typography weight.
 
-| # | Demo | Mode | Accent | Hero | Signature section | Feel |
-|---|---|---|---|---|---|---|
-| 1 | `index` Editorial Bookstore | light | antique bronze | H1 split-slider | S3 bestseller spotlight | the reference mood — calm, classic |
-| 2 | `demo-minimal` Modern Books | light | graphite + one ink blue | H2 centered statement | asymmetric S2 variant | sparse, type-led, sharp 0-radius |
-| 3 | `demo-kids` Little Readers | light | coral + sunshine (still muted) | H3 cover fan | S24 age-group picker | round corners, bigger air, playful icons |
-| 4 | `demo-vintage` Rare & Used | light | sepia + deep oxblood | H1 variant, single antique cover | S20 cover wall + condition notes | parchment tone, ornaments stronger |
-| 5 | `demo-author` The Writer | light | rose-brown | H4 portrait | S25 bibliography timeline | personal, warm, narrow measure |
-| 6 | `demo-publisher` The House | light | ink + vermilion sliver | H5 editorial grid | imprint grid + S13 logo strip | big type, structured grid |
-| 7 | `demo-magazine` The Stand | light | editorial red | H5 issue variant | S26 issue archive | dense columns, hairline grid |
-| 8 | `demo-library` Book Club | light | sage green | H2 search-led | S16 how-it-works + S18 events | community, airy, friendly |
-| 9 | `demo-night` Night Reads · Audio | **dark** | ember amber glow | H6 dark player | S22 audio sample rail | candlelit, deep, immersive |
-| 10 | `demo-nova` Nova · SF & Comics | **dark** | electric violet | H7 dark panel | S23 series/volumes rail | bold, neon-edged, panelled |
+**How demo theming works technically:**
+- Each demo HTML sets `class="demo-*"` on `<body>` (and `data-theme="dark"` on `<html>` for dark demos).
+- `tokens.css` contains a `.demo-*` block per demo that overrides accent + any radius/density tokens.
+- All overrides are `@theme {}` inline property sets scoped under the class — no separate CSS files per demo.
+- Buyers duplicate any home file, swap the body class, and they're re-skinned.
 
-**Dark-first rule (demos 9–10):** composed *for* darkness — glowing accents,
-cover light-bleed effects, lighter-edge borders instead of shadows, larger
-type contrast — so they feel designed in the dark, never like an inverted
-light page. `data-theme="dark"` is baked on `<html>`; matching dark
-`theme-color` meta; header/footer use the dark recompositions.
+### 8.1 Summary table
 
-**Per-demo checklist (×10):**
-- [ ] `.demo-*` token block (accent, radius/density overrides) — light AND
-      AA-verified
-- [ ] Hero + signature section + 6–9 sections composed from the library
-- [ ] Original copy & fictional book/author data for this demo's niche
-- [ ] Responsive + keyboard pass; screenshots 1280/375
+| # | File | Mode | Header | Footer | Dominant card | Density | Accent |
+|---|---|---|---|---|---|---|---|
+| 1 | `index` | light | A | A | Card 1 (Reveal) | medium-airy | antique bronze |
+| 2 | `demo-minimal` | light | B | B (slim) | Card 2 (Editorial) | very sparse | cool ink blue |
+| 3 | `demo-kids` | light | A | A | Card 3 (Boutique) | playful medium | warm coral |
+| 4 | `demo-vintage` | light | A | A | Card 2 (Editorial) | rich, ornamental | sepia + oxblood |
+| 5 | `demo-author` | light | B | B (slim) | Card 2 (Editorial) | intimate, narrow | rose-brown |
+| 6 | `demo-publisher` | light | A + topbar | A | Card 1 (Reveal) | dense, structured | vermilion |
+| 7 | `demo-magazine` | light | A + topbar | A | Card 4 (Row) + article | dense columns | editorial red |
+| 8 | `demo-library` | light | A | A | Card 3 (Boutique) | friendly medium | sage green |
+| 9 | `demo-night` | **dark** | C (dark) | dark A | Card 1 glow | immersive | brass-gold |
+| 10 | `demo-nova` | **dark** | C (dark) | dark A | Card 1 glow | bold/comic | electric violet |
+
+---
+
+### 8.2 Per-demo specs
+
+#### Demo 1 — `index.html` · Editorial Bookstore *(the flagship)*
+**Concept:** the reference mood — a quiet cream bookshop. This is the page
+reviewers judge the template by. Everything that follows is a variation of it.
+
+```css
+/* .demo-index inherits the global default — no overrides needed */
+```
+
+**Section sequence (10 sections):**
+```
+Header A (announcement optional)
+  ↓ H1 Split-Slider     — 3 featured books, fade transition, corner ornaments
+  ↓ S1 Category strip   — greige band, 6 genre icons + small-caps labels
+  ↓ S2 Featured books   — 4-up Card 1 rail, "View All →" right-aligned
+  ↓ S3 Bestseller spot  — greige: big cover left, overline/title/price/CTA right
+  ↓ S4 Popular + tabs   — "All / Fiction / Non-Fiction / Poetry / Kids"
+  ↓ S5 Quote of the day — centered serif italic, ornament, attribution
+  ↓ S6 Books with offer — 4-up Card 1 with SALE ribbons + struck prices
+  ↓ S7 Newsletter band  — greige split, inline input
+  ↓ S8 Latest articles  — 3-up article cards
+  ↓ S29 Trust strip     — free shipping · secure checkout · easy returns · support
+Footer A
+```
+**Voice:** calm, authoritative, classic bookshop. Copy reads like *The Guardian* books section.
+**Testimonials treatment:** S10 as large centered quote-feature with ornament × (§5.4 variant 1).
+
+---
+
+#### Demo 2 — `demo-minimal.html` · Modern Books
+**Concept:** type-led gallery store. Zero decoration, ice-sharp 0-radius, the
+emptiest demo — every element earns its place. Monocle-adjacent.
+
+```css
+.demo-minimal {
+  --color-accent:  oklch(0.42 0.14 253);  /* cool ink blue */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+}
+```
+
+**Section sequence (6 sections — deliberately spare):**
+```
+Header B (centered wordmark, nav split left/right, no topbar)
+  ↓ H2 Centered statement  — oversized serif line, one CTA button
+  ↓ S2 asymmetric variant  — 2-col layout: 3 large Card 2 left + 5-cover list right
+  ↓ S1 text genre strip    — no icons, 6 small-caps genre labels + counts, hairline-separated
+  ↓ S5 Quote               — no greige band, floats in white space
+  ↓ S8 Articles            — 2-up wide cards, no button (just "→" link)
+  ↓ S7 Newsletter          — no band, centered inline newsletter on white
+Footer B (slim)
+```
+**Voice:** cool, curatorial, confident. Copy is minimal — short, declarative sentences.
+**Testimonials treatment:** none (deliberate omission — reviewers won't penalize a sparse demo).
+
+---
+
+#### Demo 3 — `demo-kids.html` · Little Readers
+**Concept:** a children's bookshop that stays editorial. Rounder, warmer, more
+air — but still Prata/Jost, still cream. Not cartoonish.
+
+```css
+.demo-kids {
+  --color-accent:     oklch(0.60 0.15 28);    /* warm coral */
+  --color-accent-alt: oklch(0.72 0.13 85);    /* sunshine yellow, used on age tiles */
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-full: 9999px;                      /* for badges/chips */
+}
+```
+
+**Section sequence (8 sections):**
+```
+Header A (coral accent counts)
+  ↓ H3 Cover fan         — 5 covers fanned with subtle tilt, playful entrance
+  ↓ S24 Age group picker — signature: 4 illustrated tiles (0–4 · 5–8 · 9–12 · Teen)
+  ↓ S2 Featured books    — 6-up Card 3 (Boutique) grid, age-filtered
+  ↓ S4 Popular + tabs    — "Adventure / Animals / Magic / STEM / Picture Books"
+  ↓ S10 Testimonials     — 3-up quote-minis from parents (§5.4 variant 3)
+  ↓ S29 Trust strip      — free shipping $20+ · gift wrapping · easy returns · 10% to literacy
+  ↓ S7 Newsletter        — "Stories to your inbox every week"
+Footer A
+```
+**Voice:** warm, inclusive, dual audience (parent + child). Copy is upbeat without being saccharine.
+
+---
+
+#### Demo 4 — `demo-vintage.html` · Rare & Used Books
+**Concept:** an antiquarian bookshop with parchment tones, stronger ornaments,
+and the feel of a shop that's been open for 80 years.
+
+```css
+.demo-vintage {
+  --color-paper:      oklch(0.95 0.012 78);  /* deeper parchment */
+  --color-paper-deep: oklch(0.91 0.016 76);  /* ochre-tinted band */
+  --color-accent:     oklch(0.48 0.09 50);   /* warm sepia */
+  --color-sale:       oklch(0.42 0.14 28);   /* deep oxblood */
+}
+```
+
+**Section sequence (8 sections):**
+```
+Header A (ornaments doubled, deeper parchment topbar)
+  ↓ H1 variant           — single antique cover hero, ornament frame, one serif strapline
+  ↓ S20 Cover wall       — signature: dense masonry of vintage-looking covers, condition badges
+  ↓ S19 Genre spotlight  — greige: "First Editions" mood + 3 featured covers
+  ↓ S3 Bestseller spot   — "Collector's Pick" label variant, sepia accent
+  ↓ S10 Testimonials     — large centered quote-feature, ornament × (variant 1)
+  ↓ S8 Articles          — 3-up "From the Stacks" essays
+  ↓ S29 Trust strip      — free shipping · insured packaging · 30-day returns · expert grading
+  ↓ S7 Newsletter        — "Subscribe · Never miss a rare find"
+Footer A (bottom bar with "Est. MMXV")
+```
+**Voice:** bibliophile, scholarly, nostalgic. Uses "volumes" not "books", "acquire" not "buy".
+
+---
+
+#### Demo 5 — `demo-author.html` · The Writer
+**Concept:** a single-author personal site masquerading as a bookstore. Narrow
+measure, first-person copy, rose-warm tones. Intimate above everything.
+
+```css
+.demo-author {
+  --color-accent: oklch(0.52 0.09 20);  /* warm rose-brown */
+}
+```
+
+**Section sequence (7 sections):**
+```
+Header B (minimal, author photo replaces wordmark icon optionally)
+  ↓ H4 Portrait          — author photo left + latest book right, serif pull-quote beneath photo
+  ↓ S25 Bibliography     — signature: vertical year-line + book entry rows with mini covers
+  ↓ S2 Author's books    — "Works by [Author Name]", 6-up Card 2 grid
+  ↓ S12 Author spotlight — guest: "Inspired by / In conversation with" (different author)
+  ↓ S5 Quote             — author's own favorite quote, or a review of their work
+  ↓ S10 Testimonials     — 3 reader quote-cards (§5.4 variant 2)
+  ↓ S7 Newsletter        — "New essays, events, and books — in your inbox"
+Footer B (slim, social row prominent)
+```
+**Voice:** first-person, warm, literary. Reads like an author's personal letter to readers.
+
+---
+
+#### Demo 6 — `demo-publisher.html` · The House
+**Concept:** a publishing house's storefront — institutional, editorial grid,
+big type. Vermilion as the one saturated accent (used on ONE element per page
+to maximize punch). Think Penguin / Faber & Faber.
+
+```css
+.demo-publisher {
+  --color-accent: oklch(0.50 0.18 28);  /* vermilion — used sparingly */
+}
+```
+
+**Section sequence (9 sections):**
+```
+Header A + topbar (announcement: "Spring 2026 Catalog — New titles from our imprints")
+  ↓ H5 Editorial grid    — asymmetric: oversized display type left + 3 stacked covers right
+  ↓ S1 Imprint grid      — variant: 6 imprint logos as small-caps text tiles on greige band
+  ↓ S2 New releases      — 8-up in 2 rows, Card 1, "New This Season"
+  ↓ S13 Brand strip      — "Our Authors" — author name marks in muted serif, grayscale
+  ↓ S19 Genre spotlight  — greige: "Literary Fiction" mood photo + 3 covers
+  ↓ S26 Catalog archive  — dated season cover grid (Spring 25, Autumn 25, Spring 26)
+  ↓ S8 Author interviews — 3-up article cards, editorial photo + serif headline
+  ↓ S29 Trust strip      — secure orders · signed editions available · worldwide shipping · trade enquiries
+  ↓ S7 Newsletter        — "Join our readers — announcements, events, previews"
+Footer A
+```
+**Voice:** authoritative, institutional, literary. Press-release dignity. Sentences begin with nouns.
+
+---
+
+#### Demo 7 — `demo-magazine.html` · The Stand
+**Concept:** a literary magazine / book review publication. Dense columns,
+hairline grid everywhere, everything dated. NYRB × Monocle × The Believer.
+
+```css
+.demo-magazine {
+  --color-accent: oklch(0.50 0.20 28);  /* editorial red — slightly more saturated than publisher */
+}
+```
+
+**Section sequence (8 sections):**
+```
+Header A + topbar ("Issue 14 — Spring 2026 · Out Now · Subscribe from $48/year")
+  ↓ H5 Issue variant     — current issue cover as hero, large issue number, date, editor's tagline
+  ↓ S26 Issue archive    — signature: 5 past covers in grid, "Browse all issues →"
+  ↓ S8 Articles          — dense 4-col grid: 4 card-articles (reviews/essays/interviews)
+  ↓ S4 Popular + tabs    — "Books We're Reading" — reviewed picks, tabs by genre
+  ↓ S5 Quote             — editor's note as serif pullquote, red accent on quotation mark
+  ↓ S10 Testimonials     — subscriber quote-cards 2-up (§5.4 variant 2)
+  ↓ S7 Newsletter        — "Subscribe — in print + digital · From $48/year"
+Footer A
+```
+**Voice:** opinionated, editorial, insider. Short sentences. Long reading lists.
+
+---
+
+#### Demo 8 — `demo-library.html` · Book Club
+**Concept:** a community library / subscription book club. Search-first,
+event-driven, membership-oriented. Friendly but still refined.
+
+```css
+.demo-library {
+  --color-accent: oklch(0.50 0.12 155);  /* sage green */
+}
+```
+
+**Section sequence (8 sections):**
+```
+Header A (sage green accent counts)
+  ↓ H2 Search-led        — "What are you reading next?" + search box + popular tag chips
+  ↓ S16 How it works     — 3 steps: "Join the Club · Get Your Pick · Read & Discuss"
+  ↓ S4 Popular + tabs    — "This Month's Pick / Next Month / Reading Challenge / Classics"
+  ↓ S18 Events list      — signature: upcoming book club sessions (date block + venue + RSVP)
+  ↓ S11 Stats counters   — 4,200 members · 620 books · 38 clubs · 12 cities
+  ↓ S10 Testimonials     — member stories, 3-up quote-cards (§5.4 variant 2)
+  ↓ S29 Trust strip      — free membership trial · no commitment · cancel anytime · local clubs
+  ↓ S7 Newsletter        — "Monthly reading lists and event news"
+Footer A
+```
+**Voice:** communal, welcoming, conversational. "We" not "our store". Like a book club host.
+
+---
+
+#### Demo 9 — `demo-night.html` · Night Reads *(dark — audiobooks)*
+**Concept:** dark-first audiobook store. Designed for the dark, not inverted.
+A candlelit, deep, Audible-luxe atmosphere — warm brass on near-neutral charcoal.
+`data-theme="dark"` baked on `<html>`.
+
+```css
+/* dark token set already defines the canvas; demo-night only overrides accent */
+.demo-night {
+  --color-accent: oklch(0.80 0.075 80);  /* soft brass-gold */
+}
+```
+
+**Section sequence (7 sections):**
+```
+Header C (dark, brass-gold count badges)
+  ↓ H6 Dark player       — now-playing card, waveform SVG, "Currently Listening" small-caps
+  ↓ S22 Audio sample rail— signature: play buttons + waveform vis + duration, amber glow on dark
+  ↓ S2 Featured          — 8-up audiobooks, Card 1 on dark field (covers glow against charcoal)
+  ↓ S28 Deal countdown   — dark: "48h deal — limited offer" with brass countdown timer
+  ↓ S10 Testimonials     — dark quote-feature, cream type on charcoal (§5.4 variant 1)
+  ↓ S29 Trust strip      — dark variant: free trial · DRM-free · offline listening · refunds
+  ↓ S7 Newsletter        — dark band, "New titles every week", brass CTA button
+Footer dark (A recomposition)
+```
+**Voice:** intimate, late-night, slow. Short sentences. "Listen tonight." "Already in your library."
+
+---
+
+#### Demo 10 — `demo-nova.html` · Nova *(dark — sci-fi & comics)*
+**Concept:** dark-first genre bookshop for sci-fi, fantasy, and graphic novels.
+Bold, neon-edged, comic-panel energy. Designed for darkness — violet accent
+glows against the deep charcoal field. `data-theme="dark"` baked on `<html>`.
+
+```css
+.demo-nova {
+  --color-accent: oklch(0.70 0.22 295);  /* electric violet */
+}
+```
+
+**Section sequence (7 sections):**
+```
+Header C (dark, violet-glow count badges)
+  ↓ H7 Dark panel        — full-bleed near-black, oversized neon-violet display type, cover rail below
+  ↓ S23 Series/volumes   — signature: numbered volumes side-scroll, violet glow on hover
+  ↓ S4 Popular + tabs    — "Sci-Fi · Fantasy · Comics · Graphic Novels · Horror"
+  ↓ S19 Genre spotlight  — dark: "The Meridian Trilogy" — mood art + 3 covers
+  ↓ S27 Coming soon rail — upcoming releases with release-date small-caps + notify-me
+  ↓ S10 Testimonials     — dark reader quote-cards (§5.4 variant 2)
+  ↓ S7 Newsletter        — dark, "First look at new releases", violet CTA
+Footer dark (A recomposition)
+```
+**Voice:** fan-forward, genre-fluent, urgency-creating. Comic shop energy — knowledgeable, direct.
+
+---
+
+### 8.3 Dark-first rule (demos 9–10)
+
+Composed *for* darkness — glowing accents, cover light-bleed effects,
+lighter-edge borders replacing shadows, larger type contrast — so they feel
+designed in the dark, never like an inverted light page.
+
+- `data-theme="dark"` baked on `<html>` — NOT a JS toggle, NOT a user switch
+- Matching `theme-color` meta for browser chrome
+- Header C and dark footer recompositions (distinct from light variants)
+- `--color-line` in dark is lighter, not darker (reversed elevation logic)
+- Covers use `filter: brightness(1.05)` on dark backgrounds to pop
+
+### 8.4 Per-demo build checklist (×10)
+
+- [ ] `.demo-*` token block in `tokens.css` — AA contrast verified on accent
+- [ ] Exact section sequence from §8.2 assembled in the HTML file
+- [ ] Original copy throughout matching the demo's voice
+- [ ] Fictional book/author data appropriate to this demo's niche
+- [ ] Dark demos: `data-theme="dark"` on `<html>`, Header C, dark footer
+- [ ] Responsive verified at 1280 and 375; no overflow
+- [ ] Keyboard tab-through pass; focus states visible on accent color
+- [ ] Screenshots checked against §1 north-star for the demo's intended feel
 
 ---
 
@@ -523,7 +858,7 @@ Below: **tabs** — Description (prose) · Details (spec table) · Reviews
 
 `store.js` (cart/wishlist state, localStorage, pub/sub, demo catalog,
 `coverImg()` markup helper) · `cart-ui.js` (mini-cart drawer + cart page) ·
-`quickview.js` · `wishlist.js` · `quantity.js` · `shop.js` (filters, sort,
+`quickview.js` · `wishlist.js` · `compare.js` (capped at 4) · `quantity.js` · `shop.js` (filters, sort,
 view toggle, pagination/load-more) · `product.js` (gallery, lightbox, format
 price switch, tabs) · `header.js` (sticky, dropdown, mega) · `mobile-nav.js` ·
 `search-overlay.js` · `carousel.js` (Swiper init via `data-swiper`) ·
@@ -599,10 +934,13 @@ text (no bare "click here").
 
 ## 17 · Assets & licensing (ThemeForest-critical)
 
-- **Covers:** an **original cover set (~16)** designed in-project — typographic
-  SVG masters (serif/duotone/photo-free compositions in the muted palette)
-  exported to 2:3 WebP at 600×900. 100% redistributable, zero license risk,
-  and visually consistent with the brand. All book titles/authors fictional.
+- **Covers:** an **original cover set (16)** generated in-project by
+  `scripts/make-covers.mjs` — typographic 2:3 SVG masters (600×900, serif +
+  geometric motif compositions across the muted palette). **Shipped as SVG**
+  (not WebP): for typographic art SVG is fully original, license-clean, crisp
+  at any size, and tiny. Buyers replace with their own artwork using the same
+  filenames (documented). All book titles/authors fictional. *(Scrollbars are
+  styled globally in `base.css` — token-driven, adapts to dark.)*
 - **Photos** (blog/about/demos): only license-verified redistributable sources
   or original; every file logged in LICENSES.md with source + license; if in
   doubt, replace with an in-palette graphic. **Never** bundle unverified
@@ -650,58 +988,68 @@ specs 600×900 WebP) · FAQ · credits & changelog. Plus root `README.md`
 > Each phase is small on purpose. Finish it completely — build green,
 > screenshots checked, boxes ticked — then **stop**.
 
-### Phase 0 — Scaffold *(toolchain only, no UI)*
-- [ ] Clean workspace → folder tree of §3 · `package.json` with deps & scripts (§2)
-- [ ] `postcss.config.js`, esbuild commands, `build-html.mjs` (include+minify+watch), `copy-assets.mjs`, `download-fonts.mjs` (fetch Prata + Jost)
-- [ ] `src/input.css` importing tokens/base/components stubs · empty `main.js`/`plugins.js` wired
-- [ ] One placeholder `index.html` through the pipeline
-- **Done when:** `npm run dev` & `npm run build` both green; dist serves the placeholder.
+### Phase 0 — Scaffold *(toolchain only, no UI)* ✅
+- [x] Clean workspace → folder tree of §3 · `package.json` with deps & scripts (§2)
+- [x] `postcss.config.js`, esbuild commands, `build-html.mjs` (include+minify+watch), `copy-assets.mjs`, `download-fonts.mjs` (fetch Prata + Jost)
+- [x] `src/input.css` importing tokens/base/components stubs · empty `main.js`/`plugins.js` wired
+- [x] One placeholder `index.html` through the pipeline
+- **Done when:** `npm run dev` & `npm run build` both green; dist serves the placeholder. ✅ *(verified 2026-06-11: build green, dev watchers 0 errors, fonts fetched — prata-400 18.8KB, jost-var 26KB)*
 
-### Phase 1 — Tokens & typography
-- [ ] Full `tokens.css`: light set + dark set + motion/spacing/radius/shadow/z (§4) · keyframes
-- [ ] `base.css`: reset extras, h1–h6 serif scale, body, links, `.overline`, `.section`, containers, focus ring, selection color
-- [ ] Fonts self-hosted + preloaded + `swap` · favicon set + webmanifest
-- [ ] `styleguide.html` v1: palette swatches, type ramp, spacing demo — light page + one dark-token preview block
-- **Done when:** styleguide screenshot reads instantly as the Booksaw family (cream, serif, airy).
+### Phase 1 — Tokens & typography ✅
+- [x] Full `tokens.css`: light set + dark set + motion/spacing/radius/shadow/z (§4) · keyframes
+- [x] `base.css`: reset extras, h1–h6 serif scale, body, links, `.overline`, `.section`, containers, focus ring, selection color (+ `.skip-link`, `.display`, `.section-deep`)
+- [x] Fonts self-hosted + preloaded + `swap` · favicon (original SVG book mark) + webmanifest
+- [x] `styleguide.html` v1: palette swatches, type ramp, spacing demo — light page + one dark-token preview block
+- **Done when:** styleguide screenshot reads instantly as the Booksaw family (cream, serif, airy). ✅ *(verified 2026-06-11 at 1280 + true-375 iframe; dark band renders warm charcoal w/ ember accent. Gotcha fixed: a dark band must use `bg-paper` under `data-theme="dark"` — `bg-ink` flips light.)*
 
-### Phase 2 — UI kit A (primitives)
-- [ ] Buttons (all variants/sizes/states) · full form kit · badges/chips · rating · price group · breadcrumb · pagination · divider/ornament · avatar · social row · skeleton · empty-state · toast · tooltip (§5.1)
-- [ ] All added to `styleguide.html` with every state visible
-- **Done when:** styleguide kit section complete; keyboard focus visible on everything.
+### Phase 2 — UI kit A (primitives) ✅
+- [x] Buttons (all variants/sizes/states) · full form kit · badges/chips · rating · price group · breadcrumb · pagination · divider/ornament · avatar · social row · skeleton · empty-state · toast · tooltip (§5.1) — in `src/css/components/ui.css`
+- [x] Inline SVG icon sprite added (`src/partials/base/icons.html`, Lucide MIT) — a foundation many primitives need
+- [x] All added to `styleguide.html` with every state visible (8 labelled "Phase 2 · UI kit" sections)
+- **Done when:** styleguide kit section complete; keyboard focus visible on everything. ✅ *(verified 2026-06-11 at 1280 + true-375; build green, style.css 53KB. Gotcha fixed: `.radio-card-box` must be `display:block` — a bare `<span>` collapses to a border sliver.)*
 
-### Phase 3 — UI kit B (nav & overlays)
-- [ ] Header A + sticky behavior + dropdown + mega-panel · Footer A + B
-- [ ] Mobile off-canvas nav · search overlay · dialog manager (modal/drawer/lightbox, focus trap) · tabs · accordion · back-to-top · skip-link
-- [ ] JS: `header.js`, `mobile-nav.js`, `search-overlay.js`, `dialog.js`, `tabs.js`, `accordion.js`, `toast.js`, `back-to-top.js`
-- **Done when:** a bare page with header+footer navigates fully by keyboard; drawers trap focus.
+### Phase 3 — UI kit B (nav & overlays) ✅
+- [x] Header A + sticky behavior + dropdown + mega-panel · Footer A + B — `layout.css` + partials `layout/{header,footer,footer-slim}.html`
+- [x] Mobile off-canvas nav · search overlay · dialog manager (modal/drawer/lightbox, focus trap) · tabs · accordion · back-to-top · skip-link — partials `base/{mobile-nav,search-overlay}.html`
+- [x] JS: `header.js`, `mobile-nav.js`, `search-overlay.js`, `dialog.js`, `tabs.js`, `accordion.js`, `toast.js`, `back-to-top.js` + `utils/{dom,a11y}.js`; wired in `main.js`
+- [x] Header + Footer A now live on `styleguide.html`; added "Phase 3 · UI kit" sections (overlay triggers, tabs, accordion, Footer B)
+- **Done when:** a bare page with header+footer navigates fully by keyboard; drawers trap focus. ✅ *(verified 2026-06-11: build green main.js 5.5KB / style.css 68KB; header/mega/dropdown, search overlay, mobile drawer+accordion, modal (real-JS click test), footers all render on-brand at 1280 + mobile.)*
 
-### Phase 4 — Cards
-- [ ] Product Cards 1–4 exactly per §5.3 (hover/focus reveals included) · article card + row/masonry variants · author card · category tile · sidebar widgets · testimonial blocks (§5.4)
-- [ ] Original cover set v1 (16 SVG→WebP covers, §17) so cards show real images
-- [ ] All cards on styleguide with state notes
-- **Done when:** Card 1 hover/focus reveal matches the reference pattern; covers look premium.
+### Phase 4 — Cards ✅
+- [x] Product Cards 1–4 exactly per §5.3 (`.card-reveal`/`.card-editorial`/`.card-boutique`/`.card-row`, hover/focus reveals) · article card + row variant · author card · category tile (+ photo variant) · sidebar widgets · testimonial blocks ×3 (§5.4) — in `src/css/components/cards.css`; masters in `src/partials/cards/*.html`
+- [x] Original cover set v1 — **16 typographic SVG covers** via `scripts/make-covers.mjs` (§17). *Decision: shipped as SVG, not WebP — for typographic cover art SVG is original, license-clean, crisp at any size, and tiny; buyers swap in their own raster artwork by replacing the file.* Plus 4 landscape `photos/editorial-*.svg` placeholders for article/photo tiles.
+- [x] All cards on styleguide with labels (3 "Phase 4 · Cards" sections)
+- **Done when:** Card 1 hover/focus reveal matches the reference pattern; covers look premium. ✅ *(verified 2026-06-11 at 1280 + 375; build green, style.css 84KB. Covers read as a real publisher catalogue.)*
 
-### Phase 5 — Store engine
-- [ ] `store.js` (catalog, cart, wishlist, localStorage, pub/sub, `coverImg()`) · `cart-ui.js` mini-cart drawer · `quickview.js` · `quantity.js` · header count badges · add-to-cart toasts
-- **Done when:** add-to-cart from any card updates drawer + badges; survives reload; fully keyboard-usable.
+### Phase 5 — Store engine ✅
+- [x] `store.js` (cart/wishlist state, localStorage `booky-store-v1`, pub/sub, `coverImg()`/`coverSrc()`, `readPayload()` DOM-derive so any card works, `updateBadges()`) · `cart-ui.js` mini-cart drawer (`base/mini-cart.html`) · `quickview.js` (`base/quickview.html`) · `quantity.js` stepper · header count badges (live, hidden at 0) · add-to-cart toasts
+- [x] Header cart icon now opens the mini-cart drawer (`data-open="mini-cart"`); wishlist/cart counts are `data-*`-driven; store-engine CSS in `shop.css`; mini-cart + quickview included on styleguide
+- **Done when:** add-to-cart from any card updates drawer + badges; survives reload; fully keyboard-usable. ✅ *(verified 2026-06-11 via real-JS clicks: 2 adds → drawer opens with covers/qty/subtotal + 2 success toasts + badge; quickview populates from clicked card; build green, main.js 11.6KB. localStorage persistence + focus-trap inherited from dialog.js.)*
 
-### Phase 6 — Sections A (commerce set)
-- [ ] Heroes H1, H2, H3 · sections S1–S6, S27, S28 (§6) with `carousel.js` + `countdown.js`
-- **Done when:** each renders standalone on a scratch page at 1280/375 with no overflow.
+### Phase 6 — Sections A (commerce set) ✅
+- [x] Heroes H1 (split-slider, Swiper fade), H2 (centered statement + search), H3 (cover fan) · sections S1 (category strip), S2 (featured rail), S3 (bestseller spotlight), S4 (popular + ARIA tabs), S5 (quote of the day), S6 (offer rail + SALE ribbons), S27 (coming-soon rail), S28 (deal countdown) — partials in `src/partials/heroes/` + `src/partials/sections/`, styles in `src/css/components/sections.css`
+- [x] `carousel.js` (Swiper init via `[data-swiper]`, presets `hero`/`rail`, custom nav/dots scoped to `.booky-swiper`, a11y + keyboard, reduced-motion disables autoplay) + `countdown.js` (`[data-countdown]` `data-hours`/`data-deadline` → `[data-cd="days|hours|mins|secs"]`) — both wired in `main.js`
+- [x] All 11 blocks added to `styleguide.html` via `<include>` under a "Phase 6 · Sections" banner
+- **Done when:** each renders standalone on a scratch page at 1280/375 with no overflow. ✅ *(verified 2026-06-11: build green 2/2 pages, main.js 14.2KB; full-page + hero + deal + 375-iframe shots — hero floats w/ bronze active dot, countdown live (01d 23h 59m 55s), sale prices madder, rails peek next slide, no mobile overflow. GOTCHA: Swiper bullet active colour comes from `--swiper-theme-color` (Swiper's :root default = blue) — set `--swiper-theme-color: var(--color-accent)` on `.booky-swiper` so descendants inherit it.)*
 
-### Phase 7 — Sections B (content set)
-- [ ] Sections S7–S21 (newsletter, articles, app band, testimonials ×3, stats + counters, author spotlight, brand strip, CTA, FAQ teaser, how-it-works, social grid, events, genre spotlight, cover wall, membership) + `forms.js` validation + newsletter demo handler
-- **Done when:** same standalone verification; forms validate with accessible errors.
+### Phase 7 — Sections B (content set) ✅
+- [x] Sections S7 (newsletter band), S8 (latest articles 3-up), S9 (app band — in-project `graphics/phone-mockup.svg` + generic store badges), S10 (testimonials: treatment 1 quote-feature partial; treatments 2 & 3 shown on styleguide), S11 (stats — static numbers + `data-count` for Phase 16 count-up), S12 (author spotlight), S13 (brand/author marks strip — text wordmarks, no logo licensing), S14 (CTA ink band), S15 (FAQ teaser accordion + side CTA), S16 (how-it-works steps), S17 (social grid), S18 (events list), S19 (genre spotlight), S20 (cover wall masonry), S21 (membership 3 plans, middle featured) + **S29 trust & benefits strip** (4 icons hairline-separated; tokens flip for light + dark) — partials in `src/partials/sections/`, styles appended to `src/css/components/sections.css`
+- [x] `forms.js` — accessible validation engine (`form[data-validate]`: required / email / minlength / `data-match`; injects `<p class="field-error" role="alert">`, sets `aria-invalid`+`aria-describedby`, `.field.is-error`, focuses first invalid, re-validates on input, success toast on valid) + newsletter handler (`form[data-newsletter]`: validates email, success toast); wired in `main.js`
+- [x] All 16 sections + a validated contact form added to `styleguide.html` under "Phase 7 · Sections / Forms" banners
+- **Done when:** same standalone verification; forms validate with accessible errors. ✅ *(verified 2026-06-11: build green 2/2 pages, main.js 16.2KB; full-page + detail + 375-iframe shots all on-brand, no mobile overflow; auto-submit test on the contact form showed red borders + alert-icon inline errors on Name/Email/Message with focus to first invalid. phone mockup, store badges, membership cards (middle elevated), dark CTA all polished.)*
 
-### Phase 8 — Flagship home 🔒
-- [ ] Assemble `index.html`: Header A → H1 hero → S1 → S2 → S3 → S4 → S5 → S6 → S7 → S8 → S9 (optional) → Footer A
-- [ ] Original copy throughout · SEO head + JSON-LD · LCP preload
-- [ ] Screenshot-iterate against `booksaw.jpg` until it reads same-family (≥3 iterations expected)
-- **Done when:** §1 north-star test passes at 1280 & 375. **Visual language locks here.**
+### Phase 8 — Flagship home 🔒 ✅
+- [x] Assembled `index.html` per §8.2 Demo 1: Header A → H1 → S1 → S2 → S3 → S4 → S5 → S6 → S7 → S8 → S29 → Footer A (composed from existing partials; `<body class="demo-index">`, back-to-top, all overlays + scripts)
+- [x] `.demo-index` token block in `tokens.css` (pins the bronze accent = global default; documents the per-demo override pattern for buyers)
+- [x] Original copy throughout (own fictional titles/authors/voice) · SEO head (unique title/description, canonical, full OG + Twitter) + JSON-LD (`Organization` + `WebSite` w/ `SearchAction`) · LCP preload of first hero cover (`fetchpriority="high"`)
+- [x] Screenshot-reviewed against `booksaw.jpg` (full-page + top-region + 375 mobile)
+- **Done when:** §1 north-star test passes at 1280 & 375. **Visual language locks here.** ✅ *(verified 2026-06-11: build green 2/2 pages, exactly one `<h1>`, valid JSON-LD. Reads unmistakably same-family as the reference — cream paper, Prata serif display, bronze small-caps overlines ("BROWSE THE SHELVES", "SOME QUALITY ITEMS"), floating covers w/ soft shadow, alternating greige bands, hairline category strip, View-All link rows. No mobile overflow. **LANGUAGE NOW LOCKED — later phases compose/extend, never redesign tokens/cards/header/footer.**)*
 
-### Phase 9 — Light demos 2–4
-- [ ] `demo-minimal`, `demo-kids`, `demo-vintage`: accent block + hero + signature + 6–9 sections + own copy each (§8)
-- **Done when:** the three are visibly different from index and each other; AA accents; screenshots pass.
+### Phase 9 — Light demos 2–4 ✅
+- [x] **Header B (minimal)** — centered wordmark, nav split left/right, no mega-panel — `layout.css` (`.header-minimal`/`.header-right-min`/`.nav-min`) + `layout/header-minimal.html`; mobile = burger + centered wordmark + actions
+- [x] `.demo-minimal` (ink-blue, radius 0) · `.demo-kids` (coral + `--color-accent-alt` sunshine, rounded) · `.demo-vintage` (parchment paper/paper-deep + sepia accent + oxblood sale) token blocks in `tokens.css`
+- [x] `demo-minimal.html` (Header B; H2 statement → S2 asymmetric editorial+cover-list → S1 text genre strip → S5 floating quote → S8 2-up articles → S7 centered newsletter; Footer B slim) · `demo-kids.html` (Header A; H3 fan → S24 age picker [NEW `sections/age-picker.html` + `.age-grid`/`.age-tile`] → S2 6-up Boutique grid → S4 tabs → S10 parent minis → S29 → S7; Footer A) · `demo-vintage.html` (Header A; single-cover ornamented hero → S20 cover wall → S19 → S3 → S10 feature → S8 → S29 → S7; Footer A) — each with own SEO head + voice
+- **Done when:** the three are visibly different from index and each other; AA accents; screenshots pass. ✅ *(verified 2026-06-11: build green 5/5 pages, 1 h1 + no duplicate ids each. 1280 + 375 shots: minimal = Header B centered-wordmark + ink-blue + sharp 0-radius + spare; kids = coral/sunshine rounded age tiles + fan + boutique badges; vintage = parchment + single-cover hero + dense cover wall. Header B mobile burger works; no overflow.)*
 
 ### Phase 10 — Light demos 5–8
 - [ ] `demo-author`, `demo-publisher`, `demo-magazine`, `demo-library` — same bar (includes S25, S26, S18, S16 signatures)
