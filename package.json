@@ -1,0 +1,47 @@
+{
+  "name": "booky",
+  "version": "1.0.0",
+  "description": "Booky — Premium Bookstore HTML Template",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "npm run clean && run-p css:dev plugins:css:dev js:dev plugins:js:dev html:dev assets:dev",
+    "build": "npm run clean && run-s css:build plugins:css:build js:build plugins:js:build html:build assets:build",
+    "css:dev": "postcss src/input.css -o dist/assets/css/style.css --watch --map",
+    "css:build": "postcss src/input.css -o dist/assets/css/style.css --no-map",
+    "plugins:css:dev": "esbuild src/plugins.css --bundle --outfile=dist/assets/css/plugins.css --loader:.css=css --watch",
+    "plugins:css:build": "esbuild src/plugins.css --bundle --minify --outfile=dist/assets/css/plugins.css --loader:.css=css",
+    "js:dev": "esbuild src/js/main.js --bundle --sourcemap --format=esm --outfile=dist/assets/js/main.js --watch",
+    "js:build": "esbuild src/js/main.js --bundle --minify --drop:console --drop:debugger --format=esm --outfile=dist/assets/js/main.js",
+    "plugins:js:dev": "esbuild src/js/plugins.js --bundle --format=iife --outfile=dist/assets/js/plugins.js --watch",
+    "plugins:js:build": "esbuild src/js/plugins.js --bundle --minify --format=iife --outfile=dist/assets/js/plugins.js",
+    "html:dev": "node scripts/build-html.mjs --watch",
+    "html:build": "node scripts/build-html.mjs --minify",
+    "assets:dev": "node scripts/copy-assets.mjs --watch",
+    "assets:build": "node scripts/copy-assets.mjs",
+    "fonts": "node scripts/download-fonts.mjs",
+    "serve": "npx serve dist -p 3000"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.7",
+    "chokidar": "^4.0.3",
+    "esbuild": "^0.25.5",
+    "html-minifier-terser": "^7.2.0",
+    "npm-run-all2": "^7.0.2",
+    "postcss": "^8.5.4",
+    "postcss-cli": "^11.0.1",
+    "posthtml": "^0.16.6",
+    "posthtml-include": "^2.0.1",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.7"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "swiper": "^11.2.0"
+  }
+}

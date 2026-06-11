@@ -1,0 +1,6 @@
+/* ============================================================
+   BOOKY — third-party styles bundle → dist/assets/css/plugins.css
+   Swiper only (plan.md §2). Loaded before style.css so our
+   tokens always win.
+============================================================ */
+@import "swiper/css/bundle";

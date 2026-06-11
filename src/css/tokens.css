@@ -1,0 +1,12 @@
+/* ============================================================
+   BOOKY — design tokens
+   Phase 1 fills the complete spec (plan.md §4):
+   light palette · dark set · type · spacing · radius · shadow ·
+   z-scale · motion · containers · per-demo accents.
+   The values below are a minimal valid seed only.
+============================================================ */
+@theme {
+  /* seed tokens — replaced by the full Phase 1 spec */
+  --color-paper: oklch(0.97 0.008 85);
+  --color-ink: oklch(0.24 0.012 65);
+}

@@ -1,0 +1,10 @@
+/* ============================================================
+   BOOKY — base styles (element defaults, typography, focus)
+   Full spec lands in Phase 1 (plan.md §4.3 / Phase 1 checklist).
+============================================================ */
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+}
