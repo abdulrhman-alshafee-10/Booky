@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Order confirmed — Booky · Bookstore HTML Template</title>
+  <meta name="description" content="Thank you for your order. Here's your confirmation, order summary, and delivery details.">
+  <link rel="canonical" href="https://booky.example.com/order-complete.html">
+  <meta name="robots" content="noindex,nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Order confirmed — Booky">
+  <meta property="og:description" content="Thank you for your order.">
+  <meta property="og:url" content="https://booky.example.com/order-complete.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main order-done" data-order-page>
+
+      <!-- Confirmed -->
+      <div data-order-recap hidden>
+        <div class="order-done-head">
+          <span class="order-done-icon"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg></span>
+          <span class="overline">Thank you</span>
+          <h1 class="display text-3xl sm:text-4xl mt-2">Your order is confirmed</h1>
+          <p class="page-lead mx-auto">We've emailed a receipt to <b data-order-email>your email</b>. Your order number is <b class="order-number" data-order-number>BK-00000000</b>, placed <span data-order-date>today</span>.</p>
+        </div>
+
+        <!-- Status timeline -->
+        <ol class="order-timeline" aria-label="Order status">
+          <li class="order-step is-done">
+            <span class="order-step-dot"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
+            <p class="order-step-label">Confirmed</p>
+            <p class="order-step-sub">Just now</p>
+          </li>
+          <li class="order-step is-current">
+            <span class="order-step-dot"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-package"></use></svg></span>
+            <p class="order-step-label">Packed</p>
+            <p class="order-step-sub">Within 24 hours</p>
+          </li>
+          <li class="order-step">
+            <span class="order-step-dot"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-truck"></use></svg></span>
+            <p class="order-step-label">Shipped</p>
+            <p class="order-step-sub">3–5 working days</p>
+          </li>
+        </ol>
+
+        <!-- Recap -->
+        <div class="order-recap">
+          <div class="order-card">
+            <h2 class="text-xl">Order summary</h2>
+            <div class="co-items mt-4" data-order-items><!-- items rendered by checkout.js --></div>
+            <div class="summary-line"><span>Subtotal</span><span class="val" data-order-subtotal>$0.00</span></div>
+            <div class="summary-line is-discount" data-order-discount-row hidden><span>Discount</span><span class="val" data-order-discount>−$0.00</span></div>
+            <div class="summary-line"><span>Shipping</span><span class="val" data-order-shipping>Free</span></div>
+            <div class="summary-total"><span class="lbl">Total paid</span><span class="val" data-order-total>$0.00</span></div>
+
+            <div class="order-addr-grid">
+              <div class="order-addr">
+                <h3>Shipping to</h3>
+                <p data-order-address>—</p>
+              </div>
+              <div class="order-addr">
+                <h3>Delivery &amp; payment</h3>
+                <p><span data-order-shipmethod>Standard delivery</span><br><span data-order-paymethod>Card</span></p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="order-card">
+            <h2 class="text-xl">What happens next</h2>
+            <ul class="mt-4 flex flex-col gap-4">
+              <li class="prod-trust-item items-start"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg><span>A confirmation email is on its way with your receipt and order details.</span></li>
+              <li class="prod-trust-item items-start"><svg class="icon" aria-hidden="true"><use href="#i-package"></use></svg><span>We'll carefully pack your books and send tracking once they ship.</span></li>
+              <li class="prod-trust-item items-start"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg><span>Changed your mind? You have 30 days to return any unread book.</span></li>
+            </ul>
+            <a class="btn btn-block mt-6" href="shop-left.html">Continue shopping</a>
+            <a class="btn btn-outline btn-block mt-3" href="account.html">View your orders</a>
+          </aside>
+        </div>
+      </div>
+
+      <!-- No recent order fallback -->
+      <div data-order-fallback hidden>
+        <div class="empty-state page-empty">
+          <svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>
+          <p class="empty-state-title">No recent order found</p>
+          <p>Looks like there's nothing to confirm here yet. Browse the shop to find your next read.</p>
+          <a class="btn mt-6" href="shop-left.html">Browse the shop</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

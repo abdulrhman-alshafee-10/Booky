@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>My account — Booky · Dashboard</title>
+  <meta name="description" content="Your Booky account dashboard — review orders, manage saved addresses, update your details, and revisit your wishlist.">
+  <link rel="canonical" href="https://booky.example.com/account.html">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="My account — Booky">
+  <meta property="og:description" content="Your Booky account dashboard — orders, addresses, details and wishlist.">
+  <meta property="og:url" content="https://booky.example.com/account.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="My account — Booky">
+  <meta name="twitter:description" content="Your Booky account dashboard — orders, addresses, details and wishlist.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main page-head">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">My account</span>
+      </nav>
+      <span class="overline">Hello, Alex</span>
+      <h1 class="display text-3xl sm:text-4xl">My account</h1>
+      <p class="page-lead">Manage your orders, addresses, details and wishlist — all in one place.</p>
+    </section>
+
+    <section class="container-main section pt-0" aria-label="Account dashboard">
+      <div class="account-grid" data-account>
+        <nav class="account-nav is-sticky" aria-label="Account sections">
+          <button type="button" class="account-nav-link" data-account-tab="overview"><svg class="icon" aria-hidden="true"><use href="#i-grid"></use></svg> Overview</button>
+          <button type="button" class="account-nav-link" data-account-tab="orders"><svg class="icon" aria-hidden="true"><use href="#i-package"></use></svg> Orders</button>
+          <button type="button" class="account-nav-link" data-account-tab="addresses"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg> Addresses</button>
+          <button type="button" class="account-nav-link" data-account-tab="details"><svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg> Account details</button>
+          <button type="button" class="account-nav-link" data-account-tab="wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg> Wishlist</button>
+          <span class="account-nav-sep" aria-hidden="true"></span>
+          <a class="account-nav-link is-logout" href="login.html" data-account-logout><svg class="icon" aria-hidden="true"><use href="#i-log-out"></use></svg> Sign out</a>
+        </nav>
+
+        <div class="account-panels">
+          <!-- Overview -->
+          <section data-account-panel="overview" aria-labelledby="ov-title">
+            <div class="account-panel-head">
+              <h2 id="ov-title">Overview</h2>
+              <p>Welcome back, Alex. Here's the shape of your shelf so far.</p>
+            </div>
+            <div class="account-overview-grid">
+              <div class="account-stat-card">
+                <p class="account-stat-num">3</p>
+                <p class="account-stat-label">Orders placed</p>
+              </div>
+              <div class="account-stat-card">
+                <p class="account-stat-num">2024</p>
+                <p class="account-stat-label">Member since</p>
+              </div>
+            </div>
+            <div class="account-card mt-6">
+              <h3>Most recent order</h3>
+              <p class="text-sm text-ink-soft">Order <b class="text-ink">BK-20517</b> · placed 5 June 2026 · <span class="account-status is-done">Delivered</span></p>
+              <button type="button" class="btn-link mt-4" data-account-tab="orders">View all orders <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+            </div>
+            <div class="account-card mt-6">
+              <h3>Default address</h3>
+              <p class="text-sm text-ink leading-relaxed"><b>Alex Marsh</b><br>48 Hawthorn Lane, Flat 2<br>Bristol BS1 4QA, United Kingdom</p>
+              <button type="button" class="btn-link mt-4" data-account-tab="addresses">Manage addresses <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+            </div>
+          </section>
+
+          <!-- Orders -->
+          <section data-account-panel="orders" aria-labelledby="or-title" hidden>
+            <div class="account-panel-head">
+              <h2 id="or-title">Orders</h2>
+              <p>Every order you've placed with Booky.</p>
+            </div>
+            <table class="account-table">
+              <thead>
+                <tr><th scope="col">Order</th><th scope="col">Date</th><th scope="col">Status</th><th scope="col">Total</th><th scope="col"><span class="sr-only">Actions</span></th></tr>
+              </thead>
+              <tbody data-orders-body></tbody>
+            </table>
+          </section>
+
+          <!-- Order detail (populated by JS) -->
+          <section data-account-panel="order-detail" aria-label="Order details" hidden>
+            <button type="button" class="account-back" data-account-tab="orders"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-left"></use></svg> Back to orders</button>
+            <div data-order-detail></div>
+          </section>
+
+          <!-- Addresses -->
+          <section data-account-panel="addresses" aria-labelledby="ad-title" hidden>
+            <div class="account-panel-head">
+              <h2 id="ad-title">Addresses</h2>
+              <p>Saved delivery and billing addresses.</p>
+            </div>
+            <div class="account-addr-grid" data-addresses></div>
+          </section>
+
+          <!-- Account details -->
+          <section data-account-panel="details" aria-labelledby="de-title" hidden>
+            <div class="account-panel-head">
+              <h2 id="de-title">Account details</h2>
+              <p>Update your name, email, and password.</p>
+            </div>
+            <div class="account-card">
+              <h3>Your details</h3>
+              <form data-account-form class="mt-4">
+                <div class="form-grid cols-2">
+                  <div class="field">
+                    <label class="label" for="a-first">First name <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input" id="a-first" name="first" type="text" value="Alex" required data-label="First name" autocomplete="given-name">
+                  </div>
+                  <div class="field">
+                    <label class="label" for="a-last">Last name <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input" id="a-last" name="last" type="text" value="Marsh" required data-label="Last name" autocomplete="family-name">
+                  </div>
+                  <div class="field col-span-2">
+                    <label class="label" for="a-email">Email <span class="req" aria-hidden="true">*</span></label>
+                    <input class="input" id="a-email" name="email" type="email" value="alex.marsh@example.com" required data-label="Email" autocomplete="email">
+                  </div>
+                </div>
+                <button class="btn mt-5" type="submit">Save changes</button>
+              </form>
+            </div>
+            <div class="account-card mt-6">
+              <h3>Change password</h3>
+              <form data-account-form data-account-password class="mt-4">
+                <div class="field">
+                  <label class="label" for="a-current">Current password <span class="req" aria-hidden="true">*</span></label>
+                  <input class="input" id="a-current" name="current" type="password" required data-label="Current password" autocomplete="current-password">
+                </div>
+                <div class="field mt-4">
+                  <label class="label" for="a-new">New password <span class="req" aria-hidden="true">*</span></label>
+                  <input class="input" id="a-new" name="new" type="password" required minlength="8" data-label="New password" autocomplete="new-password">
+                </div>
+                <div class="field mt-4">
+                  <label class="label" for="a-newconfirm">Confirm new password <span class="req" aria-hidden="true">*</span></label>
+                  <input class="input" id="a-newconfirm" name="confirm" type="password" required data-match="a-new" data-label="Confirm new password" autocomplete="new-password">
+                </div>
+                <button class="btn mt-5" type="submit">Update password</button>
+              </form>
+            </div>
+          </section>
+
+          <!-- Wishlist -->
+          <section data-account-panel="wishlist" aria-labelledby="wi-title" hidden>
+            <div class="account-panel-head">
+              <h2 id="wi-title">Wishlist</h2>
+              <p>Books you've saved for later.</p>
+            </div>
+            <div class="account-wish-grid" data-account-wishlist hidden></div>
+            <div class="empty-state" data-account-wishlist-empty>
+              <svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg>
+              <p class="empty-state-title">Your wishlist is empty</p>
+              <p class="text-ink-soft">Tap the heart on any book to save it here.</p>
+              <a class="btn mt-5" href="shop-left.html">Browse the shop</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

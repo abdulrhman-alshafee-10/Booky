@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Page not found — Booky</title>
+  <meta name="description" content="We couldn't find that page. Search the Booky catalogue or head back to familiar shelves.">
+  <link rel="canonical" href="https://booky.example.com/404.html">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Page not found — Booky">
+  <meta property="og:description" content="We couldn't find that page. Search the catalogue or head back to the shelves.">
+  <meta property="og:url" content="https://booky.example.com/404.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-last-observatory.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Page not found — Booky">
+  <meta name="twitter:description" content="We couldn't find that page. Search the catalogue or head back to the shelves.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-last-observatory.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-narrow sys-page">
+      <p class="sys-code" aria-hidden="true">404</p>
+      <span class="overline">Off the map</span>
+      <h1 class="display text-3xl sm:text-4xl mt-2">This page slipped off the shelf</h1>
+      <p class="hero-lead">The link may be old, or the page may have moved. Let's get you back to the books.</p>
+
+      <form class="sys-search" role="search" action="shop-left.html" method="get">
+        <label class="sr-only" for="nf-search">Search the catalogue</label>
+        <div class="search">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <input class="input" id="nf-search" name="q" type="search" placeholder="Search by title, author or genre" autocomplete="off">
+        </div>
+      </form>
+
+      <div class="sys-links">
+        <a class="chip" href="index.html">Home</a>
+        <a class="chip" href="shop-left.html">Shop</a>
+        <a class="chip" href="authors.html">Authors</a>
+        <a class="chip" href="blog-grid.html">Journal</a>
+        <a class="chip" href="contact.html">Contact</a>
+      </div>
+
+      <a class="btn mt-8" href="index.html"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-home"></use></svg> Back to home</a>
+    </section>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

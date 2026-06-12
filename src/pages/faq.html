@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>FAQ — Booky · Help &amp; Answers</title>
+  <meta name="description" content="Answers to common questions about ordering, delivery, returns, formats, accounts and payment at Booky. Search the help centre or message a bookseller directly.">
+  <link rel="canonical" href="https://booky.example.com/faq.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FAQ — Booky">
+  <meta property="og:description" content="Answers to common questions about ordering, delivery, returns and payment.">
+  <meta property="og:url" content="https://booky.example.com/faq.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ — Booky">
+  <meta name="twitter:description" content="Answers to common questions about ordering, delivery, returns and payment.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Do you ship internationally?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we ship worldwide with tracked delivery. Rates are calculated at checkout based on weight and destination." } },
+      { "@type": "Question", "name": "How long does delivery take?", "acceptedAnswer": { "@type": "Answer", "text": "UK orders arrive in 2–3 working days. International delivery typically takes 5–10 working days." } },
+      { "@type": "Question", "name": "Can I return a book?", "acceptedAnswer": { "@type": "Answer", "text": "Return any title within 30 days for a full refund, provided it's in resaleable condition." } },
+      { "@type": "Question", "name": "Which payment methods do you accept?", "acceptedAnswer": { "@type": "Answer", "text": "All major cards, PayPal, and Booky gift cards. Payments are processed securely and we never store full card numbers." } }
+    ]
+  }
+  </script>
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-narrow page-head text-center">
+      <span class="overline">Help centre</span>
+      <h1 class="display text-3xl sm:text-4xl">How can we help?</h1>
+      <p class="page-lead mx-auto">Search the most common questions, or browse by topic below. Still stuck? A bookseller is one message away.</p>
+      <div class="faq-search-wrap">
+        <div class="search">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+          <label class="sr-only" for="faq-search">Search the help centre</label>
+          <input class="input" id="faq-search" type="search" placeholder="Search questions…" autocomplete="off" data-faq-search="faq-groups">
+        </div>
+      </div>
+    </section>
+
+    <section class="container-narrow section pt-0" aria-label="Frequently asked questions">
+      <div id="faq-groups">
+        <div class="faq-group" data-faq-group>
+          <h2 class="faq-group-title">Orders &amp; delivery</h2>
+          <div data-accordion data-accordion-single>
+            <div class="accordion-item" data-faq-item>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-1">Do you ship internationally? <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+              <div class="accordion-panel" id="faq-1"><div><div class="accordion-panel-inner">Yes — we ship worldwide with tracked delivery. Rates are calculated at checkout based on weight and destination, and you'll always see the total before you pay.</div></div></div>
+            </div>
+            <div class="accordion-item" data-faq-item>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2">How long does delivery take? <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+              <div class="accordion-panel" id="faq-2"><div><div class="accordion-panel-inner">UK orders arrive in 2–3 working days. International delivery typically takes 5–10 working days depending on your location. Every order ships with a tracking link.</div></div></div>
+            </div>
+            <div class="accordion-item" data-faq-item>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3">Is free shipping available? <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+              <div class="accordion-panel" id="faq-3"><div><div class="accordion-panel-inner">Yes. UK orders over $40 ship free, and members enjoy free delivery on every order with no minimum.</div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group" data-faq-group>
+          <h2 class="faq-group-title">Returns &amp; refunds</h2>
+          <div data-accordion data-accordion-single>
+            <div class="accordion-item" data-faq-item>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-4">Can I return a book? <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+              <div class="accordion-panel" id="faq-4"><div><div class="accordion-panel-inner">Return any title within 30 days for a full refund, provided it's in resaleable condition. We cover return postage on damaged or incorrect items.</div></div></div>
+            </div>
+            <div class="accordion-item" data-faq-item>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-5">How are refunds processed? <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+              <div class="accordion-panel" id="faq-5"><div><div class="accordion-panel-inner">Refunds return to your original payment method within 5–7 working days of us receiving the book. We'll email you the moment it's on its way.</div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-group" data-faq-group>
+          <h2 class="faq-group-title">Account &amp; payment</h2>
+          <div data-accordion data-accordion-single>
+            <div class="accordion-item" data-faq-item>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-6">Which payment methods do you accept? <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+              <div class="accordion-panel" id="faq-6"><div><div class="accordion-panel-inner">All major cards, PayPal, and Booky gift cards. Payments are processed securely and we never store full card numbers on our servers.</div></div></div>
+            </div>
+            <div class="accordion-item" data-faq-item>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-7">Do I need an account to order? <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+              <div class="accordion-panel" id="faq-7"><div><div class="accordion-panel-inner">No — guest checkout is always available. An account simply lets you track orders, save addresses, and keep a wishlist between visits.</div></div></div>
+            </div>
+            <div class="accordion-item" data-faq-item>
+              <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-8">What's included in membership? <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg></button>
+              <div class="accordion-panel" id="faq-8"><div><div class="accordion-panel-inner">Free delivery on every order, members-only editions, early access to author events, and a monthly hand-picked reading list. The first month is on us.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="faq-empty" data-faq-empty hidden>No questions match your search. Try different words, or <a class="text-accent" href="contact.html">message a bookseller</a>.</p>
+    </section>
+
+    <include src="sections/cta-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

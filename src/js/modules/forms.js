@@ -17,14 +17,21 @@ let uid = 0;
 
 /* Validate one control; return an error string or "" when valid. */
 function checkField(input) {
-  const val = input.value.trim();
   const label = input.dataset.label || input.getAttribute("name") || "This field";
+  const type = (input.getAttribute("type") || "").toLowerCase();
 
+  // Checkboxes / radios validate on checked-state, not value.
+  if (type === "checkbox" || type === "radio") {
+    if (input.hasAttribute("required") && !input.checked)
+      return `${label} is required.`;
+    return "";
+  }
+
+  const val = input.value.trim();
   if (input.hasAttribute("required") && !val)
     return `${label} is required.`;
   if (!val) return ""; // optional + empty → fine
 
-  const type = (input.getAttribute("type") || "").toLowerCase();
   if ((type === "email" || input.dataset.validate === "email") && !EMAIL_RE.test(val))
     return "Enter a valid email address.";
 
@@ -90,6 +97,23 @@ function controls(form) {
   return qsa("input, textarea, select", form).filter(
     (el) => el.type !== "submit" && el.type !== "button" && el.type !== "hidden"
   );
+}
+
+/* Validate every control in a form, show errors, focus the first invalid,
+ * and return true when the whole form is valid. Reusable by other modules
+ * (e.g. checkout.js) that need to gate their own submit logic. */
+export function validateForm(form) {
+  form.setAttribute("novalidate", "");
+  let firstInvalid = null;
+  controls(form).forEach((input) => {
+    if (!validate(input) && !firstInvalid) firstInvalid = input;
+    if (!fieldOf(input).classList.contains("is-listening")) {
+      fieldOf(input).classList.add("is-listening");
+      on(input, "input", () => { if (fieldOf(input).classList.contains("is-error")) validate(input); });
+    }
+  });
+  if (firstInvalid) firstInvalid.focus();
+  return !firstInvalid;
 }
 
 function initValidatedForms() {

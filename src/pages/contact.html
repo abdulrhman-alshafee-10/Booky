@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Contact — Booky · Get in Touch</title>
+  <meta name="description" content="Questions about an order, an event, or a recommendation? Message the Booky booksellers, find our opening hours, or drop by the shop. We usually reply within a few hours.">
+  <link rel="canonical" href="https://booky.example.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact — Booky">
+  <meta property="og:description" content="Message the Booky booksellers, find our hours, or visit the shop.">
+  <meta property="og:url" content="https://booky.example.com/contact.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/photos/editorial-2.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Booky">
+  <meta name="twitter:description" content="Message the Booky booksellers, find our hours, or visit the shop.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/photos/editorial-2.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://booky.example.com/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://booky.example.com/contact.html" }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "Booky",
+        "url": "https://booky.example.com/",
+        "email": "hello@booky.example.com",
+        "telephone": "+44 117 496 0182",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "14 Quay Street",
+          "addressLocality": "Bristol",
+          "postalCode": "BS1 4QA",
+          "addressCountry": "GB"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main page-head">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">Contact</span>
+      </nav>
+      <span class="overline">We'd love to hear from you</span>
+      <h1 class="display text-3xl sm:text-4xl">Get in touch</h1>
+      <p class="page-lead">Whether it's a question about an order or a hunt for a book you can half-remember, our booksellers are here. We usually reply within a few hours.</p>
+    </section>
+
+    <section class="container-main section pt-0" aria-label="Contact form and details">
+      <div class="contact-grid">
+        <form class="contact-form" data-validate data-success-message="Thanks for writing — a bookseller will reply within a few hours.">
+          <div class="form-grid cols-2">
+            <div class="field">
+              <label class="label" for="c-name">Your name <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="c-name" name="name" type="text" required data-label="Your name" autocomplete="name">
+            </div>
+            <div class="field">
+              <label class="label" for="c-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="c-email" name="email" type="email" required data-label="Email" autocomplete="email">
+            </div>
+            <div class="field col-span-2">
+              <label class="label" for="c-subject">Subject</label>
+              <div class="select-wrap">
+                <select class="select" id="c-subject" name="subject">
+                  <option value="general">General enquiry</option>
+                  <option value="order">About an order</option>
+                  <option value="events">Author events</option>
+                  <option value="trade">Trade &amp; wholesale</option>
+                </select>
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+              </div>
+            </div>
+            <div class="field col-span-2">
+              <label class="label" for="c-message">Message <span class="req" aria-hidden="true">*</span></label>
+              <textarea class="textarea" id="c-message" name="message" rows="6" required minlength="10" data-label="Message"></textarea>
+            </div>
+          </div>
+          <button class="btn mt-6" type="submit">Send message</button>
+        </form>
+
+        <aside aria-label="Shop details">
+          <div class="contact-info-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-map-pin"></use></svg>
+            <div>
+              <p class="contact-info-label">Visit</p>
+              <p class="contact-info-value">14 Quay Street<br>Bristol BS1 4QA<br>United Kingdom</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+            <div>
+              <p class="contact-info-label">Email</p>
+              <p class="contact-info-value"><a href="mailto:hello@booky.example.com">hello@booky.example.com</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+            <div>
+              <p class="contact-info-label">Call</p>
+              <p class="contact-info-value"><a href="tel:+441174960182">+44 117 496 0182</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>
+            <div>
+              <p class="contact-info-label">Hours</p>
+              <p class="contact-info-value">Mon–Sat · 9am–6pm<br>Sunday · 11am–4pm</p>
+            </div>
+          </div>
+          <div class="social-row mt-6">
+            <a class="social-link" href="#" aria-label="Booky on Facebook"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+            <a class="social-link" href="#" aria-label="Booky on Instagram"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+            <a class="social-link" href="#" aria-label="Booky on X"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-twitter"></use></svg></a>
+          </div>
+        </aside>
+      </div>
+
+      <div class="map-embed">
+        <iframe title="Map showing the Booky shop in Bristol" src="https://www.openstreetmap.org/export/embed.html?bbox=-2.6035%2C51.4490%2C-2.5875%2C51.4565&amp;layer=mapnik&amp;marker=51.4527%2C-2.5955" loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

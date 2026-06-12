@@ -1,0 +1,26 @@
+<!-- ============================================================
+     Share dialog — opened by [data-open="share"].
+     Links are demo placeholders (#); the "Copy link" button is wired
+     in product.js. Open/close/focus-trap handled by dialog.js.
+============================================================ -->
+<div class="overlay overlay-center" id="share" data-overlay role="dialog" aria-modal="true" aria-labelledby="share-title">
+  <div class="overlay-backdrop" data-close></div>
+  <div class="modal modal-narrow">
+    <button class="modal-close" data-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg></button>
+    <span class="overline">Pass it on</span>
+    <h2 id="share-title" class="text-xl mt-1">Share this book</h2>
+    <div class="social-row mt-5">
+      <a class="social-link" href="#" aria-label="Share on Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+      <a class="social-link" href="#" aria-label="Share on X"><svg class="icon" aria-hidden="true"><use href="#i-twitter"></use></svg></a>
+      <a class="social-link" href="#" aria-label="Share on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+      <a class="social-link" href="#" aria-label="Share by email"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></a>
+    </div>
+    <div class="field mt-5">
+      <label class="label" for="share-link">Page link</label>
+      <div class="coupon-form">
+        <input class="input" id="share-link" type="text" value="https://booky.example.com/product.html" readonly aria-label="Page link">
+        <button class="btn btn-outline" type="button" data-copy-link><svg class="icon icon-sm" aria-hidden="true"><use href="#i-link"></use></svg> Copy</button>
+      </div>
+    </div>
+  </div>
+</div>

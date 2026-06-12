@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Journal — masonry — Booky · Bookstore HTML Template</title>
+  <meta name="description" content="Browse the Booky journal as a masonry wall, filtered live by category — reading life, lists, interviews, and more.">
+  <link rel="canonical" href="https://booky.example.com/blog-masonry.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Journal — masonry — Booky">
+  <meta property="og:description" content="Browse the Booky journal as a masonry wall, filtered by category.">
+  <meta property="og:url" content="https://booky.example.com/blog-masonry.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/photos/editorial-1.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Journal — masonry — Booky">
+  <meta name="twitter:description" content="Browse the Booky journal as a masonry wall, filtered by category.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/photos/editorial-1.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main blog-wrap">
+      <div class="page-head text-center">
+        <nav class="breadcrumb justify-center" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="blog-grid.html">Journal</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Masonry</span>
+        </nav>
+        <span class="overline">The whole wall</span>
+        <h1 class="display text-3xl sm:text-4xl">Everything we've written</h1>
+        <p class="page-lead mx-auto">Filter the journal by what you're in the mood for. Pick a category and the wall rearranges instantly.</p>
+      </div>
+
+      <div class="blog-filters" role="group" aria-label="Filter articles by category" data-blog-filters>
+        <button class="chip" type="button" data-blog-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-blog-filter="reading-life" aria-pressed="false">Reading life</button>
+        <button class="chip" type="button" data-blog-filter="lists" aria-pressed="false">Lists</button>
+        <button class="chip" type="button" data-blog-filter="interviews" aria-pressed="false">Interviews</button>
+        <button class="chip" type="button" data-blog-filter="behind-the-book" aria-pressed="false">Behind the book</button>
+        <button class="chip" type="button" data-blog-filter="events" aria-pressed="false">Events</button>
+      </div>
+
+      <div class="blog-masonry" data-blog-grid>
+        <article class="card-article" data-category="reading-life">
+          <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-1.svg" alt="A reading nook by a rain-streaked window" width="900" height="600" loading="lazy" decoding="async"></a>
+          <div class="card-article-meta"><span>Reading life</span><span class="dot" aria-hidden="true"></span><time datetime="2026-05-12">12 May 2026</time></div>
+          <a class="card-article-title" href="blog-single.html">Why we still read by the window</a>
+          <p class="card-article-excerpt">There's a particular afternoon light that turns a paperback into a held breath.</p>
+          <div class="card-article-foot"><span>4 min read</span><a class="btn-link" href="blog-single.html">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+        </article>
+        <article class="card-article" data-category="lists">
+          <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-2.svg" alt="A stack of clothbound books on a wooden desk" width="900" height="600" loading="lazy" decoding="async"></a>
+          <div class="card-article-meta"><span>Lists</span><span class="dot" aria-hidden="true"></span><time datetime="2026-05-02">2 May 2026</time></div>
+          <a class="card-article-title" href="blog-single.html">Ten quiet novels for a loud year</a>
+          <div class="card-article-foot"><span>6 min read</span><a class="btn-link" href="blog-single.html">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+        </article>
+        <article class="card-article" data-category="interviews">
+          <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-3.svg" alt="An author's writing table at dawn" width="900" height="600" loading="lazy" decoding="async"></a>
+          <div class="card-article-meta"><span>Interviews</span><span class="dot" aria-hidden="true"></span><time datetime="2026-04-21">21 Apr 2026</time></div>
+          <a class="card-article-title" href="blog-single.html">Eleanor Finch on writing the sea</a>
+          <p class="card-article-excerpt">The debut novelist on lighthouses, unsent letters, and writing an entire book longhand.</p>
+          <div class="card-article-foot"><span>9 min read</span><a class="btn-link" href="blog-single.html">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+        </article>
+        <article class="card-article" data-category="behind-the-book">
+          <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-4.svg" alt="A printer's tray of metal type" width="900" height="600" loading="lazy" decoding="async"></a>
+          <div class="card-article-meta"><span>Behind the book</span><span class="dot" aria-hidden="true"></span><time datetime="2026-04-14">14 Apr 2026</time></div>
+          <a class="card-article-title" href="blog-single.html">How a cover finds its colour</a>
+          <div class="card-article-foot"><span>5 min read</span><a class="btn-link" href="blog-single.html">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+        </article>
+        <article class="card-article" data-category="events">
+          <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-1.svg" alt="A harbourside bookshop window at dusk" width="900" height="600" loading="lazy" decoding="async"></a>
+          <div class="card-article-meta"><span>Events</span><span class="dot" aria-hidden="true"></span><time datetime="2026-04-03">3 Apr 2026</time></div>
+          <a class="card-article-title" href="blog-single.html">A weekend of slow reading in Aldridge Bay</a>
+          <p class="card-article-excerpt">Two days, no screens, a stack of books and the sea. Notes from our first reader's retreat.</p>
+          <div class="card-article-foot"><span>3 min read</span><a class="btn-link" href="blog-single.html">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+        </article>
+        <article class="card-article" data-category="reading-life">
+          <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-2.svg" alt="A well-worn paperback left open on a chair" width="900" height="600" loading="lazy" decoding="async"></a>
+          <div class="card-article-meta"><span>Reading life</span><span class="dot" aria-hidden="true"></span><time datetime="2026-03-25">25 Mar 2026</time></div>
+          <a class="card-article-title" href="blog-single.html">The quiet case for re-reading</a>
+          <div class="card-article-foot"><span>7 min read</span><a class="btn-link" href="blog-single.html">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+        </article>
+        <article class="card-article" data-category="lists">
+          <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-3.svg" alt="A neat bedside stack of unread books" width="900" height="600" loading="lazy" decoding="async"></a>
+          <div class="card-article-meta"><span>Lists</span><span class="dot" aria-hidden="true"></span><time datetime="2026-03-18">18 Mar 2026</time></div>
+          <a class="card-article-title" href="blog-single.html">Building a bedside stack you'll actually finish</a>
+          <p class="card-article-excerpt">The art of the achievable to-read pile — mixing the easy, the ambitious, and the comforting.</p>
+          <div class="card-article-foot"><span>5 min read</span><a class="btn-link" href="blog-single.html">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+        </article>
+        <article class="card-article" data-category="interviews">
+          <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-4.svg" alt="A translator's annotated manuscript" width="900" height="600" loading="lazy" decoding="async"></a>
+          <div class="card-article-meta"><span>Interviews</span><span class="dot" aria-hidden="true"></span><time datetime="2026-03-09">9 Mar 2026</time></div>
+          <a class="card-article-title" href="blog-single.html">Translators: the quiet co-authors</a>
+          <div class="card-article-foot"><span>8 min read</span><a class="btn-link" href="blog-single.html">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+        </article>
+        <article class="card-article" data-category="behind-the-book">
+          <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-1.svg" alt="Inside a traditional bookbindery" width="900" height="600" loading="lazy" decoding="async"></a>
+          <div class="card-article-meta"><span>Behind the book</span><span class="dot" aria-hidden="true"></span><time datetime="2026-03-01">1 Mar 2026</time></div>
+          <a class="card-article-title" href="blog-single.html">Inside the bindery: how a hardback is made</a>
+          <p class="card-article-excerpt">Folded, sewn, rounded, cased — the fourteen quiet steps between a manuscript and the book in your hands.</p>
+          <div class="card-article-foot"><span>6 min read</span><a class="btn-link" href="blog-single.html">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+        </article>
+      </div>
+
+      <div class="blog-empty empty-state" data-blog-empty hidden>
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+        <p class="empty-state-title">Nothing in that category yet</p>
+        <p>Try another filter — there's plenty more on the shelf.</p>
+      </div>
+    </section>
+
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

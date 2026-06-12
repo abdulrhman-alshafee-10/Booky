@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Your wishlist — Booky · Bookstore HTML Template</title>
+  <meta name="description" content="Every book you've saved for later, in one place. Move titles to your cart or keep building your reading list.">
+  <link rel="canonical" href="https://booky.example.com/wishlist.html">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your wishlist — Booky">
+  <meta property="og:description" content="Every book you've saved for later, in one place.">
+  <meta property="og:url" content="https://booky.example.com/wishlist.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main wishlist-wrap" data-wishlist-page>
+      <div class="page-head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Wishlist</span>
+        </nav>
+        <span class="overline">Saved for later</span>
+        <h1 class="display text-3xl sm:text-4xl">Your wishlist</h1>
+        <p class="page-lead">Keep a running list of the books you're drawn to. Move them to your cart whenever you're ready.</p>
+      </div>
+
+      <!-- Populated -->
+      <div data-wishlist-body hidden>
+        <div class="wishlist-toolbar">
+          <span class="wishlist-count" data-wishlist-num>0 books</span>
+          <button class="btn btn-outline" type="button" data-wishlist-addall><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg> Add all to cart</button>
+        </div>
+        <div class="wishlist-grid" data-wishlist-grid><!-- rendered by wishlist.js --></div>
+      </div>
+
+      <!-- Empty -->
+      <div data-wishlist-empty hidden>
+        <div class="empty-state page-empty">
+          <svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg>
+          <p class="empty-state-title">Your wishlist is empty</p>
+          <p>Tap the heart on any book to save it here for later.</p>
+          <a class="btn mt-6" href="shop-left.html">Find books to love</a>
+        </div>
+      </div>
+    </section>
+
+    <include src="sections/featured-books.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

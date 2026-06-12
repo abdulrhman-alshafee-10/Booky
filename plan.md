@@ -29,8 +29,11 @@
 | Phase 10 — Light demos 5–8 | ✅ done (2026-06-12) — review: `demo-author/-publisher/-magazine/-library.html` |
 | Phase 11 — Dark demos + showcase | ✅ done (2026-06-12) — review: `demo-night/-nova.html` + `demos.html` |
 | Phase 12 — Shop | ✅ done (2026-06-12) — review: `shop-left/-right/-full.html` |
-| Phase 13 — Product · cart · checkout · wishlist · compare | ⬜ next |
-| Phases 14–18 | ⬜ not started |
+| Phase 13 — Product · cart · checkout · wishlist · compare | ✅ done (2026-06-12) — review: `product/cart/checkout/order-complete/wishlist/compare.html` |
+| Phase 14 — Blog | ✅ done (2026-06-12) — review: `blog-grid/-list/-masonry/-single/-single-full.html` |
+| Phase 15 — People · info · account · system | ✅ done (2026-06-12) — review: `authors/author/about/contact/faq/login/register/account/404/coming-soon/terms/privacy.html` |
+| Phase 16 — Motion polish | ⬜ next |
+| Phases 17–18 | ⬜ not started |
 
 ---
 
@@ -467,18 +470,18 @@ showcase grid of all 10 with hover previews).
 `blog-single-full.html` (centered prose)
 
 ### People & info (7)
-- [ ] `authors.html` — author card grid + letter filter
-- [ ] `author.html` — portrait hero, bio, stats, bibliography timeline, books grid, quote
-- [ ] `about.html` — story split, values, stats, team row, testimonial, CTA
-- [ ] `contact.html` — split form (validated) + info/hours + map embed (keyless OSM)
-- [ ] `faq.html` — search field + category accordions + contact CTA
-- [ ] `terms.html` / `privacy.html` — prose + sticky side TOC
+- [x] `authors.html` — author card grid + letter filter
+- [x] `author.html` — portrait hero, bio, stats, bibliography timeline, books grid, quote
+- [x] `about.html` — story split, values, stats, team row, testimonial, CTA
+- [x] `contact.html` — split form (validated) + info/hours + map embed (keyless OSM)
+- [x] `faq.html` — search field + category accordions + contact CTA
+- [x] `terms.html` / `privacy.html` — prose + sticky side TOC
 
 ### Account & system (6)
-- [ ] `login.html` · `register.html` — centered narrow card forms, validation states
-- [ ] `account.html` — side-tab dashboard (overview, orders table, addresses, details form)
-- [ ] `404.html` — serif statement + search + home link
-- [ ] `coming-soon.html` — countdown + notify form
+- [x] `login.html` · `register.html` — centered narrow card forms, validation states
+- [x] `account.html` — side-tab dashboard (overview, orders table, addresses, details form)
+- [x] `404.html` — serif statement + search + home link
+- [x] `coming-soon.html` — countdown + notify form
 - [ ] `styleguide.html` — full kit: tokens, type, every component & card & state (QA + buyer reference)
 
 ---
@@ -1103,46 +1106,46 @@ specs 600×900 WebP) · FAQ · credits & changelog. Plus root `README.md`
 ### Phase 13 — Product · cart · checkout · wishlist · compare (6 pages)
 > Reference studied: Ecomus DefaultShopDetails (sticky gallery, badges, compare-at price, live-view, countdown, variant picker, qty, add+buy-now, wishlist/compare, extra links, delivery/return, trust seal, tabs), BoughtTogether/Upsell/RecentProducts, Cart (qty/remove/coupon/countdown), Checkout (billing + order summary + payment radios), dashboard Wishlist/Compare. Adapted to books + vanilla JS + native `<dialog>`.
 
-- [ ] **`product.html`** (`product.js`) — breadcrumb → 2-col:
+- [x] **`product.html`** (`product.js`) — breadcrumb → 2-col:
   - **Gallery (sticky)**: main cover (2:3) + 4 thumbs (vertical ≥lg), click → native `<dialog>` lightbox (arrows + Esc); SALE/NEW badge slot.
   - **Summary**: genre overline · serif H1 · author link · rating + (132) · price-group (+ compare-at) · short promise · static **"● 14 reading now"** liveview · optional **limited-offer countdown** · **format radio-cards** (Paperback/Hardcover/eBook/Audiobook — price + availability update) · qty stepper · **ADD TO CART bar + "Buy it now"** (→checkout) · wishlist + compare icon buttons · trust mini-row · payment marks · meta list (ISBN, pages, publisher, imprint, year, language, SKU) · share row · "Ask a question" + "Delivery & returns" disclosures.
   - **Frequently bought together** (this + 2, checkboxes, bundle total, add-all) · **Tabs** (Description prose · Details spec-table · Reviews: summary bars + rating + review list + validated "write a review" form) · **Related** rail (Card 1) · **Recently viewed** rail (localStorage) · S7.
   - **Sticky add-to-cart bar** on scroll past the fold (thumb · title · price · qty · add). JSON-LD `Book`+`Offer`+`AggregateRating`.
-- [ ] **`cart.html`** — `<h1>` · free-shipping progress bar · line-item table (cover, title+author, format, unit price, qty stepper, line total, remove) · order-note · coupon field (demo `BOOKY10`) · summary card (subtotal · est. shipping · total) · checkout + continue-shopping · trust/payment row · cross-sell rail · **empty-state**. Live via `store.js`.
-- [ ] **`checkout.html`** — 2-col: **left** contact (email) · billing/shipping form (validated) · shipping-method radio-cards (Standard/Express/Pickup) · order notes · payment accordion (Card / PayPal / COD radio-cards); **right (sticky)** order summary (items · coupon · subtotal/shipping/total). "Place order" → writes demo order to localStorage → `order-complete.html`.
-- [ ] **`order-complete.html`** — serif thank-you · generated order number · status timeline (Confirmed → Packed → Shipped) · item recap + totals · shipping/billing recap · continue-shopping.
-- [ ] **`wishlist.html`** — `<h1>` · saved grid (Card 2) + move-to-cart + remove + add-all · **empty-state**. Persists via `store.js`.
-- [ ] **`compare.html`** (NEW; store already supports compare, cap 4) — table: columns = up to 4 saved books (cover, title, remove ×); rows = price, rating, format, availability, author, add-to-cart · **empty-state**.
-- [ ] **New overlay partials** `base/`: `ask-question.html`, `delivery-return.html`, `share.html` (reuse overlay system). **JS:** `product.js` (gallery+lightbox, format→price/availability, tabs, bought-together total, sticky bar, recently-viewed read/write) · extend `cart-ui.js` for the cart page (qty/remove/coupon/free-ship bar) · `checkout.js` (validation + summary sync + place-order persist) · extend `compare.js` to render the compare table.
-- **Done when:** full journey browse → add → cart → coupon → checkout → place order → complete works; wishlist + compare persist across reloads; gallery/lightbox/format-switch/tabs/sticky-bar work; every form validates; 1280/375 verified.
+- [x] **`cart.html`** — `<h1>` · free-shipping progress bar · line-item table (cover, title+author, format, unit price, qty stepper, line total, remove) · order-note · coupon field (demo `BOOKY10`) · summary card (subtotal · est. shipping · total) · checkout + continue-shopping · trust/payment row · cross-sell rail · **empty-state**. Live via `store.js`.
+- [x] **`checkout.html`** — 2-col: **left** contact (email) · billing/shipping form (validated) · shipping-method radio-cards (Standard/Express/Pickup) · order notes · payment accordion (Card / PayPal / COD radio-cards); **right (sticky)** order summary (items · coupon · subtotal/shipping/total). "Place order" → writes demo order to localStorage → `order-complete.html`.
+- [x] **`order-complete.html`** — serif thank-you · generated order number · status timeline (Confirmed → Packed → Shipped) · item recap + totals · shipping/billing recap · continue-shopping.
+- [x] **`wishlist.html`** — `<h1>` · saved grid (Card 2) + move-to-cart + remove + add-all · **empty-state**. Persists via `store.js`.
+- [x] **`compare.html`** (NEW; store already supports compare, cap 4) — table: columns = up to 4 saved books (cover, title, remove ×); rows = price, rating, format, availability, author, add-to-cart · **empty-state**.
+- [x] **New overlay partials** `base/`: `ask-question.html`, `delivery-return.html`, `share.html` (reuse overlay system). **JS:** `product.js` (gallery+lightbox, format→price/availability, tabs, bought-together total, sticky bar, recently-viewed read/write) · extend `cart-ui.js` for the cart page (qty/remove/coupon/free-ship bar) · `checkout.js` (validation + summary sync + place-order persist) · extend `compare.js` to render the compare table.
+- **Done when:** full journey browse → add → cart → coupon → checkout → place order → complete works; wishlist + compare persist across reloads; gallery/lightbox/format-switch/tabs/sticky-bar work; every form validates; 1280/375 verified. ✅ *(verified 2026-06-12: build green 21/21; each new page 1 h1 + 0 dup-id + 0 unresolved includes + 0 stray inline styles. Real-JS seeded test — cart: free-ship bar, line items, BOOKY10 → −$4.93, total $44.32, header badges; checkout: place-order disabled when empty, payment accordion, method prices; order-complete: timeline + recap from persisted order; wishlist: 3 cards + move/remove/add-all; compare: 3-col table (price/rating/format/availability/author/add). Product 1280 + 375: sticky gallery + thumbs + lightbox + format cards + countdown + FBT + tabs + related, mobile stacks clean, no overflow.)*
 
 ### Phase 14 — Blog (5 pages + engine)
 > Reference studied: Ecomus BlogGrid/BlogList/BlogDetails + Sidebar (search, categories, recent, tags, instagram) + RelatedBlogs. Per §11; books-flavoured.
 
-- [ ] **Sidebar widget partials** `blog/`: search · categories (counts) · recent posts (thumb rows) · tag cloud · mini-newsletter · promo cover tile.
-- [ ] `blog-grid.html` — 3-col article cards + **right** sidebar + pagination (JSON-LD `Blog`/`ItemList`).
-- [ ] `blog-list.html` — full-width row cards + **left** sidebar + load-more.
-- [ ] `blog-masonry.html` — CSS-columns masonry, **no** sidebar, category **filter chips**.
-- [ ] `blog-single.html` — title block (overline category · serif H1 · author + date + read-time) · featured image · **prose** (drop cap, serif blockquote + ornament, figures + captions, pull-quotes) · tags + share · prev/next nav · author bio card · related 3-up · comments list + validated form · **right** sidebar. JSON-LD `Article`+`BreadcrumbList`.
-- [ ] `blog-single-full.html` — same content centered at `--container-prose` + **reading-progress bar**.
-- [ ] **JS** `blog.js`: masonry category filter · load-more · reading-progress · comments demo (validate + append).
-- **Done when:** 3 listings (each a different sidebar position) + both singles verified; prose beautiful at 720px; filter/load-more/progress/comments work; 1280/375.
+- [x] **Sidebar widget partials** `blog/`: search · categories (counts) · recent posts (thumb rows) · tag cloud · mini-newsletter · promo cover tile.
+- [x] `blog-grid.html` — 3-col article cards + **right** sidebar + pagination (JSON-LD `Blog`/`ItemList`).
+- [x] `blog-list.html` — full-width row cards + **left** sidebar + load-more.
+- [x] `blog-masonry.html` — CSS-columns masonry, **no** sidebar, category **filter chips**.
+- [x] `blog-single.html` — title block (overline category · serif H1 · author + date + read-time) · featured image · **prose** (drop cap, serif blockquote + ornament, figures + captions, pull-quotes) · tags + share · prev/next nav · author bio card · related 3-up · comments list + validated form · **right** sidebar. JSON-LD `Article`+`BreadcrumbList`.
+- [x] `blog-single-full.html` — same content centered at `--container-prose` + **reading-progress bar**.
+- [x] **JS** `blog.js`: masonry category filter · load-more · reading-progress · comments demo (validate + append).
+- **Done when:** 3 listings (each a different sidebar position) + both singles verified; prose beautiful at 720px; filter/load-more/progress/comments work; 1280/375. ✅ *(verified 2026-06-12: build green 26/26; each page 1 h1 + 0 dup-id + 0 unresolved includes + 0 stray inline styles. Real-JS — masonry filter "Interviews" → 2 cards, aria-pressed all:false/interviews:true; comment submit → count 2→3 + appended "Jo Reader"; reading-progress bar tracks scroll; load-more reveals batches. 1280 + 375: grid 2/3-col + right sidebar, list rows + left sidebar (mobile content-first), masonry 3-col chips, single prose w/ drop-cap+blockquote+figure+pull-quote, single-full centered — all clean, no overflow.)*
 
 ### Phase 15 — People · info · account · system (12 pages)
 > Reference studied: Ecomus otherPages (about/contact/faq/login/register/404) + dashboard (DashboardNav: Dashboard/Orders/Order-details/Addresses/Account-details/Wishlist/Logout). Booky scope per §7; account becomes a proper side-tab dashboard.
 
-- [ ] `authors.html` — author-card grid + **A–Z letter filter** (JS) + counts.
-- [ ] `author.html` — portrait hero · bio · stats · **S25 bibliography timeline** · books grid (Card 2) · favourite quote. JSON-LD `Person`.
-- [ ] `about.html` — story split · values · S11 stats · team row · testimonial · CTA band.
-- [ ] `contact.html` — split: validated form (name/email/subject/message) + info/hours + **keyless OSM map embed** + social row. JSON-LD `Organization`.
-- [ ] `faq.html` — search field (filters questions) · category **accordions** · contact CTA. JSON-LD `FAQPage`.
-- [ ] `login.html` / `register.html` — centered narrow card forms · full validation states · show/hide password · remember-me · social-auth buttons (visual only).
-- [ ] `account.html` — **side-tab dashboard** (`account.js`, DashboardNav pattern): **Overview** (greeting + recent orders + default address) · **Orders** table → **Order details** (in-panel) · **Addresses** (cards + add/edit form) · **Account details** (edit + change-password) · **Wishlist** (reuse) · **Logout**. Demo data from `store.js`/localStorage.
-- [ ] `404.html` — serif statement + search + popular links + home.
-- [ ] `coming-soon.html` — countdown + validated notify form + social.
-- [ ] `terms.html` / `privacy.html` — prose + sticky side TOC (scroll-spy).
-- [ ] **JS** `account.js` (tab panels, demo orders/addresses, in-panel order details) · small helpers `letter-filter` / `faq-search` / `toc-spy` · extend `forms.js` for the new forms.
-- **Done when:** every §7 page exists, builds, navigates, matches the locked language; account tabs + demo orders/addresses work; contact/login/register/coming-soon validate; FAQ search + TOC spy work; 1280/375.
+- [x] `authors.html` — author-card grid + **A–Z letter filter** (JS) + counts.
+- [x] `author.html` — portrait hero · bio · stats · **S25 bibliography timeline** · books grid (Card 2) · favourite quote. JSON-LD `Person`.
+- [x] `about.html` — story split · values · S11 stats · team row · testimonial · CTA band.
+- [x] `contact.html` — split: validated form (name/email/subject/message) + info/hours + **keyless OSM map embed** + social row. JSON-LD `Organization`.
+- [x] `faq.html` — search field (filters questions) · category **accordions** · contact CTA. JSON-LD `FAQPage`.
+- [x] `login.html` / `register.html` — centered narrow card forms · full validation states · show/hide password · remember-me · social-auth buttons (visual only).
+- [x] `account.html` — **side-tab dashboard** (`account.js`, DashboardNav pattern): **Overview** (greeting + recent orders + default address) · **Orders** table → **Order details** (in-panel) · **Addresses** (cards + add/edit form) · **Account details** (edit + change-password) · **Wishlist** (reuse) · **Logout**. Demo data from `store.js`/localStorage.
+- [x] `404.html` — serif statement + search + popular links + home.
+- [x] `coming-soon.html` — countdown + validated notify form + social.
+- [x] `terms.html` / `privacy.html` — prose + sticky side TOC (scroll-spy).
+- [x] **JS** `account.js` (tab panels, demo orders/addresses, in-panel order details) · small helpers `letter-filter` / `faq-search` / `toc-spy` · extend `forms.js` for the new forms.
+- **Done when:** every §7 page exists, builds, navigates, matches the locked language; account tabs + demo orders/addresses work; contact/login/register/coming-soon validate; FAQ search + TOC spy work; 1280/375. ✅ *(verified 2026-06-12: build green 38/38; each new page 1 h1 + 0 dup-id + 0 unresolved includes + 0 stray inline styles. Real-JS shots: account dashboard renders nav + overview cards + orders table (status badges) via `#orders` hash deep-link; contact OSM map + marker; faq accordions; login card + eye toggle; terms sticky TOC w/ active scroll-spy. 1280 + 375-iframe: account/contact stack cleanly, no overflow. **NOTE: `styleguide.html` already existed since Phase 1 as the running showcase — not re-listed here.**)*
 
 ### Phase 16 — Motion polish
 - [ ] `motion.js` site-wide pass per §13: hero timelines, reveals, staggers, counters, parallax, reduced-motion guard

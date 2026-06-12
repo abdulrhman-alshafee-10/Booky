@@ -1,0 +1,28 @@
+<!-- ============================================================
+     Ask-a-question dialog — opened by [data-open="ask-question"].
+     Open/close/focus-trap handled by dialog.js; form by forms.js.
+============================================================ -->
+<div class="overlay overlay-center" id="ask-question" data-overlay role="dialog" aria-modal="true" aria-labelledby="ask-title">
+  <div class="overlay-backdrop" data-close></div>
+  <div class="modal modal-md">
+    <button class="modal-close" data-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg></button>
+    <span class="overline">We're here to help</span>
+    <h2 id="ask-title" class="text-xl mt-1">Ask a question</h2>
+    <p class="text-sm text-ink-soft mt-2">Tell us what you'd like to know about this title — availability, formats, signed copies — and a bookseller will reply by email.</p>
+    <form class="mt-5" data-validate data-success-message="Thanks — a bookseller will reply within one business day.">
+      <div class="field">
+        <label class="label" for="ask-name">Name <span class="req" aria-hidden="true">*</span></label>
+        <input class="input" id="ask-name" name="name" type="text" required data-label="Name" autocomplete="name">
+      </div>
+      <div class="field mt-4">
+        <label class="label" for="ask-email">Email <span class="req" aria-hidden="true">*</span></label>
+        <input class="input" id="ask-email" name="email" type="email" required data-label="Email" autocomplete="email">
+      </div>
+      <div class="field mt-4">
+        <label class="label" for="ask-message">Your question <span class="req" aria-hidden="true">*</span></label>
+        <textarea class="textarea" id="ask-message" name="message" rows="4" required minlength="10" data-label="Question"></textarea>
+      </div>
+      <button class="btn btn-block mt-5" type="submit">Send question</button>
+    </form>
+  </div>
+</div>

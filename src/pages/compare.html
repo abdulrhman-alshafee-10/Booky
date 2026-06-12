@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Compare books — Booky · Bookstore HTML Template</title>
+  <meta name="description" content="Compare up to four books side by side — price, rating, format, and availability — to choose your next read.">
+  <link rel="canonical" href="https://booky.example.com/compare.html">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Compare books — Booky">
+  <meta property="og:description" content="Compare up to four books side by side.">
+  <meta property="og:url" content="https://booky.example.com/compare.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main compare-wrap" data-compare-page>
+      <div class="page-head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Compare</span>
+        </nav>
+        <span class="overline">Side by side</span>
+        <h1 class="display text-3xl sm:text-4xl">Compare books</h1>
+        <p class="page-lead">Weigh up to four titles together — price, rating, format, and availability — and add the winner to your cart.</p>
+      </div>
+
+      <!-- Populated -->
+      <div data-compare-body hidden>
+        <div class="compare-scroll">
+          <table class="compare-table" data-compare-table><!-- rendered by compare.js --></table>
+        </div>
+        <div class="cart-foot">
+          <a class="btn-link" href="shop-left.html"><svg class="icon icon-sm rotate-180" aria-hidden="true"><use href="#i-arrow-right"></use></svg> Add more from the shop</a>
+        </div>
+      </div>
+
+      <!-- Empty -->
+      <div data-compare-empty hidden>
+        <div class="empty-state page-empty">
+          <svg class="icon" aria-hidden="true"><use href="#i-compare"></use></svg>
+          <p class="empty-state-title">Nothing to compare yet</p>
+          <p>Add books with the compare icon and they'll line up here, side by side — up to four at once.</p>
+          <a class="btn mt-6" href="shop-left.html">Browse the shop</a>
+        </div>
+      </div>
+    </section>
+
+    <include src="sections/featured-books.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

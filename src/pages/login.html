@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Sign in — Booky · Your Account</title>
+  <meta name="description" content="Sign in to your Booky account to track orders, manage addresses, and pick up your wishlist where you left off.">
+  <link rel="canonical" href="https://booky.example.com/login.html">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sign in — Booky">
+  <meta property="og:description" content="Sign in to your Booky account.">
+  <meta property="og:url" content="https://booky.example.com/login.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-quiet-algorithm.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sign in — Booky">
+  <meta name="twitter:description" content="Sign in to your Booky account.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-quiet-algorithm.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main auth-wrap">
+      <div class="auth-card">
+        <div class="auth-head">
+          <h1>Welcome back</h1>
+          <p>Sign in to track orders and pick up your wishlist.</p>
+        </div>
+
+        <form data-validate data-success-message="Signed in — welcome back to Booky.">
+          <div class="field">
+            <label class="label" for="l-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="l-email" name="email" type="email" required data-label="Email" autocomplete="email">
+          </div>
+          <div class="field mt-4">
+            <label class="label" for="l-password">Password <span class="req" aria-hidden="true">*</span></label>
+            <div class="pw-field">
+              <input class="input" id="l-password" name="password" type="password" required minlength="8" data-label="Password" autocomplete="current-password">
+              <button type="button" class="pw-toggle" data-pw-toggle="l-password" aria-pressed="false" aria-label="Show password">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="auth-row mt-4">
+            <label class="inline-flex items-center gap-2 text-ink-soft"><input class="check-input" type="checkbox" name="remember"><span>Remember me</span></label>
+            <a class="text-accent" href="#">Forgot password?</a>
+          </div>
+
+          <button class="btn btn-block mt-6" type="submit">Sign in</button>
+        </form>
+
+        <div class="auth-divider">or</div>
+        <button type="button" class="btn btn-outline btn-block btn-social">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"></use></svg> Continue with email link
+        </button>
+
+        <p class="auth-alt">New to Booky? <a href="register.html">Create an account</a></p>
+      </div>
+    </section>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

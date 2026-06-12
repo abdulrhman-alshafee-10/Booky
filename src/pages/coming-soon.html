@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Coming soon — Booky</title>
+  <meta name="description" content="Something new is coming to Booky. Leave your email and we'll let you know the moment the doors open.">
+  <link rel="canonical" href="https://booky.example.com/coming-soon.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coming soon — Booky">
+  <meta property="og:description" content="Something new is coming to Booky. Be the first to know.">
+  <meta property="og:url" content="https://booky.example.com/coming-soon.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/a-cartography-of-dreams.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Coming soon — Booky">
+  <meta name="twitter:description" content="Something new is coming to Booky. Be the first to know.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/a-cartography-of-dreams.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-narrow sys-page">
+      <span class="overline">A new chapter</span>
+      <h1 class="display text-3xl sm:text-4xl mt-2">Our new shop is almost ready</h1>
+      <p class="hero-lead">We're rebinding the whole store — faster shelves, a bigger journal, and members-only editions. It opens in just a few weeks.</p>
+
+      <div class="coming-countdown">
+        <div class="countdown" data-countdown data-deadline="2026-08-01T09:00:00" role="timer" aria-label="Time until launch">
+          <div class="cd-cell"><span class="cd-num" data-cd="days">00</span><span class="cd-label">Days</span></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="hours">00</span><span class="cd-label">Hours</span></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="mins">00</span><span class="cd-label">Mins</span></div>
+          <div class="cd-cell"><span class="cd-num" data-cd="secs">00</span><span class="cd-label">Secs</span></div>
+        </div>
+      </div>
+
+      <form class="coming-notify" data-newsletter aria-label="Notify me at launch">
+        <div class="field">
+          <div class="newsletter-inline">
+            <label class="sr-only" for="cs-email">Email address</label>
+            <input id="cs-email" name="email" type="email" placeholder="you@example.com" required data-label="Email" autocomplete="email">
+            <button class="btn-link" type="submit">Notify me <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+          </div>
+        </div>
+      </form>
+
+      <div class="social-row mt-8 justify-center">
+        <a class="social-link" href="#" aria-label="Booky on Facebook"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+        <a class="social-link" href="#" aria-label="Booky on Instagram"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+        <a class="social-link" href="#" aria-label="Booky on X"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-twitter"></use></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

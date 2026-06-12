@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Journal — list view — Booky · Bookstore HTML Template</title>
+  <meta name="description" content="The Booky journal as a reading list: full-width article rows with excerpts, a category sidebar, and load-more browsing.">
+  <link rel="canonical" href="https://booky.example.com/blog-list.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Journal — Booky">
+  <meta property="og:description" content="Full-width article rows from the Booky journal.">
+  <meta property="og:url" content="https://booky.example.com/blog-list.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/photos/editorial-1.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Journal — Booky">
+  <meta name="twitter:description" content="Full-width article rows from the Booky journal.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/photos/editorial-1.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main blog-wrap">
+      <div class="page-head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="blog-grid.html">Journal</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">List view</span>
+        </nav>
+        <span class="overline">From the journal</span>
+        <h1 class="display text-3xl sm:text-4xl">The reading list</h1>
+        <p class="page-lead">Every essay and interview in full-width rows, newest first. Load more as you go.</p>
+      </div>
+
+      <div class="blog-layout blog-layout--sidebar blog-layout--left">
+        <div class="blog-content">
+          <div class="blog-list" data-blog-list>
+            <article class="card-article card-article-row" data-blog-item>
+              <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-1.svg" alt="A reading nook by a rain-streaked window" width="900" height="600" loading="lazy" decoding="async"></a>
+              <div class="card-article-body">
+                <div class="card-article-meta"><span>Reading life</span><span class="dot" aria-hidden="true"></span><time datetime="2026-05-12">12 May 2026</time></div>
+                <a class="card-article-title" href="blog-single.html">Why we still read by the window</a>
+                <p class="card-article-excerpt">There's a particular light, late in the afternoon, that turns a paperback into something closer to a held breath. We make the case for reading where the weather can see you.</p>
+                <div class="card-article-foot"><span>4 min read</span><a class="btn-link" href="blog-single.html">Read article <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+              </div>
+            </article>
+            <article class="card-article card-article-row" data-blog-item>
+              <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-2.svg" alt="A stack of clothbound books on a wooden desk" width="900" height="600" loading="lazy" decoding="async"></a>
+              <div class="card-article-body">
+                <div class="card-article-meta"><span>Lists</span><span class="dot" aria-hidden="true"></span><time datetime="2026-05-02">2 May 2026</time></div>
+                <a class="card-article-title" href="blog-single.html">Ten quiet novels for a loud year</a>
+                <p class="card-article-excerpt">Not every great book arrives shouting. Ten titles that work slowly — and stay with you long after the noise has died down.</p>
+                <div class="card-article-foot"><span>6 min read</span><a class="btn-link" href="blog-single.html">Read article <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+              </div>
+            </article>
+            <article class="card-article card-article-row" data-blog-item>
+              <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-3.svg" alt="An author's writing table at dawn" width="900" height="600" loading="lazy" decoding="async"></a>
+              <div class="card-article-body">
+                <div class="card-article-meta"><span>Interviews</span><span class="dot" aria-hidden="true"></span><time datetime="2026-04-21">21 Apr 2026</time></div>
+                <a class="card-article-title" href="blog-single.html">Eleanor Finch on writing the sea</a>
+                <p class="card-article-excerpt">The debut novelist on lighthouses, unsent letters, and why she wrote an entire book longhand, by a window, facing the water.</p>
+                <div class="card-article-foot"><span>9 min read</span><a class="btn-link" href="blog-single.html">Read article <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+              </div>
+            </article>
+            <article class="card-article card-article-row" data-blog-item>
+              <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-4.svg" alt="A printer's tray of metal type" width="900" height="600" loading="lazy" decoding="async"></a>
+              <div class="card-article-body">
+                <div class="card-article-meta"><span>Behind the book</span><span class="dot" aria-hidden="true"></span><time datetime="2026-04-14">14 Apr 2026</time></div>
+                <a class="card-article-title" href="blog-single.html">How a cover finds its colour</a>
+                <p class="card-article-excerpt">From a rejected swatch to the shade that finally sang — a designer walks us through the long search for a single cover hue.</p>
+                <div class="card-article-foot"><span>5 min read</span><a class="btn-link" href="blog-single.html">Read article <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+              </div>
+            </article>
+            <article class="card-article card-article-row" data-blog-item>
+              <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-1.svg" alt="A harbourside bookshop window at dusk" width="900" height="600" loading="lazy" decoding="async"></a>
+              <div class="card-article-body">
+                <div class="card-article-meta"><span>Events</span><span class="dot" aria-hidden="true"></span><time datetime="2026-04-03">3 Apr 2026</time></div>
+                <a class="card-article-title" href="blog-single.html">A weekend of slow reading in Aldridge Bay</a>
+                <p class="card-article-excerpt">Two days, no screens, a stack of books and the sea. Notes from our first reader's retreat on the northern coast.</p>
+                <div class="card-article-foot"><span>3 min read</span><a class="btn-link" href="blog-single.html">Read article <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+              </div>
+            </article>
+            <article class="card-article card-article-row" data-blog-item>
+              <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-2.svg" alt="A well-worn paperback left open on a chair" width="900" height="600" loading="lazy" decoding="async"></a>
+              <div class="card-article-body">
+                <div class="card-article-meta"><span>Reading life</span><span class="dot" aria-hidden="true"></span><time datetime="2026-03-25">25 Mar 2026</time></div>
+                <a class="card-article-title" href="blog-single.html">The quiet case for re-reading</a>
+                <p class="card-article-excerpt">A book never changes, but you do. On the strange comfort — and surprising newness — of returning to the same pages.</p>
+                <div class="card-article-foot"><span>7 min read</span><a class="btn-link" href="blog-single.html">Read article <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+              </div>
+            </article>
+            <article class="card-article card-article-row" data-blog-item>
+              <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-3.svg" alt="A neat bedside stack of unread books" width="900" height="600" loading="lazy" decoding="async"></a>
+              <div class="card-article-body">
+                <div class="card-article-meta"><span>Lists</span><span class="dot" aria-hidden="true"></span><time datetime="2026-03-18">18 Mar 2026</time></div>
+                <a class="card-article-title" href="blog-single.html">Building a bedside stack you'll actually finish</a>
+                <p class="card-article-excerpt">The art of the achievable to-read pile: how to mix the easy, the ambitious, and the comforting so the stack shrinks.</p>
+                <div class="card-article-foot"><span>5 min read</span><a class="btn-link" href="blog-single.html">Read article <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="load-more-row">
+            <button class="btn btn-outline" type="button" data-blog-loadmore data-initial="4" data-step="3">Load more articles</button>
+          </div>
+        </div>
+
+        <include src="blog/sidebar.html"></include>
+      </div>
+    </section>
+
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

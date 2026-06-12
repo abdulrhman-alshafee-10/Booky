@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Your cart — Booky · Bookstore HTML Template</title>
+  <meta name="description" content="Review the books in your cart, update quantities, apply a coupon, and head to a secure checkout.">
+  <link rel="canonical" href="https://booky.example.com/cart.html">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your cart — Booky">
+  <meta property="og:description" content="Review the books in your cart and check out securely.">
+  <meta property="og:url" content="https://booky.example.com/cart.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main cart-wrap" data-cart-page>
+      <div class="page-head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Cart</span>
+        </nav>
+        <span class="overline">Almost there</span>
+        <h1 class="display text-3xl sm:text-4xl">Your cart</h1>
+      </div>
+
+      <!-- Populated state -->
+      <div data-cart-body>
+        <div class="cart-layout">
+          <div>
+            <div class="freeship" data-freeship>
+              <p class="freeship-text" data-freeship-text><svg class="icon icon-sm" aria-hidden="true"><use href="#i-truck"></use></svg> You're <b>$40.00</b> away from free shipping</p>
+              <div class="freeship-track"><div class="freeship-fill" data-freeship-fill></div></div>
+            </div>
+
+            <div class="cart-table" data-cart-rows>
+              <!-- rows rendered by cart-ui.js -->
+            </div>
+
+            <div class="field cart-note">
+              <label class="label" for="cart-note">Order note <span class="text-ink-faint">(optional)</span></label>
+              <textarea class="textarea" id="cart-note" name="note" rows="2" placeholder="Gift wrap, delivery instructions, a dedication…"></textarea>
+            </div>
+
+            <div class="cart-foot">
+              <a class="btn-link" href="shop-left.html"><svg class="icon icon-sm rotate-180" aria-hidden="true"><use href="#i-arrow-right"></use></svg> Continue shopping</a>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <aside>
+            <div class="summary-card is-sticky">
+              <h2>Order summary</h2>
+
+              <div class="summary-line"><span>Subtotal</span><span class="val" data-cart-subtotal>$0.00</span></div>
+              <div class="summary-line is-discount" data-cart-discount-row hidden><span>Discount</span><span class="val" data-cart-discount>−$0.00</span></div>
+              <div class="summary-line"><span>Shipping</span><span class="val">Calculated at checkout</span></div>
+              <div class="summary-total"><span class="lbl">Total</span><span class="val" data-cart-total>$0.00</span></div>
+
+              <!-- Coupon -->
+              <div class="mt-5">
+                <form class="coupon-form" data-coupon-form>
+                  <input class="input" type="text" name="coupon" placeholder="Coupon code" aria-label="Coupon code">
+                  <button class="btn btn-outline" type="submit"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-tag"></use></svg> Apply</button>
+                </form>
+                <p class="coupon-applied" data-coupon-applied hidden>
+                  <svg class="icon icon-sm" aria-hidden="true"><use href="#i-check-circle"></use></svg>
+                  Code <b data-coupon-code>BOOKY10</b> applied
+                  <button type="button" data-coupon-remove aria-label="Remove coupon"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"></use></svg></button>
+                </p>
+                <p class="text-xs text-ink-faint mt-2">Try <b>BOOKY10</b> for 10% off your order.</p>
+              </div>
+
+              <a class="btn btn-block mt-5" href="checkout.html"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg> Proceed to checkout</a>
+
+              <div class="summary-trust">
+                <span class="summary-trust-item"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg> SSL-encrypted secure checkout</span>
+                <span class="summary-trust-item"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg> 30-day easy returns</span>
+              </div>
+              <div class="prod-pay mt-4">
+                <span class="payment-marks">
+                  <span class="payment-mark">Visa</span>
+                  <span class="payment-mark">Mastercard</span>
+                  <span class="payment-mark">Amex</span>
+                  <span class="payment-mark">PayPal</span>
+                </span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div data-cart-empty hidden>
+        <div class="empty-state page-empty">
+          <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>
+          <p class="empty-state-title">Your cart is empty</p>
+          <p>You haven't added any books yet. Browse the shelves and find your next read.</p>
+          <a class="btn mt-6" href="shop-left.html">Browse the shop</a>
+        </div>
+      </div>
+    </section>
+
+    <include src="sections/featured-books.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

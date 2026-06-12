@@ -1,0 +1,26 @@
+<!-- ============================================================
+     Delivery & returns dialog — opened by [data-open="delivery-return"].
+     Open/close/focus-trap handled by dialog.js.
+============================================================ -->
+<div class="overlay overlay-center" id="delivery-return" data-overlay role="dialog" aria-modal="true" aria-labelledby="dr-title">
+  <div class="overlay-backdrop" data-close></div>
+  <div class="modal modal-lg">
+    <button class="modal-close" data-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg></button>
+    <span class="overline">Good to know</span>
+    <h2 id="dr-title" class="text-xl mt-1">Delivery &amp; returns</h2>
+    <ul class="mt-5 flex flex-col gap-4">
+      <li class="prod-trust-item items-start">
+        <svg class="icon" aria-hidden="true"><use href="#i-truck"></use></svg>
+        <span><b class="text-ink">Free standard shipping</b> on orders over $40. Standard delivery arrives in 3–5 working days; express in 1–2.</span>
+      </li>
+      <li class="prod-trust-item items-start">
+        <svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg>
+        <span><b class="text-ink">30-day returns.</b> Changed your mind? Send any unread book back within 30 days for a full refund.</span>
+      </li>
+      <li class="prod-trust-item items-start">
+        <svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+        <span><b class="text-ink">Carefully packed.</b> Every order ships in recyclable, rigid book mailers so covers arrive crease-free.</span>
+      </li>
+    </ul>
+  </div>
+</div>

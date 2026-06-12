@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Create account — Booky · Join</title>
+  <meta name="description" content="Create a free Booky account to save your wishlist, track orders, and check out faster. The first month of membership is on us.">
+  <link rel="canonical" href="https://booky.example.com/register.html">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Create account — Booky">
+  <meta property="og:description" content="Create a free Booky account to save your wishlist and check out faster.">
+  <meta property="og:url" content="https://booky.example.com/register.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-quiet-algorithm.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Create account — Booky">
+  <meta name="twitter:description" content="Create a free Booky account to save your wishlist and check out faster.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-quiet-algorithm.svg">
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main auth-wrap">
+      <div class="auth-card">
+        <div class="auth-head">
+          <h1>Create your account</h1>
+          <p>Save your wishlist, track orders, and check out faster.</p>
+        </div>
+
+        <form data-validate data-success-message="Welcome to Booky — your account is ready.">
+          <div class="field">
+            <label class="label" for="r-name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="r-name" name="name" type="text" required data-label="Full name" autocomplete="name">
+          </div>
+          <div class="field mt-4">
+            <label class="label" for="r-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" id="r-email" name="email" type="email" required data-label="Email" autocomplete="email">
+          </div>
+          <div class="field mt-4">
+            <label class="label" for="r-password">Password <span class="req" aria-hidden="true">*</span></label>
+            <div class="pw-field">
+              <input class="input" id="r-password" name="password" type="password" required minlength="8" data-label="Password" autocomplete="new-password">
+              <button type="button" class="pw-toggle" data-pw-toggle="r-password" aria-pressed="false" aria-label="Show password">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg>
+              </button>
+            </div>
+            <p class="field-hint">At least 8 characters.</p>
+          </div>
+          <div class="field mt-4">
+            <label class="label" for="r-confirm">Confirm password <span class="req" aria-hidden="true">*</span></label>
+            <div class="pw-field">
+              <input class="input" id="r-confirm" name="confirm" type="password" required data-match="r-password" data-label="Confirm password" autocomplete="new-password">
+              <button type="button" class="pw-toggle" data-pw-toggle="r-confirm" aria-pressed="false" aria-label="Show password">
+                <svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg>
+              </button>
+            </div>
+          </div>
+
+          <label class="inline-flex items-start gap-2 text-sm text-ink-soft mt-5"><input class="check-input mt-1" type="checkbox" name="terms" required data-label="The terms checkbox"><span>I agree to the <a class="text-accent" href="terms.html">Terms</a> and <a class="text-accent" href="privacy.html">Privacy Policy</a>.</span></label>
+
+          <button class="btn btn-block mt-6" type="submit">Create account</button>
+        </form>
+
+        <div class="auth-divider">or</div>
+        <button type="button" class="btn btn-outline btn-block btn-social">
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-mail"></use></svg> Sign up with email link
+        </button>
+
+        <p class="auth-alt">Already have an account? <a href="login.html">Sign in</a></p>
+      </div>
+    </section>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <include src="base/scripts.html"></include>
+</body>
+</html>
