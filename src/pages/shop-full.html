@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Shop · Full Width — Booky · Bookstore HTML Template</title>
+  <meta name="description" content="The full-width Booky shop: a horizontal toolbar, an off-canvas filter drawer, a 2/3/4-column switch, and boutique product cards — every control works client-side.">
+  <link rel="canonical" href="https://booky.example.com/shop-full.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shop · Full Width — Booky">
+  <meta property="og:description" content="Full-width bookshop grid with an off-canvas filter drawer and column switcher.">
+  <meta property="og:url" content="https://booky.example.com/shop-full.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-cartographers-oath.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shop · Full Width — Booky">
+  <meta name="twitter:description" content="Full-width bookshop grid with an off-canvas filter drawer and column switcher.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-cartographers-oath.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://booky.example.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Shop", "item": "https://booky.example.com/shop-full.html" }
+    ]
+  }
+  </script>
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main shop-wrap">
+
+      <div class="shop-head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Shop</span>
+        </nav>
+        <span class="overline">Browse the shelves</span>
+        <h1 class="display text-3xl sm:text-4xl">The Whole Catalogue</h1>
+        <p class="shop-intro">A wide view of everything in stock. Open the filters, choose your columns, and explore.</p>
+      </div>
+
+      <div class="shop-layout shop-page--full" data-shop="none" data-price-floor="10" data-price-ceil="20">
+        <include src="shop/filter-drawer.html"></include>
+
+        <div class="shop-content">
+          <include src="shop/toolbar.html"></include>
+          <include src="shop/card-skeleton.html"></include>
+
+          <div class="shop-grid" data-shop-grid data-cols="3">
+            <include src="shop/grid-boutique.html"></include>
+          </div>
+          <div class="shop-list" data-shop-list hidden></div>
+
+          <include src="shop/shop-empty.html"></include>
+        </div>
+      </div>
+
+    </section>
+
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

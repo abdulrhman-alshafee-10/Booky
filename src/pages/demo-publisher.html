@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>The House — Booky · Publisher Bookstore Demo</title>
+  <meta name="description" content="A publishing house storefront demo for Booky — an editorial grid, oversized type, and a vermilion accent used sparingly. Institutional and literary. One of ten home styles.">
+  <link rel="canonical" href="https://booky.example.com/demo-publisher.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The House — Booky Publisher Demo">
+  <meta property="og:description" content="A publishing house storefront demo for Booky — editorial grid, big type, vermilion accent.">
+  <meta property="og:url" content="https://booky.example.com/demo-publisher.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-cartographers-oath.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The House — Booky Publisher Demo">
+  <meta name="twitter:description" content="A publishing house storefront demo for Booky.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-cartographers-oath.svg">
+</head>
+<body class="demo-publisher">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+
+    <include src="heroes/hero-editorial.html"></include>
+
+    <!-- S1 — Imprint grid (text wordmarks on a greige band) -->
+    <section class="section section-deep" aria-labelledby="p-imprints">
+      <div class="container-main text-center">
+        <h2 id="p-imprints" class="overline">Five imprints, one house</h2>
+        <div class="brand-strip mt-8">
+          <a class="brand-mark" href="shop-left.html">Aldridge &amp; Co.</a>
+          <a class="brand-mark" href="shop-left.html">Northwind</a>
+          <a class="brand-mark" href="shop-left.html">Meridian</a>
+          <a class="brand-mark" href="shop-left.html">The Quill House</a>
+          <a class="brand-mark" href="shop-left.html">Saltmarsh</a>
+        </div>
+      </div>
+    </section>
+
+    <include src="sections/featured-books.html"></include>
+
+    <!-- S13 — Our authors (muted serif name marks) -->
+    <section class="section" aria-labelledby="p-authors">
+      <div class="container-main text-center">
+        <h2 id="p-authors" class="overline">Published by our house</h2>
+        <div class="brand-strip mt-8">
+          <a class="brand-mark" href="authors.html">Eleanor Finch</a>
+          <a class="brand-mark" href="authors.html">Marina Vøllo</a>
+          <a class="brand-mark" href="authors.html">Tomás Iriarte</a>
+          <a class="brand-mark" href="authors.html">Nadia Soto</a>
+          <a class="brand-mark" href="authors.html">Wren Adler</a>
+          <a class="brand-mark" href="authors.html">Rosa Marlowe</a>
+        </div>
+      </div>
+    </section>
+
+    <include src="sections/genre-spotlight.html"></include>
+
+    <!-- S26 — Catalog archive (seasons), reusing the archive grid -->
+    <section class="section section-deep" aria-labelledby="p-catalog">
+      <div class="container-main">
+        <div class="section-head-row">
+          <div class="section-head">
+            <span class="overline">Seasonal catalogs</span>
+            <h2 id="p-catalog">From our list</h2>
+          </div>
+          <a class="btn-link" href="shop-left.html">Download the catalog <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+        </div>
+        <ul class="archive-grid mt-10">
+          <li class="archive-item">
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Spring 2026 catalog"><img src="assets/images/covers/the-cartographers-oath.svg" alt="Spring 2026 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <span class="archive-no">Spring 2026</span>
+            <span class="archive-date">14 new titles</span>
+          </li>
+          <li class="archive-item">
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Autumn 2025 catalog"><img src="assets/images/covers/the-last-observatory.svg" alt="Autumn 2025 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <span class="archive-no">Autumn 2025</span>
+            <span class="archive-date">11 titles</span>
+          </li>
+          <li class="archive-item">
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Spring 2025 catalog"><img src="assets/images/covers/of-foxes-and-fables.svg" alt="Spring 2025 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <span class="archive-no">Spring 2025</span>
+            <span class="archive-date">9 titles</span>
+          </li>
+          <li class="archive-item">
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Autumn 2024 catalog"><img src="assets/images/covers/the-glasshouse-year.svg" alt="Autumn 2024 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <span class="archive-no">Autumn 2024</span>
+            <span class="archive-date">12 titles</span>
+          </li>
+          <li class="archive-item">
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Spring 2024 catalog"><img src="assets/images/covers/a-history-of-quiet-things.svg" alt="Spring 2024 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <span class="archive-no">Spring 2024</span>
+            <span class="archive-date">10 titles</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <include src="sections/latest-articles.html"></include>
+    <include src="sections/trust-strip.html"></include>
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

@@ -646,4 +646,350 @@
   /* alternate tiles pick up the sunshine accent (kids defines --color-accent-alt) */
   .age-tile--alt { background-color: color-mix(in oklch, var(--color-accent-alt) 14%, transparent); }
   .age-tile--alt .icon, .age-tile--alt .age-range { color: color-mix(in oklch, var(--color-accent-alt), black 18%); }
+
+  /* ═══════════════════════════════════════════════════════════
+     H4 — Portrait hero (author demo)  [Phase 10]
+  ═══════════════════════════════════════════════════════════ */
+  .hero-portrait { padding-block: clamp(2.5rem, 6vw, 5rem); }
+  .hero-portrait-grid { display: grid; gap: 2.5rem; align-items: center; }
+  @media (min-width: 1024px) {
+    .hero-portrait-grid { grid-template-columns: 0.85fr 1fr; gap: 4rem; }
+  }
+  .hero-portrait-aside { text-align: center; }
+  .hero-portrait-photo { font-size: var(--text-display); }
+  .hero-portrait-quote {
+    margin-block-start: 1.75rem;
+    margin-inline: auto;
+    max-width: 28ch;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-lg);
+    line-height: 1.5;
+    color: var(--color-ink-soft);
+  }
+  .hero-portrait-body .overline { display: block; }
+  .hero-portrait-body h1 { margin-block-start: 1rem; }
+  .hero-portrait-body .hero-lead { margin-block-start: 1.25rem; max-width: 50ch; color: var(--color-ink-soft); line-height: 1.7; }
+  .hero-portrait-latest {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+    margin-block-start: 2.25rem;
+    padding-block-start: 2.25rem;
+    border-block-start: 1px solid var(--color-line);
+  }
+  @media (min-width: 480px) {
+    .hero-portrait-latest { grid-template-columns: 7rem 1fr; gap: 1.75rem; }
+  }
+  .hero-portrait-latest .cover { inline-size: 7rem; margin-inline: auto; }
+  .hero-portrait-latest-body .overline { display: block; }
+  .hero-portrait-latest-title { margin-block-start: 0.4rem; font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-ink); }
+  .hero-portrait-latest-body p + p { margin-block-start: 0.5rem; }
+
+  /* ═══════════════════════════════════════════════════════════
+     H5 — Editorial grid hero (publisher / magazine)  [Phase 10]
+  ═══════════════════════════════════════════════════════════ */
+  .hero-editorial { padding-block: clamp(2.5rem, 6vw, 5rem); }
+  .hero-editorial-grid { display: grid; gap: 3rem; align-items: center; }
+  @media (min-width: 1024px) {
+    .hero-editorial-grid { grid-template-columns: 1fr 0.85fr; gap: 4rem; }
+  }
+  .hero-editorial-text .overline { display: block; }
+  .hero-editorial-text h1 { margin-block-start: 1rem; }
+  .hero-editorial-text .hero-lead { margin-block-start: 1.25rem; max-width: 46ch; color: var(--color-ink-soft); line-height: 1.7; }
+  .hero-editorial-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-block-start: 2rem; }
+  .hero-editorial-covers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    align-items: end;
+  }
+  .hero-editorial-cover { box-shadow: var(--shadow-cover); }
+  .hero-editorial-cover-1 { translate: 0 -1.25rem; }
+  .hero-editorial-cover-3 { translate: 0 -1.25rem; }
+  @media (min-width: 1024px) {
+    .hero-editorial-cover-2 { translate: 0 1.5rem; }
+  }
+  /* single-cover variant (magazine issue hero) */
+  .hero-editorial-covers--single { grid-template-columns: 1fr; max-inline-size: 18rem; margin-inline: auto; }
+
+  /* ═══════════════════════════════════════════════════════════
+     S25 — Bibliography timeline (author demo)  [Phase 10]
+  ═══════════════════════════════════════════════════════════ */
+  .bibliography { position: relative; list-style: none; }
+  .biblio-entry {
+    display: grid;
+    grid-template-columns: 3.5rem 4.5rem 1fr;
+    gap: 1.25rem 1.5rem;
+    align-items: start;
+    padding-block: 1.75rem;
+    border-block-start: 1px solid var(--color-line);
+  }
+  .biblio-entry:first-child { border-block-start: 0; }
+  .biblio-year {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    line-height: 1.2;
+    color: var(--color-accent);
+  }
+  .biblio-cover { inline-size: 4.5rem; }
+  .biblio-body .overline { display: block; color: var(--color-ink-faint); }
+  .biblio-title {
+    display: block;
+    margin-block-start: 0.4rem;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    color: var(--color-ink);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-smooth);
+  }
+  .biblio-title:hover, .biblio-title:focus-visible { color: var(--color-accent); }
+  .biblio-body p { margin-block-start: 0.5rem; color: var(--color-ink-soft); line-height: 1.6; }
+  @media (max-width: 479px) {
+    .biblio-entry { grid-template-columns: 4.5rem 1fr; }
+    .biblio-year { grid-column: 1 / -1; }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     S26 — Issue / catalog archive (magazine + publisher)  [Phase 10]
+  ═══════════════════════════════════════════════════════════ */
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+    list-style: none;
+  }
+  @media (min-width: 640px) { .archive-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1024px) { .archive-grid { grid-template-columns: repeat(5, 1fr); } }
+  .archive-item { text-align: center; }
+  .archive-cover { display: block; box-shadow: var(--shadow-cover); }
+  .archive-no {
+    display: block;
+    margin-block-start: 1rem;
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    color: var(--color-ink);
+  }
+  .archive-date {
+    display: block;
+    margin-block-start: 0.25rem;
+    font-size: var(--text-overline);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     DARK-FIRST polish (demos 9–10, [data-theme="dark"])  [Phase 11]
+     Header A / Footer A recompose into "Header C" / dark footer
+     purely through the dark token set; these add the extra glow.
+  ═══════════════════════════════════════════════════════════ */
+  [data-theme="dark"] .cover img { filter: brightness(1.04); }
+  [data-theme="dark"] .header-action .count,
+  [data-theme="dark"] .badge-glow {
+    box-shadow: 0 0 0 1px color-mix(in oklch, var(--color-accent) 50%, transparent),
+                0 0 12px -2px var(--color-accent);
+  }
+  /* shared waveform vis (static, decorative) */
+  .waveform { display: block; inline-size: 100%; block-size: 2rem; color: var(--color-accent); }
+  .waveform polyline { fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+
+  /* ═══════════════════════════════════════════════════════════
+     H6 — Dark player hero (night demo)
+  ═══════════════════════════════════════════════════════════ */
+  .hero-player { padding-block: clamp(2.5rem, 6vw, 5rem); }
+  .hero-player-grid { display: grid; gap: 3rem; align-items: center; }
+  @media (min-width: 1024px) { .hero-player-grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+  .hero-player-text .overline { display: block; }
+  .hero-player-text h1 { margin-block-start: 1rem; }
+  .hero-player-text .hero-lead { margin-block-start: 1.25rem; max-width: 44ch; color: var(--color-ink-soft); line-height: 1.7; }
+  .hero-player-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-block-start: 2rem; }
+
+  .player-card {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-cover);
+  }
+  .player-card .cover { inline-size: 6.5rem; }
+  .player-info .overline { display: block; color: var(--color-accent); }
+  .player-title { margin-block-start: 0.35rem; font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-ink); }
+  .player-author { font-size: var(--text-sm); color: var(--color-ink-soft); }
+  .player-bar { display: flex; align-items: center; gap: 1rem; margin-block-start: 1.1rem; }
+  .player-btn {
+    flex-shrink: 0;
+    display: inline-grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    color: var(--color-paper);
+    border: 0;
+    cursor: pointer;
+    transition: transform var(--duration-fast) var(--ease-smooth);
+  }
+  .player-btn:hover, .player-btn:focus-visible { transform: scale(1.06); }
+  .player-btn .icon { inline-size: 1.1rem; block-size: 1.1rem; }
+  .player-wave { flex: 1; min-inline-size: 0; }
+  .player-time { flex-shrink: 0; font-size: var(--text-xs); color: var(--color-ink-faint); font-variant-numeric: tabular-nums; }
+
+  /* ═══════════════════════════════════════════════════════════
+     H7 — Dark panel hero (nova demo)
+  ═══════════════════════════════════════════════════════════ */
+  .hero-panel { padding-block: clamp(3rem, 8vw, 6.5rem); text-align: center; }
+  .hero-panel .overline { display: block; color: var(--color-accent); }
+  .hero-panel-display {
+    margin-block-start: 1rem;
+    font-size: clamp(2.75rem, 1.5rem + 6vw, 6rem);
+    line-height: 1.04;
+    text-shadow: 0 0 38px color-mix(in oklch, var(--color-accent) 45%, transparent);
+  }
+  .hero-panel .hero-lead { margin-block-start: 1.5rem; max-width: 50ch; margin-inline: auto; color: var(--color-ink-soft); }
+  .hero-panel-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-block-start: 2rem; }
+  .hero-panel-rail {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-block-start: 3rem;
+    overflow-x: auto;
+    padding-block-end: 0.5rem;
+    scrollbar-width: thin;
+  }
+  .hero-panel-rail .cover { flex: 0 0 auto; inline-size: 8rem; }
+  .hero-panel-rail .cover img { box-shadow: 0 12px 40px -12px color-mix(in oklch, var(--color-accent) 55%, transparent); }
+
+  /* ═══════════════════════════════════════════════════════════
+     S22 — Audio sample rail (night demo)
+  ═══════════════════════════════════════════════════════════ */
+  .audio-list { display: grid; gap: 1rem; }
+  .audio-row {
+    display: grid;
+    grid-template-columns: 4rem 1fr auto;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+  }
+  .audio-row .cover { inline-size: 4rem; }
+  .audio-body { min-inline-size: 0; }
+  .audio-title { font-family: var(--font-display); font-size: var(--text-lg); color: var(--color-ink); }
+  .audio-author { font-size: var(--text-sm); color: var(--color-ink-soft); }
+  .audio-vis { display: flex; align-items: center; gap: 1rem; margin-block-start: 0.6rem; }
+  .audio-vis .waveform { block-size: 1.5rem; }
+  .audio-meta { display: flex; align-items: center; gap: 1.5rem; }
+  .audio-duration { display: inline-flex; align-items: center; gap: 0.4rem; font-size: var(--text-sm); color: var(--color-ink-faint); font-variant-numeric: tabular-nums; }
+  .audio-duration .icon { inline-size: 1rem; block-size: 1rem; }
+  .audio-play {
+    display: inline-grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    border-radius: var(--radius-full);
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-smooth), color var(--duration-fast) var(--ease-smooth);
+  }
+  .audio-play:hover, .audio-play:focus-visible { background-color: var(--color-accent); color: var(--color-paper); }
+  .audio-play .icon { inline-size: 1.05rem; block-size: 1.05rem; }
+  @media (max-width: 639px) {
+    .audio-row { grid-template-columns: 3.25rem 1fr; }
+    .audio-meta { grid-column: 1 / -1; justify-content: space-between; }
+    .audio-row .cover { inline-size: 3.25rem; }
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     S23 — Series / volumes rail (nova demo)
+  ═══════════════════════════════════════════════════════════ */
+  .series-rail {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(11rem, 1fr);
+    gap: 1.75rem;
+    overflow-x: auto;
+    padding-block-end: 1rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+  .series-item { scroll-snap-align: start; text-align: center; }
+  .series-cover-wrap { position: relative; }
+  .series-no {
+    position: absolute;
+    inset-block-start: -0.75rem;
+    inset-inline-start: -0.75rem;
+    z-index: 1;
+    display: inline-grid;
+    place-items: center;
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    color: var(--color-paper);
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    box-shadow: 0 0 16px -2px var(--color-accent);
+  }
+  .series-cover-wrap .cover img { transition: box-shadow var(--duration-base) var(--ease-out); }
+  .series-item:hover .cover img,
+  .series-item:focus-within .cover img { box-shadow: 0 14px 44px -10px color-mix(in oklch, var(--color-accent) 60%, transparent); }
+  .series-title { display: block; margin-block-start: 0.9rem; font-family: var(--font-display); font-size: var(--text-lg); color: var(--color-ink); text-decoration: none; }
+  .series-title:hover, .series-title:focus-visible { color: var(--color-accent); }
+  .series-vol { display: block; margin-block-start: 0.2rem; font-size: var(--text-xs); color: var(--color-ink-faint); }
+
+  /* ═══════════════════════════════════════════════════════════
+     Demos showcase (demos.html buyer page)  [Phase 11]
+     Each card is themed by a .demo-* token class (and data-theme="dark"
+     on the dark two) so its preview tile previews the real accent.
+  ═══════════════════════════════════════════════════════════ */
+  .demos-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .demos-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .demos-grid { grid-template-columns: repeat(3, 1fr); } }
+  .demo-card {
+    display: block;
+    text-decoration: none;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--color-surface);
+    transition: transform var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out);
+  }
+  .demo-card:hover, .demo-card:focus-visible { transform: translateY(-6px); box-shadow: var(--shadow-drop); }
+  .demo-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    aspect-ratio: 4 / 3;
+    padding: 1.5rem;
+    background-color: var(--color-paper-deep);
+    border-block-end: 1px solid var(--color-line);
+  }
+  .demo-preview-bar { block-size: 0.5rem; inline-size: 42%; border-radius: var(--radius-full); background-color: var(--color-accent); }
+  .demo-preview-line { block-size: 0.35rem; border-radius: var(--radius-full); background-color: var(--color-line-strong); }
+  .demo-preview-line.is-short { inline-size: 60%; }
+  .demo-preview-covers { display: flex; gap: 0.6rem; margin-block-start: auto; }
+  .demo-preview-covers i {
+    display: block;
+    inline-size: 2.1rem;
+    aspect-ratio: 2 / 3;
+    border-radius: var(--radius-xs);
+    background-color: var(--color-accent-soft);
+    border: 1px solid var(--color-accent);
+  }
+  .demo-card-body { padding: 1.25rem 1.5rem 1.5rem; }
+  .demo-card-body .overline { display: block; color: var(--color-accent); }
+  .demo-card-title { margin-block-start: 0.4rem; font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-ink); font-weight: 400; }
+  .demo-card-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-block-start: 0.85rem; font-size: var(--text-sm); color: var(--color-ink-soft); transition: color var(--duration-fast) var(--ease-smooth); }
+  .demo-card:hover .demo-card-link, .demo-card:focus-visible .demo-card-link { color: var(--color-accent); }
+  .demo-card-link .icon { inline-size: 1rem; block-size: 1rem; }
 }

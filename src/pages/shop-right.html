@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Shop · Right Sidebar — Booky · Bookstore HTML Template</title>
+  <meta name="description" content="The Booky shop with a right-hand filter sidebar, editorial product cards, and a load-more pattern — genre, price, format, rating and publisher filters all work client-side.">
+  <link rel="canonical" href="https://booky.example.com/shop-right.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shop · Right Sidebar — Booky">
+  <meta property="og:description" content="Editorial bookshop grid with a right filter sidebar and load-more.">
+  <meta property="og:url" content="https://booky.example.com/shop-right.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/salt-and-starlight.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shop · Right Sidebar — Booky">
+  <meta name="twitter:description" content="Editorial bookshop grid with a right filter sidebar and load-more.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/salt-and-starlight.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://booky.example.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "Shop", "item": "https://booky.example.com/shop-right.html" }
+    ]
+  }
+  </script>
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main shop-wrap">
+
+      <div class="shop-head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Shop</span>
+        </nav>
+        <span class="overline">Browse the shelves</span>
+        <h1 class="display text-3xl sm:text-4xl">All Books</h1>
+        <p class="shop-intro">From debut poetry to deep non-fiction. Narrow it down on the right, then keep loading more.</p>
+      </div>
+
+      <div class="shop-layout shop-has-sidebar shop-layout--right" data-shop="more" data-step="6" data-price-floor="10" data-price-ceil="20">
+        <include src="shop/filter-drawer.html"></include>
+
+        <div class="shop-content">
+          <include src="shop/toolbar.html"></include>
+          <include src="shop/card-skeleton.html"></include>
+
+          <div class="shop-grid shop-grid--sidebar" data-shop-grid>
+            <include src="shop/grid-editorial.html"></include>
+          </div>
+          <div class="shop-list" data-shop-list hidden></div>
+
+          <include src="shop/shop-empty.html"></include>
+
+          <div class="load-more-row">
+            <button class="btn btn-outline" type="button" data-load-more>Load more books<span data-load-more-left></span></button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

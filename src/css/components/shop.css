@@ -33,4 +33,123 @@
   .qv-blurb { font-size: var(--text-sm); color: var(--color-ink-soft); line-height: 1.6; }
   .qv-actions { display: flex; gap: 0.75rem; align-items: center; }
   .qv-actions .btn { flex: 1; }
+
+  /* ════════════════════════════════════════════════════════
+     [Phase 12] Shop — toolbar · layout · filters · grid · pager
+  ════════════════════════════════════════════════════════ */
+
+  /* ── Page head (breadcrumb + title + intro) ────────────── */
+  .shop-wrap { padding-block-end: var(--section-y); }
+  .shop-head { padding-block: 2.5rem 2.25rem; }
+  .shop-head .breadcrumb { margin-block-end: 1rem; }
+  .shop-intro { color: var(--color-ink-soft); max-inline-size: 46ch; margin-block-start: 0.75rem; }
+
+  /* ── Layout (sidebar + content) ────────────────────────── */
+  .shop-layout { display: block; }
+  .shop-content { min-inline-size: 0; }
+
+  @media (min-width: 1024px) {
+    .shop-has-sidebar { display: grid; grid-template-columns: 16.5rem minmax(0, 1fr); gap: 2.75rem; align-items: start; }
+    .shop-has-sidebar.shop-layout--right { grid-template-columns: minmax(0, 1fr) 16.5rem; }
+    .shop-layout--right .shop-content { order: 1; }
+    .shop-layout--right #shop-filters { order: 2; }
+
+    /* Promote the filter overlay into a static sidebar column. */
+    .shop-has-sidebar #shop-filters {
+      position: sticky; top: 5.5rem; align-self: start;
+      visibility: visible; pointer-events: auto; inset: auto; z-index: auto; display: block; background: none;
+    }
+    .shop-has-sidebar #shop-filters .overlay-backdrop { display: none; }
+    .shop-has-sidebar #shop-filters .drawer {
+      position: static; transform: none; margin: 0; inline-size: auto; max-inline-size: none;
+      block-size: auto; overflow: visible; background: none;
+    }
+    .shop-has-sidebar #shop-filters .drawer-head { padding: 0 0 1rem; border-block-end: 1px solid var(--color-line); }
+    .shop-has-sidebar #shop-filters .drawer-close { display: none; }
+    .shop-has-sidebar #shop-filters .drawer-body { padding: 0; overflow: visible; }
+    .shop-has-sidebar #shop-filters .drawer-foot { display: none; }
+    .shop-has-sidebar .filters-trigger { display: none; }
+  }
+
+  /* ── Toolbar ───────────────────────────────────────────── */
+  .shop-toolbar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;
+    padding-block: 1rem; border-block: 1px solid var(--color-line); margin-block-end: 1.75rem;
+  }
+  .shop-toolbar-count { font-size: var(--text-sm); color: var(--color-ink-faint); margin-inline-end: auto; }
+  .shop-toolbar-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+  .shop-toolbar .select-wrap .select { padding-block: 0.45rem; font-size: var(--text-sm); }
+  .filters-trigger { gap: 0.5rem; }
+  .filters-trigger [data-filters-count]:empty { display: none; }
+
+  /* View + column toggles (segmented icon buttons) */
+  .seg { display: inline-flex; border: 1px solid var(--color-line-strong); border-radius: var(--radius-sm); overflow: hidden; }
+  .seg button {
+    display: inline-grid; place-items: center; inline-size: 2.25rem; block-size: 2.25rem;
+    background: var(--color-surface); color: var(--color-ink-faint); border: 0; cursor: pointer;
+    transition: background var(--duration-fast), color var(--duration-fast);
+  }
+  .seg button + button { border-inline-start: 1px solid var(--color-line); }
+  .seg button:hover { color: var(--color-ink); }
+  .seg button[aria-pressed="true"] { background: var(--color-ink); color: var(--color-paper); }
+  .cols-switch { display: none; }
+  .shop-page--full .cols-switch { display: inline-flex; }
+  @media (max-width: 767px) { .cols-switch { display: none !important; } }
+
+  /* ── Active-filter chips row ────────────────────────────── */
+  .active-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem; margin-block-end: 1.5rem; }
+  .clear-filters { margin-inline-start: 0.25rem; }
+
+  /* ── Filters sidebar / drawer content ──────────────────── */
+  .filter-group { border-block-end: 1px solid var(--color-line); }
+  .filter-group .accordion-trigger { padding-block: 1rem; font-family: var(--font-body); font-weight: 600; font-size: var(--text-sm); text-transform: none; letter-spacing: 0; color: var(--color-ink); }
+  .filter-list { display: flex; flex-direction: column; gap: 0.7rem; }
+  .filter-check { display: flex; align-items: center; gap: 0.55rem; inline-size: 100%; font-size: var(--text-sm); color: var(--color-ink-soft); cursor: pointer; }
+  .filter-check:hover { color: var(--color-ink); }
+  .filter-check .check-input { flex-shrink: 0; }
+  .filter-count { margin-inline-start: auto; font-size: var(--text-xs); color: var(--color-ink-faint); }
+  .filter-stars { display: inline-flex; align-items: center; gap: 0.15rem; }
+  .filter-stars .icon { inline-size: 0.9rem; block-size: 0.9rem; color: var(--color-gold); }
+
+  /* Price dual-range slider */
+  .price-range { padding-block-start: 0.25rem; }
+  .price-slider { position: relative; block-size: 1.5rem; }
+  .price-track { position: absolute; inset-inline: 0; inset-block-start: 50%; transform: translateY(-50%); block-size: 3px; background: var(--color-line); border-radius: var(--radius-full); }
+  .price-track-fill { position: absolute; block-size: 100%; background: var(--color-accent); border-radius: inherit; }
+  .price-slider input[type="range"] { position: absolute; inset-block: 0; inset-inline: 0; inline-size: 100%; margin: 0; background: none; pointer-events: none; -webkit-appearance: none; appearance: none; }
+  .price-slider input[type="range"]::-webkit-slider-runnable-track { background: none; border: 0; }
+  .price-slider input[type="range"]::-moz-range-track { background: none; border: 0; }
+  .price-slider input[type="range"]::-webkit-slider-thumb { pointer-events: auto; -webkit-appearance: none; appearance: none; margin-block-start: -0.5rem; inline-size: 1.05rem; block-size: 1.05rem; border-radius: var(--radius-full); background: var(--color-surface); border: 2px solid var(--color-accent); cursor: pointer; box-shadow: var(--shadow-drop); }
+  .price-slider input[type="range"]::-moz-range-thumb { pointer-events: auto; inline-size: 1.05rem; block-size: 1.05rem; border-radius: var(--radius-full); background: var(--color-surface); border: 2px solid var(--color-accent); cursor: pointer; }
+  .price-slider input[type="range"]:focus-visible::-webkit-slider-thumb { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+  .price-slider input[type="range"]:focus-visible::-moz-range-thumb { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+  .price-inputs { display: flex; align-items: center; gap: 0.5rem; margin-block-start: 1.1rem; }
+  .price-inputs .input { padding: 0.4rem 0.45rem; text-align: center; font-size: var(--text-sm); }
+  .price-inputs .price-sep { color: var(--color-ink-faint); }
+
+  /* ── Product grid ──────────────────────────────────────── */
+  .shop-grid { display: grid; gap: 2rem 1.5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 640px) { .shop-grid { gap: 2.5rem 1.75rem; } }
+  .shop-grid--sidebar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 1280px) { .shop-grid--sidebar { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) {
+    .shop-grid[data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .shop-grid[data-cols="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .shop-grid[data-cols="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  /* List view (Card 4 rows generated by shop.js) */
+  .shop-list { display: flex; flex-direction: column; }
+  .shop-list .card-row { padding-block: 1.75rem; border-block-start: 1px solid var(--color-line); }
+  .shop-list .card-row:first-child { border-block-start: 0; padding-block-start: 0.5rem; }
+
+  /* ── Skeleton + empty ──────────────────────────────────── */
+  .skeleton-card .skeleton { display: block; }
+  .skeleton-cover { aspect-ratio: 2 / 3; border-radius: var(--radius-xs); }
+  .skeleton-line { block-size: 0.75rem; border-radius: var(--radius-full); margin-block-start: 0.7rem; }
+  .shop-empty { padding-block: var(--spacing-22, 5.5rem); }
+
+  /* ── Pagination + load-more ────────────────────────────── */
+  .shop-pagination { display: flex; justify-content: center; gap: 0.4rem; margin-block-start: 3rem; }
+  .load-more-row { display: flex; justify-content: center; margin-block-start: 3rem; }
 }

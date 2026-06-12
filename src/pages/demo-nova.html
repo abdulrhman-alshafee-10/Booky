@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <include src="base/head.html"></include>
+  <title>Nova — Booky · Dark Sci-Fi &amp; Comics Demo</title>
+  <meta name="description" content="A dark-first sci-fi, fantasy, and comics bookstore demo for Booky — electric violet glowing on deep charcoal, with a neon panel hero and numbered series rail. One of ten home styles.">
+  <link rel="canonical" href="https://booky.example.com/demo-nova.html">
+  <meta name="theme-color" content="#1b1c20">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nova — Booky Dark Sci-Fi &amp; Comics Demo">
+  <meta property="og:description" content="A dark-first sci-fi and comics bookstore demo for Booky — electric violet on charcoal.">
+  <meta property="og:url" content="https://booky.example.com/demo-nova.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-last-observatory.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nova — Booky Dark Sci-Fi &amp; Comics Demo">
+  <meta name="twitter:description" content="A dark-first sci-fi and comics bookstore demo for Booky.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-last-observatory.svg">
+</head>
+<body class="demo-nova">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <include src="heroes/hero-panel.html"></include>
+    <include src="sections/series-rail.html"></include>
+    <include src="sections/popular-tabs.html"></include>
+    <include src="sections/genre-spotlight.html"></include>
+    <include src="sections/coming-soon.html"></include>
+
+    <!-- S10 — Reader testimonials (dark, 2-up bordered quote-cards) -->
+    <section class="section" aria-labelledby="nova-readers">
+      <div class="container-main">
+        <div class="section-head section-head--center">
+          <span class="overline">From the fandom</span>
+          <h2 id="nova-readers">What readers are saying</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6 mt-12 max-w-3xl mx-auto">
+          <figure class="quote-card">
+            <blockquote>"The only shop that has every floppy, omnibus, and obscure import I want — and ships them like they actually care about the spines."</blockquote>
+            <figcaption class="quote-card-author">
+              <span class="avatar" aria-hidden="true">KV</span>
+              <span><span class="quote-card-name">Kai Vance</span><span class="quote-card-role">Collector · Austin</span></span>
+            </figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>"Their staff picks got me into three new series this year. The new-release alerts are dangerously good for my wallet."</blockquote>
+            <figcaption class="quote-card-author">
+              <span class="avatar" aria-hidden="true">SR</span>
+              <span><span class="quote-card-name">Sana Rahimi</span><span class="quote-card-role">Reader · Berlin</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

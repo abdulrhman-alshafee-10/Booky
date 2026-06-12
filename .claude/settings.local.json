@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm --version)"
+      "Bash(npm --version)",
+      "Bash(cd \"C:/Users/Victus/OneDrive/Desktop/my Ps/ecomus-package/ecomus\" 2>/dev/null && echo \"=== TOP LEVEL ===\" && ls -la && echo \"\" && echo \"=== TREE \\(depth 2\\) ===\" && find . -maxdepth 2 -type d 2>/dev/null | head -80)",
+      "Read(//c/Users/Victus/OneDrive/Desktop/my Ps/ecomus-package/ecomus/**)",
+      "PowerShell(npm run build 2>&1)"
     ]
   }
 }

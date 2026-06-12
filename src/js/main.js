@@ -20,6 +20,7 @@ import { initQuickview }     from "./modules/quickview.js";
 import { initCarousels }     from "./modules/carousel.js";
 import { initCountdowns }    from "./modules/countdown.js";
 import { initForms }         from "./modules/forms.js";
+import { initShop }          from "./modules/shop.js";
 
 document.documentElement.classList.add("js");
 
@@ -40,3 +41,4 @@ initQuickview();
 initCarousels();
 initCountdowns();
 initForms();
+initShop();

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <include src="base/head.html"></include>
+  <title>Night Reads — Booky · Dark Audiobook Demo</title>
+  <meta name="description" content="A dark-first audiobook store demo for Booky — a candlelit night library lit by soft brass-gold, with a now-playing hero and audio sample rail. One of ten home styles.">
+  <link rel="canonical" href="https://booky.example.com/demo-night.html">
+  <meta name="theme-color" content="#1b1c20">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Night Reads — Booky Dark Audiobook Demo">
+  <meta property="og:description" content="A dark-first audiobook store demo for Booky — brass-gold on charcoal, designed for the dark.">
+  <meta property="og:url" content="https://booky.example.com/demo-night.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Night Reads — Booky Dark Audiobook Demo">
+  <meta name="twitter:description" content="A dark-first audiobook store demo for Booky.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+</head>
+<body class="demo-night">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <include src="heroes/hero-player.html"></include>
+    <include src="sections/audio-rail.html"></include>
+    <include src="sections/featured-books.html"></include>
+    <include src="sections/deal-countdown.html"></include>
+    <include src="sections/testimonials.html"></include>
+    <include src="sections/trust-strip.html"></include>
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

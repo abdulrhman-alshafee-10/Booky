@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Book Club — Booky · Library &amp; Membership Demo</title>
+  <meta name="description" content="A community library and book-club demo for Booky — search-first, event-driven, and membership-oriented, with a friendly sage-green accent. One of ten home styles.">
+  <link rel="canonical" href="https://booky.example.com/demo-library.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Book Club — Booky Library Demo">
+  <meta property="og:description" content="A community library and book-club demo for Booky — search-first, event-driven, friendly.">
+  <meta property="og:url" content="https://booky.example.com/demo-library.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-gardener-of-small-hours.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book Club — Booky Library Demo">
+  <meta name="twitter:description" content="A community library and book-club demo for Booky.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-gardener-of-small-hours.svg">
+</head>
+<body class="demo-library">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+
+    <include src="heroes/hero-centered.html"></include>
+    <include src="sections/how-it-works.html"></include>
+    <include src="sections/popular-tabs.html"></include>
+    <include src="sections/events-list.html"></include>
+    <include src="sections/stats-counters.html"></include>
+
+    <!-- S10 — Member stories (3-up bordered quote-cards) -->
+    <section class="section section-deep" aria-labelledby="lib-members">
+      <div class="container-main">
+        <div class="section-head section-head--center">
+          <span class="overline">From our members</span>
+          <h2 id="lib-members">Stories from the club</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <figure class="quote-card">
+            <blockquote>"I joined to read more and stayed for the people. My Tuesday club feels like the best part of my week."</blockquote>
+            <figcaption class="quote-card-author">
+              <span class="avatar" aria-hidden="true">RK</span>
+              <span><span class="quote-card-name">Rosa Kovač</span><span class="quote-card-role">Member · Portland</span></span>
+            </figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>"The monthly pick has pulled me out of every reading rut. I've discovered authors I'd never have found alone."</blockquote>
+            <figcaption class="quote-card-author">
+              <span class="avatar" aria-hidden="true">TM</span>
+              <span><span class="quote-card-name">Théo Marchand</span><span class="quote-card-role">Member · Montréal</span></span>
+            </figcaption>
+          </figure>
+          <figure class="quote-card">
+            <blockquote>"A book club without the homework guilt. Read what you can, show up, talk. It's that simple, and it works."</blockquote>
+            <figcaption class="quote-card-author">
+              <span class="avatar" aria-hidden="true">AO</span>
+              <span><span class="quote-card-name">Amara Okafor</span><span class="quote-card-role">Member · Leeds</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <include src="sections/trust-strip.html"></include>
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>

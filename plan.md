@@ -26,8 +26,11 @@
 | Phase 7 — Sections B (content) | ✅ done (2026-06-11) — review: `styleguide.html` |
 | Phase 8 — Flagship home 🔒 | ✅ done (2026-06-11) — **visual language LOCKED** — review: `index.html` |
 | Phase 9 — Light demos 2–4 | ✅ done (2026-06-11) — review: `demo-minimal/-kids/-vintage.html` |
-| Phase 10 — Light demos 5–8 | ⬜ next |
-| Phases 11–18 | ⬜ not started |
+| Phase 10 — Light demos 5–8 | ✅ done (2026-06-12) — review: `demo-author/-publisher/-magazine/-library.html` |
+| Phase 11 — Dark demos + showcase | ✅ done (2026-06-12) — review: `demo-night/-nova.html` + `demos.html` |
+| Phase 12 — Shop | ✅ done (2026-06-12) — review: `shop-left/-right/-full.html` |
+| Phase 13 — Product · cart · checkout · wishlist · compare | ⬜ next |
+| Phases 14–18 | ⬜ not started |
 
 ---
 
@@ -67,7 +70,7 @@
 | Product single | **1** | gallery, options, tabs, reviews, related |
 | Blog | **5 pages** | 3 listing styles (grid / list / masonry, each with a different sidebar position) + 2 single styles |
 | Inner pages | **~17** | about, contact, FAQ, authors, author, account set, cart/checkout set, system pages, legal |
-| Total HTML pages | **~37** | full inventory in §7 |
+| Total HTML pages | **~38** | full inventory in §7 (incl. `compare.html`) |
 | Stack | — | HTML5 · Tailwind CSS v4 · Vanilla ES6+ · GSAP · Swiper |
 
 **The one-sentence design brief:** *a quiet, cream, editorial bookshop where
@@ -433,7 +436,7 @@ hover/focus and are always shown on touch (`@media (hover:none)`).
 
 ---
 
-## 7 · Page inventory (~37 pages)
+## 7 · Page inventory (~38 pages)
 
 ### Homes (10) — §8 for per-demo spec
 `index.html` (flagship) · `demo-minimal` · `demo-kids` · `demo-vintage` ·
@@ -441,10 +444,10 @@ hover/focus and are always shown on touch (`@media (hover:none)`).
 `demo-night` *(dark)* · `demo-nova` *(dark)* — plus `demos.html` (buyer
 showcase grid of all 10 with hover previews).
 
-### Shop & commerce (8)
-- [ ] `shop-left.html` — toolbar + left filter sidebar + Card 1 grid + pagination
-- [ ] `shop-right.html` — right sidebar + Card 2 grid + load-more
-- [ ] `shop-full.html` — no sidebar; horizontal filter bar + off-canvas filter
+### Shop & commerce (9)
+- [x] `shop-left.html` — toolbar + left filter sidebar + Card 1 grid + pagination
+- [x] `shop-right.html` — right sidebar + Card 2 grid + load-more
+- [x] `shop-full.html` — no sidebar; horizontal filter bar + off-canvas filter
       drawer + Card 3 grid — **every shop page has the grid ⇄ list toggle
       (list = Card 4) and working JS filters/sort**
 - [ ] `product.html` — single product (§10)
@@ -454,6 +457,9 @@ showcase grid of all 10 with hover previews).
       payment accordion · sticky order summary
 - [ ] `order-complete.html` — serif thank-you, order number, item recap, next steps
 - [ ] `wishlist.html` — saved grid (Card 2) + move-to-cart, empty state
+- [ ] `compare.html` — up-to-4 comparison table (price/rating/format/availability/
+      author/add), remove per column, empty state *(store already supports
+      compare, cap 4, since Phase 5 — owner-requested feature)*
 
 ### Blog (5) — §11
 `blog-grid.html` (right sidebar) · `blog-list.html` (left sidebar) ·
@@ -817,28 +823,45 @@ designed in the dark, never like an inverted light page.
 
 ## 9 · Shop system spec
 
-- **Toolbar:** result count ("Showing 12 of 96") · sort select (featured,
-  price ↑↓, rating, newest) · grid⇄list toggle (icon buttons, ARIA-pressed).
-- **Filter sidebar / drawer:** categories (counts), price range (dual slider),
-  format checkboxes, rating filter, availability switch, tag chips — all
+- **Toolbar:** result count ("Showing 1–12 of 96") · sort select (featured,
+  price ↑↓, rating, newest, title A–Z) · grid⇄list toggle (icon buttons,
+  ARIA-pressed); shop-full adds a 2/3/4 column-count switch.
+- **Filter sidebar / drawer:** genre (counts), price range (dual slider +
+  min/max inputs), **format** checkboxes (Paperback/Hardcover/eBook/Audiobook —
+  replaces apparel "size"/"colour"), rating filter, availability (In stock /
+  Pre-order, counts), **author or publisher** checklist (replaces "brand") — all
   filter a static demo dataset client-side; active-filter chips + Clear all.
+  On shop-full and all mobile the sidebar is an **off-canvas drawer** (reuses the
+  Phase-3 overlay/drawer system, focus-trapped) opened by a "Filters (n)" button.
 - **Grid:** 4-col → 3 → 2 (mobile); list view renders Card 4 rows.
-- **States:** skeleton loading shimmer on filter, no-results empty state.
-- **Pagination** on shop-left, **load-more** on shop-right (both patterns shown).
+- **States:** skeleton loading shimmer on filter apply, no-results empty state.
+- **Pagination** on shop-left, **load-more** on shop-right (both patterns shown);
+  `shop.js` also reads `?genre=&sort=&q=` so the homes' search lands pre-filtered.
 
 ## 10 · Product single spec
 
-Breadcrumb → two columns:
-**Gallery** (left): main image (2:3, zoom cursor) + 4 thumbs; click opens
-`<dialog>` lightbox with arrows/Esc.
-**Summary** (right): genre overline · serif title · author link · rating +
-count · price group · 2-line promise · **format radio-cards** (Paperback /
-Hardcover / eBook / Audio — price updates) · qty stepper + ADD TO CART bar +
-wishlist icon · meta list (ISBN, pages, publisher, year, language) · share row
-· trust mini-row (shipping/returns icons).
-Below: **tabs** — Description (prose) · Details (spec table) · Reviews
-(summary bars + review list + validated form). Then **Related books** rail
-(Card 1) and S7 newsletter. JSON-LD `Book` + `Offer` + `AggregateRating`.
+Breadcrumb → two columns. *(Feature set informed by the Ecomus product detail —
+sticky gallery, compare-at price, live-view, countdown, variant picker, buy-now,
+extra-link modals, trust seal, bought-together, recently-viewed, sticky add bar —
+adapted to books and to vanilla JS + native `<dialog>`.)*
+
+**Gallery (left, sticky):** main cover (2:3, zoom cursor) + 4 thumbs (vertical
+≥lg); click opens `<dialog>` lightbox with arrows/Esc; SALE/NEW badge slot.
+**Summary (right):** genre overline · serif title · author link · rating +
+count · price group (+ struck **compare-at** price) · short promise · static
+**"● 14 reading now"** liveview line · optional **limited-offer countdown** ·
+**format radio-cards** (Paperback / Hardcover / eBook / Audiobook — price +
+availability update) · qty stepper · **ADD TO CART bar + "Buy it now"**
+(→checkout) · wishlist + compare icon buttons · trust mini-row
+(shipping/returns/secure) · payment marks · meta list (ISBN, pages, publisher,
+imprint, year, language, SKU) · share row · "Ask a question" + "Delivery &
+returns" disclosures (overlay partials).
+**Frequently bought together:** this book + 2 related, checkboxes, bundle total,
+add-all. **Tabs:** Description (prose) · Details (spec table) · Reviews (summary
+bars + rating + review list + validated form). **Related books** rail (Card 1) ·
+**Recently viewed** rail (localStorage). **Sticky add-to-cart bar** slides in on
+scroll past the fold (thumb · title · price · qty · add). Then S7 newsletter.
+JSON-LD `Book` + `Offer` + `AggregateRating`.
 
 ## 11 · Blog system spec
 
@@ -1051,31 +1074,75 @@ specs 600×900 WebP) · FAQ · credits & changelog. Plus root `README.md`
 - [x] `demo-minimal.html` (Header B; H2 statement → S2 asymmetric editorial+cover-list → S1 text genre strip → S5 floating quote → S8 2-up articles → S7 centered newsletter; Footer B slim) · `demo-kids.html` (Header A; H3 fan → S24 age picker [NEW `sections/age-picker.html` + `.age-grid`/`.age-tile`] → S2 6-up Boutique grid → S4 tabs → S10 parent minis → S29 → S7; Footer A) · `demo-vintage.html` (Header A; single-cover ornamented hero → S20 cover wall → S19 → S3 → S10 feature → S8 → S29 → S7; Footer A) — each with own SEO head + voice
 - **Done when:** the three are visibly different from index and each other; AA accents; screenshots pass. ✅ *(verified 2026-06-11: build green 5/5 pages, 1 h1 + no duplicate ids each. 1280 + 375 shots: minimal = Header B centered-wordmark + ink-blue + sharp 0-radius + spare; kids = coral/sunshine rounded age tiles + fan + boutique badges; vintage = parchment + single-cover hero + dense cover wall. Header B mobile burger works; no overflow.)*
 
-### Phase 10 — Light demos 5–8
-- [ ] `demo-author`, `demo-publisher`, `demo-magazine`, `demo-library` — same bar (includes S25, S26, S18, S16 signatures)
-- **Done when:** all 8 light demos distinct; no shared hero+signature combo.
+### Phase 10 — Light demos 5–8 ✅
+- [x] New building blocks (locked-language compositions): `heroes/hero-portrait.html` (H4), `heroes/hero-editorial.html` (H5, + `.hero-editorial-covers--single` modifier for the magazine issue hero), `sections/bibliography.html` (S25 timeline), `sections/issue-archive.html` (S26, reusable `.archive-*` grid — also used by publisher catalog variant). All CSS appended in `sections.css` `@layer components`.
+- [x] `.demo-author` (rose-brown) · `.demo-publisher` (vermilion) · `.demo-magazine` (editorial red) · `.demo-library` (sage green) token blocks in `tokens.css`
+- [x] `demo-author.html` (Header B + Footer slim; H4 portrait → S25 bibliography → S2 6-up editorial "Works by Marina Vøllo" → S12 author-spotlight → S5 quote → S10 3-up quote-cards → S7) · `demo-publisher.html` (Header A + Footer A; H5 editorial → S1 imprint marks → S2 featured rail → S13 author marks → S19 genre → S26 catalog archive → S8 articles → S29 → S7) · `demo-magazine.html` (Header A; H5 single-cover issue hero → S26 issue archive → S8 dense 4-col reviews → S4 tabs → S5 editor pullquote → S10 2-up quote-cards → S7) · `demo-library.html` (Header A; H2 search-led hero → S16 how-it-works → S4 tabs → S18 events → S11 stats → S10 3-up quote-cards → S29 → S7) — each w/ own SEO head + voice
+- **Done when:** all 8 light demos distinct; no shared hero+signature combo. ✅ *(verified 2026-06-12: build green 9/9 pages; 1 h1 + 0 duplicate ids + 0 unresolved includes + 0 author-introduced inline styles each. 1280 shots: author = Header-B rose intimate w/ portrait + timeline; publisher = vermilion editorial-grid hero + cover collage + catalog seasons; magazine = red dense 4-col + issue archive; library = sage search-led + events + stats. 375 iframe: all stack cleanly, no overflow.)*
 
-### Phase 11 — Dark demos + showcase
-- [ ] Dark token set finalized · Header C + dark footer recompositions
-- [ ] `demo-night` (H6 + S22) and `demo-nova` (H7 + S23) — dark-first per §8, baked `data-theme="dark"`, dark `theme-color`
-- [ ] `demos.html` buyer showcase (all 10, hover previews)
-- **Done when:** dark demos feel designed-for-dark; AA contrast on dark verified; showcase links all work.
+### Phase 11 — Dark demos + showcase ✅
+- [x] Dark token set finalized (tokens.css §3) · **Header C + dark footer = Header A / Footer A recomposed via the dark token set** (token-driven, no separate partials — the buyer-friendly way) **+ dark-only polish** in `sections.css`: accent-glow on `.header-action .count`, `filter:brightness(1.04)` on `[data-theme="dark"] .cover img`. New icons: `i-play`, `i-headphones`, `i-clock`.
+- [x] New dark-first building blocks: `heroes/hero-player.html` (H6 — now-playing `.player-card` + static `.waveform` SVG polyline + play button), `heroes/hero-panel.html` (H7 — `.hero-panel-display` neon text-shadow + `.hero-panel-rail` cover scroll), `sections/audio-rail.html` (S22 — `.audio-row` cover+waveform+`.audio-duration`+`.audio-play`), `sections/series-rail.html` (S23 — `.series-rail` snap-scroll, `.series-no` glowing numbered badge). `.demo-night` (brass-gold) / `.demo-nova` (electric violet) token blocks.
+- [x] `demo-night.html` (`<html data-theme="dark">` + `.demo-night` + dark `theme-color`; H6 player → S22 audio rail → S2 featured → S28 deal-countdown → S10 quote-feature → S29 trust → S7) · `demo-nova.html` (dark + `.demo-nova`; H7 panel → S23 series → S4 tabs → S19 genre → S27 coming-soon → S10 2-up quote-cards inline → S7)
+- [x] `demos.html` buyer showcase — 10 `.demo-card` tiles, each themed by its `.demo-*` class (dark two also carry `data-theme="dark"`) so the preview tile shows the real accent; hover lift + accent link.
+- **Done when:** dark demos feel designed-for-dark; AA contrast on dark verified; showcase links all work. ✅ *(verified 2026-06-12: build green 12/12; demo-night/-nova/demos each 1 h1 + 0 dup-id + 0 unresolved includes, dark pages carry `data-theme="dark"` on `<html>`. 1280 shots: night = brass player + waveform audio rail on charcoal; nova = violet neon panel + glowing numbered series rail; demos = 10 themed tiles incl 2 genuinely-dark cards. 375 iframe: audio rows stack, series rail scrolls, showcase single-column, no overflow.)*
 
-### Phase 12 — Shop
-- [ ] `shop-left`, `shop-right`, `shop-full` per §9 · `shop.js` (filter/sort/toggle/paginate) · filter drawer · skeleton + empty states
-- **Done when:** filters/sort/view toggle work on all three; list view renders Card 4; mobile filter drawer accessible.
+### Phase 12 — Shop (3 pages + engine)
+> Reference studied: Ecomus shop (FilterSidebar / SidebarFilter / Sorting / layout switcher / off-canvas / pagination+load-more+infinite). Adapted to books (format replaces size; author/publisher replaces brand; no colour swatches) and to vanilla JS + the locked language.
 
-### Phase 13 — Product & checkout flow
-- [ ] `product.html` per §10 (`product.js`) · `cart.html` · `checkout.html` · `order-complete.html` · `wishlist.html` — all wired to `store.js`
-- **Done when:** full demo journey works: browse → add → cart → checkout → complete; wishlist persists.
+- [x] **New partials** `src/partials/shop/`:
+  - `toolbar.html` — result count ("Showing 1–12 of 96") · sort `<select>` (Featured · Price ↑ · Price ↓ · Rating · Newest · Title A–Z) · grid⇄list toggle (`[aria-pressed]` icon buttons); shop-full also a 2/3/4 column-count switch.
+  - `filters.html` — accordion facet groups: **Genre** (checklist + counts) · **Price** (dual-range slider + min/max inputs) · **Format** (Paperback/Hardcover/eBook/Audiobook) · **Availability** (In stock / Pre-order + counts) · **Rating** (4★ & up…) · **Author or Publisher** (checklist). Top: active-filter chips (×) + "Clear all".
+  - `filter-drawer.html` — off-canvas drawer wrapping `filters.html` (reuses Phase-3 `.overlay`/`.drawer`/`data-open="filters"`/`openOverlay`); "Filters (n)" trigger on shop-full + all mobile.
+  - `card-skeleton.html` (shimmer grid, reuse `.skeleton`) · `shop-empty.html` (empty-state: icon + serif line + Clear-filters CTA).
+- [x] **CSS** `src/css/components/shop.css` (extend the Phase-5 store bits): `.shop-toolbar` · `.shop-layout` (sidebar+content grid) · `.view-toggle` · `.filter-group`/`.filter-accordion` · `.price-range` (dual slider track/handles) · facet checks (reuse `.check-input`) · `.active-filters`/`.filter-chip` · `.shop-grid` (column-count driven) · `.shop-pagination` · `.load-more`. List view = `.card-row` (Card 4) full-width rows.
+- [x] **JS** `shop.js` (`initShop`, no fetch — reads a static dataset embedded as `data-*` on the rendered cards): filter (genre/price/format/availability/rating/author) → sort → reorder/hide cards → update count + active chips → grid⇄list toggle (`aria-pressed`, swaps grid class + card template) → pagination (shop-left) / load-more (shop-right) / drawer (shop-full). Brief skeleton on apply; empty-state at 0 results; reads `?genre=&sort=&q=` on load (homes' search points here); reduced-motion safe; no-ops without `[data-shop]`.
+- [x] **Pages:** `shop-left.html` (Header A · breadcrumb · `<h1>` · toolbar · **left** filters + **Card 1** 3-col grid · **pagination** · S7 · Footer A; JSON-LD `ItemList`+`BreadcrumbList`) · `shop-right.html` (**right** filters + **Card 2** grid · **load-more**) · `shop-full.html` (no sidebar; horizontal filter bar + **off-canvas drawer** + **Card 3** 4-col grid).
+- **Done when:** filters / sort / view-toggle / pagination + load-more all work client-side on the three; list view renders Card 4; active chips + Clear-all work; mobile drawer is focus-trapped + accessible; skeleton + empty states show; 1280/375 verified. ✅ *(verified 2026-06-12: build green 15/15; each page 1 h1 + 0 dup-id + 0 unresolved includes. Real-JS test: Mystery genre filter → 2 results + active chip + "Showing 1–2 of 2" + pager hidden; list toggle renders Card-4 rows from data-*; off-canvas drawer slides + dims on tablet/mobile. 1280 + 375-iframe shots: left=3-col Card-1 + pagination, right=Card-2 + load-more, full=Card-3 + column switch, mobile=2-col + FILTERS button, no overflow.)*
 
-### Phase 14 — Blog
-- [ ] All 5 blog pages per §11 · `blog.js` (filters, load-more, reading progress) · prose styles · comments demo
-- **Done when:** all three listing styles + both singles verified; prose is beautiful at 720px.
+### Phase 13 — Product · cart · checkout · wishlist · compare (6 pages)
+> Reference studied: Ecomus DefaultShopDetails (sticky gallery, badges, compare-at price, live-view, countdown, variant picker, qty, add+buy-now, wishlist/compare, extra links, delivery/return, trust seal, tabs), BoughtTogether/Upsell/RecentProducts, Cart (qty/remove/coupon/countdown), Checkout (billing + order summary + payment radios), dashboard Wishlist/Compare. Adapted to books + vanilla JS + native `<dialog>`.
 
-### Phase 15 — Inner pages
-- [ ] `about`, `contact` (validated + OSM map), `faq`, `authors`, `author`, `login`, `register`, `account` (`account.js`), `404`, `coming-soon`, `terms`, `privacy`
-- **Done when:** every page in §7 exists, builds, navigates, and matches the locked language.
+- [ ] **`product.html`** (`product.js`) — breadcrumb → 2-col:
+  - **Gallery (sticky)**: main cover (2:3) + 4 thumbs (vertical ≥lg), click → native `<dialog>` lightbox (arrows + Esc); SALE/NEW badge slot.
+  - **Summary**: genre overline · serif H1 · author link · rating + (132) · price-group (+ compare-at) · short promise · static **"● 14 reading now"** liveview · optional **limited-offer countdown** · **format radio-cards** (Paperback/Hardcover/eBook/Audiobook — price + availability update) · qty stepper · **ADD TO CART bar + "Buy it now"** (→checkout) · wishlist + compare icon buttons · trust mini-row · payment marks · meta list (ISBN, pages, publisher, imprint, year, language, SKU) · share row · "Ask a question" + "Delivery & returns" disclosures.
+  - **Frequently bought together** (this + 2, checkboxes, bundle total, add-all) · **Tabs** (Description prose · Details spec-table · Reviews: summary bars + rating + review list + validated "write a review" form) · **Related** rail (Card 1) · **Recently viewed** rail (localStorage) · S7.
+  - **Sticky add-to-cart bar** on scroll past the fold (thumb · title · price · qty · add). JSON-LD `Book`+`Offer`+`AggregateRating`.
+- [ ] **`cart.html`** — `<h1>` · free-shipping progress bar · line-item table (cover, title+author, format, unit price, qty stepper, line total, remove) · order-note · coupon field (demo `BOOKY10`) · summary card (subtotal · est. shipping · total) · checkout + continue-shopping · trust/payment row · cross-sell rail · **empty-state**. Live via `store.js`.
+- [ ] **`checkout.html`** — 2-col: **left** contact (email) · billing/shipping form (validated) · shipping-method radio-cards (Standard/Express/Pickup) · order notes · payment accordion (Card / PayPal / COD radio-cards); **right (sticky)** order summary (items · coupon · subtotal/shipping/total). "Place order" → writes demo order to localStorage → `order-complete.html`.
+- [ ] **`order-complete.html`** — serif thank-you · generated order number · status timeline (Confirmed → Packed → Shipped) · item recap + totals · shipping/billing recap · continue-shopping.
+- [ ] **`wishlist.html`** — `<h1>` · saved grid (Card 2) + move-to-cart + remove + add-all · **empty-state**. Persists via `store.js`.
+- [ ] **`compare.html`** (NEW; store already supports compare, cap 4) — table: columns = up to 4 saved books (cover, title, remove ×); rows = price, rating, format, availability, author, add-to-cart · **empty-state**.
+- [ ] **New overlay partials** `base/`: `ask-question.html`, `delivery-return.html`, `share.html` (reuse overlay system). **JS:** `product.js` (gallery+lightbox, format→price/availability, tabs, bought-together total, sticky bar, recently-viewed read/write) · extend `cart-ui.js` for the cart page (qty/remove/coupon/free-ship bar) · `checkout.js` (validation + summary sync + place-order persist) · extend `compare.js` to render the compare table.
+- **Done when:** full journey browse → add → cart → coupon → checkout → place order → complete works; wishlist + compare persist across reloads; gallery/lightbox/format-switch/tabs/sticky-bar work; every form validates; 1280/375 verified.
+
+### Phase 14 — Blog (5 pages + engine)
+> Reference studied: Ecomus BlogGrid/BlogList/BlogDetails + Sidebar (search, categories, recent, tags, instagram) + RelatedBlogs. Per §11; books-flavoured.
+
+- [ ] **Sidebar widget partials** `blog/`: search · categories (counts) · recent posts (thumb rows) · tag cloud · mini-newsletter · promo cover tile.
+- [ ] `blog-grid.html` — 3-col article cards + **right** sidebar + pagination (JSON-LD `Blog`/`ItemList`).
+- [ ] `blog-list.html` — full-width row cards + **left** sidebar + load-more.
+- [ ] `blog-masonry.html` — CSS-columns masonry, **no** sidebar, category **filter chips**.
+- [ ] `blog-single.html` — title block (overline category · serif H1 · author + date + read-time) · featured image · **prose** (drop cap, serif blockquote + ornament, figures + captions, pull-quotes) · tags + share · prev/next nav · author bio card · related 3-up · comments list + validated form · **right** sidebar. JSON-LD `Article`+`BreadcrumbList`.
+- [ ] `blog-single-full.html` — same content centered at `--container-prose` + **reading-progress bar**.
+- [ ] **JS** `blog.js`: masonry category filter · load-more · reading-progress · comments demo (validate + append).
+- **Done when:** 3 listings (each a different sidebar position) + both singles verified; prose beautiful at 720px; filter/load-more/progress/comments work; 1280/375.
+
+### Phase 15 — People · info · account · system (12 pages)
+> Reference studied: Ecomus otherPages (about/contact/faq/login/register/404) + dashboard (DashboardNav: Dashboard/Orders/Order-details/Addresses/Account-details/Wishlist/Logout). Booky scope per §7; account becomes a proper side-tab dashboard.
+
+- [ ] `authors.html` — author-card grid + **A–Z letter filter** (JS) + counts.
+- [ ] `author.html` — portrait hero · bio · stats · **S25 bibliography timeline** · books grid (Card 2) · favourite quote. JSON-LD `Person`.
+- [ ] `about.html` — story split · values · S11 stats · team row · testimonial · CTA band.
+- [ ] `contact.html` — split: validated form (name/email/subject/message) + info/hours + **keyless OSM map embed** + social row. JSON-LD `Organization`.
+- [ ] `faq.html` — search field (filters questions) · category **accordions** · contact CTA. JSON-LD `FAQPage`.
+- [ ] `login.html` / `register.html` — centered narrow card forms · full validation states · show/hide password · remember-me · social-auth buttons (visual only).
+- [ ] `account.html` — **side-tab dashboard** (`account.js`, DashboardNav pattern): **Overview** (greeting + recent orders + default address) · **Orders** table → **Order details** (in-panel) · **Addresses** (cards + add/edit form) · **Account details** (edit + change-password) · **Wishlist** (reuse) · **Logout**. Demo data from `store.js`/localStorage.
+- [ ] `404.html` — serif statement + search + popular links + home.
+- [ ] `coming-soon.html` — countdown + validated notify form + social.
+- [ ] `terms.html` / `privacy.html` — prose + sticky side TOC (scroll-spy).
+- [ ] **JS** `account.js` (tab panels, demo orders/addresses, in-panel order details) · small helpers `letter-filter` / `faq-search` / `toc-spy` · extend `forms.js` for the new forms.
+- **Done when:** every §7 page exists, builds, navigates, matches the locked language; account tabs + demo orders/addresses work; contact/login/register/coming-soon validate; FAQ search + TOC spy work; 1280/375.
 
 ### Phase 16 — Motion polish
 - [ ] `motion.js` site-wide pass per §13: hero timelines, reveals, staggers, counters, parallax, reduced-motion guard

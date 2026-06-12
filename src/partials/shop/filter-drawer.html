@@ -1,0 +1,27 @@
+<!-- ============================================================
+     Shop filter container (plan §9). One responsive node:
+       • lg+ on shop-left / shop-right  → static sidebar column (CSS).
+       • mobile, and always on shop-full → off-canvas drawer.
+     Self-managed by shop.js (open/close/focus-trap) — deliberately NOT
+     wired to dialog.js, so the same element can sit static at lg+.
+============================================================ -->
+<div class="overlay overlay-drawer" id="shop-filters" data-shop-filters role="dialog" aria-modal="true" aria-label="Filter products">
+  <div class="overlay-backdrop" data-shop-filters-close></div>
+  <aside class="drawer">
+    <div class="drawer-head">
+      <h2 class="text-lg">Filter</h2>
+      <button class="drawer-close" type="button" data-shop-filters-close aria-label="Close filters">
+        <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <include src="shop/filters.html"></include>
+    </div>
+
+    <div class="drawer-foot">
+      <button class="btn-link" type="button" data-clear-filters>Clear all filters</button>
+      <button class="btn btn-block" type="button" data-shop-filters-close>Show results</button>
+    </div>
+  </aside>
+</div>

@@ -1,0 +1,98 @@
+<!-- ============================================================
+     Shop filters — reusable facet groups (plan §9). Lives inside
+     filter-drawer.html: a static sidebar at lg+, an off-canvas drawer
+     on mobile (and always on shop-full). Inputs use wrapping <label>s
+     (no ids) so shop.js can read them by [data-filter]; accordion
+     panels have unique ids (one filters instance per page).
+============================================================ -->
+<div class="filter-groups" data-accordion>
+
+  <!-- Genre -->
+  <div class="filter-group">
+    <button type="button" class="accordion-trigger" aria-expanded="true" aria-controls="f-genre">
+      Genre <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+    </button>
+    <div class="accordion-panel is-open" id="f-genre"><div><div class="accordion-panel-inner filter-list">
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="genre" value="fiction"><span>Literary fiction</span><span class="filter-count">4</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="genre" value="mystery"><span>Mystery</span><span class="filter-count">2</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="genre" value="sci-fi"><span>Science fiction</span><span class="filter-count">2</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="genre" value="poetry"><span>Poetry</span><span class="filter-count">2</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="genre" value="non-fiction"><span>Non-fiction</span><span class="filter-count">2</span></label>
+    </div></div></div>
+  </div>
+
+  <!-- Price -->
+  <div class="filter-group">
+    <button type="button" class="accordion-trigger" aria-expanded="true" aria-controls="f-price">
+      Price <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+    </button>
+    <div class="accordion-panel is-open" id="f-price"><div><div class="accordion-panel-inner">
+      <div class="price-range" data-price-range>
+        <div class="price-slider">
+          <div class="price-track"><div class="price-track-fill" data-price-fill></div></div>
+          <input type="range" data-price-range-min min="10" max="20" step="0.5" value="10" aria-label="Minimum price">
+          <input type="range" data-price-range-max min="10" max="20" step="0.5" value="20" aria-label="Maximum price">
+        </div>
+        <div class="price-inputs">
+          <label class="sr-only" for="price-min">Minimum price</label>
+          <input class="input" id="price-min" type="number" inputmode="decimal" min="10" max="20" value="10" data-price-min>
+          <span class="price-sep" aria-hidden="true">—</span>
+          <label class="sr-only" for="price-max">Maximum price</label>
+          <input class="input" id="price-max" type="number" inputmode="decimal" min="10" max="20" value="20" data-price-max>
+        </div>
+      </div>
+    </div></div></div>
+  </div>
+
+  <!-- Format -->
+  <div class="filter-group">
+    <button type="button" class="accordion-trigger" aria-expanded="true" aria-controls="f-format">
+      Format <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+    </button>
+    <div class="accordion-panel is-open" id="f-format"><div><div class="accordion-panel-inner filter-list">
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="format" value="paperback"><span>Paperback</span><span class="filter-count">5</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="format" value="hardcover"><span>Hardcover</span><span class="filter-count">4</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="format" value="ebook"><span>eBook</span><span class="filter-count">2</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="format" value="audiobook"><span>Audiobook</span><span class="filter-count">1</span></label>
+    </div></div></div>
+  </div>
+
+  <!-- Availability -->
+  <div class="filter-group">
+    <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="f-avail">
+      Availability <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+    </button>
+    <div class="accordion-panel" id="f-avail"><div><div class="accordion-panel-inner filter-list">
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="availability" value="instock"><span>In stock</span><span class="filter-count">10</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="availability" value="preorder"><span>Pre-order</span><span class="filter-count">2</span></label>
+    </div></div></div>
+  </div>
+
+  <!-- Rating -->
+  <div class="filter-group">
+    <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="f-rating">
+      Rating <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+    </button>
+    <div class="accordion-panel" id="f-rating"><div><div class="accordion-panel-inner filter-list">
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="rating" value="5">
+        <span class="filter-stars" aria-hidden="true"><svg class="icon icon-fill" ><use href="#i-star"></use></svg><svg class="icon icon-fill"><use href="#i-star"></use></svg><svg class="icon icon-fill"><use href="#i-star"></use></svg><svg class="icon icon-fill"><use href="#i-star"></use></svg><svg class="icon icon-fill"><use href="#i-star"></use></svg></span>
+        <span class="sr-only">5 stars</span><span class="filter-count">5</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="rating" value="4">
+        <span class="filter-stars" aria-hidden="true"><svg class="icon icon-fill"><use href="#i-star"></use></svg><svg class="icon icon-fill"><use href="#i-star"></use></svg><svg class="icon icon-fill"><use href="#i-star"></use></svg><svg class="icon icon-fill"><use href="#i-star"></use></svg></span>
+        <span>&amp; up</span><span class="sr-only">4 stars and up</span><span class="filter-count">12</span></label>
+    </div></div></div>
+  </div>
+
+  <!-- Publisher -->
+  <div class="filter-group">
+    <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="f-pub">
+      Publisher <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+    </button>
+    <div class="accordion-panel" id="f-pub"><div><div class="accordion-panel-inner filter-list">
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="publisher" value="aldridge-house"><span>Aldridge House</span><span class="filter-count">4</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="publisher" value="northwind-press"><span>Northwind Press</span><span class="filter-count">4</span></label>
+      <label class="filter-check"><input class="check-input" type="checkbox" data-filter="publisher" value="vellum-vine"><span>Vellum &amp; Vine</span><span class="filter-count">4</span></label>
+    </div></div></div>
+  </div>
+
+</div>

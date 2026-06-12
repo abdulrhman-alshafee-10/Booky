@@ -1,0 +1,41 @@
+<!-- ============================================================
+     Shop toolbar (plan §9): result count · Filters trigger (mobile +
+     shop-full) · sort select · column switch (shop-full) · grid⇄list
+     toggle. Driven by shop.js.
+============================================================ -->
+<div class="shop-toolbar">
+  <p class="shop-toolbar-count" data-shop-count aria-live="polite">Showing all books</p>
+
+  <div class="shop-toolbar-tools">
+    <button type="button" class="btn btn-outline btn-sm filters-trigger" data-shop-filters-open>
+      <svg class="icon icon-sm" aria-hidden="true"><use href="#i-sliders"></use></svg>
+      Filters <span data-filters-count></span>
+    </button>
+
+    <div class="select-wrap">
+      <label class="sr-only" for="shop-sort">Sort by</label>
+      <select class="select" id="shop-sort" data-sort>
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="rating">Top rated</option>
+        <option value="newest">Newest</option>
+        <option value="title">Title A–Z</option>
+      </select>
+      <svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+    </div>
+
+    <div class="seg cols-switch" role="group" aria-label="Columns">
+      <button type="button" data-cols="2" aria-pressed="false" aria-label="Two columns"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-list"></use></svg></button>
+      <button type="button" data-cols="3" aria-pressed="true" aria-label="Three columns"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-grid"></use></svg></button>
+      <button type="button" data-cols="4" aria-pressed="false" aria-label="Four columns"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-grid"></use></svg></button>
+    </div>
+
+    <div class="seg view-toggle" role="group" aria-label="View">
+      <button type="button" data-view="grid" aria-pressed="true" aria-label="Grid view"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-grid"></use></svg></button>
+      <button type="button" data-view="list" aria-pressed="false" aria-label="List view"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-list"></use></svg></button>
+    </div>
+  </div>
+</div>
+
+<div class="active-filters" data-active-filters hidden></div>

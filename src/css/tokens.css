@@ -195,3 +195,46 @@
   --color-focus:       oklch(0.48 0.09 50 / 0.6);
   --color-sale:        oklch(0.42 0.14 28);
 }
+
+/* Demo 5 — The Writer (author). Warm rose-brown, intimate. */
+.demo-author {
+  --color-accent:      oklch(0.52 0.09 20);
+  --color-accent-soft: oklch(0.52 0.09 20 / 0.10);
+  --color-focus:       oklch(0.52 0.09 20 / 0.6);
+}
+
+/* Demo 6 — The House (publisher). Vermilion, used sparingly. */
+.demo-publisher {
+  --color-accent:      oklch(0.50 0.18 28);
+  --color-accent-soft: oklch(0.50 0.18 28 / 0.10);
+  --color-focus:       oklch(0.50 0.18 28 / 0.6);
+}
+
+/* Demo 7 — The Stand (magazine). Editorial red, slightly more saturated. */
+.demo-magazine {
+  --color-accent:      oklch(0.50 0.20 28);
+  --color-accent-soft: oklch(0.50 0.20 28 / 0.10);
+  --color-focus:       oklch(0.50 0.20 28 / 0.6);
+}
+
+/* Demo 8 — Book Club (library). Sage green, friendly. */
+.demo-library {
+  --color-accent:      oklch(0.50 0.12 155);
+  --color-accent-soft: oklch(0.50 0.12 155 / 0.10);
+  --color-focus:       oklch(0.50 0.12 155 / 0.6);
+}
+
+/* Demo 9 — Night Reads (dark, audiobooks). <html data-theme="dark"> supplies
+   the charcoal canvas; this only sets the brass-gold accent. */
+.demo-night {
+  --color-accent:      oklch(0.80 0.075 80);
+  --color-accent-soft: oklch(0.80 0.075 80 / 0.16);
+  --color-focus:       oklch(0.80 0.075 80 / 0.6);
+}
+
+/* Demo 10 — Nova (dark, sci-fi & comics). Electric violet on charcoal. */
+.demo-nova {
+  --color-accent:      oklch(0.70 0.22 295);
+  --color-accent-soft: oklch(0.70 0.22 295 / 0.18);
+  --color-focus:       oklch(0.70 0.22 295 / 0.6);
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <include src="base/head.html"></include>
+  <title>Shop — Booky · Bookstore HTML Template</title>
+  <meta name="description" content="Browse the Booky bookshop: filter by genre, price, format, availability, rating and publisher, sort your way, and switch between grid and list — all client-side.">
+  <link rel="canonical" href="https://booky.example.com/shop-left.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shop — Booky Bookstore Template">
+  <meta property="og:description" content="A full editorial bookshop with working filters, sorting, and grid/list views.">
+  <meta property="og:url" content="https://booky.example.com/shop-left.html">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shop — Booky Bookstore Template">
+  <meta name="twitter:description" content="A full editorial bookshop with working filters, sorting, and grid/list views.">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-lantern-of-aldridge-bay.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://booky.example.com/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Shop", "item": "https://booky.example.com/shop-left.html" }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "The Booky Bookshop",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "The Lantern of Aldridge Bay", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 2, "name": "Salt & Starlight", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 3, "name": "The Quiet Algorithm", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 4, "name": "Where the Rivers Remember", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 5, "name": "A Cartography of Dreams", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 6, "name": "The Gardener of Small Hours", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 7, "name": "Ashes of the Northern Coast", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 8, "name": "The Clockmaker's Daughter", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 9, "name": "The Cartographer's Oath", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 10, "name": "The Last Observatory", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 11, "name": "Letters to the Sea", "url": "https://booky.example.com/product.html" },
+          { "@type": "ListItem", "position": 12, "name": "The Weight of Mornings", "url": "https://booky.example.com/product.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="demo-index">
+  <include src="base/icons.html"></include>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <include src="layout/header.html"></include>
+
+  <main id="main">
+    <section class="container-main shop-wrap">
+
+      <div class="shop-head">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span aria-current="page">Shop</span>
+        </nav>
+        <span class="overline">Browse the shelves</span>
+        <h1 class="display text-3xl sm:text-4xl">The Bookshop</h1>
+        <p class="shop-intro">Every title hand-picked by our booksellers. Filter by genre, format, or price — then settle in.</p>
+      </div>
+
+      <div class="shop-layout shop-has-sidebar" data-shop="pages" data-per-page="9" data-price-floor="10" data-price-ceil="20">
+        <include src="shop/filter-drawer.html"></include>
+
+        <div class="shop-content">
+          <include src="shop/toolbar.html"></include>
+          <include src="shop/card-skeleton.html"></include>
+
+          <div class="shop-grid shop-grid--sidebar" data-shop-grid>
+            <include src="shop/grid-reveal.html"></include>
+          </div>
+          <div class="shop-list" data-shop-list hidden></div>
+
+          <include src="shop/shop-empty.html"></include>
+
+          <nav class="pagination shop-pagination" data-shop-pager aria-label="Shop pagination" hidden></nav>
+        </div>
+      </div>
+
+    </section>
+
+    <include src="sections/newsletter-band.html"></include>
+  </main>
+
+  <include src="layout/footer.html"></include>
+
+  <include src="base/mobile-nav.html"></include>
+  <include src="base/search-overlay.html"></include>
+  <include src="base/mini-cart.html"></include>
+  <include src="base/quickview.html"></include>
+  <button class="back-to-top back-to-top--fixed" data-back-to-top aria-label="Back to top">
+    <svg class="icon rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg>
+  </button>
+  <include src="base/scripts.html"></include>
+</body>
+</html>
