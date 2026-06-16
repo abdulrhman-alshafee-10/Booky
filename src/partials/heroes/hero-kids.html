@@ -1,0 +1,73 @@
+<!-- H-kids — Welcome hero (kids demo). Left: welcome heading + lead + stats +
+     CTA. Right: a peeking slider of "Best seller" feature cards. Playful blobs
+     in the kids accent colours. Swiper preset "cards" (carousel.js). -->
+<section class="hero hero-kids" aria-labelledby="k-hero">
+  <span class="hero-kids-blob hero-kids-blob-1" aria-hidden="true"></span>
+  <span class="hero-kids-blob hero-kids-blob-2" aria-hidden="true"></span>
+  <span class="hero-kids-rings" aria-hidden="true"><span></span><span></span><span></span></span>
+  <div class="container-main">
+    <div class="hero-kids-grid">
+      <div class="hero-kids-text">
+        <span class="overline">A bookshop for little readers</span>
+        <h1 id="k-hero">Welcome to <em>Booky</em> — books kids stay up for</h1>
+        <p class="hero-lead">Hand-picked stories by age and mood, from first words to first novels — chosen by booksellers who still believe in bedtime stories.</p>
+        <div class="hero-kids-stats">
+          <div class="hero-kids-stat">
+            <svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>
+            <div><b class="hero-kids-stat-num">68+k</b><span class="hero-kids-stat-label">Book collections</span></div>
+          </div>
+          <div class="hero-kids-stat">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+            <div><b class="hero-kids-stat-num">25,634</b><span class="hero-kids-stat-label">Happy readers</span></div>
+          </div>
+        </div>
+        <a class="btn" href="shop-left.html">Go to collections <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+      </div>
+
+      <div class="hero-kids-media">
+        <div class="booky-swiper hero-kids-slider" aria-roledescription="carousel" aria-label="Best-selling children's books">
+          <div class="swiper" data-swiper="cards">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a class="kids-feature" href="product.html">
+                  <span class="badge badge-bestseller">Best seller</span>
+                  <img src="assets/images/covers/of-foxes-and-fables.jpg" alt="Of Foxes and Fables by Bram Ostendorf — book cover" width="600" height="900" loading="eager" fetchpriority="high" decoding="async">
+                  <span class="kids-feature-cap"><span class="card-overline">Picture books</span><span class="kids-feature-title">Of Foxes and Fables</span></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="kids-feature" href="product.html">
+                  <span class="badge badge-bestseller">Best seller</span>
+                  <img src="assets/images/covers/the-gardener-of-small-hours.jpg" alt="The Gardener of Small Hours by Yuki Tanaka — book cover" width="600" height="900" loading="lazy" decoding="async">
+                  <span class="kids-feature-cap"><span class="card-overline">Ages 9–12</span><span class="kids-feature-title">The Gardener of Small Hours</span></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="kids-feature" href="product.html">
+                  <span class="badge badge-bestseller">Best seller</span>
+                  <img src="assets/images/covers/letters-to-the-sea.jpg" alt="Letters to the Sea by Cora Bellweather — book cover" width="600" height="900" loading="lazy" decoding="async">
+                  <span class="kids-feature-cap"><span class="card-overline">Read aloud</span><span class="kids-feature-title">Letters to the Sea</span></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="kids-feature" href="product.html">
+                  <span class="badge badge-bestseller">Best seller</span>
+                  <img src="assets/images/covers/the-paper-observatory.jpg" alt="The Paper Observatory by Lia Moreau — book cover" width="600" height="900" loading="lazy" decoding="async">
+                  <span class="kids-feature-cap"><span class="card-overline">First novels</span><span class="kids-feature-title">The Paper Observatory</span></span>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="kids-feature" href="product.html">
+                  <span class="badge badge-bestseller">Best seller</span>
+                  <img src="assets/images/covers/a-cartography-of-dreams.jpg" alt="A Cartography of Dreams by Petra Lindgren — book cover" width="600" height="900" loading="lazy" decoding="async">
+                  <span class="kids-feature-cap"><span class="card-overline">Ages 9–12</span><span class="kids-feature-title">A Cartography of Dreams</span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination booky-bars"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

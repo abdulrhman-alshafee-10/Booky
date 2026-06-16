@@ -23,14 +23,27 @@
 
   <main id="main" data-bands>
 
-    <!-- H2 — Centered statement (one CTA, no decoration) -->
-    <section class="hero hero-centered" aria-labelledby="m-hero">
-      <div class="container-narrow">
-        <span class="overline">A modern bookshop</span>
-        <h1 class="display" id="m-hero">Fewer books. Better ones.</h1>
-        <p class="hero-lead">A tightly edited shelf for readers who would rather own ten books they love than a hundred they won't finish.</p>
-        <div class="hero-actions">
-          <a class="btn" href="shop-left.html">Browse the edit</a>
+    <!-- H-min — Minimal type-led hero: oversized type + one floating cover -->
+    <section class="hero hero-minimal" aria-labelledby="m-hero">
+      <div class="container-main">
+        <div class="hero-minimal-grid">
+          <div class="hero-minimal-text">
+            <span class="overline">A modern bookshop</span>
+            <h1 id="m-hero">Fewer books.<br>Better ones.</h1>
+            <p class="hero-lead">A tightly edited shelf for readers who would rather own ten books they love than a hundred they won't finish.</p>
+            <div class="hero-minimal-actions">
+              <a class="btn" href="shop-left.html">Browse the edit</a>
+              <a class="btn btn-outline" href="about.html">Our story</a>
+            </div>
+            <div class="hero-minimal-meta">
+              <span class="hero-minimal-stat"><b>1,200</b> titles in print</span>
+              <span class="hero-minimal-stat"><b>40</b> staff favourites</span>
+              <span class="hero-minimal-stat"><b>Free</b> shipping over $35</span>
+            </div>
+          </div>
+          <div class="hero-minimal-media">
+            <img class="hero-minimal-cover" src="assets/images/covers/the-quiet-algorithm.jpg" alt="The Quiet Algorithm by D. Okonkwo — featured book cover" width="600" height="900" loading="eager" fetchpriority="high" decoding="async">
+          </div>
         </div>
       </div>
     </section>
@@ -101,7 +114,6 @@
               <li class="flex items-center gap-4 py-4 border-b border-line"><a class="cover w-12 shrink-0" href="product.html" aria-label="View The Cartographer's Oath"><img src="assets/images/covers/the-cartographers-oath.jpg" alt="The Cartographer's Oath — book cover" width="600" height="900" loading="lazy" decoding="async"></a><span class="min-w-0"><a class="card-title block" href="product.html">The Cartographer's Oath</a><span class="card-author">A. J. Crewe</span></span><span class="price ml-auto">$16.50</span></li>
               <li class="flex items-center gap-4 py-4 border-b border-line"><a class="cover w-12 shrink-0" href="product.html" aria-label="View Letters to the Sea"><img src="assets/images/covers/letters-to-the-sea.jpg" alt="Letters to the Sea — book cover" width="600" height="900" loading="lazy" decoding="async"></a><span class="min-w-0"><a class="card-title block" href="product.html">Letters to the Sea</a><span class="card-author">Cora Bellweather</span></span><span class="price ml-auto">$13.00</span></li>
               <li class="flex items-center gap-4 py-4 border-b border-line"><a class="cover w-12 shrink-0" href="product.html" aria-label="View The Glasshouse Year"><img src="assets/images/covers/the-glasshouse-year.jpg" alt="The Glasshouse Year — book cover" width="600" height="900" loading="lazy" decoding="async"></a><span class="min-w-0"><a class="card-title block" href="product.html">The Glasshouse Year</a><span class="card-author">Sibyl Hartmann</span></span><span class="price ml-auto">$17.50</span></li>
-              <li class="flex items-center gap-4 py-4 border-b border-line"><a class="cover w-12 shrink-0" href="product.html" aria-label="View The Paper Observatory"><img src="assets/images/covers/the-paper-observatory.jpg" alt="The Paper Observatory — book cover" width="600" height="900" loading="lazy" decoding="async"></a><span class="min-w-0"><a class="card-title block" href="product.html">The Paper Observatory</a><span class="card-author">Lia Moreau</span></span><span class="price ml-auto">$14.50</span></li>
             </ul>
           </aside>
         </div>
@@ -115,13 +127,13 @@
           <span class="overline">Browse</span>
           <h2 id="m-genres">By genre</h2>
         </div>
-        <div class="genre-strip mt-8">
-          <a href="shop-left.html"><span class="genre-strip-name">Literary fiction</span><span class="genre-strip-count">248</span></a>
-          <a href="shop-left.html"><span class="genre-strip-name">Essays</span><span class="genre-strip-count">112</span></a>
-          <a href="shop-left.html"><span class="genre-strip-name">Poetry</span><span class="genre-strip-count">96</span></a>
-          <a href="shop-left.html"><span class="genre-strip-name">Translated</span><span class="genre-strip-count">74</span></a>
-          <a href="shop-left.html"><span class="genre-strip-name">Art &amp; design</span><span class="genre-strip-count">58</span></a>
-          <a href="shop-left.html"><span class="genre-strip-name">Nature</span><span class="genre-strip-count">132</span></a>
+        <div class="genre-feature mt-10">
+          <a class="genre-feature-item" href="shop-left.html"><span class="genre-feature-no">01</span><span class="genre-feature-name">Literary fiction</span><span class="genre-feature-count">248</span></a>
+          <a class="genre-feature-item" href="shop-left.html"><span class="genre-feature-no">02</span><span class="genre-feature-name">Essays</span><span class="genre-feature-count">112</span></a>
+          <a class="genre-feature-item" href="shop-left.html"><span class="genre-feature-no">03</span><span class="genre-feature-name">Poetry</span><span class="genre-feature-count">96</span></a>
+          <a class="genre-feature-item" href="shop-left.html"><span class="genre-feature-no">04</span><span class="genre-feature-name">Translated</span><span class="genre-feature-count">74</span></a>
+          <a class="genre-feature-item" href="shop-left.html"><span class="genre-feature-no">05</span><span class="genre-feature-name">Art &amp; design</span><span class="genre-feature-count">58</span></a>
+          <a class="genre-feature-item" href="shop-left.html"><span class="genre-feature-no">06</span><span class="genre-feature-name">Nature</span><span class="genre-feature-count">132</span></a>
         </div>
       </div>
     </section>
@@ -142,7 +154,7 @@
           <span class="overline">Journal</span>
           <h2 id="m-journal">Notes from the shop</h2>
         </div>
-        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-10 mt-10">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 mt-10">
           <article class="card-article">
             <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-2.jpg" alt="A stack of clothbound books on a desk" width="900" height="600" loading="lazy" decoding="async"></a>
             <div class="card-article-meta"><span>Essay</span><span class="dot" aria-hidden="true"></span><time datetime="2026-05-09">9 May 2026</time></div>
@@ -154,6 +166,12 @@
             <div class="card-article-meta"><span>Lists</span><span class="dot" aria-hidden="true"></span><time datetime="2026-04-27">27 Apr 2026</time></div>
             <a class="card-article-title" href="blog-single.html">Six books that earn their reread</a>
             <div class="card-article-foot"><span>7 min read</span><span class="btn-link">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span></div>
+          </article>
+          <article class="card-article">
+            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-1.jpg" alt="A library aisle lit by hanging bulbs" width="900" height="600" loading="lazy" decoding="async"></a>
+            <div class="card-article-meta"><span>Craft</span><span class="dot" aria-hidden="true"></span><time datetime="2026-04-15">15 Apr 2026</time></div>
+            <a class="card-article-title" href="blog-single.html">How a cover finds its colour</a>
+            <div class="card-article-foot"><span>6 min read</span><span class="btn-link">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span></div>
           </article>
         </div>
       </div>

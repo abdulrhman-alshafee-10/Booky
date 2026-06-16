@@ -1,0 +1,75 @@
+<!-- H-lib — Library "special offer" hero. Left: offer copy + reader photo on a
+     light panel with dot-grids + a soft circle. Right: a Best-Seller card whose
+     background is the current cover, blurred (Swiper preset "solo" + arrows). -->
+<section class="hero hero-lib" aria-labelledby="lib-hero">
+  <div class="hero-lib-wrap">
+    <div class="hero-lib-grid">
+
+      <div class="hero-lib-main">
+        <span class="hero-lib-circle" aria-hidden="true"></span>
+        <span class="hero-lib-dots hero-lib-dots--a" aria-hidden="true"></span>
+        <span class="hero-lib-dots hero-lib-dots--b" aria-hidden="true"></span>
+        <div class="hero-lib-copy">
+          <span class="overline">Back to the shelves</span>
+          <h1 id="lib-hero">Special <em>50% off</em> for our reading members</h1>
+          <p class="hero-lib-lead">Borrow more, pay less. Members get half off every featured title this season — plus free pickup at your local branch and first dibs on new arrivals.</p>
+          <div class="hero-lib-actions">
+            <a class="btn" href="shop-left.html">Get the deal <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+            <a class="btn btn-outline" href="shop-full.html">See other promos</a>
+          </div>
+        </div>
+        <img class="hero-lib-person" src="assets/images/people/hero-people.png" alt="A member reading a book" width="909" height="1000" loading="eager" fetchpriority="high" decoding="async">
+      </div>
+
+      <aside class="hero-lib-bs booky-swiper" aria-roledescription="carousel" aria-label="Best sellers this week">
+        <div class="hero-lib-bs-head">
+          <span class="hero-lib-bs-eyebrow">Best seller</span>
+          <p class="hero-lib-bs-sub">Based on sales this week</p>
+        </div>
+        <div class="swiper" data-swiper="solo">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bs-slide">
+                <img class="bs-bg" src="assets/images/covers/the-last-observatory.jpg" alt="" aria-hidden="true" decoding="async">
+                <span class="bs-scrim" aria-hidden="true"></span>
+                <div class="bs-body">
+                  <a class="bs-cover" href="product.html"><img src="assets/images/covers/the-last-observatory.jpg" alt="The Last Observatory by Nadia Soto — book cover" width="600" height="900" loading="eager" decoding="async"></a>
+                  <p class="bs-title">The Last Observatory</p>
+                  <p class="bs-genre">Adventure · Science · Mystery</p>
+                  <p class="bs-price"><span class="bs-old">$60.00</span><span class="bs-new">$45.25</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bs-slide">
+                <img class="bs-bg" src="assets/images/covers/a-cartography-of-dreams.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <span class="bs-scrim" aria-hidden="true"></span>
+                <div class="bs-body">
+                  <a class="bs-cover" href="product.html"><img src="assets/images/covers/a-cartography-of-dreams.jpg" alt="A Cartography of Dreams by Petra Lindgren — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+                  <p class="bs-title">A Cartography of Dreams</p>
+                  <p class="bs-genre">Fantasy · Travel · Wonder</p>
+                  <p class="bs-price"><span class="bs-old">$34.00</span><span class="bs-new">$25.50</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bs-slide">
+                <img class="bs-bg" src="assets/images/covers/salt-and-starlight.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <span class="bs-scrim" aria-hidden="true"></span>
+                <div class="bs-body">
+                  <a class="bs-cover" href="product.html"><img src="assets/images/covers/salt-and-starlight.jpg" alt="Salt and Starlight by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+                  <p class="bs-title">Salt &amp; Starlight</p>
+                  <p class="bs-genre">Literary · Romance · Sea</p>
+                  <p class="bs-price"><span class="bs-old">$37.00</span><span class="bs-new">$27.75</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="bs-nav bs-nav--prev" data-swiper-prev aria-label="Previous book"><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"></use></svg></button>
+        <button class="bs-nav bs-nav--next" data-swiper-next aria-label="Next book"><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></button>
+      </aside>
+
+    </div>
+  </div>
+</section>

@@ -34,6 +34,37 @@ const PRESETS = {
       navigation: nav(root),
     };
   },
+  // One slide at a time (large testimonial / best-seller card). Crossfade —
+  // slides melt in place rather than sliding, so backgrounds never bleed.
+  solo(root, reduced) {
+    return {
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      slidesPerView: 1,
+      speed: reduced ? 0 : 650,
+      loop: !reduced,
+      autoplay: reduced ? false : { delay: 5500, disableOnInteraction: false },
+      pagination: pag(root),
+      navigation: nav(root),
+    };
+  },
+  // Peeking feature cards (kids hero) — fewer, larger slides + dots
+  cards(root, reduced) {
+    return {
+      slidesPerView: 1.15,
+      spaceBetween: 16,
+      grabCursor: true,
+      watchOverflow: true,
+      loop: !reduced,
+      autoplay: reduced ? false : { delay: 5000, disableOnInteraction: false },
+      breakpoints: {
+        640: { slidesPerView: 2, spaceBetween: 18 },
+        1024: { slidesPerView: 1.7, spaceBetween: 20 },
+      },
+      pagination: pag(root),
+      navigation: nav(root),
+    };
+  },
 };
 
 /* Pagination/nav live as siblings of .swiper inside the .booky-swiper
