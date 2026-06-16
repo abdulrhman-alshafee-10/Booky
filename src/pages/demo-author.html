@@ -9,11 +9,11 @@
   <meta property="og:title" content="The Writer — Booky Author Demo">
   <meta property="og:description" content="An author's personal bookstore demo for Booky — intimate, narrow, first-person.">
   <meta property="og:url" content="https://booky.example.com/demo-author.html">
-  <meta property="og:image" content="https://booky.example.com/assets/images/covers/salt-and-starlight.svg">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/salt-and-starlight.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Writer — Booky Author Demo">
   <meta name="twitter:description" content="An author's personal bookstore demo for Booky.">
-  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/salt-and-starlight.svg">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/salt-and-starlight.jpg">
 </head>
 <body class="demo-author">
   <include src="base/icons.html"></include>
@@ -21,7 +21,7 @@
 
   <include src="layout/header-minimal.html"></include>
 
-  <main id="main">
+  <main id="main" data-bands>
 
     <include src="heroes/hero-portrait.html"></include>
     <include src="sections/bibliography.html"></include>
@@ -36,7 +36,7 @@
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-12 mt-12">
           <article class="card-editorial" data-product-id="bk-02" data-product-title="Salt and Starlight" data-product-author="Marina Vøllo" data-product-price="18.50" data-product-cover="salt-and-starlight">
             <div class="card-media">
-              <a class="cover" href="product.html" aria-label="View Salt and Starlight"><img src="assets/images/covers/salt-and-starlight.svg" alt="Salt and Starlight by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+              <a class="cover" href="product.html" aria-label="View Salt and Starlight"><img src="assets/images/covers/salt-and-starlight.jpg" alt="Salt and Starlight by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
               <div class="cover-actions">
                 <button class="cover-icon-btn" data-add-to-cart aria-label="Add Salt and Starlight to cart"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg></button>
                 <button class="cover-icon-btn" data-quickview aria-label="Quick view Salt and Starlight"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg></button>
@@ -52,7 +52,7 @@
           </article>
           <article class="card-editorial" data-product-id="bk-11" data-product-title="Letters to the Sea" data-product-author="Marina Vøllo" data-product-price="13.00" data-product-cover="letters-to-the-sea">
             <div class="card-media">
-              <a class="cover" href="product.html" aria-label="View Letters to the Sea"><img src="assets/images/covers/letters-to-the-sea.svg" alt="Letters to the Sea by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+              <a class="cover" href="product.html" aria-label="View Letters to the Sea"><img src="assets/images/covers/letters-to-the-sea.jpg" alt="Letters to the Sea by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
               <div class="cover-actions">
                 <button class="cover-icon-btn" data-add-to-cart aria-label="Add Letters to the Sea to cart"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg></button>
                 <button class="cover-icon-btn" data-quickview aria-label="Quick view Letters to the Sea"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg></button>
@@ -68,7 +68,7 @@
           </article>
           <article class="card-editorial" data-product-id="bk-12" data-product-title="The Weight of Mornings" data-product-author="Marina Vøllo" data-product-price="16.00" data-product-cover="the-weight-of-mornings">
             <div class="card-media">
-              <a class="cover" href="product.html" aria-label="View The Weight of Mornings"><img src="assets/images/covers/the-weight-of-mornings.svg" alt="The Weight of Mornings by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+              <a class="cover" href="product.html" aria-label="View The Weight of Mornings"><img src="assets/images/covers/the-weight-of-mornings.jpg" alt="The Weight of Mornings by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
               <div class="cover-actions">
                 <button class="cover-icon-btn" data-add-to-cart aria-label="Add The Weight of Mornings to cart"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg></button>
                 <button class="cover-icon-btn" data-quickview aria-label="Quick view The Weight of Mornings"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg></button>
@@ -84,7 +84,7 @@
           </article>
           <article class="card-editorial" data-product-id="bk-05" data-product-title="A Cartography of Dreams" data-product-author="Marina Vøllo" data-product-price="15.00" data-product-cover="a-cartography-of-dreams">
             <div class="card-media">
-              <a class="cover" href="product.html" aria-label="View A Cartography of Dreams"><img src="assets/images/covers/a-cartography-of-dreams.svg" alt="A Cartography of Dreams by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+              <a class="cover" href="product.html" aria-label="View A Cartography of Dreams"><img src="assets/images/covers/a-cartography-of-dreams.jpg" alt="A Cartography of Dreams by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
               <div class="cover-actions">
                 <button class="cover-icon-btn" data-add-to-cart aria-label="Add A Cartography of Dreams to cart"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg></button>
                 <button class="cover-icon-btn" data-quickview aria-label="Quick view A Cartography of Dreams"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg></button>
@@ -100,7 +100,7 @@
           </article>
           <article class="card-editorial" data-product-id="bk-15" data-product-title="Of Foxes and Fables" data-product-author="Marina Vøllo" data-product-price="14.00" data-product-cover="of-foxes-and-fables">
             <div class="card-media">
-              <a class="cover" href="product.html" aria-label="View Of Foxes and Fables"><img src="assets/images/covers/of-foxes-and-fables.svg" alt="Of Foxes and Fables by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+              <a class="cover" href="product.html" aria-label="View Of Foxes and Fables"><img src="assets/images/covers/of-foxes-and-fables.jpg" alt="Of Foxes and Fables by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
               <div class="cover-actions">
                 <button class="cover-icon-btn" data-add-to-cart aria-label="Add Of Foxes and Fables to cart"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg></button>
                 <button class="cover-icon-btn" data-quickview aria-label="Quick view Of Foxes and Fables"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg></button>
@@ -116,7 +116,7 @@
           </article>
           <article class="card-editorial" data-product-id="bk-16" data-product-title="The Paper Observatory" data-product-author="Marina Vøllo" data-product-price="14.50" data-product-cover="the-paper-observatory">
             <div class="card-media">
-              <a class="cover" href="product.html" aria-label="View The Paper Observatory"><img src="assets/images/covers/the-paper-observatory.svg" alt="The Paper Observatory by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
+              <a class="cover" href="product.html" aria-label="View The Paper Observatory"><img src="assets/images/covers/the-paper-observatory.jpg" alt="The Paper Observatory by Marina Vøllo — book cover" width="600" height="900" loading="lazy" decoding="async"></a>
               <div class="cover-actions">
                 <button class="cover-icon-btn" data-add-to-cart aria-label="Add The Paper Observatory to cart"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-bag"></use></svg></button>
                 <button class="cover-icon-btn" data-quickview aria-label="Quick view The Paper Observatory"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-eye"></use></svg></button>

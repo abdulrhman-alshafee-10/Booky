@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="Letters to the Sea by Cora Beaumont">
-  <rect width="600" height="900" fill="#1f5158"/>
-  <circle cx="300" cy="300" r="150" fill="none" stroke="#e2bd86" stroke-width="2" opacity="0.65"/>
-    <circle cx="300" cy="300" r="6" fill="#e2bd86"/>
-    <text x="300" y="130" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#e2bd86" text-anchor="middle" opacity="0.85">BOOKY PRESS</text>
-    <text x="300" y="560" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#eef0e6" text-anchor="middle"><tspan x="300" dy="0">Letters</tspan><tspan x="300" dy="68.64">to the Sea</tspan></text>
-    <text x="300" y="810" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#eef0e6" text-anchor="middle" opacity="0.85">CORA BEAUMONT</text>
-</svg>

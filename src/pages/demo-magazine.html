@@ -9,11 +9,11 @@
   <meta property="og:title" content="The Stand — Booky Magazine Demo">
   <meta property="og:description" content="A literary magazine and book-review demo for Booky — dense columns, dated, editorial.">
   <meta property="og:url" content="https://booky.example.com/demo-magazine.html">
-  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-paper-observatory.svg">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-paper-observatory.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Stand — Booky Magazine Demo">
   <meta name="twitter:description" content="A literary magazine and book-review demo for Booky.">
-  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-paper-observatory.svg">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-paper-observatory.jpg">
 </head>
 <body class="demo-magazine">
   <include src="base/icons.html"></include>
@@ -21,7 +21,7 @@
 
   <include src="layout/header.html"></include>
 
-  <main id="main">
+  <main id="main" data-bands>
 
     <!-- H5 issue variant — current issue cover + big issue number + tagline -->
     <section class="hero hero-editorial section-deep" aria-labelledby="mag-hero">
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="hero-editorial-covers hero-editorial-covers--single">
-            <a class="cover hero-editorial-cover" href="product.html" aria-label="Read Issue 14 — Spring 2026"><img src="assets/images/covers/the-paper-observatory.svg" alt="The Stand, Issue 14 — Spring 2026 cover" width="600" height="900" loading="eager" fetchpriority="high" decoding="async"></a>
+            <a class="cover hero-editorial-cover" href="product.html" aria-label="Read Issue 14 — Spring 2026"><img src="assets/images/covers/the-paper-observatory.jpg" alt="The Stand, Issue 14 — Spring 2026 cover" width="600" height="900" loading="eager" fetchpriority="high" decoding="async"></a>
           </div>
         </div>
       </div>
@@ -57,25 +57,25 @@
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-10">
           <article class="card-article">
-            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-1.svg" alt="An open book beside a window" width="900" height="600" loading="lazy" decoding="async"></a>
+            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-1.jpg" alt="An open book beside a window" width="900" height="600" loading="lazy" decoding="async"></a>
             <div class="card-article-meta"><span>Review</span><span class="dot" aria-hidden="true"></span><time datetime="2026-03-12">12 Mar 2026</time></div>
             <a class="card-article-title" href="blog-single.html">On the new nature writing</a>
             <div class="card-article-foot"><span>8 min read</span><span class="btn-link">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span></div>
           </article>
           <article class="card-article">
-            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-2.svg" alt="A stack of clothbound books on a desk" width="900" height="600" loading="lazy" decoding="async"></a>
+            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-2.jpg" alt="A stack of clothbound books on a desk" width="900" height="600" loading="lazy" decoding="async"></a>
             <div class="card-article-meta"><span>Essay</span><span class="dot" aria-hidden="true"></span><time datetime="2026-03-08">8 Mar 2026</time></div>
             <a class="card-article-title" href="blog-single.html">The fight about translation</a>
             <div class="card-article-foot"><span>11 min read</span><span class="btn-link">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span></div>
           </article>
           <article class="card-article">
-            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-3.svg" alt="A writer's desk at dawn" width="900" height="600" loading="lazy" decoding="async"></a>
+            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-3.jpg" alt="A writer's desk at dawn" width="900" height="600" loading="lazy" decoding="async"></a>
             <div class="card-article-meta"><span>Interview</span><span class="dot" aria-hidden="true"></span><time datetime="2026-02-27">27 Feb 2026</time></div>
             <a class="card-article-title" href="blog-single.html">A conversation with Eleanor Finch</a>
             <div class="card-article-foot"><span>14 min read</span><span class="btn-link">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span></div>
           </article>
           <article class="card-article">
-            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-4.svg" alt="Bookshelves in soft afternoon light" width="900" height="600" loading="lazy" decoding="async"></a>
+            <a class="card-article-media" href="blog-single.html"><img src="assets/images/photos/editorial-4.jpg" alt="Bookshelves in soft afternoon light" width="900" height="600" loading="lazy" decoding="async"></a>
             <div class="card-article-meta"><span>Review</span><span class="dot" aria-hidden="true"></span><time datetime="2026-02-20">20 Feb 2026</time></div>
             <a class="card-article-title" href="blog-single.html">Twelve we couldn't put down</a>
             <div class="card-article-foot"><span>6 min read</span><span class="btn-link">Read <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span></div>
@@ -121,7 +121,7 @@
       </div>
     </section>
 
-    <include src="sections/newsletter-band.html"></include>
+    <include src="sections/newsletter-centered.html"></include>
   </main>
 
   <include src="layout/footer.html"></include>

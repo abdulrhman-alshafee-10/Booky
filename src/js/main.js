@@ -26,6 +26,7 @@ import { initShop }          from "./modules/shop.js";
 import { initBlog }          from "./modules/blog.js";
 import { initPages }         from "./modules/pages.js";
 import { initAccount }       from "./modules/account.js";
+import { initMotion }        from "./modules/motion.js";
 
 document.documentElement.classList.add("js");
 
@@ -56,3 +57,4 @@ initShop();
 initBlog();
 initPages();
 initAccount();
+initMotion();

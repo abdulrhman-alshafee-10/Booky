@@ -58,6 +58,9 @@
     background: none; border: 0; color: var(--color-ink); cursor: pointer;
   }
   .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
     font-family: var(--font-display);
     font-size: var(--text-2xl);
     line-height: 1;
@@ -66,6 +69,20 @@
     text-decoration: none;
   }
   .wordmark:hover { color: var(--color-ink); }
+  .wordmark:hover .wordmark-mark { color: var(--color-accent); }
+  .wordmark-mark {
+    inline-size: 1.75rem;
+    block-size: 1.75rem;
+    flex-shrink: 0;
+    color: var(--color-accent);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: color var(--duration-fast) var(--ease-smooth);
+  }
+  .footer-brand .wordmark-mark { inline-size: 2rem; block-size: 2rem; }
 
   .header-actions { justify-self: end; display: flex; align-items: center; gap: 0.25rem; }
   .header-action {
@@ -101,13 +118,11 @@
 
   /* Dropdown + mega panels */
   .has-menu { position: relative; }
+  .has-menu:has(.mega) { position: static; }
   .dropdown, .mega {
     position: absolute;
-    inset-block-start: calc(100% + 0.4rem);
     background-color: var(--color-surface);
-    border: 1px solid var(--color-line);
     box-shadow: var(--shadow-drop);
-    border-radius: var(--radius-md);
     opacity: 0;
     visibility: hidden;
     transform: translateY(6px);
@@ -118,7 +133,14 @@
   .has-menu.is-open > .dropdown,
   .has-menu.is-open > .mega { opacity: 1; visibility: visible; transform: translateY(0); }
 
-  .dropdown { inset-inline-start: 0; min-inline-size: 12rem; padding: 0.5rem; }
+  .dropdown {
+    inset-block-start: calc(100% + 0.4rem);
+    inset-inline-start: 0;
+    min-inline-size: 12rem;
+    padding: 0.5rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+  }
   .dropdown a {
     display: block; padding: 0.55rem 0.75rem; border-radius: var(--radius-sm);
     font-size: var(--text-sm); color: var(--color-ink-soft); text-decoration: none;
@@ -126,20 +148,23 @@
   }
   .dropdown a:hover { background-color: var(--color-paper-deep); color: var(--color-ink); }
 
+  /* Full-width mega — spans the whole header, drops below it as a band. */
   .mega {
-    inset-inline-start: 50%;
-    transform: translateX(-50%) translateY(6px);
-    inline-size: min(48rem, 92vw);
-    padding: 1.75rem;
+    inset-inline: 0;
+    inset-block-start: 100%;
+    inline-size: 100%;
+    border-block: 1px solid var(--color-line);
   }
-  .has-menu.is-open > .mega { transform: translateX(-50%) translateY(0); }
-  .mega-grid { display: grid; grid-template-columns: repeat(3, 1fr) 1.2fr; gap: 1.5rem; }
-  .mega-col h3 { font-size: var(--text-overline); letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-ink-faint); margin-block-end: 0.6rem; }
-  .mega-col a { display: block; padding: 0.3rem 0; font-size: var(--text-sm); color: var(--color-ink-soft); text-decoration: none; }
+  .mega-inner { padding-block: 2.75rem; }
+  .mega-grid { display: grid; grid-template-columns: repeat(3, 1fr) 1.3fr; gap: 2.5rem 3rem; }
+  @media (max-width: 1023px) { .mega-grid { grid-template-columns: repeat(2, 1fr); } }
+  .mega-col h3 { font-size: var(--text-overline); letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-ink-faint); margin-block-end: 0.9rem; }
+  .mega-col a { display: block; padding: 0.4rem 0; font-size: var(--text-sm); color: var(--color-ink-soft); text-decoration: none; transition: color var(--duration-fast); }
   .mega-col a:hover { color: var(--color-accent); }
-  .mega-feature { border-radius: var(--radius-sm); overflow: hidden; background-color: var(--color-paper-deep); display: flex; flex-direction: column; }
-  .mega-feature .mega-feature-art { aspect-ratio: 16/10; background-color: var(--color-ink); }
-  .mega-feature-body { padding: 0.9rem 1rem 1.1rem; }
+  .mega-feature { border-radius: var(--radius-md); overflow: hidden; background-color: var(--color-paper-deep); display: flex; flex-direction: column; text-decoration: none; transition: transform var(--duration-base) var(--ease-out); }
+  .mega-feature:hover { transform: translateY(-3px); }
+  .mega-feature .mega-feature-art { aspect-ratio: 16/9; background-color: var(--color-ink); flex: 1; }
+  .mega-feature-body { padding: 1rem 1.2rem 1.2rem; }
 
   /* ══ Footer A — "Columns" ══════════════════════════════════ */
   .site-footer { background-color: var(--color-paper-deep); border-block-start: 1px solid var(--color-line); }

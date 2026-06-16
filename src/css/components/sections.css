@@ -23,17 +23,22 @@
     gap: 1.5rem;
   }
 
-  /* ── Corner ornaments (faint line-art) ───────────────────── */
+  /* ── Corner ornaments (faint line-art: concentric rings + a wave) ── */
   .ornament {
     position: absolute;
     color: var(--color-accent);
-    opacity: 0.1;
+    opacity: 0.18;
     pointer-events: none;
-    inline-size: 5rem;
-    block-size: 5rem;
+    inline-size: 6rem;
+    block-size: 6rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.25;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
-  .ornament-tl { inset-block-start: 1.5rem; inset-inline-start: 1.5rem; }
-  .ornament-br { inset-block-end: 1.5rem; inset-inline-end: 1.5rem; transform: rotate(180deg); }
+  .ornament-tl { inset-block-start: 1.75rem; inset-inline-start: 1.75rem; }
+  .ornament-br { inset-block-end: 1.75rem; inset-inline-end: 1.75rem; transform: rotate(180deg); }
 
   /* ═══════════════════════════════════════════════════════════
      SWIPER theming (scoped to our carousels)
@@ -43,7 +48,9 @@
      overriding Swiper's :root default). */
   .booky-swiper { position: relative; --swiper-theme-color: var(--color-accent); }
 
-  /* Custom arrow buttons (shared by hero + rails) */
+  /* Custom arrow buttons (shared by hero + rails). They stay hidden at rest
+     so they never cover the covers, and reveal on hover / keyboard focus.
+     On small screens swipe/drag is primary, so they're removed entirely. */
   .swiper-nav {
     position: absolute;
     inset-block-start: 50%;
@@ -59,15 +66,24 @@
     border-radius: var(--radius-full);
     box-shadow: var(--shadow-drop);
     cursor: pointer;
+    opacity: 0;
     transition: background-color var(--duration-fast) var(--ease-smooth),
-                color var(--duration-fast) var(--ease-smooth);
+                color var(--duration-fast) var(--ease-smooth),
+                opacity var(--duration-base) var(--ease-out);
   }
+  .booky-swiper:hover .swiper-nav,
+  .booky-swiper:focus-within .swiper-nav { opacity: 1; }
   .swiper-nav:hover { background-color: var(--color-ink); color: var(--color-paper); }
   .swiper-nav .icon { inline-size: 1.25rem; block-size: 1.25rem; }
-  .swiper-nav-prev { inset-inline-start: -0.5rem; }
-  .swiper-nav-next { inset-inline-end: -0.5rem; }
-  .swiper-nav.swiper-button-disabled { opacity: 0.35; cursor: default; }
-  .swiper-nav.swiper-button-disabled:hover { background-color: var(--color-surface); color: var(--color-ink); }
+  .swiper-nav-prev { inset-inline-start: -0.75rem; }
+  .swiper-nav-next { inset-inline-end: -0.75rem; }
+  /* Disabled (rail ends) stays hidden even on hover */
+  .swiper-nav.swiper-button-disabled,
+  .booky-swiper:hover .swiper-nav.swiper-button-disabled,
+  .booky-swiper:focus-within .swiper-nav.swiper-button-disabled { opacity: 0; cursor: default; pointer-events: none; }
+  /* Product rails: align the arrows to the cover's centre, not the whole card */
+  .product-rail .swiper-nav { inset-block-start: 40%; }
+  @media (max-width: 767px) { .swiper-nav { display: none; } }
 
   /* Pagination dots */
   .booky-dots { display: flex; justify-content: center; gap: 0.5rem; margin-block-start: 2rem; }
@@ -91,7 +107,28 @@
      H1 — Split slider (flagship hero)
   ═══════════════════════════════════════════════════════════ */
   .hero { position: relative; overflow: hidden; }
-  .hero-split { padding-block: clamp(2.5rem, 6vw, 5rem); }
+  .hero-split { padding-block: clamp(2.5rem, 6vw, 5rem) clamp(5rem, 9vw, 8rem); }
+
+  /* Flowing layered wave at the foot of the hero — a soft-bronze back layer
+     for depth and a cream front layer that merges into the next section.
+     Sits behind the hero content (transform/opacity-safe, decorative). */
+  .hero-split .container-main { position: relative; z-index: 1; }
+  .hero-waves { position: absolute; inset-inline: 0; inset-block-end: 0; block-size: clamp(80px, 13vw, 170px); pointer-events: none; z-index: 0; }
+  .hero-waves svg { display: block; inline-size: 100%; block-size: 100%; }
+  .hero-wave-back { fill: var(--color-accent-soft); opacity: 0.5; }
+  .hero-wave-front { fill: var(--color-paper); }
+
+  /* Concentric decorative rings bleeding off the top-left corner (+ centre dot)
+     — faint accent line-art behind the content. Clipped by .hero overflow. */
+  .hero-ring { position: absolute; border-radius: 50%; border: 1px solid var(--color-accent); pointer-events: none; z-index: 0; }
+  .hero-ring-1 { inline-size: 12rem; block-size: 12rem; inset-block-start: -3rem;  inset-inline-start: -4rem;  opacity: 0.22; }
+  .hero-ring-2 { inline-size: 20rem; block-size: 20rem; inset-block-start: -7rem;  inset-inline-start: -8rem;  opacity: 0.15; }
+  .hero-ring-3 { inline-size: 28rem; block-size: 28rem; inset-block-start: -11rem; inset-inline-start: -12rem; opacity: 0.09; }
+  .hero-dot { position: absolute; inline-size: 0.85rem; block-size: 0.85rem; inset-block-start: 2.58rem; inset-inline-start: 1.58rem; border-radius: 50%; background-color: var(--color-accent); opacity: 0.5; pointer-events: none; z-index: 0; }
+  /* Hero controls: drop the side arrows (they crowded the cover + title);
+     keep the dots, aligned bottom-left under the copy. */
+  .hero-split .swiper-nav { display: none; }
+  .hero-split .booky-dots { justify-content: flex-start; }
 
   .hero-slide {
     display: grid;
@@ -111,6 +148,11 @@
     line-height: 1.7;
   }
   .hero-text .btn-link { margin-block-start: 1.75rem; }
+  /* Mobile: centre the hero copy above the stacked cover */
+  @media (max-width: 1023px) {
+    .hero-split .hero-text { text-align: center; }
+    .hero-split .hero-text p { margin-inline: auto; }
+  }
 
   .hero-cover-wrap { display: flex; justify-content: center; }
   .hero-cover {
@@ -238,7 +280,7 @@
   }
   .bestseller-cover-wrap { display: flex; justify-content: center; }
   .bestseller-cover {
-    inline-size: min(65%, 17rem);
+    inline-size: 100%;
     aspect-ratio: 2 / 3;
     object-fit: cover;
     border-radius: var(--radius-xs);
@@ -247,8 +289,41 @@
   .bestseller-body .overline { display: block; }
   .bestseller-body h2 { margin-block-start: 0.75rem; }
   .bestseller-body p { margin-block-start: 1.25rem; color: var(--color-ink-soft); line-height: 1.7; }
-  .bestseller-body .price-group { margin-block-start: 1.5rem; }
-  .bestseller-body .btn { margin-block-start: 1.75rem; }
+  /* Larger, prominent spotlight price on its own row + clear gap before CTA.
+     display:flex (not inline-flex) forces the button onto the next line. */
+  .bestseller-body .price-group { display: flex; margin-block-start: 1.75rem; gap: 0.75rem; }
+  .bestseller-body .price { font-size: var(--text-3xl); }
+  .bestseller-body .price-old { font-size: var(--text-base); }
+  .bestseller-body .btn { margin-block-start: 2.25rem; }
+
+  /* Circular "seal" tag that sits half on / half off the cover corner.
+     The frame is sized to the cover so the seal anchors to the cover edge,
+     not the column edge. */
+  .cover-framed { position: relative; display: inline-block; inline-size: min(65%, 17rem); }
+  .cover-seal {
+    position: absolute;
+    inset-block-start: -1.15rem;
+    inset-inline-end: -1.15rem;
+    z-index: 2;
+    display: grid;
+    place-content: center;
+    inline-size: 5.5rem;
+    block-size: 5.5rem;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    color: var(--color-paper);
+    text-align: center;
+    box-shadow: var(--shadow-cover);
+    transform: rotate(7deg);
+  }
+  .cover-seal-num { display: block; font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1; }
+  .cover-seal-cap { display: block; margin-block-start: 0.1rem; font-size: var(--text-overline); font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+
+  /* Mobile: stack centred (cover + copy), incl. the hero swiper on top */
+  @media (max-width: 767px) {
+    .bestseller-body { text-align: center; }
+    .bestseller-body .price-group { justify-content: center; }
+  }
 
   /* ═══════════════════════════════════════════════════════════
      S4 — Popular + tabs (centered filter)
@@ -257,10 +332,11 @@
     justify-content: center;
     border-block-end: 0;
     gap: 0.25rem 1.75rem;
-    margin-block: 2.5rem;
+    margin-block: 1.5rem 2.5rem;
   }
   .tablist-center .tab {
     border-block-end: 0;
+    padding-block: 0.35rem;
     padding-inline: 0.25rem;
     color: var(--color-ink-faint);
     position: relative;
@@ -268,7 +344,7 @@
   .tablist-center .tab::after {
     content: "";
     position: absolute;
-    inset-block-end: -0.35rem;
+    inset-block-end: -0.1rem;
     inset-inline: 0;
     block-size: 1px;
     background-color: var(--color-accent);
@@ -380,6 +456,52 @@
   }
   .newsletter-grid h2 { margin-block-start: 0.5rem; }
   .newsletter-grid .form-foot { margin-block-start: 0.75rem; font-size: var(--text-xs); color: var(--color-ink-faint); }
+
+  /* ── S7 Newsletter — alternate treatments (variety per page) ──── */
+  /* Boxed inline form: bordered input + solid button (vs the band's
+     underline style). Used by the centered, card, and ink variants. */
+  .newsletter-boxed { display: flex; flex-wrap: wrap; gap: 0.5rem; max-inline-size: 32rem; }
+  .newsletter-boxed .input { flex: 1; min-inline-size: 12rem; }
+  .newsletter-boxed .btn { flex-shrink: 0; }
+  .newsletter-center { margin-inline: auto; }
+  .newsletter-center .newsletter-boxed { margin-inline: auto; }
+  .newsletter-center .form-foot { text-align: center; margin-block-start: 0.85rem; font-size: var(--text-xs); color: var(--color-ink-faint); }
+
+  /* B · Card with image */
+  .newsletter-card {
+    display: grid;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--color-surface);
+  }
+  @media (min-width: 768px) { .newsletter-card { grid-template-columns: 1.1fr 1fr; } }
+  .newsletter-card-body { padding: clamp(1.75rem, 4vw, 3rem); }
+  .newsletter-card-body h2 { margin-block-start: 0.5rem; }
+  .newsletter-card-body p { margin-block-start: 1rem; color: var(--color-ink-soft); }
+  .newsletter-card-body .form-foot { margin-block-start: 0.75rem; font-size: var(--text-xs); color: var(--color-ink-faint); }
+  .newsletter-card-media { min-block-size: 13rem; order: -1; }
+  @media (min-width: 768px) { .newsletter-card-media { order: 0; } }
+  .newsletter-card-media img { inline-size: 100%; block-size: 100%; object-fit: cover; }
+
+  /* C · Ink band (dark) — reuses .cta-band fill; light input + solid button */
+  .newsletter-ink .input { background-color: var(--color-surface); }
+  .newsletter-ink .form-foot { color: color-mix(in oklch, var(--color-paper), transparent 35%); }
+
+  /* ── S10 Testimonials — alternate treatments ──────────────────── */
+  /* B · Three review cards */
+  .quote-grid { display: grid; gap: 1.5rem; }
+  @media (min-width: 768px) { .quote-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .quote-card .rating .icon { color: var(--color-accent); }
+
+  /* C · Quote beside a reader photo */
+  .quote-split { display: grid; gap: 2.5rem; align-items: center; }
+  @media (min-width: 768px) { .quote-split { grid-template-columns: 0.9fr 1fr; gap: 4rem; } }
+  .quote-split-media img { inline-size: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-cover); }
+  .quote-split .rating { margin-block-end: 1rem; }
+  .quote-split .rating .icon { color: var(--color-accent); }
+  .quote-split blockquote { font-family: var(--font-display); font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.1rem); line-height: 1.4; color: var(--color-ink); }
+  .quote-split .quote-card-author { margin-block-start: 1.75rem; }
 
   /* ── S9 App download band ────────────────────────────────── */
   .app-grid { display: grid; gap: 2.5rem; align-items: center; }

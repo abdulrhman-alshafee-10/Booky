@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="The Paper Observatory by Lena Hartmann">
-  <rect width="600" height="900" fill="#3b2a4a"/>
-  <text x="70" y="150" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#c39ccd" text-anchor="start" opacity="0.85">BOOKY PRESS</text>
-    <line x1="70" y1="180" x2="530" y2="180" stroke="#ece2ec" stroke-width="3" opacity="0.85"/>
-    <text x="70" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#ece2ec" text-anchor="start"><tspan x="70" dy="0">The Paper</tspan><tspan x="70" dy="61.480000000000004">Observatory</tspan></text>
-    <line x1="70" y1="750" x2="530" y2="750" stroke="#c39ccd" stroke-width="1.5" opacity="0.6"/>
-    <text x="70" y="790" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#ece2ec" text-anchor="start" opacity="0.85">LENA HARTMANN</text>
-</svg>

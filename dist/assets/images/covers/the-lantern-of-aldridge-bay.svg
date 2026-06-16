@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="The Lantern of Aldridge Bay by Eleanor Finch">
-  <rect width="600" height="900" fill="#1f2a3a"/>
-  <rect x="40" y="40" width="520" height="820" fill="none" stroke="#c9a86a" stroke-width="1.5" opacity="0.55"/>
-    <text x="300" y="110" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#c9a86a" text-anchor="middle" opacity="0.85">BOOKY PRESS</text>
-    <text x="300" y="406.59999999999997" font-family="Georgia, 'Times New Roman', serif" font-size="62" fill="#efe7d6" text-anchor="middle"><tspan x="300" dy="0">The Lantern</tspan><tspan x="300" dy="64.48">of Aldridge</tspan><tspan x="300" dy="64.48">Bay</tspan></text>
-    <line x1="264" y1="446.59999999999997" x2="336" y2="446.59999999999997" stroke="#c9a86a" stroke-width="2"/>
-    <text x="300" y="810" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#efe7d6" text-anchor="middle" opacity="0.85">ELEANOR FINCH</text>
-</svg>

@@ -5,7 +5,15 @@ import { qs, qsa } from "../utils/dom.js";
 export function initHeader() {
   const header = qs("[data-header]");
   if (header) {
-    const onScroll = () => header.classList.toggle("is-stuck", window.scrollY > 8);
+    /* Hysteresis: stick well past the top, release only near it. The dead
+       zone (12–64px) stops the condense from flickering — and shaking — when
+       the scroll position hovers around a single threshold. */
+    let stuck = false;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (!stuck && y > 64) { stuck = true; header.classList.add("is-stuck"); }
+      else if (stuck && y < 12) { stuck = false; header.classList.remove("is-stuck"); }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="The Glasshouse Year by Nadia Whitlock">
-  <rect width="600" height="900" fill="#e6dabf"/>
-  <path d="M150 360 V190 A150 150 0 0 1 450 190 V360 Z" fill="none" stroke="#9a6b3f" stroke-width="2" opacity="0.7"/>
-    <circle cx="300" cy="150" r="26" fill="#9a6b3f" opacity="0.5"/>
-    <text x="300" y="520" font-family="Georgia, 'Times New Roman', serif" font-size="64" fill="#3a3128" text-anchor="middle"><tspan x="300" dy="0">The</tspan><tspan x="300" dy="66.56">Glasshouse</tspan><tspan x="300" dy="66.56">Year</tspan></text>
-    <line x1="270" y1="640" x2="330" y2="640" stroke="#9a6b3f" stroke-width="2"/>
-    <text x="300" y="810" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#3a3128" text-anchor="middle" opacity="0.85">NADIA WHITLOCK</text>
-</svg>

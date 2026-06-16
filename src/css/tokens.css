@@ -98,7 +98,9 @@
   --section-y: clamp(4.5rem, 9vw, 8rem);
 
   /* ----- Z scale ----- */
-  --z-header:   10;
+  /* header sits above page content incl. Swiper's z-index:10 pagination/nav
+     (which otherwise paints over the sticky header while scrolling) */
+  --z-header:   15;
   --z-dropdown: 20;
   --z-drawer:   30;
   --z-modal:    40;

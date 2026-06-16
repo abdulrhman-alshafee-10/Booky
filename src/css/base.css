@@ -122,7 +122,11 @@
 
   /* Section rhythm — every band uses this vertical padding */
   .section { padding-block: var(--section-y); }
+  /* Slim band for thin strips (trust/benefits) that don't need full rhythm */
+  .section--slim { padding-block: clamp(2rem, 4vw, 3rem); }
   .section-deep { background-color: var(--color-paper-deep); }
+  [data-bands] > section:not(.cta-band) { background-color: var(--color-paper); }
+  [data-bands] > section:nth-of-type(odd):not(.cta-band) { background-color: var(--color-paper-deep); }
 
   /* Containers */
   .container-main,

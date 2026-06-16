@@ -1,7 +1,7 @@
 /* store.js — single source of truth for cart & wishlist (plan §12).
  * Persists to localStorage; simple pub/sub so any UI stays in sync.
  * Product payloads: { id, title, author, price, oldPrice, cover, genre }.
- * `cover` is a cover slug → assets/images/covers/<slug>.svg. */
+ * `cover` is a cover slug → assets/images/covers/<slug>.jpg. */
 import { qsa } from "../utils/dom.js";
 
 const KEY = "booky-store-v1";
@@ -51,8 +51,8 @@ export function format(n) { return "$" + Number(n || 0).toFixed(2); }
 
 /* ── Cover image helper ──────────────────────────────────── */
 export function coverSrc(slug) {
-  if (!slug) return COVER_BASE + "the-lantern-of-aldridge-bay.svg";
-  return COVER_BASE + slug + ".svg";
+  if (!slug) return COVER_BASE + "the-lantern-of-aldridge-bay.jpg";
+  return COVER_BASE + slug + ".jpg";
 }
 export function coverImg(item, opts = {}) {
   const { className = "", eager = false } = opts;
@@ -66,7 +66,7 @@ export function coverImg(item, opts = {}) {
 /* ── Read a product payload from a card (data-* or DOM) ──── */
 function slugFromCard(card) {
   const src = card.querySelector(".cover img")?.getAttribute("src") || "";
-  const m = src.match(/covers\/([a-z0-9-]+)\.svg/i);
+  const m = src.match(/covers\/([a-z0-9-]+)\.(?:jpg|svg)/i);
   return m ? m[1] : "";
 }
 export function readPayload(el) {

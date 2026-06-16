@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="The Cartographer's Oath by Rowan Hale">
-  <rect width="600" height="900" fill="#b07e2c"/>
-  <rect x="40" y="40" width="520" height="820" fill="none" stroke="#241c10" stroke-width="1.5" opacity="0.55"/>
-    <text x="300" y="110" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#241c10" text-anchor="middle" opacity="0.85">BOOKY PRESS</text>
-    <text x="300" y="412.2" font-family="Georgia, 'Times New Roman', serif" font-size="54" fill="#241c10" text-anchor="middle"><tspan x="300" dy="0">The</tspan><tspan x="300" dy="56.160000000000004">Cartographer's</tspan><tspan x="300" dy="56.160000000000004">Oath</tspan></text>
-    <line x1="264" y1="452.2" x2="336" y2="452.2" stroke="#241c10" stroke-width="2"/>
-    <text x="300" y="810" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#241c10" text-anchor="middle" opacity="0.85">ROWAN HALE</text>
-</svg>

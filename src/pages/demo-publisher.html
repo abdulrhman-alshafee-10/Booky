@@ -9,11 +9,11 @@
   <meta property="og:title" content="The House — Booky Publisher Demo">
   <meta property="og:description" content="A publishing house storefront demo for Booky — editorial grid, big type, vermilion accent.">
   <meta property="og:url" content="https://booky.example.com/demo-publisher.html">
-  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-cartographers-oath.svg">
+  <meta property="og:image" content="https://booky.example.com/assets/images/covers/the-cartographers-oath.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The House — Booky Publisher Demo">
   <meta name="twitter:description" content="A publishing house storefront demo for Booky.">
-  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-cartographers-oath.svg">
+  <meta name="twitter:image" content="https://booky.example.com/assets/images/covers/the-cartographers-oath.jpg">
 </head>
 <body class="demo-publisher">
   <include src="base/icons.html"></include>
@@ -21,7 +21,7 @@
 
   <include src="layout/header.html"></include>
 
-  <main id="main">
+  <main id="main" data-bands>
 
     <include src="heroes/hero-editorial.html"></include>
 
@@ -70,27 +70,27 @@
         </div>
         <ul class="archive-grid mt-10">
           <li class="archive-item">
-            <a class="cover archive-cover" href="shop-left.html" aria-label="Spring 2026 catalog"><img src="assets/images/covers/the-cartographers-oath.svg" alt="Spring 2026 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Spring 2026 catalog"><img src="assets/images/covers/the-cartographers-oath.jpg" alt="Spring 2026 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
             <span class="archive-no">Spring 2026</span>
             <span class="archive-date">14 new titles</span>
           </li>
           <li class="archive-item">
-            <a class="cover archive-cover" href="shop-left.html" aria-label="Autumn 2025 catalog"><img src="assets/images/covers/the-last-observatory.svg" alt="Autumn 2025 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Autumn 2025 catalog"><img src="assets/images/covers/the-last-observatory.jpg" alt="Autumn 2025 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
             <span class="archive-no">Autumn 2025</span>
             <span class="archive-date">11 titles</span>
           </li>
           <li class="archive-item">
-            <a class="cover archive-cover" href="shop-left.html" aria-label="Spring 2025 catalog"><img src="assets/images/covers/of-foxes-and-fables.svg" alt="Spring 2025 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Spring 2025 catalog"><img src="assets/images/covers/of-foxes-and-fables.jpg" alt="Spring 2025 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
             <span class="archive-no">Spring 2025</span>
             <span class="archive-date">9 titles</span>
           </li>
           <li class="archive-item">
-            <a class="cover archive-cover" href="shop-left.html" aria-label="Autumn 2024 catalog"><img src="assets/images/covers/the-glasshouse-year.svg" alt="Autumn 2024 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Autumn 2024 catalog"><img src="assets/images/covers/the-glasshouse-year.jpg" alt="Autumn 2024 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
             <span class="archive-no">Autumn 2024</span>
             <span class="archive-date">12 titles</span>
           </li>
           <li class="archive-item">
-            <a class="cover archive-cover" href="shop-left.html" aria-label="Spring 2024 catalog"><img src="assets/images/covers/a-history-of-quiet-things.svg" alt="Spring 2024 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
+            <a class="cover archive-cover" href="shop-left.html" aria-label="Spring 2024 catalog"><img src="assets/images/covers/a-history-of-quiet-things.jpg" alt="Spring 2024 catalog cover" width="600" height="900" loading="lazy" decoding="async"></a>
             <span class="archive-no">Spring 2024</span>
             <span class="archive-date">10 titles</span>
           </li>
@@ -100,7 +100,7 @@
 
     <include src="sections/latest-articles.html"></include>
     <include src="sections/trust-strip.html"></include>
-    <include src="sections/newsletter-band.html"></include>
+    <include src="sections/newsletter-card.html"></include>
   </main>
 
   <include src="layout/footer.html"></include>

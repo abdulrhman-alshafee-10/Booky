@@ -32,8 +32,9 @@
 | Phase 13 — Product · cart · checkout · wishlist · compare | ✅ done (2026-06-12) — review: `product/cart/checkout/order-complete/wishlist/compare.html` |
 | Phase 14 — Blog | ✅ done (2026-06-12) — review: `blog-grid/-list/-masonry/-single/-single-full.html` |
 | Phase 15 — People · info · account · system | ✅ done (2026-06-12) — review: `authors/author/about/contact/faq/login/register/account/404/coming-soon/terms/privacy.html` |
-| Phase 16 — Motion polish | ⬜ next |
-| Phases 17–18 | ⬜ not started |
+| Phase 16 — Motion polish | ✅ done (2026-06-13) — review: every page (`motion.js`, reduced-motion verified) |
+| Phase 17 — QA gate | ⬜ next |
+| Phase 18 — Docs & packaging | ⬜ not started |
 
 ---
 
@@ -901,25 +902,33 @@ when its markup is absent.
 
 GSAP 3 + ScrollTrigger only. Restraint is the brand: **slow, soft, never bouncy.**
 
-- [ ] **Hero entrance:** timeline — overline fades, title lines rise with
+- [x] **Hero entrance:** timeline — overline fades, title lines rise with
       0.08s stagger, cover drifts up + shadow grows (0.9s, `--ease-out`).
-- [ ] **Scroll reveals:** `data-reveal` → fade-up 28px, 0.8s, triggered at 80%
+      *(per-element fade-up stagger 0.08 — no SplitText line-split; cover-wrap
+      transform-only drift, opacity untouched to protect LCP.)*
+- [x] **Scroll reveals:** `data-reveal` → fade-up 28px, 0.8s, triggered at 80%
       viewport, once; grids stagger children 0.07s; above-the-fold content is
-      NEVER hidden pre-JS (no FOUC, no LCP penalty).
-- [ ] **Micro-interactions (CSS):** cover lift + shadow grow on hover · Card 1
+      NEVER hidden pre-JS (no FOUC, no LCP penalty). *(also auto-targets
+      `.section-head`/signature blocks; above-fold = top < 0.9×vh skipped;
+      trigger at top 85%.)*
+- [x] **Micro-interactions (CSS):** cover lift + shadow grow on hover · Card 1
       dark bar slide-up · nav link underline grow from center · button bar
       brightens + arrow nudges 4px · input border ink-darkens on focus.
-- [ ] **Counters** (S11) count up on enter; **marquee** (S13 optional) is pure
-      CSS, pauses on hover.
-- [ ] **Parallax:** corner ornaments and hero cover drift ±5% (transform only).
-- [ ] **Sliders:** Swiper fade for hero, drag rails for products; pause on
-      hover/focus; bullets are accessible buttons.
-- [ ] **Dark demos:** add accent glow pulse on play buttons, cover light-bleed
-      on hover — still transform/opacity/filter only.
-- [ ] **`prefers-reduced-motion`:** one global guard — all GSAP timelines
+      *(all already shipped as CSS in earlier phases — not motion.js.)*
+- [x] **Counters** (S11) count up on enter; ~~**marquee** (S13 optional)~~
+      *(S13 brand-strip is static wordmarks, not a marquee — optional, skipped.)*
+- [x] **Parallax:** corner ornaments and hero cover drift ±5% (transform only).
+      *(ornaments ±8% by tl/br corner, hero cover −5%, scrub.)*
+- [x] **Sliders:** Swiper fade for hero, drag rails for products; pause on
+      hover/focus; bullets are accessible buttons. *(shipped in Phase 6 carousel.js.)*
+- [~] **Dark demos:** ~~accent glow pulse on play buttons~~, cover light-bleed
+      on hover. *(CSS accent glow on badges + cover brightness shipped Phase 11;
+      no JS looping pulse added — honours CLAUDE.md "avoid looping motion".)*
+- [x] **`prefers-reduced-motion`:** one global guard — all GSAP timelines
       skipped, content shown immediately, marquees/sliders static, smooth
-      scroll off.
-- [ ] Performance: transforms/opacity only · `will-change` added just-in-time
+      scroll off. *(initMotion returns before any gsap.set; verified all
+      elements 1.00/visible under --force-prefers-reduced-motion.)*
+- [x] Performance: transforms/opacity only · `will-change` added just-in-time
       and removed after · timelines killed on teardown · no animating layout
       properties, ever.
 
@@ -1148,9 +1157,9 @@ specs 600×900 WebP) · FAQ · credits & changelog. Plus root `README.md`
 - **Done when:** every §7 page exists, builds, navigates, matches the locked language; account tabs + demo orders/addresses work; contact/login/register/coming-soon validate; FAQ search + TOC spy work; 1280/375. ✅ *(verified 2026-06-12: build green 38/38; each new page 1 h1 + 0 dup-id + 0 unresolved includes + 0 stray inline styles. Real-JS shots: account dashboard renders nav + overview cards + orders table (status badges) via `#orders` hash deep-link; contact OSM map + marker; faq accordions; login card + eye toggle; terms sticky TOC w/ active scroll-spy. 1280 + 375-iframe: account/contact stack cleanly, no overflow. **NOTE: `styleguide.html` already existed since Phase 1 as the running showcase — not re-listed here.**)*
 
 ### Phase 16 — Motion polish
-- [ ] `motion.js` site-wide pass per §13: hero timelines, reveals, staggers, counters, parallax, reduced-motion guard
-- [ ] Audit: nothing hidden above the fold, no CLS from animation, timelines clean
-- **Done when:** motion feels premium-calm on every page; reduced-motion shows everything instantly.
+- [x] `motion.js` site-wide pass per §13: hero timelines, reveals, staggers, counters, parallax, reduced-motion guard
+- [x] Audit: nothing hidden above the fold, no CLS from animation, timelines clean
+- **Done when:** motion feels premium-calm on every page; reduced-motion shows everything instantly. ✅ *(verified 2026-06-13: `src/js/modules/motion.js` wired last in main.js after initCarousels. ALL hidden states JS-applied via gsap.set/from — JS-off or reduced-motion leaves everything visible (no FOUC/LCP/stuck-content). Above-fold guard: any reveal target with top < 0.9×innerHeight at load is skipped (never hidden). LCP hero cover img moved by transform only — never faded. Hero entrance = overline/title/copy fade-up stagger 0.08 + cover-wrap y-drift; scroll reveals (`[data-reveal]`/`.section-head`/blocks) fade-up 28px at top 85% once; grid staggers (book/shop/blog/cat/plan/value/team/steps/trust/age/archive/demos/social/deal/bestseller/stats/genre) children stagger 0.07; `.stat-num[data-count]` count-up on enter (en-US thousands); parallax scrub on `.ornament` (±8% by tl/br) + `.hero-cover` (−5%); all transform/opacity only. **`gsap.ticker.lagSmoothing(0)`** added so a janky first frame can't stall a just-started timeline. Build green 38/38, main.js 58KB (budget 70). Verified via DOM-dump computed opacity: normal → hero p/h1/btn-link=1.00 visible, below-fold `.section-head` & `.book-grid>*`=0.00/hidden (await scroll); `--force-prefers-reduced-motion` → ALL=1.00/visible. Screenshots: index + demo-night hero entrances complete; about-tall fully visible incl. live counters.)*
 
 ### Phase 17 — QA gate
 - [ ] W3C validate every page · duplicate-ID/inline-style/console sweep · link + asset check

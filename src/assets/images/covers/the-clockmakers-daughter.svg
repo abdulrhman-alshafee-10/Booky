@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900" role="img" aria-label="The Clockmaker's Daughter by Isla Brennan">
-  <rect width="600" height="900" fill="#52232f"/>
-  <path d="M150 360 V190 A150 150 0 0 1 450 190 V360 Z" fill="none" stroke="#d6a48f" stroke-width="2" opacity="0.7"/>
-    <circle cx="300" cy="150" r="26" fill="#d6a48f" opacity="0.5"/>
-    <text x="300" y="520" font-family="Georgia, 'Times New Roman', serif" font-size="56" fill="#f0e3d8" text-anchor="middle"><tspan x="300" dy="0">The</tspan><tspan x="300" dy="58.24">Clockmaker's</tspan><tspan x="300" dy="58.24">Daughter</tspan></text>
-    <line x1="270" y1="640" x2="330" y2="640" stroke="#d6a48f" stroke-width="2"/>
-    <text x="300" y="810" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="20" letter-spacing="4" fill="#f0e3d8" text-anchor="middle" opacity="0.85">ISLA BRENNAN</text>
-</svg>
