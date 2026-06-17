@@ -9,27 +9,35 @@
 
   /* ══ Header A — "Editorial" ════════════════════════════════ */
   .site-header {
+    /* themeable colours — demos re-skin the header by overriding these */
+    --hdr-bg:        var(--color-paper);
+    --hdr-fg:        var(--color-ink);
+    --hdr-muted:     var(--color-ink-soft);
+    --hdr-line:      var(--color-line);
+    --hdr-topbar-bg: var(--color-paper-deep);
+    --hdr-mark:      var(--color-accent);
+    --hdr-accent:    var(--color-accent);
     position: sticky;
     inset-block-start: 0;
     z-index: var(--z-header);
-    background-color: var(--color-paper);
+    background-color: var(--hdr-bg);
     transition: box-shadow var(--duration-base) var(--ease-out),
                 background-color var(--duration-base) var(--ease-out);
   }
   .site-header.is-stuck {
-    box-shadow: 0 1px 0 0 var(--color-line), var(--shadow-drop);
+    box-shadow: 0 1px 0 0 var(--hdr-line), var(--shadow-drop);
   }
 
   /* Slim top hairline announcement bar */
   .topbar {
-    border-block-end: 1px solid var(--color-line);
-    background-color: var(--color-paper-deep);
+    border-block-end: 1px solid var(--hdr-line);
+    background-color: var(--hdr-topbar-bg);
     font-size: var(--text-xs);
-    color: var(--color-ink-soft);
+    color: var(--hdr-muted);
   }
   .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.55rem; }
-  .topbar a { color: var(--color-ink-soft); text-decoration: none; }
-  .topbar a:hover { color: var(--color-accent); }
+  .topbar a { color: var(--hdr-muted); text-decoration: none; }
+  .topbar a:hover { color: var(--hdr-accent); }
 
   /* Main bar — wordmark · centered nav · actions */
   .header-main {
@@ -55,7 +63,7 @@
     display: inline-grid; place-items: center;
     inline-size: 2.5rem; block-size: 2.5rem;
     margin-inline-start: -0.5rem;
-    background: none; border: 0; color: var(--color-ink); cursor: pointer;
+    background: none; border: 0; color: var(--hdr-fg, var(--color-ink)); cursor: pointer;
   }
   .wordmark {
     display: inline-flex;
@@ -65,16 +73,16 @@
     font-size: var(--text-2xl);
     line-height: 1;
     letter-spacing: 0.02em;
-    color: var(--color-ink);
+    color: var(--hdr-fg, var(--color-ink));
     text-decoration: none;
   }
-  .wordmark:hover { color: var(--color-ink); }
-  .wordmark:hover .wordmark-mark { color: var(--color-accent); }
+  .wordmark:hover { color: var(--hdr-fg, var(--color-ink)); }
+  .wordmark:hover .wordmark-mark { color: var(--hdr-accent, var(--color-accent)); }
   .wordmark-mark {
     inline-size: 1.75rem;
     block-size: 1.75rem;
     flex-shrink: 0;
-    color: var(--color-accent);
+    color: var(--hdr-mark, var(--color-accent));
     fill: none;
     stroke: currentColor;
     stroke-width: 1.5;
@@ -90,10 +98,10 @@
     display: inline-grid; place-items: center;
     inline-size: 2.5rem; block-size: 2.5rem;
     background: none; border: 0; border-radius: var(--radius-sm);
-    color: var(--color-ink); text-decoration: none; cursor: pointer;
+    color: var(--hdr-fg, var(--color-ink)); text-decoration: none; cursor: pointer;
     transition: color var(--duration-fast) var(--ease-smooth);
   }
-  .header-action:hover { color: var(--color-accent); }
+  .header-action:hover { color: var(--hdr-accent, var(--color-accent)); }
   .header-action .count { position: absolute; inset-block-start: 0.25rem; inset-inline-end: 0.15rem; }
 
   /* Primary navigation */
@@ -107,12 +115,12 @@
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--color-ink-soft);
+    color: var(--hdr-muted, var(--color-ink-soft));
     background: none; border: 0; cursor: pointer;
     text-decoration: none;
     transition: color var(--duration-fast) var(--ease-smooth);
   }
-  .nav-link:hover, .nav-link[aria-current="page"] { color: var(--color-ink); }
+  .nav-link:hover, .nav-link[aria-current="page"] { color: var(--hdr-fg, var(--color-ink)); }
   .nav-link .icon { transition: transform var(--duration-fast) var(--ease-out); }
   .has-menu.is-open > .nav-link .icon { transform: rotate(180deg); }
 
@@ -165,6 +173,49 @@
   .mega-feature:hover { transform: translateY(-3px); }
   .mega-feature .mega-feature-art { aspect-ratio: 16/9; background-color: var(--color-ink); flex: 1; }
   .mega-feature-body { padding: 1rem 1.2rem 1.2rem; }
+
+  /* ══ Per-demo header re-skins (colour only; same layout/JS) ════════
+     Each demo overrides the header colour tokens for visual variety. */
+  /* Kids — soft coral wash */
+  .demo-kids .site-header {
+    --hdr-bg: color-mix(in oklch, var(--color-accent) 13%, var(--color-surface));
+    --hdr-topbar-bg: color-mix(in oklch, var(--color-accent) 22%, var(--color-surface));
+  }
+  /* Library — soft sage wash (echoes the offer hero) */
+  .demo-library .site-header {
+    --hdr-bg: color-mix(in oklch, var(--color-accent) 13%, var(--color-surface));
+    --hdr-topbar-bg: color-mix(in oklch, var(--color-accent) 22%, var(--color-surface));
+  }
+  /* Vintage — dark sepia masthead */
+  .demo-vintage .site-header {
+    --hdr-bg: oklch(0.30 0.03 60);
+    --hdr-fg: oklch(0.95 0.012 78);
+    --hdr-muted: color-mix(in oklch, oklch(0.95 0.012 78), transparent 34%);
+    --hdr-line: oklch(0.46 0.03 60);
+    --hdr-topbar-bg: oklch(0.25 0.028 60);
+    --hdr-mark: oklch(0.75 0.1 66);
+    --hdr-accent: oklch(0.78 0.1 66);
+  }
+  /* Publisher — dark ink masthead */
+  .demo-publisher .site-header {
+    --hdr-bg: var(--color-ink);
+    --hdr-fg: var(--color-paper);
+    --hdr-muted: color-mix(in oklch, var(--color-paper), transparent 36%);
+    --hdr-line: color-mix(in oklch, var(--color-paper), transparent 82%);
+    --hdr-topbar-bg: color-mix(in oklch, var(--color-ink), black 22%);
+    --hdr-mark: oklch(0.66 0.2 31);
+    --hdr-accent: oklch(0.72 0.18 32);
+  }
+  /* Magazine — bold accent masthead */
+  .demo-magazine .site-header {
+    --hdr-bg: var(--color-accent);
+    --hdr-fg: oklch(0.99 0 0);
+    --hdr-muted: color-mix(in oklch, white, transparent 26%);
+    --hdr-line: color-mix(in oklch, white, transparent 78%);
+    --hdr-topbar-bg: color-mix(in oklch, var(--color-accent), black 20%);
+    --hdr-mark: oklch(0.99 0 0);
+    --hdr-accent: oklch(0.99 0 0);
+  }
 
   /* ══ Footer A — "Columns" ══════════════════════════════════ */
   .site-footer { background-color: var(--color-paper-deep); border-block-start: 1px solid var(--color-line); }

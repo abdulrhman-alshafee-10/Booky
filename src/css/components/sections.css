@@ -339,6 +339,46 @@
   .bs-nav--next { inset-inline-end: 0.6rem; }
 
   /* ═══════════════════════════════════════════════════════════
+     H-author — coastal author hero (demo-author): light, hazy shoreline
+     photo; LEFT ringed portrait + quote, RIGHT intro + featured extract.
+  ═══════════════════════════════════════════════════════════ */
+  .hero-author { position: relative; overflow: hidden; display: grid; align-items: center; min-block-size: clamp(34rem, 82svh, 50rem); padding-block: clamp(2rem, 4vw, 3rem); }
+  /* flip so the cliff sits left (behind the portrait), open water right (behind the dark text) */
+  .hero-author-bg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; transform: scaleX(-1); }
+  .hero-author-wash { position: absolute; inset: 0; background-image: linear-gradient(to right, color-mix(in oklch, var(--color-paper), transparent 42%), color-mix(in oklch, var(--color-paper), transparent 22%) 50%, color-mix(in oklch, var(--color-paper), transparent 8%)); }
+  .hero-author-grid { position: relative; z-index: 1; display: grid; gap: 2.5rem; align-items: center; }
+  @media (min-width: 1024px) { .hero-author-grid { grid-template-columns: 0.82fr 1fr; gap: 4rem; } }
+
+  /* LEFT — ringed portrait + quill badge + quote */
+  .hero-author-aside { text-align: center; }
+  .hero-author-portrait { position: relative; inline-size: min(72%, 20rem); aspect-ratio: 1; margin-inline: auto; }
+  .hero-author-portrait img { inline-size: 100%; block-size: 100%; object-fit: cover; border-radius: var(--radius-full); }
+  .hero-author-portrait::before { content: ""; position: absolute; inset: -0.85rem; border-radius: var(--radius-full); border: 1px solid color-mix(in oklch, var(--color-accent) 60%, transparent); }
+  .hero-author-quill { position: absolute; inset-block-end: 0.6rem; inset-inline-end: 0.6rem; inline-size: 3rem; block-size: 3rem; display: grid; place-items: center; border-radius: var(--radius-full); background-color: var(--color-surface); color: var(--color-accent); box-shadow: var(--shadow-drop); }
+  .hero-author-quill .icon { inline-size: 1.3rem; block-size: 1.3rem; }
+  .hero-author-quote { margin-block-start: 2rem; margin-inline: auto; max-inline-size: 27ch; font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); line-height: 1.5; color: var(--color-ink-soft); }
+
+  /* RIGHT — intro + featured-extract card */
+  .hero-author-main .overline { display: block; }
+  .hero-author-main h1 { margin-block-start: 1rem; font-size: clamp(2.5rem, 1.4rem + 5vw, 4.5rem); line-height: 1.04; }
+  .hero-author-lead { margin-block-start: 1.5rem; max-inline-size: 46ch; color: var(--color-ink-soft); line-height: 1.7; }
+  .hero-author-extracts { position: relative; margin-block-start: 2.25rem; max-inline-size: 36rem; }
+  .hero-author-extracts .swiper-slide { block-size: auto; }
+  .hero-author-extract { display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: center; min-block-size: 12rem; padding: 1.1rem; border-radius: var(--radius-md); background-color: color-mix(in oklch, var(--color-surface), transparent 6%); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border: 1px solid color-mix(in oklch, var(--color-ink), transparent 88%); box-shadow: var(--shadow-cover); }
+  .hero-author-ext-nav { position: absolute; z-index: 3; inset-block-start: 50%; translate: 0 -50%; inline-size: 2.1rem; block-size: 2.1rem; display: inline-grid; place-items: center; border-radius: var(--radius-full); background-color: var(--color-surface); color: var(--color-ink); border: 1px solid var(--color-line); box-shadow: var(--shadow-drop); cursor: pointer; transition: background-color var(--duration-fast) var(--ease-smooth), color var(--duration-fast) var(--ease-smooth); }
+  .hero-author-ext-nav:hover { background-color: var(--color-ink); color: var(--color-paper); }
+  .hero-author-ext-prev { inset-inline-start: -0.85rem; }
+  .hero-author-ext-next { inset-inline-end: -0.85rem; }
+  .hero-author-extract-cover { display: block; inline-size: 6.5rem; }
+  .hero-author-extract-cover img { inline-size: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: var(--radius-xs); box-shadow: var(--shadow-cover); }
+  .hero-author-extract-body { min-inline-size: 0; }
+  .hero-author-extract-body .overline { display: block; }
+  .hero-author-extract-title { margin-block-start: 0.4rem; font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* clamp to 2 lines so slides keep an even height regardless of copy length */
+  .hero-author-extract-desc { margin-block-start: 0.4rem; font-size: var(--text-sm); color: var(--color-ink-soft); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .hero-author-extract .btn { margin-block-start: 1rem; }
+
+  /* ═══════════════════════════════════════════════════════════
      S1-alt — Featured genre index (numbered big-type grid)
   ═══════════════════════════════════════════════════════════ */
   .genre-feature { display: grid; }

@@ -4,7 +4,12 @@
       "Bash(npm --version)",
       "Bash(cd \"C:/Users/Victus/OneDrive/Desktop/my Ps/ecomus-package/ecomus\" 2>/dev/null && echo \"=== TOP LEVEL ===\" && ls -la && echo \"\" && echo \"=== TREE \\(depth 2\\) ===\" && find . -maxdepth 2 -type d 2>/dev/null | head -80)",
       "Read(//c/Users/Victus/OneDrive/Desktop/my Ps/ecomus-package/ecomus/**)",
-      "PowerShell(npm run build 2>&1)"
+      "PowerShell(npm run build 2>&1)",
+      "Bash(xargs -n1 basename)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:images.unsplash.com)",
+      "Bash(cp \"/c/Users/Victus/.claude/projects/c--Users-Victus-OneDrive-Desktop-Booky/62a98ae1-1bab-464a-a49e-baf59866139d/tool-results/webfetch-1781700825779-02s2o2.jpg\" src/assets/images/photos/coast-shore.jpg)",
+      "Bash(node -e 'const fs=require\\(\"fs\"\\);const b=fs.readFileSync\\(\"src/assets/images/photos/coast-shore.jpg\"\\);let i=2;while\\(i<b.length\\){if\\(b[i]==0xFF&&b[i+1]>=0xC0&&b[i+1]<=0xC3\\){console.log\\(\"dims \"+b.readUInt16BE\\(i+7\\)+\"x\"+b.readUInt16BE\\(i+5\\)\\);break;}i++;}')"
     ]
   }
 }

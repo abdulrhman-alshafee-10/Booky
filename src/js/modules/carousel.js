@@ -77,12 +77,12 @@ function pag(root) {
   return el ? { el, clickable: true } : false;
 }
 
-/* Resolve custom nav buttons scoped to this carousel, if both present. */
+/* Resolve custom nav buttons scoped to this carousel (either/both present). */
 function nav(root) {
   const wrap = scope(root);
   const prevEl = qs("[data-swiper-prev]", wrap);
   const nextEl = qs("[data-swiper-next]", wrap);
-  return prevEl && nextEl ? { prevEl, nextEl } : false;
+  return prevEl || nextEl ? { prevEl: prevEl || null, nextEl: nextEl || null } : false;
 }
 
 export function initCarousels() {

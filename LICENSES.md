@@ -31,6 +31,7 @@ Sourced from **Unsplash** (reading / library themed) per owner request.
 | editorial-4.jpg | blog / section thumbs | photo-1512820790803-83ca734da794 |
 | reading-coffee.jpg | newsletter-card variant | photo-1544716278-ca5e3f4abd8c |
 | reading-hands.jpg | testimonials-split variant | photo-1521123845560-14093637aa7d |
+| coast-shore.jpg | demo-author coastal hero bg (Jean Vella) | photo-1691325011849-de814c92dbbd |
 
 - **License:** the [Unsplash License](https://unsplash.com/license) permits
   free commercial and non-commercial use.
